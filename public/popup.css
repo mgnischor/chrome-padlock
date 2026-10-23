@@ -1,0 +1,401 @@
+/*
+    Padlock Chrome Extension
+    Copyright (C) 2026 Miguel Nischor
+
+    File: public/popup.css
+    Description: Styles of the popup user interface.
+    Author: Miguel Nischor <miguel@nischor.com.br>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
+:root {
+    color-scheme: light dark;
+    --bg: #f4f5f9;
+    --card: #ffffff;
+    --text: #1b1d2a;
+    --muted: #667085;
+    --border: #dfe2ec;
+    --accent: #4f46e5;
+    --accent-text: #ffffff;
+    --digit: #1d6fd8;
+    --symbol: #c2570c;
+    --danger: #c0262d;
+    --meter-off: #e3e6ef;
+    --level-0: #d92d20;
+    --level-1: #e8710a;
+    --level-2: #c9a000;
+    --level-3: #2e9e5b;
+    --level-4: #0f8a4f;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #14151c;
+        --card: #1e2029;
+        --text: #eceef5;
+        --muted: #9aa0b4;
+        --border: #2f3240;
+        --accent: #7b74ff;
+        --accent-text: #0e0f16;
+        --digit: #6cb2ff;
+        --symbol: #ffa65c;
+        --danger: #ff7b80;
+        --meter-off: #333646;
+        --level-0: #ff6257;
+        --level-1: #ff9a3d;
+        --level-2: #e6c027;
+        --level-3: #4cc47f;
+        --level-4: #34d17f;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 360px;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font:
+        13px/1.4 system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.tagline,
+.muted {
+    color: var(--muted);
+}
+
+.tagline {
+    margin-left: auto;
+    font-size: 12px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.password {
+    display: block;
+    min-height: 3.2em;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font:
+        600 15px/1.5 ui-monospace,
+        "Cascadia Mono",
+        Consolas,
+        monospace;
+    letter-spacing: 0.02em;
+    overflow-wrap: anywhere;
+    user-select: all;
+    cursor: pointer;
+}
+
+.password:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.password .digit {
+    color: var(--digit);
+}
+
+.password .symbol {
+    color: var(--symbol);
+}
+
+.password.error {
+    color: var(--danger);
+    font:
+        13px/1.4 system-ui,
+        sans-serif;
+    cursor: default;
+    user-select: none;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+button {
+    flex: 1;
+    padding: 8px 10px;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    border-color: var(--accent);
+}
+
+button.primary {
+    color: var(--accent-text);
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.strength {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.meter {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+}
+
+.meter span {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--meter-off);
+}
+
+/* Level N lights up the first N + 1 of the five segments. */
+.meter[data-level="0"] span:nth-child(-n + 1) {
+    background: var(--level-0);
+}
+.meter[data-level="1"] span:nth-child(-n + 2) {
+    background: var(--level-1);
+}
+.meter[data-level="2"] span:nth-child(-n + 3) {
+    background: var(--level-2);
+}
+.meter[data-level="3"] span:nth-child(-n + 4) {
+    background: var(--level-3);
+}
+.meter[data-level="4"] span:nth-child(-n + 5) {
+    background: var(--level-4);
+}
+
+.strength-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.status {
+    min-height: 1.4em;
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.status.error {
+    color: var(--danger);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    font-weight: 600;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+}
+
+.check code {
+    margin-left: auto;
+    color: var(--muted);
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+legend {
+    margin-bottom: 6px;
+    padding: 0;
+    font-weight: 600;
+}
+
+fieldset .check code {
+    display: none;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 0;
+    accent-color: var(--accent);
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 6px 8px;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font: inherit;
+}
+
+input[type="number"] {
+    width: 72px;
+    text-align: center;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.options {
+    gap: 12px;
+}
+
+.footer {
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button.compact {
+    flex: 0 0 auto;
+}
+
+.hint {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 380px;
+    margin: 0;
+    padding: 0 4px 0 0;
+    overflow-y: auto;
+    list-style: none;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.history-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.history-password {
+    font:
+        600 13px/1.4 ui-monospace,
+        "Cascadia Mono",
+        Consolas,
+        monospace;
+    overflow-wrap: anywhere;
+}
+
+.history-password .digit {
+    color: var(--digit);
+}
+
+.history-password .symbol {
+    color: var(--symbol);
+}
+
+.history-time {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.history-item button {
+    flex: 0 0 auto;
+    padding: 4px 10px;
+    font-size: 12px;
+}
