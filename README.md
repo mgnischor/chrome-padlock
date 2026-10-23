@@ -21,6 +21,8 @@ entirely on your device.
 - **Password history** (optional, off by default) – when enabled in the popup, a _History_ button
   shows the last 50 generated passwords, newest first, each with a timestamp and a copy button.
   See [History](#history) for what is recorded and where it lives.
+- **Roomy popup** that uses the full 640 × 400 px an extension popup can have: the password and its
+  strength on the left, all options on the right, with no scrolling in the generator view.
 - **Localized** in English (US), Brazilian Portuguese and Spanish. The extension follows the
   browser's UI language automatically; any other language falls back to English. See
   [Localization](#localization).
