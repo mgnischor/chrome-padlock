@@ -63,9 +63,12 @@
     box-sizing: border-box;
 }
 
+/* The popup uses the whole 640x400 area available to an extension popup, in both views. */
 body {
-    width: 360px;
+    width: 640px;
+    height: 400px;
     margin: 0;
+    overflow: hidden;
     background: var(--bg);
     color: var(--text);
     font:
@@ -79,8 +82,9 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 12px;
+    gap: 8px;
+    height: 100%;
+    padding: 10px;
 }
 
 .header {
@@ -104,11 +108,28 @@ main {
     font-size: 12px;
 }
 
+/* Generator view: password on the left, options on the right. */
+.layout {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 10px;
+    min-height: 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 0;
+    min-width: 0;
+}
+
 .card {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 12px;
+    gap: 8px;
+    padding: 10px;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -116,8 +137,10 @@ main {
 
 .password {
     display: block;
-    min-height: 3.2em;
-    padding: 10px;
+    min-height: 56px;
+    max-height: 100px;
+    padding: 8px 10px;
+    overflow-y: auto;
     border: 1px solid var(--border);
     border-radius: 8px;
     font:
@@ -156,14 +179,23 @@ select:focus-visible {
     user-select: none;
 }
 
+/* Copy spans the full width; Regenerate and History share the row below it. */
 .actions {
-    display: flex;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.actions .primary {
+    grid-column: 1 / -1;
+}
+
+.actions:has(#history-open[hidden]) #regenerate {
+    grid-column: 1 / -1;
 }
 
 button {
-    flex: 1;
-    padding: 8px 10px;
+    padding: 6px 10px;
     color: var(--text);
     background: transparent;
     border: 1px solid var(--border);
@@ -191,7 +223,7 @@ button:disabled {
 .strength {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .meter {
@@ -239,12 +271,6 @@ button:disabled {
     color: var(--danger);
 }
 
-.row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 label {
     font-weight: 600;
 }
@@ -271,7 +297,7 @@ fieldset {
 }
 
 legend {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     padding: 0;
     font-weight: 600;
 }
@@ -280,8 +306,26 @@ fieldset .check code {
     display: none;
 }
 
+/* Options card (right column). It scrolls instead of clipping if a translation runs long. */
+.options {
+    flex: 1;
+    gap: 10px;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.length-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.length-row input[type="range"] {
+    flex: 1;
+    min-width: 0;
+}
+
 input[type="range"] {
-    width: 100%;
     margin: 0;
     accent-color: var(--accent);
 }
@@ -290,7 +334,7 @@ input[type="number"],
 input[type="text"],
 select {
     width: 100%;
-    padding: 6px 8px;
+    padding: 5px 8px;
     color: var(--text);
     background: var(--bg);
     border: 1px solid var(--border);
@@ -299,7 +343,7 @@ select {
 }
 
 input[type="number"] {
-    width: 72px;
+    width: 64px;
     text-align: center;
 }
 
@@ -307,30 +351,13 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
-.options {
-    gap: 12px;
-}
-
-.footer {
-    color: var(--muted);
-    font-size: 11px;
-    text-align: center;
-}
-
-[hidden] {
-    display: none !important;
-}
-
-.stack {
-    display: flex;
-    flex-direction: column;
+.field-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
-}
-
-button.compact {
-    flex: 0 0 auto;
 }
 
 .hint {
@@ -339,16 +366,44 @@ button.compact {
     font-size: 11px;
 }
 
+.footer {
+    margin-top: auto;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
 h2 {
     margin: 0;
     font-size: 14px;
 }
 
-.history-list {
+/* History view: header with the actions, then a two-column list that fills the remaining height. */
+.history {
+    flex: 1;
+    min-height: 0;
+}
+
+.history-head {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-head .spacer {
+    flex: 1;
+}
+
+.history-list {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
     gap: 6px;
-    max-height: 380px;
+    min-height: 0;
     margin: 0;
     padding: 0 4px 0 0;
     overflow-y: auto;
@@ -359,6 +414,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: 8px;
+    min-width: 0;
     padding: 6px 8px;
     border: 1px solid var(--border);
     border-radius: 8px;
