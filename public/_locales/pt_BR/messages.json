@@ -1,0 +1,92 @@
+{
+    "extName": { "message": "Padlock – Gerador de Senhas Seguras" },
+    "extShortName": { "message": "Padlock" },
+    "extDescription": {
+        "message": "Gere senhas fortes e aleatórias com o gerador de números aleatórios seguro do navegador. Tudo fica no seu dispositivo."
+    },
+    "actionTitle": { "message": "Padlock – gerar uma senha" },
+    "commandOpen": { "message": "Abrir o Padlock" },
+    "menuInsertPassword": { "message": "Inserir senha segura" },
+
+    "tagline": { "message": "Gerador de senhas seguras" },
+    "generatedPasswordLabel": { "message": "Senha gerada" },
+    "clickToCopy": { "message": "Clique para copiar" },
+    "copy": { "message": "Copiar" },
+    "regenerate": { "message": "Gerar outra" },
+    "regenerateTitle": { "message": "Gerar uma nova senha" },
+    "historyButton": { "message": "Histórico" },
+    "historyButtonTitle": {
+        "message": "Mostrar as últimas $COUNT$ senhas geradas",
+        "placeholders": { "count": { "content": "$1", "example": "50" } }
+    },
+
+    "strengthMeterLabel": { "message": "Força da senha" },
+    "strengthLevel0": { "message": "Muito fraca" },
+    "strengthLevel1": { "message": "Fraca" },
+    "strengthLevel2": { "message": "Boa" },
+    "strengthLevel3": { "message": "Forte" },
+    "strengthLevel4": { "message": "Muito forte" },
+    "entropyBits": {
+        "message": "$BITS$ bits de entropia",
+        "placeholders": { "bits": { "content": "$1", "example": "128" } }
+    },
+
+    "optionsLabel": { "message": "Opções" },
+    "lengthLabel": { "message": "Tamanho" },
+    "lengthSliderLabel": { "message": "Tamanho da senha" },
+    "charactersLegend": { "message": "Caracteres" },
+    "lowercase": { "message": "Minúsculas" },
+    "uppercase": { "message": "Maiúsculas" },
+    "digits": { "message": "Dígitos" },
+    "symbols": { "message": "Símbolos" },
+    "avoidLookalikes": { "message": "Evitar caracteres parecidos" },
+    "excludeCharsLabel": { "message": "Excluir caracteres" },
+    "excludeCharsPlaceholder": { "message": "ex.: {}[]" },
+    "clipboardClearLabel": { "message": "Limpar a área de transferência após copiar" },
+    "clipboardNever": { "message": "Nunca" },
+    "clipboard30": { "message": "30 segundos" },
+    "clipboard60": { "message": "1 minuto" },
+    "clipboard120": { "message": "2 minutos" },
+    "keepHistoryLabel": {
+        "message": "Manter um histórico das últimas $COUNT$ senhas",
+        "placeholders": { "count": { "content": "$1", "example": "50" } }
+    },
+    "keepHistoryHint": {
+        "message": "As senhas ficam sem criptografia, apenas na memória do navegador, e são apagadas quando o Chrome é fechado. Desativar esta opção apaga o histórico."
+    },
+    "footer": {
+        "message": "As senhas são geradas localmente com o CSPRNG do navegador. Nada é enviado para fora. Clique com o botão direito em um campo de texto para inserir uma."
+    },
+
+    "historyViewLabel": { "message": "Histórico de senhas" },
+    "historyHeading": { "message": "Histórico" },
+    "historyEmpty": { "message": "Nenhuma senha ainda." },
+    "historyBack": { "message": "Voltar" },
+    "historyClear": { "message": "Limpar histórico" },
+    "historyCleared": { "message": "Histórico limpo." },
+
+    "statusCopyFailed": { "message": "Falha ao copiar. Selecione a senha e copie manualmente." },
+    "statusCopied": { "message": "Copiada para a área de transferência." },
+    "statusCopiedNoPermission": {
+        "message": "Copiada. A limpeza automática precisa de permissão para a área de transferência; selecione a opção novamente para concedê-la."
+    },
+    "statusCopiedClearIn": {
+        "message": "Copiada. A área de transferência será limpa em $SECONDS$ s.",
+        "placeholders": { "seconds": { "content": "$1", "example": "30" } }
+    },
+    "statusScheduleFailed": { "message": "Copiada, mas não foi possível agendar a limpeza da área de transferência." },
+    "statusClipboardPermissionRequired": {
+        "message": "A permissão da área de transferência é necessária para limpá-la automaticamente."
+    },
+    "statusSaveFailed": { "message": "Não foi possível salvar as configurações." },
+
+    "errorGeneric": { "message": "Não foi possível gerar uma senha." },
+    "errorInvalidLength": {
+        "message": "O tamanho deve estar entre $MIN$ e $MAX$.",
+        "placeholders": { "min": { "content": "$1", "example": "4" }, "max": { "content": "$2", "example": "128" } }
+    },
+    "errorNoCharset": { "message": "Selecione pelo menos um tipo de caractere." },
+    "errorLengthTooShort": {
+        "message": "O tamanho é menor que o número de tipos de caracteres selecionados."
+    }
+}
