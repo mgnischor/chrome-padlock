@@ -1,0 +1,200 @@
+<!doctype html>
+<!--
+    Padlock Chrome Extension
+    Copyright (C) 2026 Miguel Nischor
+
+    File: public/popup.html
+    Description: Markup of the popup user interface.
+    Author: Miguel Nischor <miguel@nischor.com.br>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Padlock</title>
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+    <body>
+        <main>
+            <header class="header">
+                <img src="icons/icon-32.png" alt="" width="24" height="24" />
+                <h1>Padlock</h1>
+                <span class="tagline" data-i18n="tagline">Secure password generator</span>
+            </header>
+
+            <div id="main-view" class="stack">
+                <section class="card" aria-label="Generated password" data-i18n-aria-label="generatedPasswordLabel">
+                    <output
+                        id="password"
+                        class="password"
+                        aria-live="off"
+                        tabindex="0"
+                        title="Click to copy"
+                        data-i18n-title="clickToCopy"
+                    ></output>
+                    <div class="actions">
+                        <button id="copy" type="button" class="primary" data-i18n="copy">Copy</button>
+                        <button
+                            id="regenerate"
+                            type="button"
+                            aria-label="Generate a new password"
+                            title="Generate a new password"
+                            data-i18n="regenerate"
+                            data-i18n-aria-label="regenerateTitle"
+                            data-i18n-title="regenerateTitle"
+                        >
+                            Regenerate
+                        </button>
+                        <button
+                            id="history-open"
+                            type="button"
+                            class="compact"
+                            title="Show the last 50 generated passwords"
+                            data-i18n="historyButton"
+                            data-i18n-title="historyButtonTitle"
+                            hidden
+                        >
+                            History
+                        </button>
+                    </div>
+                    <div class="strength">
+                        <div
+                            id="meter"
+                            class="meter"
+                            data-level="0"
+                            role="meter"
+                            aria-label="Password strength"
+                            data-i18n-aria-label="strengthMeterLabel"
+                            aria-valuemin="0"
+                            aria-valuemax="4"
+                            aria-valuenow="0"
+                        >
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="strength-text">
+                            <strong id="strength-label">–</strong>
+                            <span id="entropy" class="muted"></span>
+                        </div>
+                    </div>
+                    <p id="status" class="status" role="status" aria-live="polite"></p>
+                </section>
+
+                <section class="card options" aria-label="Options" data-i18n-aria-label="optionsLabel">
+                    <div class="row">
+                        <label for="length-number" data-i18n="lengthLabel">Length</label>
+                        <input id="length-number" type="number" inputmode="numeric" />
+                    </div>
+                    <input
+                        id="length"
+                        type="range"
+                        aria-label="Password length"
+                        data-i18n-aria-label="lengthSliderLabel"
+                    />
+
+                    <fieldset>
+                        <legend data-i18n="charactersLegend">Characters</legend>
+                        <label class="check">
+                            <input id="lowercase" type="checkbox" />
+                            <span data-i18n="lowercase">Lowercase</span>
+                            <code>a–z</code>
+                        </label>
+                        <label class="check">
+                            <input id="uppercase" type="checkbox" />
+                            <span data-i18n="uppercase">Uppercase</span>
+                            <code>A–Z</code>
+                        </label>
+                        <label class="check">
+                            <input id="digits" type="checkbox" />
+                            <span data-i18n="digits">Digits</span>
+                            <code>0–9</code>
+                        </label>
+                        <label class="check">
+                            <input id="symbols" type="checkbox" />
+                            <span data-i18n="symbols">Symbols</span>
+                            <code>!@#$…</code>
+                        </label>
+                    </fieldset>
+
+                    <label class="check">
+                        <input id="ambiguous" type="checkbox" />
+                        <span data-i18n="avoidLookalikes">Avoid look-alikes</span>
+                        <code>0 O 1 l I |</code>
+                    </label>
+
+                    <div class="field">
+                        <label for="exclude" data-i18n="excludeCharsLabel">Exclude characters</label>
+                        <input
+                            id="exclude"
+                            type="text"
+                            autocomplete="off"
+                            spellcheck="false"
+                            placeholder="e.g. {}[]"
+                            data-i18n-placeholder="excludeCharsPlaceholder"
+                        />
+                    </div>
+
+                    <div class="field">
+                        <label for="clipboard-clear" data-i18n="clipboardClearLabel"
+                            >Clear clipboard after copying</label
+                        >
+                        <select id="clipboard-clear">
+                            <option value="0" data-i18n="clipboardNever">Never</option>
+                            <option value="30" data-i18n="clipboard30">30 seconds</option>
+                            <option value="60" data-i18n="clipboard60">1 minute</option>
+                            <option value="120" data-i18n="clipboard120">2 minutes</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label class="check">
+                            <input id="keep-history" type="checkbox" />
+                            <span data-i18n="keepHistoryLabel">Keep a history of the last 50 passwords</span>
+                        </label>
+                        <p class="hint" data-i18n="keepHistoryHint">
+                            Passwords are kept unencrypted in browser memory only and are erased when Chrome closes.
+                            Turning this off deletes the history.
+                        </p>
+                    </div>
+                </section>
+
+                <footer class="footer" data-i18n="footer">
+                    Passwords are generated locally with the browser's CSPRNG. Nothing is sent anywhere. Right-click a
+                    text field to insert one.
+                </footer>
+            </div>
+
+            <section
+                id="history-view"
+                class="card"
+                aria-label="Password history"
+                data-i18n-aria-label="historyViewLabel"
+                hidden
+            >
+                <div class="row">
+                    <h2 data-i18n="historyHeading">History</h2>
+                    <span id="history-count" class="muted"></span>
+                </div>
+                <p id="history-empty" class="muted" data-i18n="historyEmpty" hidden>No passwords yet.</p>
+                <ol id="history-list" class="history-list"></ol>
+                <div class="actions">
+                    <button id="history-back" type="button" class="primary" data-i18n="historyBack">Back</button>
+                    <button id="history-clear" type="button" data-i18n="historyClear">Clear history</button>
+                </div>
+                <p id="history-status" class="status" role="status" aria-live="polite"></p>
+            </section>
+        </main>
+        <script src="popup.js"></script>
+    </body>
+</html>
