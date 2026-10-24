@@ -18,6 +18,8 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
+import { CLIPBOARD_CLEAR_CHOICES } from "./settings";
+
 /** Messages exchanged between the popup, the service worker and the offscreen document. */
 
 /** Popup -> service worker: arm the "clear clipboard" timer for a freshly copied password. */
@@ -48,7 +50,8 @@ export const CLIPBOARD_PERMISSIONS: chrome.permissions.Permissions = {
 
 /**
  * Type guard for {@link ScheduleClipboardClearMessage}. Validates the shape of
- * an untrusted runtime message, including that the hash looks like a SHA-256 digest.
+ * an untrusted runtime message: the hash must look like a SHA-256 digest and the
+ * delay must be one of the choices offered in the UI.
  *
  * @param message - Value received from `chrome.runtime.onMessage`.
  * @returns `true` when `message` is a well-formed schedule request.
@@ -62,7 +65,8 @@ export function isScheduleClipboardClear(message: unknown): message is ScheduleC
         typeof m.hash === "string" &&
         /^[0-9a-f]{64}$/.test(m.hash) &&
         typeof m.delaySeconds === "number" &&
-        Number.isFinite(m.delaySeconds)
+        m.delaySeconds > 0 &&
+        (CLIPBOARD_CLEAR_CHOICES as readonly number[]).includes(m.delaySeconds)
     );
 }
 
