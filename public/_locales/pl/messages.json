@@ -1,0 +1,207 @@
+{
+    "extName": {
+        "message": "Padlock – Generator bezpiecznych haseł"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Twórz silne, losowe hasła za pomocą bezpiecznego generatora liczb losowych przeglądarki. Wszystko zostaje na Twoim urządzeniu."
+    },
+    "actionTitle": {
+        "message": "Padlock – wygeneruj hasło"
+    },
+    "commandOpen": {
+        "message": "Otwórz Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "Wstaw bezpieczne hasło"
+    },
+    "tagline": {
+        "message": "Generator bezpiecznych haseł"
+    },
+    "generatedPasswordLabel": {
+        "message": "Wygenerowane hasło"
+    },
+    "clickToCopy": {
+        "message": "Kliknij, aby skopiować"
+    },
+    "copy": {
+        "message": "Kopiuj"
+    },
+    "regenerate": {
+        "message": "Generuj ponownie"
+    },
+    "regenerateTitle": {
+        "message": "Wygeneruj nowe hasło"
+    },
+    "historyButton": {
+        "message": "Historia"
+    },
+    "historyButtonTitle": {
+        "message": "Pokaż ostatnie $COUNT$ wygenerowanych haseł",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Siła hasła"
+    },
+    "strengthLevel0": {
+        "message": "Bardzo słabe"
+    },
+    "strengthLevel1": {
+        "message": "Słabe"
+    },
+    "strengthLevel2": {
+        "message": "Dobre"
+    },
+    "strengthLevel3": {
+        "message": "Silne"
+    },
+    "strengthLevel4": {
+        "message": "Bardzo silne"
+    },
+    "entropyBits": {
+        "message": "$BITS$ bitów entropii",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Opcje"
+    },
+    "lengthLabel": {
+        "message": "Długość"
+    },
+    "lengthSliderLabel": {
+        "message": "Długość hasła"
+    },
+    "charactersLegend": {
+        "message": "Znaki"
+    },
+    "lowercase": {
+        "message": "Małe litery"
+    },
+    "uppercase": {
+        "message": "Wielkie litery"
+    },
+    "digits": {
+        "message": "Cyfry"
+    },
+    "symbols": {
+        "message": "Symbole"
+    },
+    "avoidLookalikes": {
+        "message": "Unikaj podobnych znaków"
+    },
+    "excludeCharsLabel": {
+        "message": "Wyklucz znaki"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "np. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Wyczyść schowek po skopiowaniu"
+    },
+    "clipboardNever": {
+        "message": "Nigdy"
+    },
+    "clipboard30": {
+        "message": "30 sekund"
+    },
+    "clipboard60": {
+        "message": "1 minuta"
+    },
+    "clipboard120": {
+        "message": "2 minuty"
+    },
+    "keepHistoryLabel": {
+        "message": "Zachowuj historię ostatnich $COUNT$ haseł",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Hasła są przechowywane bez szyfrowania wyłącznie w pamięci przeglądarki i usuwane po zamknięciu Chrome. Wyłączenie tej opcji usuwa historię."
+    },
+    "footer": {
+        "message": "Hasła są generowane lokalnie przy użyciu CSPRNG przeglądarki. Nic nie jest nigdzie wysyłane. Kliknij pole tekstowe prawym przyciskiem myszy, aby wstawić hasło."
+    },
+    "historyViewLabel": {
+        "message": "Historia haseł"
+    },
+    "historyHeading": {
+        "message": "Historia"
+    },
+    "historyEmpty": {
+        "message": "Brak haseł."
+    },
+    "historyBack": {
+        "message": "Wstecz"
+    },
+    "historyClear": {
+        "message": "Wyczyść historię"
+    },
+    "historyCleared": {
+        "message": "Historia wyczyszczona."
+    },
+    "statusCopyFailed": {
+        "message": "Nie udało się skopiować. Zaznacz hasło i skopiuj je ręcznie."
+    },
+    "statusCopied": {
+        "message": "Skopiowano do schowka."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Skopiowano. Automatyczne czyszczenie wymaga uprawnienia do schowka; wybierz opcję ponownie, aby je przyznać."
+    },
+    "statusCopiedClearIn": {
+        "message": "Skopiowano. Schowek zostanie wyczyszczony za $SECONDS$ s.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Skopiowano, ale nie udało się zaplanować wyczyszczenia schowka."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Do automatycznego czyszczenia schowka wymagane jest uprawnienie do schowka."
+    },
+    "statusSaveFailed": {
+        "message": "Nie udało się zapisać ustawień."
+    },
+    "errorGeneric": {
+        "message": "Nie udało się wygenerować hasła."
+    },
+    "errorInvalidLength": {
+        "message": "Długość musi mieścić się w zakresie od $MIN$ do $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Wybierz co najmniej jeden typ znaków."
+    },
+    "errorLengthTooShort": {
+        "message": "Długość jest mniejsza niż liczba wybranych typów znaków."
+    }
+}
