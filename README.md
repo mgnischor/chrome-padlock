@@ -1,5 +1,7 @@
 # Padlock – Secure Password Generator
 
+**English** · [Português (Brasil)](README.pt-BR.md) · [Español](README.es-ES.md)
+
 A Chrome (Manifest V3) extension, written in TypeScript, that generates strong random passwords
 entirely on your device.
 
@@ -32,7 +34,7 @@ entirely on your device.
 
 ## Install (from source)
 
-Requires Node.js 18+.
+Requires Node.js 20.12 or newer.
 
 ```bash
 npm install
@@ -44,14 +46,15 @@ Then open `chrome://extensions`, enable **Developer mode**, click **Load unpacke
 
 ## Development
 
-| Command             | Purpose                                                     |
-| ------------------- | ----------------------------------------------------------- |
-| `npm run build`     | Bundle the extension into `dist/` (minified)                |
-| `npm run watch`     | Rebuild on change (unminified, inline source maps)          |
-| `npm run typecheck` | Run `tsc --noEmit` in strict mode                           |
-| `npm test`          | Run the unit tests (Vitest)                                 |
-| `npm run icons`     | Regenerate `public/icons/*.png` (dependency-free generator) |
-| `npm run check`     | Typecheck, test and build                                   |
+| Command             | Purpose                                                        |
+| ------------------- | -------------------------------------------------------------- |
+| `npm run build`     | Production build into `dist/`: JS, HTML, CSS and JSON minified |
+| `npm run package`   | Build, verify and zip into `release/padlock-<version>.zip`     |
+| `npm run watch`     | Rebuild on change (unminified, inline source maps)             |
+| `npm run typecheck` | Run `tsc --noEmit` in strict mode                              |
+| `npm test`          | Run the unit tests (Vitest)                                    |
+| `npm run icons`     | Regenerate `public/icons/*.png` (dependency-free generator)    |
+| `npm run check`     | Typecheck, test and build                                      |
 
 After a rebuild, press the reload button on the extension's card in `chrome://extensions`.
 
@@ -60,7 +63,7 @@ After a rebuild, press the reload button on the extension's card in `chrome://ex
 ```
 public/                 Static files copied to dist/ (manifest, HTML, CSS, icons)
 public/_locales/        Translations: en_US (default), pt_BR and es
-scripts/                build.mjs (esbuild) and make-icons.mjs
+scripts/                Build tooling: build, package, minify, zip and icon generator
 src/core/               Pure, DOM-free logic: random, charsets, generator, entropy
 src/shared/             Settings, history, i18n helper, message types, hashing helper
 src/popup/              Popup UI
@@ -134,8 +137,8 @@ browser's UI language and needs no setting. Chrome picks the best match: an exac
   its English text as a fallback and marks translatable elements with `data-i18n="key"`,
   `data-i18n-title`, `data-i18n-aria-label` or `data-i18n-placeholder`. Messages built in code use
   `t("key", substitutions)`. Message keys are type-checked against `en_US/messages.json`.
-- **The core stays language-neutral:** the generator reports error *codes* and the entropy module
-  reports strength *levels*; the popup maps both to localized text.
+- **The core stays language-neutral:** the generator reports error _codes_ and the entropy module
+  reports strength _levels_; the popup maps both to localized text.
 - **Dates** in the history use the browser's UI language.
 - **Adding a language:** copy `public/_locales/en_US` to a new folder named after the locale (for
   example `fr` or `de`), translate every `message`, and keep the `placeholders` blocks unchanged. Then
@@ -151,10 +154,47 @@ Every function is documented with [TSDoc](https://tsdoc.org): a one-line summary
 `@param name - description`, `@returns` and `@throws` where they apply. Types are not repeated in the
 tags because TypeScript already provides them.
 
+### Build and packaging
+
+`npm run build` always produces the production build that is shipped. Only `npm run watch` skips
+minification, so that errors point at readable code.
+
+| File type                      | How it is minified                                                                                                                    |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| TypeScript → JavaScript        | esbuild: bundled, minified, no source maps, license comments removed                                                                  |
+| `popup.css`                    | esbuild's CSS minifier                                                                                                                |
+| `popup.html`, `offscreen.html` | `scripts/minify.mjs`: comments removed and whitespace collapsed; quoted attributes and `<script>`/`<textarea>` contents are untouched |
+| `manifest.json`                | Compact JSON, with the version taken from `package.json`                                                                              |
+| `_locales/*/messages.json`     | Compact JSON, without the translator-only `description` and `example` notes                                                           |
+| Icons                          | Copied as they are                                                                                                                    |
+
+`npm run package` then verifies the build and writes the Web Store upload to
+`release/padlock-<version>.zip` (reproducible: the same sources give the same bytes). It stops with an
+error if the manifest references a missing file, if source maps or other development files slipped in,
+if an HTML page has an inline script, or if the bundled JavaScript contains `fetch`, `XMLHttpRequest`,
+`WebSocket`, `eval`, `new Function` or an `http(s)://` URL.
+
+### Security
+
+- **No network, by construction.** The content security policy blocks every request
+  (`connect-src 'none'`), plugins, base-URL changes and form posts, and allows only scripts packaged
+  with the extension. The package check above rejects network and `eval` code.
+- **No site access.** The manifest declares no host permissions, content scripts or web-accessible
+  resources. `activeTab` gives access to one tab only after the user clicks the context menu item.
+- **Strict message handling.** The service worker accepts runtime messages only from this extension,
+  and validates their shape, hash format and delay against the values the UI offers.
+- **Memory-only secrets.** The history and the clipboard hash live in `chrome.storage.session`, limited
+  to trusted extension contexts and never written to disk.
+- **Safe DOM updates.** The code never uses `innerHTML`; text goes in with `textContent`.
+- **Guard tests.** `tests/manifest.test.ts` fails if a permission is added without a matching
+  justification in `docs/chrome-web-store.md`, or if the manifest gains host access or a weaker policy.
+- **Dependencies.** `npm audit` reports no known vulnerabilities, and the extension ships no runtime
+  dependencies: everything bundled into the package is this repository's own code.
+
 ### Publishing
 
-- [docs/chrome-web-store.md](docs/chrome-web-store.md): answers for the Chrome Web Store *Privacy
-  practices* tab (single purpose and permission justifications).
+- [docs/chrome-web-store.md](docs/chrome-web-store.md): answers for the Chrome Web Store _Privacy
+  practices_ tab (single purpose and permission justifications).
 - [docs/privacy-policy.md](docs/privacy-policy.md): the privacy policy. The store needs it at a public
   URL. Update it before releasing any change to what the extension stores or transmits.
 
