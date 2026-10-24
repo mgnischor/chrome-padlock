@@ -27,7 +27,8 @@ import { t } from "../src/shared/i18n";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LOCALES_DIR = path.join(ROOT, "public", "_locales");
 const DEFAULT_LOCALE = "en_US";
-const EXPECTED_LOCALES = ["en_US", "es", "pt_BR"];
+/** Supported locale folders, in the order `readdirSync().sort()` lists them. */
+const EXPECTED_LOCALES = ["de", "en_US", "es", "fr", "it", "pl", "pt_BR", "ru"];
 
 /** Shape of one entry of a `messages.json` file. */
 interface Message {
@@ -103,6 +104,19 @@ describe("locales", () => {
             }
         }
     });
+
+    it.each(EXPECTED_LOCALES.filter((locale) => locale !== DEFAULT_LOCALE))(
+        "%s is translated, not a copy of the default locale",
+        (locale) => {
+            const messages = loadLocale(locale);
+            const untranslated = Object.keys(defaults).filter((key) => messages[key]!.message === defaults[key]!.message);
+            // A few strings (the product name, "1 minuto"...) legitimately match; most must not.
+            expect(untranslated.length, untranslated.join(", ")).toBeLessThan(Object.keys(defaults).length * 0.1);
+            for (const key of ["tagline", "copy", "footer", "keepHistoryHint"]) {
+                expect(messages[key]!.message, key).not.toBe(defaults[key]!.message);
+            }
+        }
+    );
 
     it.each(EXPECTED_LOCALES)("%s respects the Chrome Web Store length limits", (locale) => {
         const messages = loadLocale(locale);
