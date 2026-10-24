@@ -28,7 +28,8 @@ fuertes íntegramente en tu dispositivo.
 - **Popup amplio** que aprovecha los 640 × 400 px completos que puede tener el popup de una extensión:
   la contraseña y su fortaleza a la izquierda, todas las opciones a la derecha, sin desplazamiento en
   la vista del generador.
-- **Localizada** en inglés (EE. UU.), portugués de Brasil y español. La extensión sigue
+- **Localizada** en inglés (EE. UU.), portugués de Brasil, español, francés, italiano, alemán, ruso y polaco.
+  La extensión sigue
   automáticamente el idioma de la interfaz del navegador; cualquier otro idioma usa el inglés.
   Consulta [Localización](#localización).
 - **Tema claro / oscuro**, accesible con el teclado, sin acceso a la red y sin analíticas.
@@ -66,7 +67,7 @@ Después de recompilar, pulsa el botón de recargar en la tarjeta de la extensi�
 
 ```
 public/                 Archivos estáticos copiados a dist/ (manifest, HTML, CSS, iconos)
-public/_locales/        Traducciones: en_US (predeterminado), pt_BR y es
+public/_locales/        Traducciones: en_US (predeterminado), pt_BR, es, fr, it, de, ru y pl
 scripts/                Herramientas de compilación: build, package, minify, zip y generador de iconos
 src/core/               Lógica pura, sin DOM: random, charsets, generator, entropy
 src/shared/             Ajustes, historial, helper de i18n, tipos de mensaje, helper de hash
@@ -154,7 +155,7 @@ predeterminado `en_US`.
   entropía informa _niveles_ de fortaleza; el popup convierte ambos en texto localizado.
 - **Las fechas** del historial usan el idioma de la interfaz del navegador.
 - **Añadir un idioma:** copia `public/_locales/en_US` en una carpeta nueva con el nombre del idioma
-  (por ejemplo `fr` o `de`), traduce cada `message` y deja sin cambios los bloques `placeholders`.
+  (por ejemplo `nl` o `ja`), traduce cada `message` y deja sin cambios los bloques `placeholders`.
   Después añade el nombre de la carpeta a `EXPECTED_LOCALES` en `tests/i18n.test.ts`. Las pruebas
   comprueban que cada idioma tiene las mismas claves y los mismos placeholders que `en_US`, que no
   queda ningún mensaje sin usar y que la descripción de la extensión respeta el límite de 132
