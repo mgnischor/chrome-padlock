@@ -1,6 +1,11 @@
 {
+    "author": {
+        "name": "Miguel Nischor",
+        "email": "miguel@nischor.com.br",
+        "url": "https://github.com/mgnischor/chrome-padlock"
+    },
     "name": "padlock-password-generator",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "private": true,
     "description": "Chrome extension that generates cryptographically secure passwords.",
     "type": "module",
@@ -10,13 +15,14 @@
         "typecheck": "tsc --noEmit",
         "test": "vitest run",
         "icons": "node scripts/make-icons.mjs",
+        "package": "node scripts/package.mjs",
         "check": "npm run typecheck && npm test && npm run build"
     },
     "devDependencies": {
         "@types/chrome": "^0.0.326",
         "@types/node": "^22.20.5",
-        "esbuild": "^0.25.0",
+        "esbuild": "^0.28.2",
         "typescript": "^5.8.0",
-        "vitest": "^3.2.0"
+        "vitest": "^5.0.5"
     }
 }
