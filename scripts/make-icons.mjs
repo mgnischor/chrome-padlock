@@ -26,6 +26,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { deflateSync } from "node:zlib";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { crc32 } from "./crc32.mjs";
 
 const outDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../public/icons");
 const SIZES = [16, 32, 48, 128];
@@ -130,24 +131,6 @@ function rasterise(size) {
         }
     }
     return pixels;
-}
-
-const CRC_TABLE = Array.from({ length: 256 }, (_, n) => {
-    let c = n;
-    for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
-    return c >>> 0;
-});
-
-/**
- * Computes the CRC-32 checksum used by PNG chunks.
- *
- * @param buffer - Bytes to checksum.
- * @returns The unsigned 32-bit checksum.
- */
-function crc32(buffer) {
-    let c = 0xffffffff;
-    for (const byte of buffer) c = CRC_TABLE[(c ^ byte) & 0xff] ^ (c >>> 8);
-    return (c ^ 0xffffffff) >>> 0;
 }
 
 /**
