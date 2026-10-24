@@ -25,7 +25,8 @@ entirely on your device.
   See [History](#history) for what is recorded and where it lives.
 - **Roomy popup** that uses the full 640 × 400 px an extension popup can have: the password and its
   strength on the left, all options on the right, with no scrolling in the generator view.
-- **Localized** in English (US), Brazilian Portuguese and Spanish. The extension follows the
+- **Localized** in English (US), Brazilian Portuguese, Spanish, French, Italian, German, Russian and Polish.
+  The extension follows the
   browser's UI language automatically; any other language falls back to English. See
   [Localization](#localization).
 - **Light / dark theme**, keyboard accessible, no network access, no analytics.
@@ -62,7 +63,7 @@ After a rebuild, press the reload button on the extension's card in `chrome://ex
 
 ```
 public/                 Static files copied to dist/ (manifest, HTML, CSS, icons)
-public/_locales/        Translations: en_US (default), pt_BR and es
+public/_locales/        Translations: en_US (default), pt_BR, es, fr, it, de, ru and pl
 scripts/                Build tooling: build, package, minify, zip and icon generator
 src/core/               Pure, DOM-free logic: random, charsets, generator, entropy
 src/shared/             Settings, history, i18n helper, message types, hashing helper
@@ -141,7 +142,7 @@ browser's UI language and needs no setting. Chrome picks the best match: an exac
   reports strength _levels_; the popup maps both to localized text.
 - **Dates** in the history use the browser's UI language.
 - **Adding a language:** copy `public/_locales/en_US` to a new folder named after the locale (for
-  example `fr` or `de`), translate every `message`, and keep the `placeholders` blocks unchanged. Then
+  example `nl` or `ja`), translate every `message`, and keep the `placeholders` blocks unchanged. Then
   add the folder name to `EXPECTED_LOCALES` in `tests/i18n.test.ts`. The tests check that every locale
   has the same keys and placeholders as `en_US`, that no message is unused, and that the extension
   description stays within the Web Store limit of 132 characters.
