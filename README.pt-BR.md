@@ -27,7 +27,8 @@ inteiramente no seu dispositivo.
   fica.
 - **Popup espaçoso** que usa os 640 × 400 px completos que um popup de extensão pode ter: a senha e sua
   força à esquerda, todas as opções à direita, sem rolagem na tela do gerador.
-- **Localizada** em inglês (EUA), português do Brasil e espanhol. A extensão segue automaticamente o
+- **Localizada** em inglês (EUA), português do Brasil, espanhol, francês, italiano, alemão, russo e polonês.
+  A extensão segue automaticamente o
   idioma da interface do navegador; qualquer outro idioma usa o inglês. Veja
   [Localização](#localização).
 - **Tema claro / escuro**, acessível pelo teclado, sem acesso à rede e sem análise de uso.
@@ -64,7 +65,7 @@ Depois de recompilar, clique no botão de recarregar no card da extensão em `ch
 
 ```
 public/                 Arquivos estáticos copiados para dist/ (manifest, HTML, CSS, ícones)
-public/_locales/        Traduções: en_US (padrão), pt_BR e es
+public/_locales/        Traduções: en_US (padrão), pt_BR, es, fr, it, de, ru e pl
 scripts/                Ferramentas de build: build, package, minify, zip e gerador de ícones
 src/core/               Lógica pura, sem DOM: random, charsets, generator, entropy
 src/shared/             Configurações, histórico, helper de i18n, tipos de mensagem, helper de hash
@@ -148,7 +149,7 @@ idioma exato como `pt_BR`, depois o idioma base como `es` e, por fim, o idioma p
   informa _níveis_ de força; o popup converte ambos em texto localizado.
 - **As datas** do histórico usam o idioma da interface do navegador.
 - **Adicionar um idioma:** copie `public/_locales/en_US` para uma nova pasta com o nome do idioma (por
-  exemplo `fr` ou `de`), traduza cada `message` e mantenha os blocos `placeholders` inalterados. Depois
+  exemplo `nl` ou `ja`), traduza cada `message` e mantenha os blocos `placeholders` inalterados. Depois
   adicione o nome da pasta a `EXPECTED_LOCALES` em `tests/i18n.test.ts`. Os testes verificam que cada
   idioma tem as mesmas chaves e os mesmos placeholders que `en_US`, que nenhuma mensagem está sem uso
   e que a descrição da extensão respeita o limite de 132 caracteres da Web Store.
