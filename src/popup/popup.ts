@@ -361,7 +361,8 @@ async function copyToClipboard(password: string | null = current): Promise<void>
         delaySeconds,
     };
     try {
-        await chrome.runtime.sendMessage(message);
+        // The service worker answers `true` only once the timer is armed. Never claim otherwise.
+        if ((await chrome.runtime.sendMessage(message)) !== true) throw new Error("Scheduling was rejected");
         setStatus(t("statusCopiedClearIn", String(delaySeconds)), false, 5000);
     } catch {
         setStatus(t("statusScheduleFailed"), true);
