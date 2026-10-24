@@ -1,0 +1,207 @@
+{
+    "extName": {
+        "message": "Padlock – Generatore di password sicure"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Genera password forti e casuali con il generatore di numeri casuali sicuro del browser. Tutto resta sul tuo dispositivo."
+    },
+    "actionTitle": {
+        "message": "Padlock – genera una password"
+    },
+    "commandOpen": {
+        "message": "Apri Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "Inserisci password sicura"
+    },
+    "tagline": {
+        "message": "Generatore di password sicure"
+    },
+    "generatedPasswordLabel": {
+        "message": "Password generata"
+    },
+    "clickToCopy": {
+        "message": "Fai clic per copiare"
+    },
+    "copy": {
+        "message": "Copia"
+    },
+    "regenerate": {
+        "message": "Rigenera"
+    },
+    "regenerateTitle": {
+        "message": "Genera una nuova password"
+    },
+    "historyButton": {
+        "message": "Cronologia"
+    },
+    "historyButtonTitle": {
+        "message": "Mostra le ultime $COUNT$ password generate",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Robustezza della password"
+    },
+    "strengthLevel0": {
+        "message": "Molto debole"
+    },
+    "strengthLevel1": {
+        "message": "Debole"
+    },
+    "strengthLevel2": {
+        "message": "Buona"
+    },
+    "strengthLevel3": {
+        "message": "Forte"
+    },
+    "strengthLevel4": {
+        "message": "Molto forte"
+    },
+    "entropyBits": {
+        "message": "$BITS$ bit di entropia",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Opzioni"
+    },
+    "lengthLabel": {
+        "message": "Lunghezza"
+    },
+    "lengthSliderLabel": {
+        "message": "Lunghezza della password"
+    },
+    "charactersLegend": {
+        "message": "Caratteri"
+    },
+    "lowercase": {
+        "message": "Minuscole"
+    },
+    "uppercase": {
+        "message": "Maiuscole"
+    },
+    "digits": {
+        "message": "Cifre"
+    },
+    "symbols": {
+        "message": "Simboli"
+    },
+    "avoidLookalikes": {
+        "message": "Evita caratteri simili"
+    },
+    "excludeCharsLabel": {
+        "message": "Escludi caratteri"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "es. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Cancella gli appunti dopo la copia"
+    },
+    "clipboardNever": {
+        "message": "Mai"
+    },
+    "clipboard30": {
+        "message": "30 secondi"
+    },
+    "clipboard60": {
+        "message": "1 minuto"
+    },
+    "clipboard120": {
+        "message": "2 minuti"
+    },
+    "keepHistoryLabel": {
+        "message": "Conserva la cronologia delle ultime $COUNT$ password",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Le password sono conservate senza crittografia solo nella memoria del browser e vengono cancellate alla chiusura di Chrome. Disattivare questa opzione elimina la cronologia."
+    },
+    "footer": {
+        "message": "Le password vengono generate localmente con il CSPRNG del browser. Non viene inviato nulla a nessuno. Fai clic con il pulsante destro su un campo di testo per inserirne una."
+    },
+    "historyViewLabel": {
+        "message": "Cronologia delle password"
+    },
+    "historyHeading": {
+        "message": "Cronologia"
+    },
+    "historyEmpty": {
+        "message": "Ancora nessuna password."
+    },
+    "historyBack": {
+        "message": "Indietro"
+    },
+    "historyClear": {
+        "message": "Cancella cronologia"
+    },
+    "historyCleared": {
+        "message": "Cronologia cancellata."
+    },
+    "statusCopyFailed": {
+        "message": "Copia non riuscita. Seleziona la password e copiala manualmente."
+    },
+    "statusCopied": {
+        "message": "Copiata negli appunti."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Copiata. La cancellazione automatica richiede l'autorizzazione per gli appunti; seleziona di nuovo l'opzione per concederla."
+    },
+    "statusCopiedClearIn": {
+        "message": "Copiata. Gli appunti verranno cancellati tra $SECONDS$ s.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Copiata, ma non è stato possibile pianificare la cancellazione degli appunti."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "L'autorizzazione per gli appunti è necessaria per cancellarli automaticamente."
+    },
+    "statusSaveFailed": {
+        "message": "Impossibile salvare le impostazioni."
+    },
+    "errorGeneric": {
+        "message": "Impossibile generare una password."
+    },
+    "errorInvalidLength": {
+        "message": "La lunghezza deve essere compresa tra $MIN$ e $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Seleziona almeno un tipo di carattere."
+    },
+    "errorLengthTooShort": {
+        "message": "La lunghezza è inferiore al numero di tipi di caratteri selezionati."
+    }
+}
