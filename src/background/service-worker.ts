@@ -121,15 +121,54 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 // copied password is kept, in memory-only session storage.
 // ---------------------------------------------------------------------------
 
+// Session storage is limited to trusted extension contexts by default; state it explicitly so a
+// future change of the default can never expose the history or the pending hash to content scripts.
+void chrome.storage.session.setAccessLevel({ accessLevel: chrome.storage.AccessLevel.TRUSTED_CONTEXTS });
+
+/**
+ * Remembers the hash of a copied password and arms the alarm that will clear it.
+ *
+ * @param hash - SHA-256 (hex) of the copied password.
+ * @param delaySeconds - Seconds to wait before clearing the clipboard.
+ */
+async function scheduleClipboardClear(hash: string, delaySeconds: number): Promise<void> {
+    await chrome.storage.session.set({ [PENDING_HASH_KEY]: hash });
+    // Chrome enforces a 30 second minimum for alarms.
+    await chrome.alarms.create(CLIPBOARD_CLEAR_ALARM, { delayInMinutes: Math.max(delaySeconds, 30) / 60 });
+}
+
+/**
+ * Asks an offscreen document to clear the clipboard if it still holds the
+ * copied password, then closes the document again.
+ *
+ * @param hash - SHA-256 (hex) of the copied password.
+ */
+async function clearClipboard(hash: string): Promise<void> {
+    try {
+        await chrome.offscreen.createDocument({
+            url: OFFSCREEN_URL,
+            reasons: [chrome.offscreen.Reason.CLIPBOARD],
+            justification: "Clear the clipboard after a copied password has expired.",
+        });
+    } catch (error) {
+        // A document left over from an earlier run is fine; anything else must not be swallowed.
+        if (!String(error).includes("Only a single offscreen document")) throw error;
+    }
+    try {
+        const message: ClearClipboardMessage = { type: "offscreen-clear-clipboard", hash };
+        await chrome.runtime.sendMessage(message);
+    } finally {
+        await chrome.offscreen.closeDocument().catch(() => undefined);
+    }
+}
+
 chrome.runtime.onMessage.addListener((message: unknown, sender, sendResponse) => {
     if (sender.id !== chrome.runtime.id || !isScheduleClipboardClear(message)) return false;
 
-    void (async () => {
-        await chrome.storage.session.set({ [PENDING_HASH_KEY]: message.hash });
-        // Chrome enforces a 30 second minimum for alarms.
-        await chrome.alarms.create(CLIPBOARD_CLEAR_ALARM, { delayInMinutes: Math.max(message.delaySeconds, 30) / 60 });
-        sendResponse(true);
-    })();
+    scheduleClipboardClear(message.hash, message.delaySeconds).then(
+        () => sendResponse(true),
+        () => sendResponse(false)
+    );
     return true; // keep the channel open for the async response
 });
 
@@ -139,17 +178,5 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
     const stored = await chrome.storage.session.get(PENDING_HASH_KEY);
     const hash = stored[PENDING_HASH_KEY];
     await chrome.storage.session.remove(PENDING_HASH_KEY);
-    if (typeof hash !== "string") return;
-
-    await chrome.offscreen.createDocument({
-        url: OFFSCREEN_URL,
-        reasons: [chrome.offscreen.Reason.CLIPBOARD],
-        justification: "Clear the clipboard after a copied password has expired.",
-    });
-    try {
-        const message: ClearClipboardMessage = { type: "offscreen-clear-clipboard", hash };
-        await chrome.runtime.sendMessage(message);
-    } finally {
-        await chrome.offscreen.closeDocument();
-    }
+    if (typeof hash === "string") await clearClipboard(hash);
 });
