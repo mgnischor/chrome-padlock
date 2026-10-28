@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – सुरक्षित पासवर्ड जनरेटर"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "ब्राउज़र के सुरक्षित रैंडम नंबर जनरेटर से मजबूत, रैंडम पासवर्ड बनाईं। सब कुछ रउरा डिवाइस पर ही रहेला।"
+    },
+    "actionTitle": {
+        "message": "Padlock – पासवर्ड बनाईं"
+    },
+    "commandOpen": {
+        "message": "Padlock खोलीं"
+    },
+    "menuInsertPassword": {
+        "message": "सुरक्षित पासवर्ड डालीं"
+    },
+    "tagline": {
+        "message": "सुरक्षित पासवर्ड जनरेटर"
+    },
+    "generatedPasswordLabel": {
+        "message": "बनावल पासवर्ड"
+    },
+    "clickToCopy": {
+        "message": "कॉपी करे खातिर क्लिक करीं"
+    },
+    "copy": {
+        "message": "कॉपी करीं"
+    },
+    "regenerate": {
+        "message": "फेर से बनाईं"
+    },
+    "regenerateTitle": {
+        "message": "नया पासवर्ड बनाईं"
+    },
+    "historyButton": {
+        "message": "इतिहास"
+    },
+    "historyButtonTitle": {
+        "message": "हाल में बनावल $COUNT$ पासवर्ड देखाईं",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "पासवर्ड के मजबूती"
+    },
+    "strengthLevel0": {
+        "message": "बहुत कमजोर"
+    },
+    "strengthLevel1": {
+        "message": "कमजोर"
+    },
+    "strengthLevel2": {
+        "message": "बढ़िया"
+    },
+    "strengthLevel3": {
+        "message": "मजबूत"
+    },
+    "strengthLevel4": {
+        "message": "बहुत मजबूत"
+    },
+    "entropyBits": {
+        "message": "$BITS$ बिट एंट्रॉपी",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "विकल्प"
+    },
+    "lengthLabel": {
+        "message": "लंबाई"
+    },
+    "lengthSliderLabel": {
+        "message": "पासवर्ड के लंबाई"
+    },
+    "charactersLegend": {
+        "message": "अक्षर"
+    },
+    "lowercase": {
+        "message": "छोट अक्षर"
+    },
+    "uppercase": {
+        "message": "बड़ अक्षर"
+    },
+    "digits": {
+        "message": "अंक"
+    },
+    "symbols": {
+        "message": "चिन्ह"
+    },
+    "avoidLookalikes": {
+        "message": "मिलत-जुलत अक्षर से बचीं"
+    },
+    "excludeCharsLabel": {
+        "message": "अक्षर बाहर रखीं"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "जइसे {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "कॉपी कइला के बाद क्लिपबोर्ड साफ करीं"
+    },
+    "clipboardNever": {
+        "message": "कबो ना"
+    },
+    "clipboard30": {
+        "message": "30 सेकंड"
+    },
+    "clipboard60": {
+        "message": "1 मिनट"
+    },
+    "clipboard120": {
+        "message": "2 मिनट"
+    },
+    "keepHistoryLabel": {
+        "message": "पिछला $COUNT$ पासवर्ड के इतिहास रखीं",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "पासवर्ड बिना एन्क्रिप्शन के खाली ब्राउज़र के मेमोरी में रहेला आ Chrome बंद भइला पर मिट जाला। ई विकल्प बंद कइला से इतिहास हट जाला।"
+    },
+    "footer": {
+        "message": "पासवर्ड ब्राउज़र के CSPRNG से अपने डिवाइस पर बनेला। कुछुओ कहीं ना भेजाला। पासवर्ड डाले खातिर टेक्स्ट फील्ड पर राइट-क्लिक करीं।"
+    },
+    "historyViewLabel": {
+        "message": "पासवर्ड के इतिहास"
+    },
+    "historyHeading": {
+        "message": "इतिहास"
+    },
+    "historyEmpty": {
+        "message": "अभी कवनो पासवर्ड नइखे।"
+    },
+    "back": {
+        "message": "पीछे"
+    },
+    "historyClear": {
+        "message": "इतिहास साफ करीं"
+    },
+    "historyCleared": {
+        "message": "इतिहास साफ हो गइल।"
+    },
+    "statusCopyFailed": {
+        "message": "कॉपी ना हो सकल। पासवर्ड चुनीं आ हाथ से कॉपी करीं।"
+    },
+    "statusCopied": {
+        "message": "क्लिपबोर्ड पर कॉपी हो गइल।"
+    },
+    "statusCopiedNoPermission": {
+        "message": "कॉपी हो गइल। अपने-आप साफ करे खातिर क्लिपबोर्ड के अनुमति चाहीं; अनुमति देवे खातिर विकल्प फेर से चुनीं।"
+    },
+    "statusCopiedClearIn": {
+        "message": "कॉपी हो गइल। क्लिपबोर्ड $SECONDS$ सेकंड में साफ हो जाई।",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "कॉपी हो गइल, बाकिर क्लिपबोर्ड साफ करे के समय तय ना हो सकल।"
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "क्लिपबोर्ड अपने-आप साफ करे खातिर ओकर अनुमति जरूरी बा।"
+    },
+    "statusSaveFailed": {
+        "message": "सेटिंग सहेजल ना जा सकल।"
+    },
+    "errorGeneric": {
+        "message": "पासवर्ड ना बनावल जा सकल।"
+    },
+    "errorInvalidLength": {
+        "message": "लंबाई $MIN$ आ $MAX$ के बीच में होखे के चाहीं।",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "कम से कम एगो किसिम के अक्षर चुनीं।"
+    },
+    "errorLengthTooShort": {
+        "message": "लंबाई चुनल अक्षर-किसिम के गिनती से कम बा।"
+    },
+    "settingsButtonTitle": {
+        "message": "सेटिंग"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock के बारे में"
+    },
+    "settingsHeading": {
+        "message": "सेटिंग"
+    },
+    "aboutHeading": {
+        "message": "परिचय"
+    },
+    "languageLabel": {
+        "message": "भाषा"
+    },
+    "languageAuto": {
+        "message": "अपने-आप (ब्राउज़र के भाषा)"
+    },
+    "themeLabel": {
+        "message": "थीम"
+    },
+    "themeSystem": {
+        "message": "सिस्टम डिफ़ॉल्ट"
+    },
+    "themeLight": {
+        "message": "हल्का"
+    },
+    "themeDark": {
+        "message": "गहिर"
+    },
+    "contextMenuLabel": {
+        "message": "राइट-क्लिक मेनू में “$ITEM$” देखाईं",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "माउस ले जाए तक पासवर्ड धुंधला रखीं"
+    },
+    "resetSettings": {
+        "message": "डिफ़ॉल्ट बहाल करीं"
+    },
+    "settingsReset": {
+        "message": "सेटिंग डिफ़ॉल्ट पर बहाल हो गइल।"
+    },
+    "aboutVersion": {
+        "message": "संस्करण $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "बनावे वाला: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "ओपन सोर्स, Apache लाइसेंस 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "सब कुछ रउरा डिवाइस पर चलेला। Padlock कवनो डेटा ना जुटावे आ कहीं कुछुओ ना भेजे।"
+    },
+    "aboutRepositoryLabel": {
+        "message": "सोर्स कोड, समस्या आ अपडेट"
+    }
+}
