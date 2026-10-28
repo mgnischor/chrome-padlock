@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – Générateur de mots de passe"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Générez des mots de passe forts et aléatoires avec le générateur aléatoire sécurisé du navigateur. Tout reste sur l'appareil."
+    },
+    "actionTitle": {
+        "message": "Padlock – générer un mot de passe"
+    },
+    "commandOpen": {
+        "message": "Ouvrir Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "Insérer un mot de passe sécurisé"
+    },
+    "tagline": {
+        "message": "Générateur de mots de passe sécurisés"
+    },
+    "generatedPasswordLabel": {
+        "message": "Mot de passe généré"
+    },
+    "clickToCopy": {
+        "message": "Cliquer pour copier"
+    },
+    "copy": {
+        "message": "Copier"
+    },
+    "regenerate": {
+        "message": "Régénérer"
+    },
+    "regenerateTitle": {
+        "message": "Générer un nouveau mot de passe"
+    },
+    "historyButton": {
+        "message": "Historique"
+    },
+    "historyButtonTitle": {
+        "message": "Afficher les $COUNT$ derniers mots de passe générés",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Robustesse du mot de passe"
+    },
+    "strengthLevel0": {
+        "message": "Très faible"
+    },
+    "strengthLevel1": {
+        "message": "Faible"
+    },
+    "strengthLevel2": {
+        "message": "Bon"
+    },
+    "strengthLevel3": {
+        "message": "Fort"
+    },
+    "strengthLevel4": {
+        "message": "Très fort"
+    },
+    "entropyBits": {
+        "message": "$BITS$ bits d'entropie",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Options"
+    },
+    "lengthLabel": {
+        "message": "Longueur"
+    },
+    "lengthSliderLabel": {
+        "message": "Longueur du mot de passe"
+    },
+    "charactersLegend": {
+        "message": "Caractères"
+    },
+    "lowercase": {
+        "message": "Minuscules"
+    },
+    "uppercase": {
+        "message": "Majuscules"
+    },
+    "digits": {
+        "message": "Chiffres"
+    },
+    "symbols": {
+        "message": "Symboles"
+    },
+    "avoidLookalikes": {
+        "message": "Éviter les caractères ambigus"
+    },
+    "excludeCharsLabel": {
+        "message": "Exclure des caractères"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "p. ex. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Vider le presse-papiers après la copie"
+    },
+    "clipboardNever": {
+        "message": "Jamais"
+    },
+    "clipboard30": {
+        "message": "30 secondes"
+    },
+    "clipboard60": {
+        "message": "1 minute"
+    },
+    "clipboard120": {
+        "message": "2 minutes"
+    },
+    "keepHistoryLabel": {
+        "message": "Conserver l'historique des $COUNT$ derniers mots de passe",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Les mots de passe sont conservés non chiffrés, uniquement dans la mémoire du navigateur, et effacés à la fermeture de Chrome. Désactiver cette option supprime l'historique."
+    },
+    "footer": {
+        "message": "Les mots de passe sont générés localement avec le CSPRNG du navigateur. Rien n'est envoyé nulle part. Faites un clic droit sur un champ de texte pour en insérer un."
+    },
+    "historyViewLabel": {
+        "message": "Historique des mots de passe"
+    },
+    "historyHeading": {
+        "message": "Historique"
+    },
+    "historyEmpty": {
+        "message": "Aucun mot de passe pour le moment."
+    },
+    "back": {
+        "message": "Retour"
+    },
+    "historyClear": {
+        "message": "Effacer l'historique"
+    },
+    "historyCleared": {
+        "message": "Historique effacé."
+    },
+    "statusCopyFailed": {
+        "message": "Échec de la copie. Sélectionnez le mot de passe et copiez-le manuellement."
+    },
+    "statusCopied": {
+        "message": "Copié dans le presse-papiers."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Copié. L'effacement automatique nécessite l'autorisation d'accès au presse-papiers ; sélectionnez à nouveau l'option pour l'accorder."
+    },
+    "statusCopiedClearIn": {
+        "message": "Copié. Le presse-papiers sera vidé dans $SECONDS$ s.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Copié, mais la planification du vidage du presse-papiers a échoué."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "L'autorisation d'accès au presse-papiers est nécessaire pour le vider automatiquement."
+    },
+    "statusSaveFailed": {
+        "message": "Impossible d'enregistrer les paramètres."
+    },
+    "errorGeneric": {
+        "message": "Impossible de générer un mot de passe."
+    },
+    "errorInvalidLength": {
+        "message": "La longueur doit être comprise entre $MIN$ et $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Sélectionnez au moins un type de caractère."
+    },
+    "errorLengthTooShort": {
+        "message": "La longueur est inférieure au nombre de types de caractères sélectionnés."
+    },
+    "settingsButtonTitle": {
+        "message": "Paramètres"
+    },
+    "aboutButtonTitle": {
+        "message": "À propos de Padlock"
+    },
+    "settingsHeading": {
+        "message": "Paramètres"
+    },
+    "aboutHeading": {
+        "message": "À propos"
+    },
+    "languageLabel": {
+        "message": "Langue"
+    },
+    "languageAuto": {
+        "message": "Automatique (langue du navigateur)"
+    },
+    "themeLabel": {
+        "message": "Thème"
+    },
+    "themeSystem": {
+        "message": "Par défaut du système"
+    },
+    "themeLight": {
+        "message": "Clair"
+    },
+    "themeDark": {
+        "message": "Sombre"
+    },
+    "contextMenuLabel": {
+        "message": "Afficher « $ITEM$ » dans le menu contextuel",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Flouter les mots de passe jusqu'au survol"
+    },
+    "resetSettings": {
+        "message": "Rétablir les valeurs par défaut"
+    },
+    "settingsReset": {
+        "message": "Paramètres rétablis par défaut."
+    },
+    "aboutVersion": {
+        "message": "Version $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Créé par Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "Open source, licence Apache 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "Tout s'exécute sur votre appareil. Padlock ne collecte aucune donnée et n'envoie rien nulle part."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Code source, tickets et mises à jour"
+    }
+}
