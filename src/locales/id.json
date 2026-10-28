@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – Pembuat Kata Sandi Aman"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Buat kata sandi acak yang kuat dengan generator angka acak aman milik browser Anda. Semuanya tetap berada di perangkat Anda."
+    },
+    "actionTitle": {
+        "message": "Padlock – buat kata sandi"
+    },
+    "commandOpen": {
+        "message": "Buka Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "Sisipkan kata sandi aman"
+    },
+    "tagline": {
+        "message": "Pembuat kata sandi aman"
+    },
+    "generatedPasswordLabel": {
+        "message": "Kata sandi yang dibuat"
+    },
+    "clickToCopy": {
+        "message": "Klik untuk menyalin"
+    },
+    "copy": {
+        "message": "Salin"
+    },
+    "regenerate": {
+        "message": "Buat ulang"
+    },
+    "regenerateTitle": {
+        "message": "Buat kata sandi baru"
+    },
+    "historyButton": {
+        "message": "Riwayat"
+    },
+    "historyButtonTitle": {
+        "message": "Tampilkan $COUNT$ kata sandi terakhir yang dibuat",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Kekuatan kata sandi"
+    },
+    "strengthLevel0": {
+        "message": "Sangat lemah"
+    },
+    "strengthLevel1": {
+        "message": "Lemah"
+    },
+    "strengthLevel2": {
+        "message": "Baik"
+    },
+    "strengthLevel3": {
+        "message": "Kuat"
+    },
+    "strengthLevel4": {
+        "message": "Sangat kuat"
+    },
+    "entropyBits": {
+        "message": "Entropi $BITS$ bit",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Opsi"
+    },
+    "lengthLabel": {
+        "message": "Panjang"
+    },
+    "lengthSliderLabel": {
+        "message": "Panjang kata sandi"
+    },
+    "charactersLegend": {
+        "message": "Karakter"
+    },
+    "lowercase": {
+        "message": "Huruf kecil"
+    },
+    "uppercase": {
+        "message": "Huruf besar"
+    },
+    "digits": {
+        "message": "Angka"
+    },
+    "symbols": {
+        "message": "Simbol"
+    },
+    "avoidLookalikes": {
+        "message": "Hindari karakter yang mirip"
+    },
+    "excludeCharsLabel": {
+        "message": "Kecualikan karakter"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "mis. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Bersihkan papan klip setelah menyalin"
+    },
+    "clipboardNever": {
+        "message": "Tidak pernah"
+    },
+    "clipboard30": {
+        "message": "30 detik"
+    },
+    "clipboard60": {
+        "message": "1 menit"
+    },
+    "clipboard120": {
+        "message": "2 menit"
+    },
+    "keepHistoryLabel": {
+        "message": "Simpan riwayat $COUNT$ kata sandi terakhir",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Kata sandi disimpan tanpa enkripsi hanya di memori browser dan dihapus saat Chrome ditutup. Menonaktifkan opsi ini akan menghapus riwayat."
+    },
+    "footer": {
+        "message": "Kata sandi dibuat secara lokal dengan CSPRNG browser. Tidak ada yang dikirim ke mana pun. Klik kanan pada kolom teks untuk menyisipkan kata sandi."
+    },
+    "historyViewLabel": {
+        "message": "Riwayat kata sandi"
+    },
+    "historyHeading": {
+        "message": "Riwayat"
+    },
+    "historyEmpty": {
+        "message": "Belum ada kata sandi."
+    },
+    "back": {
+        "message": "Kembali"
+    },
+    "historyClear": {
+        "message": "Hapus riwayat"
+    },
+    "historyCleared": {
+        "message": "Riwayat dihapus."
+    },
+    "statusCopyFailed": {
+        "message": "Gagal menyalin. Pilih kata sandi lalu salin secara manual."
+    },
+    "statusCopied": {
+        "message": "Disalin ke papan klip."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Disalin. Pembersihan otomatis memerlukan izin papan klip; pilih ulang opsi untuk memberikan izin."
+    },
+    "statusCopiedClearIn": {
+        "message": "Disalin. Papan klip akan dibersihkan dalam $SECONDS$ dtk.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Disalin, tetapi gagal menjadwalkan pembersihan papan klip."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Izin papan klip diperlukan untuk membersihkannya secara otomatis."
+    },
+    "statusSaveFailed": {
+        "message": "Tidak dapat menyimpan pengaturan."
+    },
+    "errorGeneric": {
+        "message": "Tidak dapat membuat kata sandi."
+    },
+    "errorInvalidLength": {
+        "message": "Panjang harus antara $MIN$ dan $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Pilih setidaknya satu jenis karakter."
+    },
+    "errorLengthTooShort": {
+        "message": "Panjang kurang dari jumlah jenis karakter yang dipilih."
+    },
+    "settingsButtonTitle": {
+        "message": "Pengaturan"
+    },
+    "aboutButtonTitle": {
+        "message": "Tentang Padlock"
+    },
+    "settingsHeading": {
+        "message": "Pengaturan"
+    },
+    "aboutHeading": {
+        "message": "Tentang"
+    },
+    "languageLabel": {
+        "message": "Bahasa"
+    },
+    "languageAuto": {
+        "message": "Otomatis (bahasa browser)"
+    },
+    "themeLabel": {
+        "message": "Tema"
+    },
+    "themeSystem": {
+        "message": "Default sistem"
+    },
+    "themeLight": {
+        "message": "Terang"
+    },
+    "themeDark": {
+        "message": "Gelap"
+    },
+    "contextMenuLabel": {
+        "message": "Tampilkan “$ITEM$” di menu klik kanan",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Buramkan kata sandi sampai kursor diarahkan"
+    },
+    "resetSettings": {
+        "message": "Pulihkan default"
+    },
+    "settingsReset": {
+        "message": "Pengaturan dipulihkan ke default."
+    },
+    "aboutVersion": {
+        "message": "Versi $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Dibuat oleh Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "Sumber terbuka, Lisensi Apache 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "Semuanya berjalan di perangkat Anda. Padlock tidak mengumpulkan data dan tidak mengirim apa pun ke mana pun."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Kode sumber, masalah, dan pembaruan"
+    }
+}
