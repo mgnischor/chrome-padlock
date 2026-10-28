@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – ਸੁਰੱਖਿਅਤ ਪਾਸਵਰਡ ਜਨਰੇਟਰ"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "ਬ੍ਰਾਊਜ਼ਰ ਦੇ ਸੁਰੱਖਿਅਤ ਰੈਂਡਮ ਨੰਬਰ ਜਨਰੇਟਰ ਨਾਲ ਮਜ਼ਬੂਤ, ਰੈਂਡਮ ਪਾਸਵਰਡ ਬਣਾਓ। ਸਭ ਕੁਝ ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਉੱਤੇ ਹੀ ਰਹਿੰਦਾ ਹੈ।"
+    },
+    "actionTitle": {
+        "message": "Padlock – ਪਾਸਵਰਡ ਬਣਾਓ"
+    },
+    "commandOpen": {
+        "message": "Padlock ਖੋਲ੍ਹੋ"
+    },
+    "menuInsertPassword": {
+        "message": "ਸੁਰੱਖਿਅਤ ਪਾਸਵਰਡ ਪਾਓ"
+    },
+    "tagline": {
+        "message": "ਸੁਰੱਖਿਅਤ ਪਾਸਵਰਡ ਜਨਰੇਟਰ"
+    },
+    "generatedPasswordLabel": {
+        "message": "ਬਣਾਇਆ ਗਿਆ ਪਾਸਵਰਡ"
+    },
+    "clickToCopy": {
+        "message": "ਕਾਪੀ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ"
+    },
+    "copy": {
+        "message": "ਕਾਪੀ ਕਰੋ"
+    },
+    "regenerate": {
+        "message": "ਦੁਬਾਰਾ ਬਣਾਓ"
+    },
+    "regenerateTitle": {
+        "message": "ਨਵਾਂ ਪਾਸਵਰਡ ਬਣਾਓ"
+    },
+    "historyButton": {
+        "message": "ਇਤਿਹਾਸ"
+    },
+    "historyButtonTitle": {
+        "message": "ਹਾਲ ਹੀ ਵਿੱਚ ਬਣਾਏ $COUNT$ ਪਾਸਵਰਡ ਵੇਖੋ",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "ਪਾਸਵਰਡ ਦੀ ਮਜ਼ਬੂਤੀ"
+    },
+    "strengthLevel0": {
+        "message": "ਬਹੁਤ ਕਮਜ਼ੋਰ"
+    },
+    "strengthLevel1": {
+        "message": "ਕਮਜ਼ੋਰ"
+    },
+    "strengthLevel2": {
+        "message": "ਚੰਗਾ"
+    },
+    "strengthLevel3": {
+        "message": "ਮਜ਼ਬੂਤ"
+    },
+    "strengthLevel4": {
+        "message": "ਬਹੁਤ ਮਜ਼ਬੂਤ"
+    },
+    "entropyBits": {
+        "message": "$BITS$ ਬਿੱਟ ਐਂਟਰੌਪੀ",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "ਵਿਕਲਪ"
+    },
+    "lengthLabel": {
+        "message": "ਲੰਬਾਈ"
+    },
+    "lengthSliderLabel": {
+        "message": "ਪਾਸਵਰਡ ਦੀ ਲੰਬਾਈ"
+    },
+    "charactersLegend": {
+        "message": "ਅੱਖਰ"
+    },
+    "lowercase": {
+        "message": "ਛੋਟੇ ਅੱਖਰ"
+    },
+    "uppercase": {
+        "message": "ਵੱਡੇ ਅੱਖਰ"
+    },
+    "digits": {
+        "message": "ਅੰਕ"
+    },
+    "symbols": {
+        "message": "ਚਿੰਨ੍ਹ"
+    },
+    "avoidLookalikes": {
+        "message": "ਇੱਕੋ ਜਿਹੇ ਦਿਸਣ ਵਾਲੇ ਅੱਖਰਾਂ ਤੋਂ ਬਚੋ"
+    },
+    "excludeCharsLabel": {
+        "message": "ਅੱਖਰ ਬਾਹਰ ਰੱਖੋ"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "ਜਿਵੇਂ {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "ਕਾਪੀ ਕਰਨ ਤੋਂ ਬਾਅਦ ਕਲਿੱਪਬੋਰਡ ਸਾਫ਼ ਕਰੋ"
+    },
+    "clipboardNever": {
+        "message": "ਕਦੇ ਨਹੀਂ"
+    },
+    "clipboard30": {
+        "message": "30 ਸਕਿੰਟ"
+    },
+    "clipboard60": {
+        "message": "1 ਮਿੰਟ"
+    },
+    "clipboard120": {
+        "message": "2 ਮਿੰਟ"
+    },
+    "keepHistoryLabel": {
+        "message": "ਆਖ਼ਰੀ $COUNT$ ਪਾਸਵਰਡਾਂ ਦਾ ਇਤਿਹਾਸ ਰੱਖੋ",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "ਪਾਸਵਰਡ ਬਿਨਾਂ ਇਨਕ੍ਰਿਪਸ਼ਨ ਦੇ ਸਿਰਫ਼ ਬ੍ਰਾਊਜ਼ਰ ਦੀ ਮੈਮੋਰੀ ਵਿੱਚ ਰਹਿੰਦੇ ਹਨ ਅਤੇ Chrome ਬੰਦ ਕਰਨ ਉੱਤੇ ਮਿਟ ਜਾਂਦੇ ਹਨ। ਇਹ ਵਿਕਲਪ ਬੰਦ ਕਰਨ ਨਾਲ ਇਤਿਹਾਸ ਮਿਟ ਜਾਂਦਾ ਹੈ।"
+    },
+    "footer": {
+        "message": "ਪਾਸਵਰਡ ਬ੍ਰਾਊਜ਼ਰ ਦੇ CSPRNG ਨਾਲ ਸਥਾਨਕ ਤੌਰ ਉੱਤੇ ਬਣਦੇ ਹਨ। ਕੁਝ ਵੀ ਕਿਤੇ ਨਹੀਂ ਭੇਜਿਆ ਜਾਂਦਾ। ਪਾਸਵਰਡ ਪਾਉਣ ਲਈ ਟੈਕਸਟ ਖੇਤਰ ਉੱਤੇ ਸੱਜਾ-ਕਲਿੱਕ ਕਰੋ।"
+    },
+    "historyViewLabel": {
+        "message": "ਪਾਸਵਰਡ ਇਤਿਹਾਸ"
+    },
+    "historyHeading": {
+        "message": "ਇਤਿਹਾਸ"
+    },
+    "historyEmpty": {
+        "message": "ਹਾਲੇ ਕੋਈ ਪਾਸਵਰਡ ਨਹੀਂ।"
+    },
+    "back": {
+        "message": "ਪਿੱਛੇ"
+    },
+    "historyClear": {
+        "message": "ਇਤਿਹਾਸ ਸਾਫ਼ ਕਰੋ"
+    },
+    "historyCleared": {
+        "message": "ਇਤਿਹਾਸ ਸਾਫ਼ ਹੋ ਗਿਆ।"
+    },
+    "statusCopyFailed": {
+        "message": "ਕਾਪੀ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਪਾਸਵਰਡ ਚੁਣੋ ਅਤੇ ਹੱਥੀਂ ਕਾਪੀ ਕਰੋ।"
+    },
+    "statusCopied": {
+        "message": "ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਹੋ ਗਿਆ।"
+    },
+    "statusCopiedNoPermission": {
+        "message": "ਕਾਪੀ ਹੋ ਗਿਆ। ਆਪਣੇ-ਆਪ ਸਾਫ਼ ਕਰਨ ਲਈ ਕਲਿੱਪਬੋਰਡ ਦੀ ਇਜਾਜ਼ਤ ਚਾਹੀਦੀ ਹੈ; ਇਜਾਜ਼ਤ ਦੇਣ ਲਈ ਵਿਕਲਪ ਦੁਬਾਰਾ ਚੁਣੋ।"
+    },
+    "statusCopiedClearIn": {
+        "message": "ਕਾਪੀ ਹੋ ਗਿਆ। ਕਲਿੱਪਬੋਰਡ $SECONDS$ ਸਕਿੰਟ ਵਿੱਚ ਸਾਫ਼ ਹੋ ਜਾਵੇਗਾ।",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "ਕਾਪੀ ਹੋ ਗਿਆ, ਪਰ ਕਲਿੱਪਬੋਰਡ ਸਾਫ਼ ਕਰਨ ਦਾ ਸਮਾਂ ਤੈਅ ਨਹੀਂ ਹੋ ਸਕਿਆ।"
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "ਕਲਿੱਪਬੋਰਡ ਨੂੰ ਆਪਣੇ-ਆਪ ਸਾਫ਼ ਕਰਨ ਲਈ ਉਸਦੀ ਇਜਾਜ਼ਤ ਲੋੜੀਂਦੀ ਹੈ।"
+    },
+    "statusSaveFailed": {
+        "message": "ਸੈਟਿੰਗਾਂ ਸੰਭਾਲੀਆਂ ਨਹੀਂ ਜਾ ਸਕੀਆਂ।"
+    },
+    "errorGeneric": {
+        "message": "ਪਾਸਵਰਡ ਨਹੀਂ ਬਣਾਇਆ ਜਾ ਸਕਿਆ।"
+    },
+    "errorInvalidLength": {
+        "message": "ਲੰਬਾਈ $MIN$ ਅਤੇ $MAX$ ਦੇ ਵਿਚਕਾਰ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "ਘੱਟੋ-ਘੱਟ ਇੱਕ ਕਿਸਮ ਦੇ ਅੱਖਰ ਚੁਣੋ।"
+    },
+    "errorLengthTooShort": {
+        "message": "ਲੰਬਾਈ ਚੁਣੀਆਂ ਗਈਆਂ ਅੱਖਰ-ਕਿਸਮਾਂ ਦੀ ਗਿਣਤੀ ਤੋਂ ਘੱਟ ਹੈ।"
+    },
+    "settingsButtonTitle": {
+        "message": "ਸੈਟਿੰਗਾਂ"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock ਬਾਰੇ"
+    },
+    "settingsHeading": {
+        "message": "ਸੈਟਿੰਗਾਂ"
+    },
+    "aboutHeading": {
+        "message": "ਬਾਰੇ"
+    },
+    "languageLabel": {
+        "message": "ਭਾਸ਼ਾ"
+    },
+    "languageAuto": {
+        "message": "ਆਟੋਮੈਟਿਕ (ਬ੍ਰਾਊਜ਼ਰ ਦੀ ਭਾਸ਼ਾ)"
+    },
+    "themeLabel": {
+        "message": "ਥੀਮ"
+    },
+    "themeSystem": {
+        "message": "ਸਿਸਟਮ ਡਿਫ਼ਾਲਟ"
+    },
+    "themeLight": {
+        "message": "ਹਲਕਾ"
+    },
+    "themeDark": {
+        "message": "ਗੂੜ੍ਹਾ"
+    },
+    "contextMenuLabel": {
+        "message": "ਸੱਜਾ-ਕਲਿੱਕ ਮੀਨੂ ਵਿੱਚ “$ITEM$” ਦਿਖਾਓ",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "ਮਾਊਸ ਲਿਜਾਣ ਤੱਕ ਪਾਸਵਰਡ ਧੁੰਦਲੇ ਰੱਖੋ"
+    },
+    "resetSettings": {
+        "message": "ਡਿਫ਼ਾਲਟ ਬਹਾਲ ਕਰੋ"
+    },
+    "settingsReset": {
+        "message": "ਸੈਟਿੰਗਾਂ ਡਿਫ਼ਾਲਟ ਉੱਤੇ ਬਹਾਲ ਹੋ ਗਈਆਂ।"
+    },
+    "aboutVersion": {
+        "message": "ਵਰਜਨ $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "ਨਿਰਮਾਤਾ: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "ਓਪਨ ਸੋਰਸ, Apache ਲਾਇਸੰਸ 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "ਸਭ ਕੁਝ ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਉੱਤੇ ਚੱਲਦਾ ਹੈ। Padlock ਕੋਈ ਡਾਟਾ ਇਕੱਠਾ ਨਹੀਂ ਕਰਦਾ ਅਤੇ ਕਿਤੇ ਕੁਝ ਨਹੀਂ ਭੇਜਦਾ।"
+    },
+    "aboutRepositoryLabel": {
+        "message": "ਸੋਰਸ ਕੋਡ, ਸਮੱਸਿਆਵਾਂ ਅਤੇ ਅੱਪਡੇਟ"
+    }
+}
