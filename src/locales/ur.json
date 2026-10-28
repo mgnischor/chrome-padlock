@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – محفوظ پاس ورڈ جنریٹر"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "براؤزر کے محفوظ رینڈم نمبر جنریٹر سے مضبوط، رینڈم پاس ورڈ بنائیں۔ سب کچھ آپ کے آلے پر ہی رہتا ہے۔"
+    },
+    "actionTitle": {
+        "message": "Padlock – پاس ورڈ بنائیں"
+    },
+    "commandOpen": {
+        "message": "Padlock کھولیں"
+    },
+    "menuInsertPassword": {
+        "message": "محفوظ پاس ورڈ داخل کریں"
+    },
+    "tagline": {
+        "message": "محفوظ پاس ورڈ جنریٹر"
+    },
+    "generatedPasswordLabel": {
+        "message": "بنایا گیا پاس ورڈ"
+    },
+    "clickToCopy": {
+        "message": "کاپی کرنے کے لیے کلک کریں"
+    },
+    "copy": {
+        "message": "کاپی کریں"
+    },
+    "regenerate": {
+        "message": "دوبارہ بنائیں"
+    },
+    "regenerateTitle": {
+        "message": "نیا پاس ورڈ بنائیں"
+    },
+    "historyButton": {
+        "message": "تاریخ"
+    },
+    "historyButtonTitle": {
+        "message": "حال ہی میں بنائے گئے $COUNT$ پاس ورڈ دکھائیں",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "پاس ورڈ کی مضبوطی"
+    },
+    "strengthLevel0": {
+        "message": "بہت کمزور"
+    },
+    "strengthLevel1": {
+        "message": "کمزور"
+    },
+    "strengthLevel2": {
+        "message": "اچھا"
+    },
+    "strengthLevel3": {
+        "message": "مضبوط"
+    },
+    "strengthLevel4": {
+        "message": "بہت مضبوط"
+    },
+    "entropyBits": {
+        "message": "$BITS$ بٹ اینٹروپی",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "اختیارات"
+    },
+    "lengthLabel": {
+        "message": "لمبائی"
+    },
+    "lengthSliderLabel": {
+        "message": "پاس ورڈ کی لمبائی"
+    },
+    "charactersLegend": {
+        "message": "حروف"
+    },
+    "lowercase": {
+        "message": "چھوٹے حروف"
+    },
+    "uppercase": {
+        "message": "بڑے حروف"
+    },
+    "digits": {
+        "message": "ہندسے"
+    },
+    "symbols": {
+        "message": "علامات"
+    },
+    "avoidLookalikes": {
+        "message": "ملتے جلتے حروف سے پرہیز کریں"
+    },
+    "excludeCharsLabel": {
+        "message": "حروف خارج کریں"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "مثلاً {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "کاپی کرنے کے بعد کلپ بورڈ صاف کریں"
+    },
+    "clipboardNever": {
+        "message": "کبھی نہیں"
+    },
+    "clipboard30": {
+        "message": "30 سیکنڈ"
+    },
+    "clipboard60": {
+        "message": "1 منٹ"
+    },
+    "clipboard120": {
+        "message": "2 منٹ"
+    },
+    "keepHistoryLabel": {
+        "message": "آخری $COUNT$ پاس ورڈز کی تاریخ رکھیں",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "پاس ورڈ بغیر خفیہ کاری کے صرف براؤزر کی میموری میں رہتے ہیں اور Chrome بند ہونے پر مٹ جاتے ہیں۔ یہ اختیار بند کرنے سے تاریخ حذف ہو جاتی ہے۔"
+    },
+    "footer": {
+        "message": "پاس ورڈ براؤزر کے CSPRNG سے مقامی طور پر بنتے ہیں۔ کچھ بھی کہیں نہیں بھیجا جاتا۔ پاس ورڈ داخل کرنے کے لیے ٹیکسٹ فیلڈ پر رائٹ کلک کریں۔"
+    },
+    "historyViewLabel": {
+        "message": "پاس ورڈ کی تاریخ"
+    },
+    "historyHeading": {
+        "message": "تاریخ"
+    },
+    "historyEmpty": {
+        "message": "ابھی کوئی پاس ورڈ نہیں۔"
+    },
+    "back": {
+        "message": "واپس"
+    },
+    "historyClear": {
+        "message": "تاریخ صاف کریں"
+    },
+    "historyCleared": {
+        "message": "تاریخ صاف ہو گئی۔"
+    },
+    "statusCopyFailed": {
+        "message": "کاپی نہیں ہو سکا۔ پاس ورڈ منتخب کریں اور خود کاپی کریں۔"
+    },
+    "statusCopied": {
+        "message": "کلپ بورڈ میں کاپی ہو گیا۔"
+    },
+    "statusCopiedNoPermission": {
+        "message": "کاپی ہو گیا۔ خودکار صفائی کے لیے کلپ بورڈ کی اجازت درکار ہے؛ اجازت دینے کے لیے اختیار دوبارہ منتخب کریں۔"
+    },
+    "statusCopiedClearIn": {
+        "message": "کاپی ہو گیا۔ کلپ بورڈ $SECONDS$ سیکنڈ میں صاف ہو جائے گا۔",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "کاپی ہو گیا، لیکن کلپ بورڈ صاف کرنے کا وقت مقرر نہیں ہو سکا۔"
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "کلپ بورڈ کو خود بخود صاف کرنے کے لیے کلپ بورڈ کی اجازت ضروری ہے۔"
+    },
+    "statusSaveFailed": {
+        "message": "ترتیبات محفوظ نہیں ہو سکیں۔"
+    },
+    "errorGeneric": {
+        "message": "پاس ورڈ نہیں بنایا جا سکا۔"
+    },
+    "errorInvalidLength": {
+        "message": "لمبائی $MIN$ اور $MAX$ کے درمیان ہونی چاہیے۔",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "کم از کم ایک قسم کے حروف منتخب کریں۔"
+    },
+    "errorLengthTooShort": {
+        "message": "لمبائی منتخب کردہ حروف کی اقسام کی تعداد سے کم ہے۔"
+    },
+    "settingsButtonTitle": {
+        "message": "ترتیبات"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock کے بارے میں"
+    },
+    "settingsHeading": {
+        "message": "ترتیبات"
+    },
+    "aboutHeading": {
+        "message": "تعارف"
+    },
+    "languageLabel": {
+        "message": "زبان"
+    },
+    "languageAuto": {
+        "message": "خودکار (براؤزر کی زبان)"
+    },
+    "themeLabel": {
+        "message": "تھیم"
+    },
+    "themeSystem": {
+        "message": "سسٹم ڈیفالٹ"
+    },
+    "themeLight": {
+        "message": "روشن"
+    },
+    "themeDark": {
+        "message": "گہرا"
+    },
+    "contextMenuLabel": {
+        "message": "رائٹ کلک مینو میں “$ITEM$” دکھائیں",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "ماؤس لانے تک پاس ورڈ دھندلے رکھیں"
+    },
+    "resetSettings": {
+        "message": "ڈیفالٹ بحال کریں"
+    },
+    "settingsReset": {
+        "message": "ترتیبات ڈیفالٹ پر بحال ہو گئیں۔"
+    },
+    "aboutVersion": {
+        "message": "ورژن $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "تخلیق کار: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "اوپن سورس، Apache لائسنس 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "سب کچھ آپ کے آلے پر چلتا ہے۔ Padlock کوئی ڈیٹا اکٹھا نہیں کرتا اور کہیں کچھ نہیں بھیجتا۔"
+    },
+    "aboutRepositoryLabel": {
+        "message": "سورس کوڈ، مسائل اور اپ ڈیٹس"
+    }
+}
