@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – مولّد كلمات مرور آمنة"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "أنشئ كلمات مرور قوية وعشوائية باستخدام مولّد الأرقام العشوائية الآمن في المتصفح. يبقى كل شيء على جهازك."
+    },
+    "actionTitle": {
+        "message": "Padlock – إنشاء كلمة مرور"
+    },
+    "commandOpen": {
+        "message": "فتح Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "إدراج كلمة مرور آمنة"
+    },
+    "tagline": {
+        "message": "مولّد كلمات مرور آمنة"
+    },
+    "generatedPasswordLabel": {
+        "message": "كلمة المرور المُنشأة"
+    },
+    "clickToCopy": {
+        "message": "انقر للنسخ"
+    },
+    "copy": {
+        "message": "نسخ"
+    },
+    "regenerate": {
+        "message": "إنشاء مجدّدًا"
+    },
+    "regenerateTitle": {
+        "message": "إنشاء كلمة مرور جديدة"
+    },
+    "historyButton": {
+        "message": "السجل"
+    },
+    "historyButtonTitle": {
+        "message": "عرض آخر $COUNT$ كلمة مرور تم إنشاؤها",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "قوة كلمة المرور"
+    },
+    "strengthLevel0": {
+        "message": "ضعيفة جدًا"
+    },
+    "strengthLevel1": {
+        "message": "ضعيفة"
+    },
+    "strengthLevel2": {
+        "message": "جيدة"
+    },
+    "strengthLevel3": {
+        "message": "قوية"
+    },
+    "strengthLevel4": {
+        "message": "قوية جدًا"
+    },
+    "entropyBits": {
+        "message": "إنتروبيا $BITS$ بت",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "الخيارات"
+    },
+    "lengthLabel": {
+        "message": "الطول"
+    },
+    "lengthSliderLabel": {
+        "message": "طول كلمة المرور"
+    },
+    "charactersLegend": {
+        "message": "الأحرف"
+    },
+    "lowercase": {
+        "message": "أحرف صغيرة"
+    },
+    "uppercase": {
+        "message": "أحرف كبيرة"
+    },
+    "digits": {
+        "message": "أرقام"
+    },
+    "symbols": {
+        "message": "رموز"
+    },
+    "avoidLookalikes": {
+        "message": "تجنّب الأحرف المتشابهة"
+    },
+    "excludeCharsLabel": {
+        "message": "استبعاد أحرف"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "مثال: {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "مسح الحافظة بعد النسخ"
+    },
+    "clipboardNever": {
+        "message": "أبدًا"
+    },
+    "clipboard30": {
+        "message": "30 ثانية"
+    },
+    "clipboard60": {
+        "message": "دقيقة واحدة"
+    },
+    "clipboard120": {
+        "message": "دقيقتان"
+    },
+    "keepHistoryLabel": {
+        "message": "الاحتفاظ بسجل آخر $COUNT$ كلمة مرور",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "تُحفظ كلمات المرور دون تشفير في ذاكرة المتصفح فقط، وتُمسح عند إغلاق Chrome. يؤدي إيقاف هذا الخيار إلى حذف السجل."
+    },
+    "footer": {
+        "message": "تُنشأ كلمات المرور محليًا باستخدام CSPRNG الخاص بالمتصفح. لا يُرسل أي شيء إلى أي مكان. انقر بزر الماوس الأيمن على حقل نصي لإدراج كلمة مرور."
+    },
+    "historyViewLabel": {
+        "message": "سجل كلمات المرور"
+    },
+    "historyHeading": {
+        "message": "السجل"
+    },
+    "historyEmpty": {
+        "message": "لا توجد كلمات مرور بعد."
+    },
+    "back": {
+        "message": "رجوع"
+    },
+    "historyClear": {
+        "message": "مسح السجل"
+    },
+    "historyCleared": {
+        "message": "تم مسح السجل."
+    },
+    "statusCopyFailed": {
+        "message": "فشل النسخ. حدّد كلمة المرور وانسخها يدويًا."
+    },
+    "statusCopied": {
+        "message": "تم النسخ إلى الحافظة."
+    },
+    "statusCopiedNoPermission": {
+        "message": "تم النسخ. يحتاج المسح التلقائي إلى إذن الحافظة؛ أعد تحديد الخيار لمنح الإذن."
+    },
+    "statusCopiedClearIn": {
+        "message": "تم النسخ. ستُمسح الحافظة خلال $SECONDS$ ثانية.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "تم النسخ، لكن تعذّرت جدولة مسح الحافظة."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "يلزم إذن الحافظة لمسحها تلقائيًا."
+    },
+    "statusSaveFailed": {
+        "message": "تعذّر حفظ الإعدادات."
+    },
+    "errorGeneric": {
+        "message": "تعذّر إنشاء كلمة مرور."
+    },
+    "errorInvalidLength": {
+        "message": "يجب أن يكون الطول بين $MIN$ و$MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "حدّد نوعًا واحدًا على الأقل من الأحرف."
+    },
+    "errorLengthTooShort": {
+        "message": "الطول أقل من عدد أنواع الأحرف المحددة."
+    },
+    "settingsButtonTitle": {
+        "message": "الإعدادات"
+    },
+    "aboutButtonTitle": {
+        "message": "حول Padlock"
+    },
+    "settingsHeading": {
+        "message": "الإعدادات"
+    },
+    "aboutHeading": {
+        "message": "حول"
+    },
+    "languageLabel": {
+        "message": "اللغة"
+    },
+    "languageAuto": {
+        "message": "تلقائي (لغة المتصفح)"
+    },
+    "themeLabel": {
+        "message": "المظهر"
+    },
+    "themeSystem": {
+        "message": "افتراضي النظام"
+    },
+    "themeLight": {
+        "message": "فاتح"
+    },
+    "themeDark": {
+        "message": "داكن"
+    },
+    "contextMenuLabel": {
+        "message": "إظهار «$ITEM$» في قائمة النقر بزر الماوس الأيمن",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "تمويه كلمات المرور حتى مرور المؤشر فوقها"
+    },
+    "resetSettings": {
+        "message": "استعادة الإعدادات الافتراضية"
+    },
+    "settingsReset": {
+        "message": "تمت استعادة الإعدادات الافتراضية."
+    },
+    "aboutVersion": {
+        "message": "الإصدار $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "من إنشاء Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "مفتوح المصدر، رخصة Apache 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "كل شيء يعمل على جهازك. لا يجمع Padlock أي بيانات ولا يرسل أي شيء إلى أي مكان."
+    },
+    "aboutRepositoryLabel": {
+        "message": "الشيفرة المصدرية والمشكلات والتحديثات"
+    }
+}
