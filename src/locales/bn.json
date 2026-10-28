@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – নিরাপদ পাসওয়ার্ড জেনারেটর"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "ব্রাউজারের নিরাপদ র‍্যান্ডম সংখ্যা জেনারেটর দিয়ে শক্তিশালী, র‍্যান্ডম পাসওয়ার্ড তৈরি করুন। সবকিছু আপনার ডিভাইসেই থাকে।"
+    },
+    "actionTitle": {
+        "message": "Padlock – পাসওয়ার্ড তৈরি করুন"
+    },
+    "commandOpen": {
+        "message": "Padlock খুলুন"
+    },
+    "menuInsertPassword": {
+        "message": "নিরাপদ পাসওয়ার্ড সন্নিবেশ করুন"
+    },
+    "tagline": {
+        "message": "নিরাপদ পাসওয়ার্ড জেনারেটর"
+    },
+    "generatedPasswordLabel": {
+        "message": "তৈরি করা পাসওয়ার্ড"
+    },
+    "clickToCopy": {
+        "message": "কপি করতে ক্লিক করুন"
+    },
+    "copy": {
+        "message": "কপি"
+    },
+    "regenerate": {
+        "message": "আবার তৈরি করুন"
+    },
+    "regenerateTitle": {
+        "message": "নতুন পাসওয়ার্ড তৈরি করুন"
+    },
+    "historyButton": {
+        "message": "ইতিহাস"
+    },
+    "historyButtonTitle": {
+        "message": "সম্প্রতি তৈরি করা $COUNT$টি পাসওয়ার্ড দেখান",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "পাসওয়ার্ডের শক্তি"
+    },
+    "strengthLevel0": {
+        "message": "খুব দুর্বল"
+    },
+    "strengthLevel1": {
+        "message": "দুর্বল"
+    },
+    "strengthLevel2": {
+        "message": "ভালো"
+    },
+    "strengthLevel3": {
+        "message": "শক্তিশালী"
+    },
+    "strengthLevel4": {
+        "message": "খুব শক্তিশালী"
+    },
+    "entropyBits": {
+        "message": "$BITS$ বিট এনট্রপি",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "বিকল্প"
+    },
+    "lengthLabel": {
+        "message": "দৈর্ঘ্য"
+    },
+    "lengthSliderLabel": {
+        "message": "পাসওয়ার্ডের দৈর্ঘ্য"
+    },
+    "charactersLegend": {
+        "message": "অক্ষর"
+    },
+    "lowercase": {
+        "message": "ছোট হাতের অক্ষর"
+    },
+    "uppercase": {
+        "message": "বড় হাতের অক্ষর"
+    },
+    "digits": {
+        "message": "অঙ্ক"
+    },
+    "symbols": {
+        "message": "চিহ্ন"
+    },
+    "avoidLookalikes": {
+        "message": "একই রকম দেখতে অক্ষর এড়িয়ে চলুন"
+    },
+    "excludeCharsLabel": {
+        "message": "অক্ষর বাদ দিন"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "যেমন {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "কপি করার পরে ক্লিপবোর্ড মুছুন"
+    },
+    "clipboardNever": {
+        "message": "কখনও না"
+    },
+    "clipboard30": {
+        "message": "30 সেকেন্ড"
+    },
+    "clipboard60": {
+        "message": "1 মিনিট"
+    },
+    "clipboard120": {
+        "message": "2 মিনিট"
+    },
+    "keepHistoryLabel": {
+        "message": "শেষ $COUNT$টি পাসওয়ার্ডের ইতিহাস রাখুন",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "পাসওয়ার্ড এনক্রিপ্ট ছাড়াই শুধু ব্রাউজারের মেমরিতে থাকে এবং Chrome বন্ধ করলে মুছে যায়। এই বিকল্প বন্ধ করলে ইতিহাস মুছে যায়।"
+    },
+    "footer": {
+        "message": "পাসওয়ার্ড ব্রাউজারের CSPRNG দিয়ে স্থানীয়ভাবে তৈরি হয়। কোথাও কিছু পাঠানো হয় না। পাসওয়ার্ড বসাতে টেক্সট ফিল্ডে ডান-ক্লিক করুন।"
+    },
+    "historyViewLabel": {
+        "message": "পাসওয়ার্ডের ইতিহাস"
+    },
+    "historyHeading": {
+        "message": "ইতিহাস"
+    },
+    "historyEmpty": {
+        "message": "এখনও কোনো পাসওয়ার্ড নেই।"
+    },
+    "back": {
+        "message": "ফিরে যান"
+    },
+    "historyClear": {
+        "message": "ইতিহাস মুছুন"
+    },
+    "historyCleared": {
+        "message": "ইতিহাস মুছে ফেলা হয়েছে।"
+    },
+    "statusCopyFailed": {
+        "message": "কপি করা যায়নি। পাসওয়ার্ডটি নির্বাচন করে নিজে কপি করুন।"
+    },
+    "statusCopied": {
+        "message": "ক্লিপবোর্ডে কপি করা হয়েছে।"
+    },
+    "statusCopiedNoPermission": {
+        "message": "কপি করা হয়েছে। স্বয়ংক্রিয়ভাবে মুছতে ক্লিপবোর্ডের অনুমতি লাগে; অনুমতি দিতে বিকল্পটি আবার নির্বাচন করুন।"
+    },
+    "statusCopiedClearIn": {
+        "message": "কপি করা হয়েছে। ক্লিপবোর্ড $SECONDS$ সেকেন্ড পরে মুছে যাবে।",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "কপি করা হয়েছে, কিন্তু ক্লিপবোর্ড মোছার সময় নির্ধারণ করা যায়নি।"
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "ক্লিপবোর্ড স্বয়ংক্রিয়ভাবে মুছতে ক্লিপবোর্ডের অনুমতি প্রয়োজন।"
+    },
+    "statusSaveFailed": {
+        "message": "সেটিংস সংরক্ষণ করা যায়নি।"
+    },
+    "errorGeneric": {
+        "message": "পাসওয়ার্ড তৈরি করা যায়নি।"
+    },
+    "errorInvalidLength": {
+        "message": "দৈর্ঘ্য $MIN$ থেকে $MAX$ এর মধ্যে হতে হবে।",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "কমপক্ষে একটি অক্ষরের ধরন নির্বাচন করুন।"
+    },
+    "errorLengthTooShort": {
+        "message": "দৈর্ঘ্য নির্বাচিত অক্ষরের ধরনের সংখ্যার চেয়ে কম।"
+    },
+    "settingsButtonTitle": {
+        "message": "সেটিংস"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock সম্পর্কে"
+    },
+    "settingsHeading": {
+        "message": "সেটিংস"
+    },
+    "aboutHeading": {
+        "message": "সম্পর্কে"
+    },
+    "languageLabel": {
+        "message": "ভাষা"
+    },
+    "languageAuto": {
+        "message": "স্বয়ংক্রিয় (ব্রাউজারের ভাষা)"
+    },
+    "themeLabel": {
+        "message": "থিম"
+    },
+    "themeSystem": {
+        "message": "সিস্টেম ডিফল্ট"
+    },
+    "themeLight": {
+        "message": "হালকা"
+    },
+    "themeDark": {
+        "message": "গাঢ়"
+    },
+    "contextMenuLabel": {
+        "message": "ডান-ক্লিক মেনুতে “$ITEM$” দেখান",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "মাউস না আনা পর্যন্ত পাসওয়ার্ড ঝাপসা রাখুন"
+    },
+    "resetSettings": {
+        "message": "ডিফল্ট পুনরুদ্ধার করুন"
+    },
+    "settingsReset": {
+        "message": "সেটিংস ডিফল্টে ফিরিয়ে আনা হয়েছে।"
+    },
+    "aboutVersion": {
+        "message": "সংস্করণ $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "নির্মাতা: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "ওপেন সোর্স, Apache লাইসেন্স 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "সবকিছু আপনার ডিভাইসেই চলে। Padlock কোনো ডেটা সংগ্রহ করে না এবং কোথাও কিছু পাঠায় না।"
+    },
+    "aboutRepositoryLabel": {
+        "message": "সোর্স কোড, সমস্যা ও আপডেট"
+    }
+}
