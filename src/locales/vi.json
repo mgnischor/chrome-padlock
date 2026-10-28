@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – Trình tạo mật khẩu an toàn"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Tạo mật khẩu mạnh, ngẫu nhiên bằng bộ tạo số ngẫu nhiên an toàn của trình duyệt. Mọi thứ đều ở lại trên thiết bị của bạn."
+    },
+    "actionTitle": {
+        "message": "Padlock – tạo mật khẩu"
+    },
+    "commandOpen": {
+        "message": "Mở Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "Chèn mật khẩu an toàn"
+    },
+    "tagline": {
+        "message": "Trình tạo mật khẩu an toàn"
+    },
+    "generatedPasswordLabel": {
+        "message": "Mật khẩu đã tạo"
+    },
+    "clickToCopy": {
+        "message": "Nhấp để sao chép"
+    },
+    "copy": {
+        "message": "Sao chép"
+    },
+    "regenerate": {
+        "message": "Tạo lại"
+    },
+    "regenerateTitle": {
+        "message": "Tạo mật khẩu mới"
+    },
+    "historyButton": {
+        "message": "Lịch sử"
+    },
+    "historyButtonTitle": {
+        "message": "Hiển thị $COUNT$ mật khẩu đã tạo gần nhất",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Độ mạnh mật khẩu"
+    },
+    "strengthLevel0": {
+        "message": "Rất yếu"
+    },
+    "strengthLevel1": {
+        "message": "Yếu"
+    },
+    "strengthLevel2": {
+        "message": "Tốt"
+    },
+    "strengthLevel3": {
+        "message": "Mạnh"
+    },
+    "strengthLevel4": {
+        "message": "Rất mạnh"
+    },
+    "entropyBits": {
+        "message": "$BITS$ bit entropy",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Tùy chọn"
+    },
+    "lengthLabel": {
+        "message": "Độ dài"
+    },
+    "lengthSliderLabel": {
+        "message": "Độ dài mật khẩu"
+    },
+    "charactersLegend": {
+        "message": "Ký tự"
+    },
+    "lowercase": {
+        "message": "Chữ thường"
+    },
+    "uppercase": {
+        "message": "Chữ hoa"
+    },
+    "digits": {
+        "message": "Chữ số"
+    },
+    "symbols": {
+        "message": "Ký hiệu"
+    },
+    "avoidLookalikes": {
+        "message": "Tránh ký tự dễ nhầm"
+    },
+    "excludeCharsLabel": {
+        "message": "Loại trừ ký tự"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "ví dụ {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Xóa bộ nhớ tạm sau khi sao chép"
+    },
+    "clipboardNever": {
+        "message": "Không bao giờ"
+    },
+    "clipboard30": {
+        "message": "30 giây"
+    },
+    "clipboard60": {
+        "message": "1 phút"
+    },
+    "clipboard120": {
+        "message": "2 phút"
+    },
+    "keepHistoryLabel": {
+        "message": "Lưu lịch sử $COUNT$ mật khẩu gần nhất",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Mật khẩu được giữ không mã hóa, chỉ trong bộ nhớ trình duyệt và bị xóa khi đóng Chrome. Tắt tùy chọn này sẽ xóa lịch sử."
+    },
+    "footer": {
+        "message": "Mật khẩu được tạo cục bộ bằng CSPRNG của trình duyệt. Không có gì được gửi đi đâu cả. Nhấp chuột phải vào ô văn bản để chèn mật khẩu."
+    },
+    "historyViewLabel": {
+        "message": "Lịch sử mật khẩu"
+    },
+    "historyHeading": {
+        "message": "Lịch sử"
+    },
+    "historyEmpty": {
+        "message": "Chưa có mật khẩu nào."
+    },
+    "back": {
+        "message": "Quay lại"
+    },
+    "historyClear": {
+        "message": "Xóa lịch sử"
+    },
+    "historyCleared": {
+        "message": "Đã xóa lịch sử."
+    },
+    "statusCopyFailed": {
+        "message": "Sao chép không thành công. Hãy chọn mật khẩu và sao chép thủ công."
+    },
+    "statusCopied": {
+        "message": "Đã sao chép vào bộ nhớ tạm."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Đã sao chép. Tính năng tự động xóa cần quyền truy cập bộ nhớ tạm; hãy chọn lại tùy chọn để cấp quyền."
+    },
+    "statusCopiedClearIn": {
+        "message": "Đã sao chép. Bộ nhớ tạm sẽ được xóa sau $SECONDS$ giây.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Đã sao chép, nhưng không thể lên lịch xóa bộ nhớ tạm."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Cần quyền truy cập bộ nhớ tạm để tự động xóa."
+    },
+    "statusSaveFailed": {
+        "message": "Không thể lưu cài đặt."
+    },
+    "errorGeneric": {
+        "message": "Không thể tạo mật khẩu."
+    },
+    "errorInvalidLength": {
+        "message": "Độ dài phải nằm trong khoảng từ $MIN$ đến $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Hãy chọn ít nhất một loại ký tự."
+    },
+    "errorLengthTooShort": {
+        "message": "Độ dài ngắn hơn số loại ký tự đã chọn."
+    },
+    "settingsButtonTitle": {
+        "message": "Cài đặt"
+    },
+    "aboutButtonTitle": {
+        "message": "Giới thiệu Padlock"
+    },
+    "settingsHeading": {
+        "message": "Cài đặt"
+    },
+    "aboutHeading": {
+        "message": "Giới thiệu"
+    },
+    "languageLabel": {
+        "message": "Ngôn ngữ"
+    },
+    "languageAuto": {
+        "message": "Tự động (ngôn ngữ trình duyệt)"
+    },
+    "themeLabel": {
+        "message": "Giao diện"
+    },
+    "themeSystem": {
+        "message": "Mặc định hệ thống"
+    },
+    "themeLight": {
+        "message": "Sáng"
+    },
+    "themeDark": {
+        "message": "Tối"
+    },
+    "contextMenuLabel": {
+        "message": "Hiển thị “$ITEM$” trong menu chuột phải",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Làm mờ mật khẩu cho đến khi rê chuột"
+    },
+    "resetSettings": {
+        "message": "Khôi phục mặc định"
+    },
+    "settingsReset": {
+        "message": "Đã khôi phục cài đặt mặc định."
+    },
+    "aboutVersion": {
+        "message": "Phiên bản $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Tác giả: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "Mã nguồn mở, Giấy phép Apache 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "Mọi thứ chạy trên thiết bị của bạn. Padlock không thu thập dữ liệu và không gửi bất cứ thứ gì đi đâu cả."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Mã nguồn, sự cố và bản cập nhật"
+    }
+}
