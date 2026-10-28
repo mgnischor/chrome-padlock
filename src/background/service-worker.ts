@@ -26,23 +26,29 @@ import {
     type ClearClipboardMessage,
 } from "../shared/messages";
 import { recordPassword } from "../shared/history";
-import { t } from "../shared/i18n";
+import { browserLanguage, setLanguage, t } from "../shared/i18n";
 import { loadSettings } from "../shared/settings";
 
 const MENU_ID = "insert-password";
 const OFFSCREEN_URL = "offscreen.html";
 const BADGE_RESET_MS = 2000;
+const SETTINGS_STORAGE_KEY = "settings";
 
 // ---------------------------------------------------------------------------
-// Context menu: insert a password into the focused text field
+// Browser surfaces: the toolbar tooltip and the context menu entry
 // ---------------------------------------------------------------------------
 
 /**
- * Creates the context menu entry in the browser's UI language. Existing
- * entries are removed first so the menu never ends up duplicated.
+ * Brings the toolbar tooltip and the right-click menu in line with the settings: they use the
+ * language the user chose (or the browser's), and the menu entry only exists when it is enabled.
+ * Existing entries are removed first so the menu never ends up duplicated.
  */
-function createContextMenu(): void {
+async function syncBrowserSurfaces(): Promise<void> {
+    const settings = await loadSettings();
+    setLanguage(settings.language, browserLanguage());
+    void chrome.action.setTitle({ title: t("actionTitle") });
     chrome.contextMenus.removeAll(() => {
+        if (!settings.contextMenu) return;
         chrome.contextMenus.create({
             id: MENU_ID,
             title: t("menuInsertPassword"),
@@ -51,9 +57,12 @@ function createContextMenu(): void {
     });
 }
 
-// Also recreate on startup so the title follows a changed browser language.
-chrome.runtime.onInstalled.addListener(createContextMenu);
-chrome.runtime.onStartup.addListener(createContextMenu);
+// Recreate on startup too, so the titles follow a changed browser language.
+chrome.runtime.onInstalled.addListener(() => void syncBrowserSurfaces());
+chrome.runtime.onStartup.addListener(() => void syncBrowserSurfaces());
+chrome.storage.onChanged.addListener((changes, area) => {
+    if (area === "sync" && SETTINGS_STORAGE_KEY in changes) void syncBrowserSurfaces();
+});
 
 /**
  * Runs inside the page (injected with `chrome.scripting.executeScript`), so it

@@ -25,11 +25,19 @@ entirely on your device.
   See [History](#history) for what is recorded and where it lives.
 - **Roomy popup** that uses the full 640 × 400 px an extension popup can have: the password and its
   strength on the left, all options on the right, with no scrolling in the generator view.
-- **Localized** in English (US), Brazilian Portuguese, Spanish, French, Italian, German, Russian and Polish.
-  The extension follows the
-  browser's UI language automatically; any other language falls back to English. See
+- **Localized in 30 languages**, the most spoken native languages plus Polish: English, Chinese
+  (Simplified and Traditional), Spanish, Hindi, Bengali, Portuguese (Brazil), Russian, Japanese,
+  Punjabi, Marathi, Telugu, Turkish, Korean, French, German, Vietnamese, Tamil, Urdu, Javanese,
+  Italian, Arabic, Gujarati, Persian, Bhojpuri, Hausa, Kannada, Indonesian, Polish, Malayalam and
+  Ukrainian. The extension follows the browser's language automatically, or you can pick one in the
+  settings. Arabic, Persian and Urdu switch the layout to right-to-left. See
   [Localization](#localization).
-- **Light / dark theme**, keyboard accessible, no network access, no analytics.
+- **Settings screen** (gear button): language, light / dark / system theme, clipboard auto-clear, the
+  password history, the right-click menu entry, and blurring passwords until you hover over them. One
+  button restores the defaults.
+- **About screen** (GitHub button): version, author, license, privacy statement and a link to the
+  [source code on GitHub](https://github.com/mgnischor/chrome-padlock).
+- Keyboard accessible, no network access, no analytics.
 - Open the popup with `Ctrl+Shift+Y` (`Command+Shift+Y` on macOS); rebind it at
   `chrome://extensions/shortcuts`.
 
@@ -63,7 +71,7 @@ After a rebuild, press the reload button on the extension's card in `chrome://ex
 
 ```
 public/                 Static files copied to dist/ (manifest, HTML, CSS, icons)
-public/_locales/        Translations: en_US (default), pt_BR, es, fr, it, de, ru and pl
+src/locales/            Translations, one JSON file per language (en_US is the source)
 scripts/                Build tooling: build, package, minify, zip and icon generator
 src/core/               Pure, DOM-free logic: random, charsets, generator, entropy
 src/shared/             Settings, history, i18n helper, message types, hashing helper
@@ -123,31 +131,54 @@ Off by default. Enable it with _Keep a history of the last 50 passwords_ in the 
 ### Privacy
 
 Passwords are generated in memory, shown in the popup, and discarded when it closes, unless you
-enable the history (see above). Only your option choices are persisted (via `chrome.storage.sync`,
-so they follow your Chrome profile). The extension makes no network requests.
+enable the history (see above). Only your settings are persisted (via `chrome.storage.sync`, so they
+follow your Chrome profile): the generator options, language, theme and the other switches. The
+extension makes no network requests. The only link it contains, to the project's GitHub page on the
+About screen, opens in a new tab and only if you click it.
 
 ### Localization
 
-The extension uses Chrome's built-in `chrome.i18n` system, so the language always follows the
-browser's UI language and needs no setting. Chrome picks the best match: an exact locale such as
-`pt_BR`, then the base language such as `es`, then the default locale `en_US`.
+The popup and the right-click menu are translated into 30 languages. By default the language follows
+the browser's UI language, and the settings let you choose another one, which `chrome.i18n` cannot do.
+For that reason the translations are bundled into the extension and looked up by
+`src/shared/i18n.ts`, using the same message format as Chrome (`$1` and `$NAME$` placeholders).
+Browser languages are matched to the closest translation: `pt-PT` uses Brazilian Portuguese,
+`es-419` uses Spanish, `zh-TW`/`zh-HK` use Traditional Chinese, any other Chinese uses Simplified, and
+everything else falls back to English.
 
-- **Messages** live in `public/_locales/<locale>/messages.json`. The manifest (name, description,
-  toolbar tooltip, shortcut description) uses `__MSG_<key>__` references.
-- **Popup text** is localized at startup by `applyTranslations` in `src/shared/i18n.ts`. The HTML keeps
-  its English text as a fallback and marks translatable elements with `data-i18n="key"`,
-  `data-i18n-title`, `data-i18n-aria-label` or `data-i18n-placeholder`. Messages built in code use
-  `t("key", substitutions)`. Message keys are type-checked against `en_US/messages.json`.
+- **Messages** live in `src/locales/<code>.json`, in the format of Chrome's `messages.json`. English
+  (`en_US`) is the source; the other files must define the same keys and placeholders.
+- **Chrome's own strings** (name, description, toolbar tooltip, shortcut label) come from `_locales`.
+  The build generates those folders from `src/locales`, but only for the 26 languages Chrome supports.
+  Punjabi, Urdu, Javanese, Bhojpuri and Hausa have no Chrome UI language, so the store listing and
+  Chrome's extension page show English for them. The extension itself is fully translated.
+- **Popup text** is localized at startup, and again whenever the language changes, by
+  `applyTranslations`. The HTML keeps its English text as a fallback and marks translatable elements
+  with `data-i18n="key"`, `data-i18n-title`, `data-i18n-aria-label` or `data-i18n-placeholder`.
+  Messages built in code use `t("key", substitutions)`. Keys are type-checked against `en_US.json`,
+  and `src/shared/catalog.ts` is typed so that a language missing a message fails to compile.
 - **The core stays language-neutral:** the generator reports error _codes_ and the entropy module
   reports strength _levels_; the popup maps both to localized text.
-- **Dates** in the history use the browser's UI language.
-- **Adding a language:** copy `public/_locales/en_US` to a new folder named after the locale (for
-  example `nl` or `ja`), translate every `message`, and keep the `placeholders` blocks unchanged. Then
-  add the folder name to `EXPECTED_LOCALES` in `tests/i18n.test.ts`. The tests check that every locale
-  has the same keys and placeholders as `en_US`, that no message is unused, and that the extension
-  description stays within the Web Store limit of 132 characters.
-- **Testing a language:** start Chrome with `--lang=pt-BR` (or change the language in
-  `chrome://settings/languages` and restart Chrome), then reload the extension.
+- **Right-to-left languages** (Arabic, Persian, Urdu) set `dir="rtl"` on the page. Passwords, character
+  hints and number fields always stay left-to-right.
+- **Dates** in the history use the active language.
+- **Adding a language:** copy `src/locales/en_US.json` to `src/locales/<code>.json` and translate every
+  `message` (keep the `placeholders` blocks as they are); add one entry to `LOCALES` in
+  `src/shared/locales.ts` (code, name in that language, language tag, direction); add the import and the
+  entry to `src/shared/catalog.ts`. If Chrome supports the language as a UI language, also add its code
+  to `MANIFEST_LOCALES` in `scripts/manifest-locales.mjs`. The tests then check that the new file has the
+  same keys and placeholders as English, that it is translated and not a copy, that no message is unused
+  and that the description stays within the Web Store limit of 132 characters.
+- **Testing a language:** pick it in the settings, or start Chrome with `--lang=pt-BR` to test the
+  automatic choice.
+
+### Appearance and settings
+
+The theme setting is _System default_, _Light_ or _Dark_. It is applied through a `data-theme`
+attribute on the page, so the colors are plain CSS custom properties in `public/popup.css`. The popup
+stays hidden until the saved language and theme are applied, so neither flashes on opening. Settings
+are validated when read (`sanitizeSettings`), so an unknown language or theme in storage falls back to
+the defaults instead of breaking the popup.
 
 ### Code documentation
 
@@ -166,7 +197,8 @@ minification, so that errors point at readable code.
 | `popup.css`                    | esbuild's CSS minifier                                                                                                                |
 | `popup.html`, `offscreen.html` | `scripts/minify.mjs`: comments removed and whitespace collapsed; quoted attributes and `<script>`/`<textarea>` contents are untouched |
 | `manifest.json`                | Compact JSON, with the version taken from `package.json`                                                                              |
-| `_locales/*/messages.json`     | Compact JSON, without the translator-only `description` and `example` notes                                                           |
+| `src/locales/*.json`           | Bundled into the JavaScript without the translator-only `description` and `example` notes, as UTF-8 rather than `\u` escapes         |
+| `_locales/*/messages.json`     | Generated: only the five manifest messages, compact JSON, for the 26 languages Chrome supports                                        |
 | Icons                          | Copied as they are                                                                                                                    |
 
 `npm run package` then verifies the build and writes the Web Store upload to
@@ -194,8 +226,6 @@ if an HTML page has an inline script, or if the bundled JavaScript contains `fet
 
 ### Publishing
 
-- [docs/chrome-web-store.md](docs/chrome-web-store.md): answers for the Chrome Web Store _Privacy
-  practices_ tab (single purpose and permission justifications).
 - [docs/privacy-policy.md](docs/privacy-policy.md): the privacy policy. The store needs it at a public
   URL. Update it before releasing any change to what the extension stores or transmits.
 

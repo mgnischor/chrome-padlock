@@ -28,7 +28,7 @@ activity, no page content, no clipboard content, no device or usage data.
 
 | Information                                                                                                            | Where it is stored                                                   | Purpose                                                         |
 | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Your preferences (length, character types, excluded characters, clipboard-clear delay, whether the history is enabled) | `chrome.storage.sync`                                                | Remember your settings between sessions. Contains no passwords. |
+| Your preferences (length, character types, excluded characters, language, theme, clipboard-clear delay, and the on/off switches of the history, the right-click menu entry and password blurring) | `chrome.storage.sync`                                                | Remember your settings between sessions. Contains no passwords. |
 | Recently generated passwords (last 50), **only if you enable the history**                                             | `chrome.storage.session`: browser memory only, never written to disk | Let you view passwords you generated earlier.                   |
 | A SHA-256 hash of the last copied password, **only if you enable clipboard auto-clear**                                | `chrome.storage.session`: browser memory only                        | Clear the clipboard only if it still holds that password.       |
 
@@ -60,6 +60,13 @@ Padlock does not read, collect or transmit the content of the pages you visit. W
 **Insert secure password**, it temporarily gains access to that one tab (through Chrome's `activeTab`
 permission) and writes the generated password into the field you right-clicked. It requests no
 permission to access websites in the background.
+
+## The link to GitHub
+
+The **About** screen of the popup contains a link to the project's public page on GitHub
+(`github.com/mgnischor/chrome-padlock`). Padlock itself never contacts that address: the link opens in
+a new browser tab only if you click it, and from then on you are using GitHub under its own privacy
+policy.
 
 ## Permissions
 

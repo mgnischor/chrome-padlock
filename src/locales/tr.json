@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – Güvenli Parola Oluşturucu"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Tarayıcınızın güvenli rastgele sayı üretecini kullanarak güçlü, rastgele parolalar oluşturun. Her şey cihazınızda kalır."
+    },
+    "actionTitle": {
+        "message": "Padlock – parola oluştur"
+    },
+    "commandOpen": {
+        "message": "Padlock'u aç"
+    },
+    "menuInsertPassword": {
+        "message": "Güvenli parola ekle"
+    },
+    "tagline": {
+        "message": "Güvenli parola oluşturucu"
+    },
+    "generatedPasswordLabel": {
+        "message": "Oluşturulan parola"
+    },
+    "clickToCopy": {
+        "message": "Kopyalamak için tıklayın"
+    },
+    "copy": {
+        "message": "Kopyala"
+    },
+    "regenerate": {
+        "message": "Yeniden oluştur"
+    },
+    "regenerateTitle": {
+        "message": "Yeni parola oluştur"
+    },
+    "historyButton": {
+        "message": "Geçmiş"
+    },
+    "historyButtonTitle": {
+        "message": "Son oluşturulan $COUNT$ parolayı göster",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Parola gücü"
+    },
+    "strengthLevel0": {
+        "message": "Çok zayıf"
+    },
+    "strengthLevel1": {
+        "message": "Zayıf"
+    },
+    "strengthLevel2": {
+        "message": "İyi"
+    },
+    "strengthLevel3": {
+        "message": "Güçlü"
+    },
+    "strengthLevel4": {
+        "message": "Çok güçlü"
+    },
+    "entropyBits": {
+        "message": "$BITS$ bit entropi",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Seçenekler"
+    },
+    "lengthLabel": {
+        "message": "Uzunluk"
+    },
+    "lengthSliderLabel": {
+        "message": "Parola uzunluğu"
+    },
+    "charactersLegend": {
+        "message": "Karakterler"
+    },
+    "lowercase": {
+        "message": "Küçük harfler"
+    },
+    "uppercase": {
+        "message": "Büyük harfler"
+    },
+    "digits": {
+        "message": "Rakamlar"
+    },
+    "symbols": {
+        "message": "Simgeler"
+    },
+    "avoidLookalikes": {
+        "message": "Benzer karakterlerden kaçın"
+    },
+    "excludeCharsLabel": {
+        "message": "Karakterleri hariç tut"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "örn. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Kopyaladıktan sonra panoyu temizle"
+    },
+    "clipboardNever": {
+        "message": "Hiçbir zaman"
+    },
+    "clipboard30": {
+        "message": "30 saniye"
+    },
+    "clipboard60": {
+        "message": "1 dakika"
+    },
+    "clipboard120": {
+        "message": "2 dakika"
+    },
+    "keepHistoryLabel": {
+        "message": "Son $COUNT$ parolanın geçmişini tut",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Parolalar şifrelenmeden yalnızca tarayıcı belleğinde tutulur ve Chrome kapandığında silinir. Bu seçeneği kapatmak geçmişi siler."
+    },
+    "footer": {
+        "message": "Parolalar tarayıcının CSPRNG'si ile yerel olarak oluşturulur. Hiçbir şey hiçbir yere gönderilmez. Parola eklemek için bir metin alanına sağ tıklayın."
+    },
+    "historyViewLabel": {
+        "message": "Parola geçmişi"
+    },
+    "historyHeading": {
+        "message": "Geçmiş"
+    },
+    "historyEmpty": {
+        "message": "Henüz parola yok."
+    },
+    "back": {
+        "message": "Geri"
+    },
+    "historyClear": {
+        "message": "Geçmişi temizle"
+    },
+    "historyCleared": {
+        "message": "Geçmiş temizlendi."
+    },
+    "statusCopyFailed": {
+        "message": "Kopyalanamadı. Parolayı seçip elle kopyalayın."
+    },
+    "statusCopied": {
+        "message": "Panoya kopyalandı."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Kopyalandı. Otomatik temizleme pano izni gerektirir; izni vermek için seçeneği yeniden seçin."
+    },
+    "statusCopiedClearIn": {
+        "message": "Kopyalandı. Pano $SECONDS$ sn içinde temizlenecek.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Kopyalandı ancak pano temizleme zamanlanamadı."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Panoyu otomatik temizlemek için pano izni gerekir."
+    },
+    "statusSaveFailed": {
+        "message": "Ayarlar kaydedilemedi."
+    },
+    "errorGeneric": {
+        "message": "Parola oluşturulamadı."
+    },
+    "errorInvalidLength": {
+        "message": "Uzunluk $MIN$ ile $MAX$ arasında olmalıdır.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "En az bir karakter türü seçin."
+    },
+    "errorLengthTooShort": {
+        "message": "Uzunluk, seçilen karakter türlerinin sayısından kısa."
+    },
+    "settingsButtonTitle": {
+        "message": "Ayarlar"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock hakkında"
+    },
+    "settingsHeading": {
+        "message": "Ayarlar"
+    },
+    "aboutHeading": {
+        "message": "Hakkında"
+    },
+    "languageLabel": {
+        "message": "Dil"
+    },
+    "languageAuto": {
+        "message": "Otomatik (tarayıcı dili)"
+    },
+    "themeLabel": {
+        "message": "Tema"
+    },
+    "themeSystem": {
+        "message": "Sistem varsayılanı"
+    },
+    "themeLight": {
+        "message": "Açık"
+    },
+    "themeDark": {
+        "message": "Koyu"
+    },
+    "contextMenuLabel": {
+        "message": "Sağ tık menüsünde “$ITEM$” öğesini göster",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Fare üzerine gelene kadar parolaları bulanıklaştır"
+    },
+    "resetSettings": {
+        "message": "Varsayılanları geri yükle"
+    },
+    "settingsReset": {
+        "message": "Ayarlar varsayılana döndürüldü."
+    },
+    "aboutVersion": {
+        "message": "Sürüm $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Geliştiren: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "Açık kaynak, Apache Lisansı 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "Her şey cihazınızda çalışır. Padlock veri toplamaz ve hiçbir yere hiçbir şey göndermez."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Kaynak kodu, sorunlar ve güncellemeler"
+    }
+}

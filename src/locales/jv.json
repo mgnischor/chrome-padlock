@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – Generator Sandi Aman"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Gawé sandi sing kuwat lan acak nganggo generator angka acak sing aman ing browser. Kabeh tetep ing piranti sampeyan."
+    },
+    "actionTitle": {
+        "message": "Padlock – gawé sandi"
+    },
+    "commandOpen": {
+        "message": "Bukak Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "Selehake sandi aman"
+    },
+    "tagline": {
+        "message": "Generator sandi aman"
+    },
+    "generatedPasswordLabel": {
+        "message": "Sandi sing wis digawé"
+    },
+    "clickToCopy": {
+        "message": "Klik kanggo nyalin"
+    },
+    "copy": {
+        "message": "Salin"
+    },
+    "regenerate": {
+        "message": "Gawé maneh"
+    },
+    "regenerateTitle": {
+        "message": "Gawé sandi anyar"
+    },
+    "historyButton": {
+        "message": "Riwayat"
+    },
+    "historyButtonTitle": {
+        "message": "Tampilake $COUNT$ sandi pungkasan sing digawé",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Kekuwatan sandi"
+    },
+    "strengthLevel0": {
+        "message": "Banget ringkih"
+    },
+    "strengthLevel1": {
+        "message": "Ringkih"
+    },
+    "strengthLevel2": {
+        "message": "Apik"
+    },
+    "strengthLevel3": {
+        "message": "Kuwat"
+    },
+    "strengthLevel4": {
+        "message": "Banget kuwat"
+    },
+    "entropyBits": {
+        "message": "$BITS$ bit entropi",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Pilihan"
+    },
+    "lengthLabel": {
+        "message": "Dawa"
+    },
+    "lengthSliderLabel": {
+        "message": "Dawa sandi"
+    },
+    "charactersLegend": {
+        "message": "Karakter"
+    },
+    "lowercase": {
+        "message": "Aksara cilik"
+    },
+    "uppercase": {
+        "message": "Aksara gedhé"
+    },
+    "digits": {
+        "message": "Angka"
+    },
+    "symbols": {
+        "message": "Simbol"
+    },
+    "avoidLookalikes": {
+        "message": "Singkirake karakter sing meh padha"
+    },
+    "excludeCharsLabel": {
+        "message": "Kecualekake karakter"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "contone {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Resiki clipboard sawisé disalin"
+    },
+    "clipboardNever": {
+        "message": "Ora tau"
+    },
+    "clipboard30": {
+        "message": "30 detik"
+    },
+    "clipboard60": {
+        "message": "1 menit"
+    },
+    "clipboard120": {
+        "message": "2 menit"
+    },
+    "keepHistoryLabel": {
+        "message": "Simpen riwayat $COUNT$ sandi pungkasan",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Sandi disimpen tanpa enkripsi mung ing memori browser lan dibusak nalika Chrome ditutup. Yen pilihan iki dipateni, riwayat dibusak."
+    },
+    "footer": {
+        "message": "Sandi digawé sacara lokal nganggo CSPRNG browser. Ora ana sing dikirim menyang ngendi-endi. Klik tengen ing kolom teks kanggo nyelehake sandi."
+    },
+    "historyViewLabel": {
+        "message": "Riwayat sandi"
+    },
+    "historyHeading": {
+        "message": "Riwayat"
+    },
+    "historyEmpty": {
+        "message": "Durung ana sandi."
+    },
+    "back": {
+        "message": "Bali"
+    },
+    "historyClear": {
+        "message": "Resiki riwayat"
+    },
+    "historyCleared": {
+        "message": "Riwayat wis diresiki."
+    },
+    "statusCopyFailed": {
+        "message": "Gagal nyalin. Pilih sandi lan salin kanthi manual."
+    },
+    "statusCopied": {
+        "message": "Wis disalin menyang clipboard."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Wis disalin. Pangresik otomatis butuh ijin clipboard; pilih pilihan iki maneh kanggo menehi ijin."
+    },
+    "statusCopiedClearIn": {
+        "message": "Wis disalin. Clipboard bakal diresiki sajrone $SECONDS$ detik.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Wis disalin, nanging jadwal ngresiki clipboard gagal digawé."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Ijin clipboard dibutuhake kanggo ngresiki kanthi otomatis."
+    },
+    "statusSaveFailed": {
+        "message": "Setelan ora bisa disimpen."
+    },
+    "errorGeneric": {
+        "message": "Sandi ora bisa digawé."
+    },
+    "errorInvalidLength": {
+        "message": "Dawa kudu antara $MIN$ lan $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Pilih paling ora siji jinis karakter."
+    },
+    "errorLengthTooShort": {
+        "message": "Dawa kurang saka cacahé jinis karakter sing dipilih."
+    },
+    "settingsButtonTitle": {
+        "message": "Setelan"
+    },
+    "aboutButtonTitle": {
+        "message": "Bab Padlock"
+    },
+    "settingsHeading": {
+        "message": "Setelan"
+    },
+    "aboutHeading": {
+        "message": "Bab"
+    },
+    "languageLabel": {
+        "message": "Basa"
+    },
+    "languageAuto": {
+        "message": "Otomatis (basa browser)"
+    },
+    "themeLabel": {
+        "message": "Tema"
+    },
+    "themeSystem": {
+        "message": "Standar sistem"
+    },
+    "themeLight": {
+        "message": "Padhang"
+    },
+    "themeDark": {
+        "message": "Peteng"
+    },
+    "contextMenuLabel": {
+        "message": "Tampilake “$ITEM$” ing menu klik tengen",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Buremake sandi nganti kursor ana ing ndhuwur"
+    },
+    "resetSettings": {
+        "message": "Balekake standar"
+    },
+    "settingsReset": {
+        "message": "Setelan wis dibalekake menyang standar."
+    },
+    "aboutVersion": {
+        "message": "Versi $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Digawé dening Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "Sumber terbuka, Lisensi Apache 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "Kabeh mlaku ing piranti sampeyan. Padlock ora ngumpulake data lan ora ngirim apa-apa menyang ngendi-endi."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Kode sumber, masalah, lan nganyari"
+    }
+}

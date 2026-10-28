@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – Generador de contraseñas seguras"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Genera contraseñas fuertes y aleatorias con el generador de números aleatorios seguro del navegador. Todo queda en tu dispositivo."
+    },
+    "actionTitle": {
+        "message": "Padlock – generar una contraseña"
+    },
+    "commandOpen": {
+        "message": "Abrir Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "Insertar contraseña segura"
+    },
+    "tagline": {
+        "message": "Generador de contraseñas seguras"
+    },
+    "generatedPasswordLabel": {
+        "message": "Contraseña generada"
+    },
+    "clickToCopy": {
+        "message": "Haz clic para copiar"
+    },
+    "copy": {
+        "message": "Copiar"
+    },
+    "regenerate": {
+        "message": "Regenerar"
+    },
+    "regenerateTitle": {
+        "message": "Generar una nueva contraseña"
+    },
+    "historyButton": {
+        "message": "Historial"
+    },
+    "historyButtonTitle": {
+        "message": "Mostrar las últimas $COUNT$ contraseñas generadas",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Fortaleza de la contraseña"
+    },
+    "strengthLevel0": {
+        "message": "Muy débil"
+    },
+    "strengthLevel1": {
+        "message": "Débil"
+    },
+    "strengthLevel2": {
+        "message": "Buena"
+    },
+    "strengthLevel3": {
+        "message": "Fuerte"
+    },
+    "strengthLevel4": {
+        "message": "Muy fuerte"
+    },
+    "entropyBits": {
+        "message": "$BITS$ bits de entropía",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Opciones"
+    },
+    "lengthLabel": {
+        "message": "Longitud"
+    },
+    "lengthSliderLabel": {
+        "message": "Longitud de la contraseña"
+    },
+    "charactersLegend": {
+        "message": "Caracteres"
+    },
+    "lowercase": {
+        "message": "Minúsculas"
+    },
+    "uppercase": {
+        "message": "Mayúsculas"
+    },
+    "digits": {
+        "message": "Dígitos"
+    },
+    "symbols": {
+        "message": "Símbolos"
+    },
+    "avoidLookalikes": {
+        "message": "Evitar caracteres parecidos"
+    },
+    "excludeCharsLabel": {
+        "message": "Excluir caracteres"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "p. ej. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Borrar el portapapeles después de copiar"
+    },
+    "clipboardNever": {
+        "message": "Nunca"
+    },
+    "clipboard30": {
+        "message": "30 segundos"
+    },
+    "clipboard60": {
+        "message": "1 minuto"
+    },
+    "clipboard120": {
+        "message": "2 minutos"
+    },
+    "keepHistoryLabel": {
+        "message": "Mantener un historial de las últimas $COUNT$ contraseñas",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Las contraseñas se guardan sin cifrar, solo en la memoria del navegador, y se borran al cerrar Chrome. Desactivar esta opción elimina el historial."
+    },
+    "footer": {
+        "message": "Las contraseñas se generan localmente con el CSPRNG del navegador. No se envía nada a ningún sitio. Haz clic derecho en un campo de texto para insertar una."
+    },
+    "historyViewLabel": {
+        "message": "Historial de contraseñas"
+    },
+    "historyHeading": {
+        "message": "Historial"
+    },
+    "historyEmpty": {
+        "message": "Aún no hay contraseñas."
+    },
+    "back": {
+        "message": "Volver"
+    },
+    "historyClear": {
+        "message": "Borrar historial"
+    },
+    "historyCleared": {
+        "message": "Historial borrado."
+    },
+    "statusCopyFailed": {
+        "message": "No se pudo copiar. Selecciona la contraseña y cópiala manualmente."
+    },
+    "statusCopied": {
+        "message": "Copiada al portapapeles."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Copiada. El borrado automático necesita permiso para el portapapeles; vuelve a seleccionar la opción para concederlo."
+    },
+    "statusCopiedClearIn": {
+        "message": "Copiada. El portapapeles se borrará en $SECONDS$ s.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Copiada, pero no se pudo programar el borrado del portapapeles."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Se necesita el permiso del portapapeles para borrarlo automáticamente."
+    },
+    "statusSaveFailed": {
+        "message": "No se pudieron guardar los ajustes."
+    },
+    "errorGeneric": {
+        "message": "No se pudo generar una contraseña."
+    },
+    "errorInvalidLength": {
+        "message": "La longitud debe estar entre $MIN$ y $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Selecciona al menos un tipo de carácter."
+    },
+    "errorLengthTooShort": {
+        "message": "La longitud es menor que el número de tipos de caracteres seleccionados."
+    },
+    "settingsButtonTitle": {
+        "message": "Configuración"
+    },
+    "aboutButtonTitle": {
+        "message": "Acerca de Padlock"
+    },
+    "settingsHeading": {
+        "message": "Configuración"
+    },
+    "aboutHeading": {
+        "message": "Acerca de"
+    },
+    "languageLabel": {
+        "message": "Idioma"
+    },
+    "languageAuto": {
+        "message": "Automático (idioma del navegador)"
+    },
+    "themeLabel": {
+        "message": "Tema"
+    },
+    "themeSystem": {
+        "message": "Predeterminado del sistema"
+    },
+    "themeLight": {
+        "message": "Claro"
+    },
+    "themeDark": {
+        "message": "Oscuro"
+    },
+    "contextMenuLabel": {
+        "message": "Mostrar «$ITEM$» en el menú contextual",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Desenfocar las contraseñas hasta pasar el ratón"
+    },
+    "resetSettings": {
+        "message": "Restaurar valores predeterminados"
+    },
+    "settingsReset": {
+        "message": "Ajustes restaurados a los valores predeterminados."
+    },
+    "aboutVersion": {
+        "message": "Versión $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Creado por Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "Código abierto, Licencia Apache 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "Todo se ejecuta en tu dispositivo. Padlock no recopila datos y no envía nada a ningún sitio."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Código fuente, incidencias y actualizaciones"
+    }
+}

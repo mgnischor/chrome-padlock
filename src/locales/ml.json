@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – സുരക്ഷിത പാസ്‌വേഡ് ജനറേറ്റർ"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "ബ്രൗസറിന്റെ സുരക്ഷിത റാൻഡം നമ്പർ ജനറേറ്റർ ഉപയോഗിച്ച് ശക്തമായ പാസ്‌വേഡുകൾ സൃഷ്ടിക്കുക. എല്ലാം നിങ്ങളുടെ ഉപകരണത്തിൽ തന്നെ തുടരും."
+    },
+    "actionTitle": {
+        "message": "Padlock – പാസ്‌വേഡ് സൃഷ്ടിക്കുക"
+    },
+    "commandOpen": {
+        "message": "Padlock തുറക്കുക"
+    },
+    "menuInsertPassword": {
+        "message": "സുരക്ഷിത പാസ്‌വേഡ് ചേർക്കുക"
+    },
+    "tagline": {
+        "message": "സുരക്ഷിത പാസ്‌വേഡ് ജനറേറ്റർ"
+    },
+    "generatedPasswordLabel": {
+        "message": "സൃഷ്ടിച്ച പാസ്‌വേഡ്"
+    },
+    "clickToCopy": {
+        "message": "പകർത്താൻ ക്ലിക്ക് ചെയ്യുക"
+    },
+    "copy": {
+        "message": "പകർത്തുക"
+    },
+    "regenerate": {
+        "message": "വീണ്ടും സൃഷ്ടിക്കുക"
+    },
+    "regenerateTitle": {
+        "message": "പുതിയ പാസ്‌വേഡ് സൃഷ്ടിക്കുക"
+    },
+    "historyButton": {
+        "message": "ചരിത്രം"
+    },
+    "historyButtonTitle": {
+        "message": "അടുത്തിടെ സൃഷ്ടിച്ച $COUNT$ പാസ്‌വേഡുകൾ കാണിക്കുക",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "പാസ്‌വേഡ് ശക്തി"
+    },
+    "strengthLevel0": {
+        "message": "വളരെ ദുർബലം"
+    },
+    "strengthLevel1": {
+        "message": "ദുർബലം"
+    },
+    "strengthLevel2": {
+        "message": "നല്ലത്"
+    },
+    "strengthLevel3": {
+        "message": "ശക്തം"
+    },
+    "strengthLevel4": {
+        "message": "വളരെ ശക്തം"
+    },
+    "entropyBits": {
+        "message": "$BITS$ ബിറ്റ് എൻട്രോപ്പി",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "ഓപ്ഷനുകൾ"
+    },
+    "lengthLabel": {
+        "message": "നീളം"
+    },
+    "lengthSliderLabel": {
+        "message": "പാസ്‌വേഡ് നീളം"
+    },
+    "charactersLegend": {
+        "message": "അക്ഷരങ്ങൾ"
+    },
+    "lowercase": {
+        "message": "ചെറിയ അക്ഷരങ്ങൾ"
+    },
+    "uppercase": {
+        "message": "വലിയ അക്ഷരങ്ങൾ"
+    },
+    "digits": {
+        "message": "അക്കങ്ങൾ"
+    },
+    "symbols": {
+        "message": "ചിഹ്നങ്ങൾ"
+    },
+    "avoidLookalikes": {
+        "message": "സമാനമായി തോന്നുന്ന അക്ഷരങ്ങൾ ഒഴിവാക്കുക"
+    },
+    "excludeCharsLabel": {
+        "message": "അക്ഷരങ്ങൾ ഒഴിവാക്കുക"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "ഉദാ. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "പകർത്തിയ ശേഷം ക്ലിപ്പ്ബോർഡ് മായ്ക്കുക"
+    },
+    "clipboardNever": {
+        "message": "ഒരിക്കലും വേണ്ട"
+    },
+    "clipboard30": {
+        "message": "30 സെക്കൻഡ്"
+    },
+    "clipboard60": {
+        "message": "1 മിനിറ്റ്"
+    },
+    "clipboard120": {
+        "message": "2 മിനിറ്റ്"
+    },
+    "keepHistoryLabel": {
+        "message": "അവസാനത്തെ $COUNT$ പാസ്‌വേഡുകളുടെ ചരിത്രം സൂക്ഷിക്കുക",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "പാസ്‌വേഡുകൾ എൻക്രിപ്റ്റ് ചെയ്യാതെ ബ്രൗസറിന്റെ മെമ്മറിയിൽ മാത്രം സൂക്ഷിക്കുകയും Chrome അടയ്ക്കുമ്പോൾ മായ്ക്കുകയും ചെയ്യും. ഈ ഓപ്ഷൻ ഓഫാക്കിയാൽ ചരിത്രം ഇല്ലാതാകും."
+    },
+    "footer": {
+        "message": "പാസ്‌വേഡുകൾ ബ്രൗസറിന്റെ CSPRNG ഉപയോഗിച്ച് ഉപകരണത്തിൽ തന്നെ സൃഷ്ടിക്കുന്നു; ഒന്നും അയയ്ക്കുന്നില്ല. ചേർക്കാൻ ടെക്സ്റ്റ് ഫീൽഡിൽ റൈറ്റ്-ക്ലിക്ക് ചെയ്യുക."
+    },
+    "historyViewLabel": {
+        "message": "പാസ്‌വേഡ് ചരിത്രം"
+    },
+    "historyHeading": {
+        "message": "ചരിത്രം"
+    },
+    "historyEmpty": {
+        "message": "ഇതുവരെ പാസ്‌വേഡുകളൊന്നുമില്ല."
+    },
+    "back": {
+        "message": "പിന്നോട്ട്"
+    },
+    "historyClear": {
+        "message": "ചരിത്രം മായ്ക്കുക"
+    },
+    "historyCleared": {
+        "message": "ചരിത്രം മായ്ച്ചു."
+    },
+    "statusCopyFailed": {
+        "message": "പകർത്താനായില്ല. പാസ്‌വേഡ് തിരഞ്ഞെടുത്ത് സ്വയം പകർത്തുക."
+    },
+    "statusCopied": {
+        "message": "ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി."
+    },
+    "statusCopiedNoPermission": {
+        "message": "പകർത്തി. സ്വയമേവ മായ്ക്കാൻ ക്ലിപ്പ്ബോർഡ് അനുമതി ആവശ്യമാണ്; അനുമതി നൽകാൻ ഓപ്ഷൻ വീണ്ടും തിരഞ്ഞെടുക്കുക."
+    },
+    "statusCopiedClearIn": {
+        "message": "പകർത്തി. ക്ലിപ്പ്ബോർഡ് $SECONDS$ സെക്കൻഡിനുള്ളിൽ മായ്ക്കും.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "പകർത്തി, പക്ഷേ ക്ലിപ്പ്ബോർഡ് മായ്ക്കൽ ഷെഡ്യൂൾ ചെയ്യാനായില്ല."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "ക്ലിപ്പ്ബോർഡ് സ്വയമേവ മായ്ക്കാൻ ക്ലിപ്പ്ബോർഡ് അനുമതി ആവശ്യമാണ്."
+    },
+    "statusSaveFailed": {
+        "message": "ക്രമീകരണങ്ങൾ സംരക്ഷിക്കാനായില്ല."
+    },
+    "errorGeneric": {
+        "message": "പാസ്‌വേഡ് സൃഷ്ടിക്കാനായില്ല."
+    },
+    "errorInvalidLength": {
+        "message": "നീളം $MIN$ നും $MAX$ നും ഇടയിലായിരിക്കണം.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "കുറഞ്ഞത് ഒരു തരം അക്ഷരമെങ്കിലും തിരഞ്ഞെടുക്കുക."
+    },
+    "errorLengthTooShort": {
+        "message": "നീളം തിരഞ്ഞെടുത്ത അക്ഷര തരങ്ങളുടെ എണ്ണത്തേക്കാൾ കുറവാണ്."
+    },
+    "settingsButtonTitle": {
+        "message": "ക്രമീകരണങ്ങൾ"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock നെക്കുറിച്ച്"
+    },
+    "settingsHeading": {
+        "message": "ക്രമീകരണങ്ങൾ"
+    },
+    "aboutHeading": {
+        "message": "കുറിച്ച്"
+    },
+    "languageLabel": {
+        "message": "ഭാഷ"
+    },
+    "languageAuto": {
+        "message": "സ്വയമേവ (ബ്രൗസർ ഭാഷ)"
+    },
+    "themeLabel": {
+        "message": "തീം"
+    },
+    "themeSystem": {
+        "message": "സിസ്റ്റം ഡിഫോൾട്ട്"
+    },
+    "themeLight": {
+        "message": "ലൈറ്റ്"
+    },
+    "themeDark": {
+        "message": "ഡാർക്ക്"
+    },
+    "contextMenuLabel": {
+        "message": "റൈറ്റ്-ക്ലിക്ക് മെനുവിൽ “$ITEM$” കാണിക്കുക",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "മൗസ് കൊണ്ടുവരുന്നതുവരെ പാസ്‌വേഡുകൾ മങ്ങിക്കുക"
+    },
+    "resetSettings": {
+        "message": "ഡിഫോൾട്ടുകൾ പുനഃസ്ഥാപിക്കുക"
+    },
+    "settingsReset": {
+        "message": "ക്രമീകരണങ്ങൾ ഡിഫോൾട്ടുകളിലേക്ക് പുനഃസ്ഥാപിച്ചു."
+    },
+    "aboutVersion": {
+        "message": "പതിപ്പ് $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "നിർമ്മാതാവ്: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "ഓപ്പൺ സോഴ്സ്, Apache ലൈസൻസ് 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "എല്ലാം നിങ്ങളുടെ ഉപകരണത്തിൽ തന്നെ പ്രവർത്തിക്കുന്നു. Padlock ഡാറ്റ ശേഖരിക്കുന്നില്ല, എവിടെയും ഒന്നും അയയ്ക്കുന്നുമില്ല."
+    },
+    "aboutRepositoryLabel": {
+        "message": "സോഴ്സ് കോഡ്, പ്രശ്നങ്ങൾ, അപ്‌ഡേറ്റുകൾ"
+    }
+}

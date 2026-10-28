@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – سازندهٔ گذرواژهٔ امن"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "با مولد اعداد تصادفی امن مرورگر، گذرواژه‌های قوی و تصادفی بسازید. همه‌چیز روی دستگاه شما می‌ماند."
+    },
+    "actionTitle": {
+        "message": "Padlock – ساخت گذرواژه"
+    },
+    "commandOpen": {
+        "message": "باز کردن Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "درج گذرواژهٔ امن"
+    },
+    "tagline": {
+        "message": "سازندهٔ گذرواژهٔ امن"
+    },
+    "generatedPasswordLabel": {
+        "message": "گذرواژهٔ ساخته‌شده"
+    },
+    "clickToCopy": {
+        "message": "برای کپی کلیک کنید"
+    },
+    "copy": {
+        "message": "کپی"
+    },
+    "regenerate": {
+        "message": "ساخت دوباره"
+    },
+    "regenerateTitle": {
+        "message": "ساخت گذرواژهٔ جدید"
+    },
+    "historyButton": {
+        "message": "تاریخچه"
+    },
+    "historyButtonTitle": {
+        "message": "نمایش $COUNT$ گذرواژهٔ اخیراً ساخته‌شده",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "قدرت گذرواژه"
+    },
+    "strengthLevel0": {
+        "message": "بسیار ضعیف"
+    },
+    "strengthLevel1": {
+        "message": "ضعیف"
+    },
+    "strengthLevel2": {
+        "message": "خوب"
+    },
+    "strengthLevel3": {
+        "message": "قوی"
+    },
+    "strengthLevel4": {
+        "message": "بسیار قوی"
+    },
+    "entropyBits": {
+        "message": "$BITS$ بیت آنتروپی",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "گزینه‌ها"
+    },
+    "lengthLabel": {
+        "message": "طول"
+    },
+    "lengthSliderLabel": {
+        "message": "طول گذرواژه"
+    },
+    "charactersLegend": {
+        "message": "نویسه‌ها"
+    },
+    "lowercase": {
+        "message": "حروف کوچک"
+    },
+    "uppercase": {
+        "message": "حروف بزرگ"
+    },
+    "digits": {
+        "message": "ارقام"
+    },
+    "symbols": {
+        "message": "نمادها"
+    },
+    "avoidLookalikes": {
+        "message": "پرهیز از نویسه‌های شبیه هم"
+    },
+    "excludeCharsLabel": {
+        "message": "حذف نویسه‌ها"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "مثلاً {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "پاک‌کردن کلیپ‌بورد پس از کپی"
+    },
+    "clipboardNever": {
+        "message": "هرگز"
+    },
+    "clipboard30": {
+        "message": "30 ثانیه"
+    },
+    "clipboard60": {
+        "message": "1 دقیقه"
+    },
+    "clipboard120": {
+        "message": "2 دقیقه"
+    },
+    "keepHistoryLabel": {
+        "message": "نگه‌داشتن تاریخچهٔ $COUNT$ گذرواژهٔ آخر",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "گذرواژه‌ها بدون رمزگذاری و فقط در حافظهٔ مرورگر نگه‌داری می‌شوند و با بسته‌شدن Chrome پاک می‌شوند. خاموش‌کردن این گزینه تاریخچه را حذف می‌کند."
+    },
+    "footer": {
+        "message": "گذرواژه‌ها با CSPRNG مرورگر و به‌صورت محلی ساخته می‌شوند. هیچ چیزی به هیچ جا فرستاده نمی‌شود. برای درج گذرواژه روی یک فیلد متنی راست‌کلیک کنید."
+    },
+    "historyViewLabel": {
+        "message": "تاریخچهٔ گذرواژه‌ها"
+    },
+    "historyHeading": {
+        "message": "تاریخچه"
+    },
+    "historyEmpty": {
+        "message": "هنوز گذرواژه‌ای نیست."
+    },
+    "back": {
+        "message": "بازگشت"
+    },
+    "historyClear": {
+        "message": "پاک‌کردن تاریخچه"
+    },
+    "historyCleared": {
+        "message": "تاریخچه پاک شد."
+    },
+    "statusCopyFailed": {
+        "message": "کپی ناموفق بود. گذرواژه را انتخاب و دستی کپی کنید."
+    },
+    "statusCopied": {
+        "message": "در کلیپ‌بورد کپی شد."
+    },
+    "statusCopiedNoPermission": {
+        "message": "کپی شد. پاک‌کردن خودکار به اجازهٔ کلیپ‌بورد نیاز دارد؛ برای دادن اجازه گزینه را دوباره انتخاب کنید."
+    },
+    "statusCopiedClearIn": {
+        "message": "کپی شد. کلیپ‌بورد تا $SECONDS$ ثانیهٔ دیگر پاک می‌شود.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "کپی شد، اما زمان‌بندی پاک‌کردن کلیپ‌بورد انجام نشد."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "برای پاک‌کردن خودکار کلیپ‌بورد، اجازهٔ کلیپ‌بورد لازم است."
+    },
+    "statusSaveFailed": {
+        "message": "تنظیمات ذخیره نشد."
+    },
+    "errorGeneric": {
+        "message": "ساخت گذرواژه ممکن نشد."
+    },
+    "errorInvalidLength": {
+        "message": "طول باید بین $MIN$ و $MAX$ باشد.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "دست‌کم یک نوع نویسه را انتخاب کنید."
+    },
+    "errorLengthTooShort": {
+        "message": "طول کمتر از تعداد انواع نویسهٔ انتخاب‌شده است."
+    },
+    "settingsButtonTitle": {
+        "message": "تنظیمات"
+    },
+    "aboutButtonTitle": {
+        "message": "دربارهٔ Padlock"
+    },
+    "settingsHeading": {
+        "message": "تنظیمات"
+    },
+    "aboutHeading": {
+        "message": "درباره"
+    },
+    "languageLabel": {
+        "message": "زبان"
+    },
+    "languageAuto": {
+        "message": "خودکار (زبان مرورگر)"
+    },
+    "themeLabel": {
+        "message": "زمینه"
+    },
+    "themeSystem": {
+        "message": "پیش‌فرض سیستم"
+    },
+    "themeLight": {
+        "message": "روشن"
+    },
+    "themeDark": {
+        "message": "تیره"
+    },
+    "contextMenuLabel": {
+        "message": "نمایش «$ITEM$» در منوی راست‌کلیک",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "تار کردن گذرواژه‌ها تا زمان قرارگرفتن نشانگر روی آن‌ها"
+    },
+    "resetSettings": {
+        "message": "بازگردانی پیش‌فرض‌ها"
+    },
+    "settingsReset": {
+        "message": "تنظیمات به پیش‌فرض بازگردانده شد."
+    },
+    "aboutVersion": {
+        "message": "نسخهٔ $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "سازنده: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "متن‌باز، مجوز Apache 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "همه‌چیز روی دستگاه شما اجرا می‌شود. Padlock هیچ داده‌ای جمع‌آوری نمی‌کند و هیچ چیزی را به هیچ جا نمی‌فرستد."
+    },
+    "aboutRepositoryLabel": {
+        "message": "کد منبع، مشکلات و به‌روزرسانی‌ها"
+    }
+}

@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – 安全密码生成器"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "使用浏览器的安全随机数生成器，生成强大的随机密码。所有内容都保留在您的设备上。"
+    },
+    "actionTitle": {
+        "message": "Padlock – 生成密码"
+    },
+    "commandOpen": {
+        "message": "打开 Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "插入安全密码"
+    },
+    "tagline": {
+        "message": "安全密码生成器"
+    },
+    "generatedPasswordLabel": {
+        "message": "生成的密码"
+    },
+    "clickToCopy": {
+        "message": "点击复制"
+    },
+    "copy": {
+        "message": "复制"
+    },
+    "regenerate": {
+        "message": "重新生成"
+    },
+    "regenerateTitle": {
+        "message": "生成新密码"
+    },
+    "historyButton": {
+        "message": "历史记录"
+    },
+    "historyButtonTitle": {
+        "message": "显示最近生成的 $COUNT$ 个密码",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "密码强度"
+    },
+    "strengthLevel0": {
+        "message": "非常弱"
+    },
+    "strengthLevel1": {
+        "message": "弱"
+    },
+    "strengthLevel2": {
+        "message": "良好"
+    },
+    "strengthLevel3": {
+        "message": "强"
+    },
+    "strengthLevel4": {
+        "message": "非常强"
+    },
+    "entropyBits": {
+        "message": "$BITS$ 位熵",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "选项"
+    },
+    "lengthLabel": {
+        "message": "长度"
+    },
+    "lengthSliderLabel": {
+        "message": "密码长度"
+    },
+    "charactersLegend": {
+        "message": "字符"
+    },
+    "lowercase": {
+        "message": "小写字母"
+    },
+    "uppercase": {
+        "message": "大写字母"
+    },
+    "digits": {
+        "message": "数字"
+    },
+    "symbols": {
+        "message": "符号"
+    },
+    "avoidLookalikes": {
+        "message": "避免易混淆字符"
+    },
+    "excludeCharsLabel": {
+        "message": "排除字符"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "例如 {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "复制后清空剪贴板"
+    },
+    "clipboardNever": {
+        "message": "从不"
+    },
+    "clipboard30": {
+        "message": "30 秒"
+    },
+    "clipboard60": {
+        "message": "1 分钟"
+    },
+    "clipboard120": {
+        "message": "2 分钟"
+    },
+    "keepHistoryLabel": {
+        "message": "保留最近 $COUNT$ 个密码的历史记录",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "密码以未加密形式仅保存在浏览器内存中，关闭 Chrome 时会被清除。关闭此选项将删除历史记录。"
+    },
+    "footer": {
+        "message": "密码使用浏览器的 CSPRNG 在本地生成，不会发送到任何地方。右键单击文本框即可插入密码。"
+    },
+    "historyViewLabel": {
+        "message": "密码历史记录"
+    },
+    "historyHeading": {
+        "message": "历史记录"
+    },
+    "historyEmpty": {
+        "message": "还没有密码。"
+    },
+    "back": {
+        "message": "返回"
+    },
+    "historyClear": {
+        "message": "清除历史记录"
+    },
+    "historyCleared": {
+        "message": "历史记录已清除。"
+    },
+    "statusCopyFailed": {
+        "message": "复制失败。请选中密码后手动复制。"
+    },
+    "statusCopied": {
+        "message": "已复制到剪贴板。"
+    },
+    "statusCopiedNoPermission": {
+        "message": "已复制。自动清空需要剪贴板权限；请重新选择该选项以授予权限。"
+    },
+    "statusCopiedClearIn": {
+        "message": "已复制。剪贴板将在 $SECONDS$ 秒后清空。",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "已复制，但无法安排清空剪贴板。"
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "自动清空剪贴板需要剪贴板权限。"
+    },
+    "statusSaveFailed": {
+        "message": "无法保存设置。"
+    },
+    "errorGeneric": {
+        "message": "无法生成密码。"
+    },
+    "errorInvalidLength": {
+        "message": "长度必须在 $MIN$ 到 $MAX$ 之间。",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "请至少选择一种字符类型。"
+    },
+    "errorLengthTooShort": {
+        "message": "长度小于所选字符类型的数量。"
+    },
+    "settingsButtonTitle": {
+        "message": "设置"
+    },
+    "aboutButtonTitle": {
+        "message": "关于 Padlock"
+    },
+    "settingsHeading": {
+        "message": "设置"
+    },
+    "aboutHeading": {
+        "message": "关于"
+    },
+    "languageLabel": {
+        "message": "语言"
+    },
+    "languageAuto": {
+        "message": "自动（浏览器语言）"
+    },
+    "themeLabel": {
+        "message": "主题"
+    },
+    "themeSystem": {
+        "message": "跟随系统"
+    },
+    "themeLight": {
+        "message": "浅色"
+    },
+    "themeDark": {
+        "message": "深色"
+    },
+    "contextMenuLabel": {
+        "message": "在右键菜单中显示“$ITEM$”",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "鼠标悬停前模糊密码"
+    },
+    "resetSettings": {
+        "message": "恢复默认设置"
+    },
+    "settingsReset": {
+        "message": "设置已恢复为默认值。"
+    },
+    "aboutVersion": {
+        "message": "版本 $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "作者：Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "开源，Apache 许可证 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "一切都在您的设备上运行。Padlock 不收集数据，也不向任何地方发送任何内容。"
+    },
+    "aboutRepositoryLabel": {
+        "message": "源代码、问题反馈与更新"
+    }
+}

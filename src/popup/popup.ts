@@ -23,9 +23,26 @@ import { classifyStrength } from "../core/entropy";
 import { analyze, generatePassword, GeneratorError, MAX_LENGTH, MIN_LENGTH } from "../core/generator";
 import { sha256Hex } from "../shared/hash";
 import { HISTORY_LIMIT, clearHistory, loadHistory, recordPassword } from "../shared/history";
-import { applyTranslations, t, uiLanguage, type MessageKey } from "../shared/i18n";
+import {
+    applyTranslations,
+    browserLanguage,
+    languageTag,
+    setLanguage,
+    t,
+    textDirection,
+    type MessageKey,
+    type Substitutions,
+} from "../shared/i18n";
+import { LOCALES } from "../shared/locales";
 import { CLIPBOARD_PERMISSIONS, type ScheduleClipboardClearMessage } from "../shared/messages";
-import { MAX_EXCLUDE_CHARS, loadSettings, sanitizeSettings, saveSettings, type Settings } from "../shared/settings";
+import {
+    DEFAULT_SETTINGS,
+    MAX_EXCLUDE_CHARS,
+    loadSettings,
+    sanitizeSettings,
+    saveSettings,
+    type Settings,
+} from "../shared/settings";
 
 /** Delay before persisting, so dragging the slider does not hammer storage.sync. */
 const SAVE_DEBOUNCE_MS = 400;
@@ -38,6 +55,9 @@ const STRENGTH_MESSAGES = [
     "strengthLevel3",
     "strengthLevel4",
 ] as const satisfies readonly MessageKey[];
+
+/** The screens of the popup. Only one is visible at a time. */
+type View = "main" | "history" | "settings" | "about";
 
 /**
  * Finds an element by id.
@@ -69,8 +89,8 @@ const ui = {
     symbols: el<HTMLInputElement>("symbols"),
     ambiguous: el<HTMLInputElement>("ambiguous"),
     exclude: el<HTMLInputElement>("exclude"),
-    clipboardClear: el<HTMLSelectElement>("clipboard-clear"),
-    keepHistory: el<HTMLInputElement>("keep-history"),
+    settingsOpen: el<HTMLButtonElement>("settings-open"),
+    aboutOpen: el<HTMLButtonElement>("about-open"),
     mainView: el<HTMLElement>("main-view"),
     historyView: el<HTMLElement>("history-view"),
     historyOpen: el<HTMLButtonElement>("history-open"),
@@ -80,9 +100,30 @@ const ui = {
     historyCount: el<HTMLElement>("history-count"),
     historyEmpty: el<HTMLElement>("history-empty"),
     historyStatus: el<HTMLElement>("history-status"),
+    settingsView: el<HTMLElement>("settings-view"),
+    settingsBack: el<HTMLButtonElement>("settings-back"),
+    settingsReset: el<HTMLButtonElement>("settings-reset"),
+    settingsStatus: el<HTMLElement>("settings-status"),
+    language: el<HTMLSelectElement>("language"),
+    theme: el<HTMLSelectElement>("theme"),
+    clipboardClear: el<HTMLSelectElement>("clipboard-clear"),
+    keepHistory: el<HTMLInputElement>("keep-history"),
+    contextMenu: el<HTMLInputElement>("context-menu"),
+    maskPasswords: el<HTMLInputElement>("mask-passwords"),
+    aboutView: el<HTMLElement>("about-view"),
+    aboutBack: el<HTMLButtonElement>("about-back"),
+};
+
+/** The view each screen lives in, and the status line it shows messages on. */
+const VIEWS: Record<View, { element: HTMLElement; status: HTMLElement }> = {
+    main: { element: ui.mainView, status: ui.status },
+    history: { element: ui.historyView, status: ui.historyStatus },
+    settings: { element: ui.settingsView, status: ui.settingsStatus },
+    about: { element: ui.aboutView, status: ui.status },
 };
 
 let settings: Settings;
+let currentView: View = "main";
 /** Status line of whichever view is showing. */
 let activeStatus: HTMLElement = ui.status;
 /** Serialises history writes so quick successive changes cannot overwrite each other. */
@@ -160,7 +201,7 @@ function renderStrength(): void {
  * Turns a generator failure into a localized message.
  *
  * @param error - Value thrown by the generator.
- * @returns A message for the user in the browser's UI language.
+ * @returns A message for the user in the active language.
  */
 function describeError(error: unknown): string {
     if (!(error instanceof GeneratorError)) return t("errorGeneric");
@@ -197,6 +238,55 @@ function scheduleSave(): void {
     }, SAVE_DEBOUNCE_MS);
 }
 
+/** Applies the theme setting: the stylesheet reads it from the root element. */
+function applyTheme(): void {
+    document.documentElement.dataset.theme = settings.theme;
+}
+
+/** Applies the "blur passwords" setting: the stylesheet reads it from the root element. */
+function applyMask(): void {
+    document.documentElement.dataset.mask = String(settings.maskPasswords);
+}
+
+/**
+ * Values that fill the `$1` placeholders of the messages shown in the page's static text.
+ *
+ * @returns Substitutions by message key, for {@link applyTranslations}.
+ */
+function substitutions(): Partial<Record<MessageKey, Substitutions>> {
+    return {
+        historyButtonTitle: String(HISTORY_LIMIT),
+        keepHistoryLabel: String(HISTORY_LIMIT),
+        contextMenuLabel: t("menuInsertPassword"),
+        aboutVersion: chrome.runtime.getManifest().version,
+    };
+}
+
+/**
+ * Switches the whole interface to the language in the settings: the page's language and reading
+ * direction, every translated text, and the texts that are built in code.
+ */
+function refreshLanguage(): void {
+    setLanguage(settings.language, browserLanguage());
+    document.documentElement.lang = languageTag();
+    document.documentElement.dir = textDirection();
+    applyTranslations(document, substitutions());
+    renderStrength();
+    if (current === null) regenerate();
+    if (currentView === "history") void renderHistory();
+}
+
+/** Fills the language selector with every supported language, each named in its own language. */
+function populateLanguages(): void {
+    for (const locale of LOCALES) {
+        const option = document.createElement("option");
+        option.value = locale.code;
+        option.textContent = locale.name;
+        option.lang = locale.tag;
+        ui.language.append(option);
+    }
+}
+
 /** Pushes the current settings into the form controls. */
 function renderForm(): void {
     ui.lengthRange.value = String(settings.length);
@@ -207,8 +297,12 @@ function renderForm(): void {
     ui.symbols.checked = settings.symbols;
     ui.ambiguous.checked = settings.excludeAmbiguous;
     ui.exclude.value = settings.excludeChars;
+    ui.language.value = settings.language;
+    ui.theme.value = settings.theme;
     ui.clipboardClear.value = String(settings.clipboardClearSeconds);
     ui.keepHistory.checked = settings.keepHistory;
+    ui.contextMenu.checked = settings.contextMenu;
+    ui.maskPasswords.checked = settings.maskPasswords;
     ui.historyOpen.hidden = !settings.keepHistory;
 }
 
@@ -233,13 +327,13 @@ async function onKeepHistoryChanged(): Promise<void> {
 }
 
 /**
- * Formats a history timestamp for the browser's UI language.
+ * Formats a history timestamp for the active language.
  *
  * @param timestamp - Unix time in milliseconds.
  * @returns A short date and time such as `23/10/2026, 15:42:02`.
  */
 function formatTime(timestamp: number): string {
-    return new Date(timestamp).toLocaleString(uiLanguage(), { dateStyle: "short", timeStyle: "medium" });
+    return new Date(timestamp).toLocaleString(languageTag(), { dateStyle: "short", timeStyle: "medium" });
 }
 
 /** Reloads the history from storage and redraws the list. */
@@ -277,16 +371,16 @@ async function renderHistory(): Promise<void> {
 }
 
 /**
- * Switches between the generator and the history view.
+ * Shows one screen of the popup and hides the others.
  *
- * @param visible - `true` to show the history, `false` to return to the generator.
+ * @param view - The screen to show.
  */
-function showHistory(visible: boolean): void {
-    ui.mainView.hidden = visible;
-    ui.historyView.hidden = !visible;
-    activeStatus = visible ? ui.historyStatus : ui.status;
+function showView(view: View): void {
+    currentView = view;
+    for (const [name, { element }] of Object.entries(VIEWS)) element.hidden = name !== view;
+    activeStatus = VIEWS[view].status;
     setStatus("");
-    if (visible) void renderHistory();
+    if (view === "history") void renderHistory();
 }
 
 /** Deletes the whole history and refreshes the list. */
@@ -305,6 +399,7 @@ async function onClearHistory(): Promise<void> {
 function onOptionsChanged(source?: "range" | "number"): void {
     const rawLength = source === "number" ? ui.lengthNumber.value : ui.lengthRange.value;
     settings = sanitizeSettings({
+        ...settings,
         length: rawLength === "" ? settings.length : Number(rawLength),
         lowercase: ui.lowercase.checked,
         uppercase: ui.uppercase.checked,
@@ -312,8 +407,6 @@ function onOptionsChanged(source?: "range" | "number"): void {
         symbols: ui.symbols.checked,
         excludeAmbiguous: ui.ambiguous.checked,
         excludeChars: ui.exclude.value,
-        clipboardClearSeconds: settings.clipboardClearSeconds,
-        keepHistory: settings.keepHistory,
     });
     // Keep the two length controls in sync. Skip the field being typed in so
     // that clearing it to type a new number is not overwritten mid-edit.
@@ -321,6 +414,50 @@ function onOptionsChanged(source?: "range" | "number"): void {
     if (source !== "number") ui.lengthNumber.value = String(settings.length);
     regenerate();
     scheduleSave();
+}
+
+/** Applies the language selector: every text of the popup switches immediately. */
+function onLanguageChanged(): void {
+    settings = sanitizeSettings({ ...settings, language: ui.language.value });
+    refreshLanguage();
+    scheduleSave();
+}
+
+/** Applies the theme selector. */
+function onThemeChanged(): void {
+    settings = sanitizeSettings({ ...settings, theme: ui.theme.value });
+    applyTheme();
+    scheduleSave();
+}
+
+/** Applies the "right-click menu" checkbox. The service worker adds or removes the menu item when the setting is saved. */
+function onContextMenuChanged(): void {
+    settings = sanitizeSettings({ ...settings, contextMenu: ui.contextMenu.checked });
+    scheduleSave();
+}
+
+/** Applies the "blur passwords" checkbox. */
+function onMaskChanged(): void {
+    settings = sanitizeSettings({ ...settings, maskPasswords: ui.maskPasswords.checked });
+    applyMask();
+    scheduleSave();
+}
+
+/** Restores every setting to its default, including the language and theme, and deletes the history. */
+async function onResetSettings(): Promise<void> {
+    const hadHistory = settings.keepHistory;
+    settings = { ...DEFAULT_SETTINGS };
+    renderForm();
+    applyTheme();
+    applyMask();
+    refreshLanguage();
+    regenerate();
+    scheduleSave();
+    if (hadHistory) {
+        await historyQueue;
+        await clearHistory();
+    }
+    setStatus(t("settingsReset"), false, 3000);
 }
 
 /**
@@ -410,11 +547,24 @@ function bindEvents(): void {
     }
     ui.exclude.addEventListener("input", () => onOptionsChanged());
     ui.exclude.addEventListener("change", recordCurrent);
+
+    ui.language.addEventListener("change", onLanguageChanged);
+    ui.theme.addEventListener("change", onThemeChanged);
     ui.clipboardClear.addEventListener("change", () => void onClipboardClearChanged());
     ui.keepHistory.addEventListener("change", () => void onKeepHistoryChanged());
+    ui.contextMenu.addEventListener("change", onContextMenuChanged);
+    ui.maskPasswords.addEventListener("change", onMaskChanged);
+    ui.settingsReset.addEventListener("click", () => void onResetSettings());
 
-    ui.historyOpen.addEventListener("click", () => showHistory(true));
-    ui.historyBack.addEventListener("click", () => showHistory(false));
+    ui.settingsOpen.addEventListener("click", () => showView("settings"));
+    ui.aboutOpen.addEventListener("click", () => showView("about"));
+    ui.historyOpen.addEventListener("click", () => showView("history"));
+    for (const back of [ui.historyBack, ui.settingsBack, ui.aboutBack]) {
+        back.addEventListener("click", () => showView("main"));
+    }
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && currentView !== "main") showView("main");
+    });
     ui.historyClear.addEventListener("click", () => void onClearHistory());
 
     ui.regenerate.addEventListener("click", () => {
@@ -431,23 +581,27 @@ function bindEvents(): void {
     });
 }
 
-/** Localizes the page, loads the settings and shows the first password. */
+/** Loads the settings, applies the saved language and theme, and shows the first password. */
 async function init(): Promise<void> {
-    document.documentElement.lang = uiLanguage();
-    applyTranslations(document, {
-        historyButtonTitle: String(HISTORY_LIMIT),
-        keepHistoryLabel: String(HISTORY_LIMIT),
-    });
+    try {
+        settings = await loadSettings();
+        populateLanguages();
+        applyTheme();
+        applyMask();
+        refreshLanguage();
 
-    ui.lengthRange.min = ui.lengthNumber.min = String(MIN_LENGTH);
-    ui.lengthRange.max = ui.lengthNumber.max = String(MAX_LENGTH);
-    ui.exclude.maxLength = MAX_EXCLUDE_CHARS;
+        ui.lengthRange.min = ui.lengthNumber.min = String(MIN_LENGTH);
+        ui.lengthRange.max = ui.lengthNumber.max = String(MAX_LENGTH);
+        ui.exclude.maxLength = MAX_EXCLUDE_CHARS;
 
-    settings = await loadSettings();
-    renderForm();
-    bindEvents();
-    regenerate();
-    recordCurrent();
+        renderForm();
+        bindEvents();
+        regenerate();
+        recordCurrent();
+    } finally {
+        // The page stays hidden until the language and theme are applied; see popup.css.
+        document.documentElement.classList.add("ready");
+    }
 }
 
 void init();

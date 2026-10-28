@@ -32,6 +32,49 @@
                 <img src="icons/icon-32.png" alt="" width="24" height="24" />
                 <h1>Padlock</h1>
                 <span class="tagline" data-i18n="tagline">Secure password generator</span>
+                <button
+                    id="settings-open"
+                    type="button"
+                    class="icon-button"
+                    title="Settings"
+                    aria-label="Settings"
+                    data-i18n-title="settingsButtonTitle"
+                    data-i18n-aria-label="settingsButtonTitle"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <mask id="gear-hole">
+                            <rect width="24" height="24" fill="#fff" />
+                            <circle cx="12" cy="12" r="3.2" fill="#000" />
+                        </mask>
+                        <g mask="url(#gear-hole)">
+                            <circle cx="12" cy="12" r="6.6" />
+                            <rect x="10.4" y="2" width="3.2" height="5" rx="1" />
+                            <rect x="10.4" y="2" width="3.2" height="5" rx="1" transform="rotate(45 12 12)" />
+                            <rect x="10.4" y="2" width="3.2" height="5" rx="1" transform="rotate(90 12 12)" />
+                            <rect x="10.4" y="2" width="3.2" height="5" rx="1" transform="rotate(135 12 12)" />
+                            <rect x="10.4" y="2" width="3.2" height="5" rx="1" transform="rotate(180 12 12)" />
+                            <rect x="10.4" y="2" width="3.2" height="5" rx="1" transform="rotate(225 12 12)" />
+                            <rect x="10.4" y="2" width="3.2" height="5" rx="1" transform="rotate(270 12 12)" />
+                            <rect x="10.4" y="2" width="3.2" height="5" rx="1" transform="rotate(315 12 12)" />
+                        </g>
+                    </svg>
+                </button>
+                <button
+                    id="about-open"
+                    type="button"
+                    class="icon-button"
+                    title="About Padlock"
+                    aria-label="About Padlock"
+                    data-i18n-title="aboutButtonTitle"
+                    data-i18n-aria-label="aboutButtonTitle"
+                >
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <path
+                            fill-rule="evenodd"
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+                        />
+                    </svg>
+                </button>
             </header>
 
             <div id="main-view" class="layout">
@@ -140,31 +183,82 @@
                             <code>0 O 1 l I |</code>
                         </label>
 
-                        <div class="field-pair">
-                            <div class="field">
-                                <label for="exclude" data-i18n="excludeCharsLabel">Exclude characters</label>
-                                <input
-                                    id="exclude"
-                                    type="text"
-                                    autocomplete="off"
-                                    spellcheck="false"
-                                    placeholder="e.g. {}[]"
-                                    data-i18n-placeholder="excludeCharsPlaceholder"
-                                />
-                            </div>
-                            <div class="field">
-                                <label for="clipboard-clear" data-i18n="clipboardClearLabel"
-                                    >Clear clipboard after copying</label
-                                >
-                                <select id="clipboard-clear">
-                                    <option value="0" data-i18n="clipboardNever">Never</option>
-                                    <option value="30" data-i18n="clipboard30">30 seconds</option>
-                                    <option value="60" data-i18n="clipboard60">1 minute</option>
-                                    <option value="120" data-i18n="clipboard120">2 minutes</option>
-                                </select>
-                            </div>
+                        <div class="field">
+                            <label for="exclude" data-i18n="excludeCharsLabel">Exclude characters</label>
+                            <input
+                                id="exclude"
+                                type="text"
+                                autocomplete="off"
+                                spellcheck="false"
+                                placeholder="e.g. {}[]"
+                                data-i18n-placeholder="excludeCharsPlaceholder"
+                            />
                         </div>
+                    </section>
+                </div>
+            </div>
 
+            <section
+                id="history-view"
+                class="card view"
+                aria-label="Password history"
+                data-i18n-aria-label="historyViewLabel"
+                hidden
+            >
+                <div class="view-head">
+                    <button id="history-back" type="button" class="primary" data-i18n="back">Back</button>
+                    <h2 data-i18n="historyHeading">History</h2>
+                    <span id="history-count" class="muted"></span>
+                    <span class="spacer"></span>
+                    <button id="history-clear" type="button" data-i18n="historyClear">Clear history</button>
+                </div>
+                <p id="history-empty" class="muted" data-i18n="historyEmpty" hidden>No passwords yet.</p>
+                <ol id="history-list" class="history-list"></ol>
+                <p id="history-status" class="status" role="status" aria-live="polite"></p>
+            </section>
+
+            <section
+                id="settings-view"
+                class="card view"
+                aria-label="Settings"
+                data-i18n-aria-label="settingsHeading"
+                hidden
+            >
+                <div class="view-head">
+                    <button id="settings-back" type="button" class="primary" data-i18n="back">Back</button>
+                    <h2 data-i18n="settingsHeading">Settings</h2>
+                    <span class="spacer"></span>
+                    <button id="settings-reset" type="button" data-i18n="resetSettings">Restore defaults</button>
+                </div>
+                <div class="settings-grid">
+                    <div class="settings-column">
+                        <div class="field">
+                            <label for="language" data-i18n="languageLabel">Language</label>
+                            <select id="language">
+                                <option value="auto" data-i18n="languageAuto">Automatic (browser language)</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="theme" data-i18n="themeLabel">Theme</label>
+                            <select id="theme">
+                                <option value="system" data-i18n="themeSystem">System default</option>
+                                <option value="light" data-i18n="themeLight">Light</option>
+                                <option value="dark" data-i18n="themeDark">Dark</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="clipboard-clear" data-i18n="clipboardClearLabel"
+                                >Clear clipboard after copying</label
+                            >
+                            <select id="clipboard-clear">
+                                <option value="0" data-i18n="clipboardNever">Never</option>
+                                <option value="30" data-i18n="clipboard30">30 seconds</option>
+                                <option value="60" data-i18n="clipboard60">1 minute</option>
+                                <option value="120" data-i18n="clipboard120">2 minutes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="settings-column">
                         <div class="field">
                             <label class="check">
                                 <input id="keep-history" type="checkbox" />
@@ -175,27 +269,66 @@
                                 closes. Turning this off deletes the history.
                             </p>
                         </div>
-                    </section>
+                        <label class="check">
+                            <input id="context-menu" type="checkbox" />
+                            <span data-i18n="contextMenuLabel"
+                                >Show “Insert secure password” in the right-click menu</span
+                            >
+                        </label>
+                        <label class="check">
+                            <input id="mask-passwords" type="checkbox" />
+                            <span data-i18n="maskPasswordsLabel">Blur passwords until hovered</span>
+                        </label>
+                    </div>
                 </div>
-            </div>
+                <p id="settings-status" class="status" role="status" aria-live="polite"></p>
+            </section>
 
             <section
-                id="history-view"
-                class="card history"
-                aria-label="Password history"
-                data-i18n-aria-label="historyViewLabel"
+                id="about-view"
+                class="card view"
+                aria-label="About Padlock"
+                data-i18n-aria-label="aboutButtonTitle"
                 hidden
             >
-                <div class="history-head">
-                    <button id="history-back" type="button" class="primary" data-i18n="historyBack">Back</button>
-                    <h2 data-i18n="historyHeading">History</h2>
-                    <span id="history-count" class="muted"></span>
-                    <span class="spacer"></span>
-                    <button id="history-clear" type="button" data-i18n="historyClear">Clear history</button>
+                <div class="view-head">
+                    <button id="about-back" type="button" class="primary" data-i18n="back">Back</button>
+                    <h2 data-i18n="aboutHeading">About</h2>
                 </div>
-                <p id="history-empty" class="muted" data-i18n="historyEmpty" hidden>No passwords yet.</p>
-                <ol id="history-list" class="history-list"></ol>
-                <p id="history-status" class="status" role="status" aria-live="polite"></p>
+                <div class="about-body">
+                    <div class="about-identity">
+                        <img src="icons/icon-128.png" alt="" width="64" height="64" />
+                        <h3>Padlock</h3>
+                        <p id="about-version" class="muted" data-i18n="aboutVersion">Version 1.0.0</p>
+                        <p class="muted" data-i18n="aboutAuthor">Created by Miguel Nischor</p>
+                        <p class="muted" data-i18n="aboutLicense">Open source, Apache License 2.0</p>
+                    </div>
+                    <div class="about-details">
+                        <p data-i18n="extDescription">
+                            Generate strong, random passwords with your browser's secure random number generator.
+                            Everything stays on your device.
+                        </p>
+                        <p data-i18n="aboutPrivacy">
+                            Everything runs on your device. Padlock collects no data and sends nothing anywhere.
+                        </p>
+                        <p class="muted" data-i18n="aboutRepositoryLabel">Source code, issues and updates</p>
+                        <a
+                            id="about-link"
+                            class="link-button"
+                            href="https://github.com/mgnischor/chrome-padlock"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <svg viewBox="0 0 16 16" aria-hidden="true">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+                                />
+                            </svg>
+                            <span>github.com/mgnischor/chrome-padlock</span>
+                        </a>
+                    </div>
+                </div>
             </section>
         </main>
         <script src="popup.js"></script>

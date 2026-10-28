@@ -32,6 +32,7 @@ import { mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { listFiles } from "./files.mjs";
+import { MANIFEST_LOCALES } from "./manifest-locales.mjs";
 import { createZip } from "./zip.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -97,6 +98,8 @@ async function verify(files, version) {
     }
 
     for (const file of files) {
+        const locale = file.match(/^_locales\/([^/]+)\//)?.[1];
+        if (locale && !MANIFEST_LOCALES.includes(locale)) problems.push(`locale folder Chrome does not support: ${locale}`);
         if (FORBIDDEN_FILES.test(file)) problems.push(`development file in the package: ${file}`);
         if (file.endsWith(".html")) {
             const html = await readFile(path.join(dist, file), "utf8");

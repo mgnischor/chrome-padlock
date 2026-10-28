@@ -28,6 +28,7 @@ import { minifyCss, minifyHtml, minifyJson, stripTranslatorNotes } from "../scri
 import { createZip } from "../scripts/zip.mjs";
 
 const PUBLIC_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "public");
+const SOURCE_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "src");
 
 /**
  * Reads a file of the `public` folder.
@@ -132,8 +133,8 @@ describe("minifyJson / stripTranslatorNotes", () => {
     });
 
     it("keeps every message and placeholder of the real locales", () => {
-        for (const locale of ["en_US", "pt_BR", "es"]) {
-            const original = JSON.parse(readPublic(`_locales/${locale}/messages.json`));
+        for (const locale of ["en_US", "pt_BR", "es", "ja", "ar"]) {
+            const original = JSON.parse(readFileSync(path.join(SOURCE_DIR, "locales", `${locale}.json`), "utf8"));
             const stripped = stripTranslatorNotes(original) as Record<string, any>;
             expect(Object.keys(stripped)).toEqual(Object.keys(original));
             for (const [key, entry] of Object.entries<any>(original)) {

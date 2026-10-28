@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – సురక్షిత పాస్‌వర్డ్ జనరేటర్"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "బ్రౌజర్ సురక్షిత యాదృచ్ఛిక సంఖ్యా జనరేటర్‌తో బలమైన, యాదృచ్ఛిక పాస్‌వర్డ్‌లను సృష్టించండి. ప్రతిదీ మీ పరికరంలోనే ఉంటుంది."
+    },
+    "actionTitle": {
+        "message": "Padlock – పాస్‌వర్డ్‌ను సృష్టించండి"
+    },
+    "commandOpen": {
+        "message": "Padlock తెరవండి"
+    },
+    "menuInsertPassword": {
+        "message": "సురక్షిత పాస్‌వర్డ్‌ను చొప్పించండి"
+    },
+    "tagline": {
+        "message": "సురక్షిత పాస్‌వర్డ్ జనరేటర్"
+    },
+    "generatedPasswordLabel": {
+        "message": "సృష్టించిన పాస్‌వర్డ్"
+    },
+    "clickToCopy": {
+        "message": "కాపీ చేయడానికి క్లిక్ చేయండి"
+    },
+    "copy": {
+        "message": "కాపీ చేయి"
+    },
+    "regenerate": {
+        "message": "మళ్లీ సృష్టించు"
+    },
+    "regenerateTitle": {
+        "message": "కొత్త పాస్‌వర్డ్‌ను సృష్టించండి"
+    },
+    "historyButton": {
+        "message": "చరిత్ర"
+    },
+    "historyButtonTitle": {
+        "message": "ఇటీవల సృష్టించిన $COUNT$ పాస్‌వర్డ్‌లను చూపించు",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "పాస్‌వర్డ్ బలం"
+    },
+    "strengthLevel0": {
+        "message": "చాలా బలహీనం"
+    },
+    "strengthLevel1": {
+        "message": "బలహీనం"
+    },
+    "strengthLevel2": {
+        "message": "మంచిది"
+    },
+    "strengthLevel3": {
+        "message": "బలమైనది"
+    },
+    "strengthLevel4": {
+        "message": "చాలా బలమైనది"
+    },
+    "entropyBits": {
+        "message": "$BITS$ బిట్ల ఎంట్రోపీ",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "ఎంపికలు"
+    },
+    "lengthLabel": {
+        "message": "పొడవు"
+    },
+    "lengthSliderLabel": {
+        "message": "పాస్‌వర్డ్ పొడవు"
+    },
+    "charactersLegend": {
+        "message": "అక్షరాలు"
+    },
+    "lowercase": {
+        "message": "చిన్న అక్షరాలు"
+    },
+    "uppercase": {
+        "message": "పెద్ద అక్షరాలు"
+    },
+    "digits": {
+        "message": "అంకెలు"
+    },
+    "symbols": {
+        "message": "చిహ్నాలు"
+    },
+    "avoidLookalikes": {
+        "message": "ఒకేలా కనిపించే అక్షరాలను నివారించండి"
+    },
+    "excludeCharsLabel": {
+        "message": "అక్షరాలను మినహాయించండి"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "ఉదా. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "కాపీ చేసిన తర్వాత క్లిప్‌బోర్డ్‌ను క్లియర్ చేయండి"
+    },
+    "clipboardNever": {
+        "message": "ఎప్పుడూ కాదు"
+    },
+    "clipboard30": {
+        "message": "30 సెకన్లు"
+    },
+    "clipboard60": {
+        "message": "1 నిమిషం"
+    },
+    "clipboard120": {
+        "message": "2 నిమిషాలు"
+    },
+    "keepHistoryLabel": {
+        "message": "చివరి $COUNT$ పాస్‌వర్డ్‌ల చరిత్రను ఉంచండి",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "పాస్‌వర్డ్‌లు ఎన్‌క్రిప్ట్ చేయకుండా బ్రౌజర్ మెమరీలో మాత్రమే ఉంటాయి మరియు Chrome మూసివేసినప్పుడు తొలగించబడతాయి. ఈ ఎంపికను ఆపివేస్తే చరిత్ర తొలగించబడుతుంది."
+    },
+    "footer": {
+        "message": "పాస్‌వర్డ్‌లు బ్రౌజర్ CSPRNGతో స్థానికంగా సృష్టించబడతాయి. ఏదీ ఎక్కడికీ పంపబడదు. పాస్‌వర్డ్ చొప్పించడానికి టెక్స్ట్ ఫీల్డ్‌పై రైట్-క్లిక్ చేయండి."
+    },
+    "historyViewLabel": {
+        "message": "పాస్‌వర్డ్ చరిత్ర"
+    },
+    "historyHeading": {
+        "message": "చరిత్ర"
+    },
+    "historyEmpty": {
+        "message": "ఇంకా పాస్‌వర్డ్‌లు లేవు."
+    },
+    "back": {
+        "message": "వెనుకకు"
+    },
+    "historyClear": {
+        "message": "చరిత్రను క్లియర్ చేయండి"
+    },
+    "historyCleared": {
+        "message": "చరిత్ర క్లియర్ చేయబడింది."
+    },
+    "statusCopyFailed": {
+        "message": "కాపీ చేయడం విఫలమైంది. పాస్‌వర్డ్‌ను ఎంచుకుని మాన్యువల్‌గా కాపీ చేయండి."
+    },
+    "statusCopied": {
+        "message": "క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది."
+    },
+    "statusCopiedNoPermission": {
+        "message": "కాపీ చేయబడింది. ఆటోమేటిక్‌గా క్లియర్ చేయడానికి క్లిప్‌బోర్డ్ అనుమతి అవసరం; అనుమతి ఇవ్వడానికి ఎంపికను మళ్లీ ఎంచుకోండి."
+    },
+    "statusCopiedClearIn": {
+        "message": "కాపీ చేయబడింది. క్లిప్‌బోర్డ్ $SECONDS$ సెకన్లలో క్లియర్ అవుతుంది.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "కాపీ చేయబడింది, కానీ క్లిప్‌బోర్డ్ క్లియర్ చేయడాన్ని షెడ్యూల్ చేయలేకపోయాము."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "క్లిప్‌బోర్డ్‌ను ఆటోమేటిక్‌గా క్లియర్ చేయడానికి క్లిప్‌బోర్డ్ అనుమతి అవసరం."
+    },
+    "statusSaveFailed": {
+        "message": "సెట్టింగ్‌లను సేవ్ చేయడం సాధ్యం కాలేదు."
+    },
+    "errorGeneric": {
+        "message": "పాస్‌వర్డ్‌ను సృష్టించడం సాధ్యం కాలేదు."
+    },
+    "errorInvalidLength": {
+        "message": "పొడవు $MIN$ మరియు $MAX$ మధ్య ఉండాలి.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "కనీసం ఒక అక్షర రకాన్ని ఎంచుకోండి."
+    },
+    "errorLengthTooShort": {
+        "message": "పొడవు ఎంచుకున్న అక్షర రకాల సంఖ్య కంటే తక్కువగా ఉంది."
+    },
+    "settingsButtonTitle": {
+        "message": "సెట్టింగ్‌లు"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock గురించి"
+    },
+    "settingsHeading": {
+        "message": "సెట్టింగ్‌లు"
+    },
+    "aboutHeading": {
+        "message": "గురించి"
+    },
+    "languageLabel": {
+        "message": "భాష"
+    },
+    "languageAuto": {
+        "message": "ఆటోమేటిక్ (బ్రౌజర్ భాష)"
+    },
+    "themeLabel": {
+        "message": "థీమ్"
+    },
+    "themeSystem": {
+        "message": "సిస్టమ్ డిఫాల్ట్"
+    },
+    "themeLight": {
+        "message": "లైట్"
+    },
+    "themeDark": {
+        "message": "డార్క్"
+    },
+    "contextMenuLabel": {
+        "message": "రైట్-క్లిక్ మెనులో “$ITEM$” చూపించు",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "మౌస్ పెట్టే వరకు పాస్‌వర్డ్‌లను అస్పష్టంగా ఉంచండి"
+    },
+    "resetSettings": {
+        "message": "డిఫాల్ట్‌లను పునరుద్ధరించు"
+    },
+    "settingsReset": {
+        "message": "సెట్టింగ్‌లు డిఫాల్ట్‌లకు పునరుద్ధరించబడ్డాయి."
+    },
+    "aboutVersion": {
+        "message": "వెర్షన్ $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "రూపకర్త: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "ఓపెన్ సోర్స్, Apache లైసెన్స్ 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "ప్రతిదీ మీ పరికరంలోనే నడుస్తుంది. Padlock ఎలాంటి డేటాను సేకరించదు, ఎక్కడికీ ఏమీ పంపదు."
+    },
+    "aboutRepositoryLabel": {
+        "message": "సోర్స్ కోడ్, సమస్యలు మరియు అప్‌డేట్‌లు"
+    }
+}

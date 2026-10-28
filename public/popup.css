@@ -18,6 +18,11 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
+
+/*
+ * Theme. Light is the default. Dark applies when the system prefers it (data-theme="system", or no
+ * attribute) or when the user forces it (data-theme="dark"); data-theme="light" always wins.
+ */
 :root {
     color-scheme: light dark;
     --bg: #f4f5f9;
@@ -38,8 +43,12 @@
     --level-4: #0f8a4f;
 }
 
+:root[data-theme="light"] {
+    color-scheme: light;
+}
+
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --bg: #14151c;
         --card: #1e2029;
         --text: #eceef5;
@@ -59,11 +68,31 @@
     }
 }
 
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #14151c;
+    --card: #1e2029;
+    --text: #eceef5;
+    --muted: #9aa0b4;
+    --border: #2f3240;
+    --accent: #7b74ff;
+    --accent-text: #0e0f16;
+    --digit: #6cb2ff;
+    --symbol: #ffa65c;
+    --danger: #ff7b80;
+    --meter-off: #333646;
+    --level-0: #ff6257;
+    --level-1: #ff9a3d;
+    --level-2: #e6c027;
+    --level-3: #4cc47f;
+    --level-4: #34d17f;
+}
+
 * {
     box-sizing: border-box;
 }
 
-/* The popup uses the whole 640x400 area available to an extension popup, in both views. */
+/* The popup uses the whole 640x400 area available to an extension popup, in every view. */
 body {
     width: 640px;
     height: 400px;
@@ -77,6 +106,21 @@ body {
         "Segoe UI",
         Roboto,
         sans-serif;
+}
+
+/*
+ * Hide the page until the script has applied the saved language and theme, so neither flashes.
+ * The animation shows the page anyway after a second, in case the script never runs.
+ */
+html:not(.ready) body {
+    visibility: hidden;
+    animation: reveal 0s 1s forwards;
+}
+
+@keyframes reveal {
+    to {
+        visibility: visible;
+    }
 }
 
 main {
@@ -104,8 +148,35 @@ main {
 }
 
 .tagline {
-    margin-left: auto;
+    flex: 1;
+    min-width: 0;
+    margin-inline-start: 4px;
+    overflow: hidden;
     font-size: 12px;
+    text-align: end;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.icon-button {
+    display: inline-grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    color: var(--muted);
+    border-color: transparent;
+}
+
+.icon-button svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.icon-button:hover:not(:disabled) {
+    color: var(--text);
 }
 
 /* Generator view: password on the left, options on the right. */
@@ -135,6 +206,16 @@ main {
     border-radius: 10px;
 }
 
+/* Passwords are always left-to-right text, even in a right-to-left interface. */
+.password,
+.history-password,
+code,
+input[type="number"],
+input[type="text"] {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
 .password {
     display: block;
     min-height: 56px;
@@ -150,6 +231,7 @@ main {
         monospace;
     letter-spacing: 0.02em;
     overflow-wrap: anywhere;
+    text-align: left;
     user-select: all;
     cursor: pointer;
 }
@@ -157,7 +239,8 @@ main {
 .password:focus-visible,
 button:focus-visible,
 input:focus-visible,
-select:focus-visible {
+select:focus-visible,
+.link-button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
@@ -175,8 +258,18 @@ select:focus-visible {
     font:
         13px/1.4 system-ui,
         sans-serif;
+    direction: inherit;
+    letter-spacing: normal;
+    text-align: start;
+    unicode-bidi: normal;
     cursor: default;
     user-select: none;
+}
+
+/* Optional setting: blur passwords on screen until the pointer is over them. */
+:root[data-mask="true"] .password:not(.error):not(:hover):not(:focus-visible),
+:root[data-mask="true"] .history-item:not(:hover) .history-password {
+    filter: blur(6px);
 }
 
 /* Copy spans the full width; Regenerate and History share the row below it. */
@@ -283,7 +376,7 @@ label {
 }
 
 .check code {
-    margin-left: auto;
+    margin-inline-start: auto;
     color: var(--muted);
 }
 
@@ -347,17 +440,16 @@ input[type="number"] {
     text-align: center;
 }
 
+input[type="checkbox"] {
+    flex: 0 0 auto;
+    accent-color: var(--accent);
+}
+
 .field {
     display: flex;
     flex-direction: column;
     gap: 4px;
     min-width: 0;
-}
-
-.field-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
 }
 
 .hint {
@@ -366,8 +458,11 @@ input[type="number"] {
     font-size: 11px;
 }
 
+/* The footer gives way (and scrolls) before it can push the page past 400px in a language with tall glyphs. */
 .footer {
+    min-height: 0;
     margin-top: auto;
+    overflow-y: auto;
     color: var(--muted);
     font-size: 11px;
 }
@@ -376,27 +471,32 @@ input[type="number"] {
     display: none !important;
 }
 
-h2 {
+h2,
+h3 {
     margin: 0;
+}
+
+h2 {
     font-size: 14px;
 }
 
-/* History view: header with the actions, then a two-column list that fills the remaining height. */
-.history {
+/* Secondary views (history, settings, about) share one card that fills the popup. */
+.view {
     flex: 1;
     min-height: 0;
 }
 
-.history-head {
+.view-head {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.history-head .spacer {
+.view-head .spacer {
     flex: 1;
 }
 
+/* History view: a two-column list that fills the remaining height. */
 .history-list {
     display: grid;
     flex: 1;
@@ -405,7 +505,8 @@ h2 {
     gap: 6px;
     min-height: 0;
     margin: 0;
-    padding: 0 4px 0 0;
+    padding: 0;
+    padding-inline-end: 4px;
     overflow-y: auto;
     list-style: none;
 }
@@ -435,6 +536,7 @@ h2 {
         Consolas,
         monospace;
     overflow-wrap: anywhere;
+    text-align: left;
 }
 
 .history-password .digit {
@@ -454,4 +556,81 @@ h2 {
     flex: 0 0 auto;
     padding: 4px 10px;
     font-size: 12px;
+}
+
+/* Settings view: selects on one side, switches on the other. */
+.settings-grid {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+    gap: 14px 20px;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.settings-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+/* About view: identity on one side, details and the repository link on the other. */
+.about-body {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 200px minmax(0, 1fr);
+    align-content: center;
+    gap: 16px 24px;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.about-identity,
+.about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.about-identity {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-identity p,
+.about-details p {
+    margin: 0;
+}
+
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 8px;
+    padding: 6px 12px;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.link-button:hover {
+    border-color: var(--accent);
+}
+
+.link-button svg {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.link-button span {
+    direction: ltr;
+    unicode-bidi: isolate;
 }

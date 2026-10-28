@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – Sicherer Passwortgenerator"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Erzeugt starke Zufallspasswörter mit dem sicheren Zufallszahlengenerator des Browsers. Alles bleibt auf dem Gerät."
+    },
+    "actionTitle": {
+        "message": "Padlock – Passwort erzeugen"
+    },
+    "commandOpen": {
+        "message": "Padlock öffnen"
+    },
+    "menuInsertPassword": {
+        "message": "Sicheres Passwort einfügen"
+    },
+    "tagline": {
+        "message": "Sicherer Passwortgenerator"
+    },
+    "generatedPasswordLabel": {
+        "message": "Erzeugtes Passwort"
+    },
+    "clickToCopy": {
+        "message": "Zum Kopieren klicken"
+    },
+    "copy": {
+        "message": "Kopieren"
+    },
+    "regenerate": {
+        "message": "Neu erzeugen"
+    },
+    "regenerateTitle": {
+        "message": "Neues Passwort erzeugen"
+    },
+    "historyButton": {
+        "message": "Verlauf"
+    },
+    "historyButtonTitle": {
+        "message": "Die letzten $COUNT$ erzeugten Passwörter anzeigen",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Passwortstärke"
+    },
+    "strengthLevel0": {
+        "message": "Sehr schwach"
+    },
+    "strengthLevel1": {
+        "message": "Schwach"
+    },
+    "strengthLevel2": {
+        "message": "Gut"
+    },
+    "strengthLevel3": {
+        "message": "Stark"
+    },
+    "strengthLevel4": {
+        "message": "Sehr stark"
+    },
+    "entropyBits": {
+        "message": "$BITS$ Bit Entropie",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Optionen"
+    },
+    "lengthLabel": {
+        "message": "Länge"
+    },
+    "lengthSliderLabel": {
+        "message": "Passwortlänge"
+    },
+    "charactersLegend": {
+        "message": "Zeichen"
+    },
+    "lowercase": {
+        "message": "Kleinbuchstaben"
+    },
+    "uppercase": {
+        "message": "Großbuchstaben"
+    },
+    "digits": {
+        "message": "Ziffern"
+    },
+    "symbols": {
+        "message": "Sonderzeichen"
+    },
+    "avoidLookalikes": {
+        "message": "Ähnliche Zeichen vermeiden"
+    },
+    "excludeCharsLabel": {
+        "message": "Zeichen ausschließen"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "z. B. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Zwischenablage nach dem Kopieren leeren"
+    },
+    "clipboardNever": {
+        "message": "Nie"
+    },
+    "clipboard30": {
+        "message": "30 Sekunden"
+    },
+    "clipboard60": {
+        "message": "1 Minute"
+    },
+    "clipboard120": {
+        "message": "2 Minuten"
+    },
+    "keepHistoryLabel": {
+        "message": "Verlauf der letzten $COUNT$ Passwörter speichern",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Passwörter werden unverschlüsselt nur im Arbeitsspeicher des Browsers gehalten und beim Schließen von Chrome gelöscht. Wird diese Option deaktiviert, wird der Verlauf gelöscht."
+    },
+    "footer": {
+        "message": "Passwörter werden lokal mit dem CSPRNG des Browsers erzeugt. Es wird nichts irgendwohin gesendet. Mit der rechten Maustaste auf ein Textfeld klicken, um eines einzufügen."
+    },
+    "historyViewLabel": {
+        "message": "Passwortverlauf"
+    },
+    "historyHeading": {
+        "message": "Verlauf"
+    },
+    "historyEmpty": {
+        "message": "Noch keine Passwörter."
+    },
+    "back": {
+        "message": "Zurück"
+    },
+    "historyClear": {
+        "message": "Verlauf löschen"
+    },
+    "historyCleared": {
+        "message": "Verlauf gelöscht."
+    },
+    "statusCopyFailed": {
+        "message": "Kopieren fehlgeschlagen. Das Passwort markieren und manuell kopieren."
+    },
+    "statusCopied": {
+        "message": "In die Zwischenablage kopiert."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Kopiert. Das automatische Leeren benötigt die Berechtigung für die Zwischenablage; die Option erneut auswählen, um sie zu erteilen."
+    },
+    "statusCopiedClearIn": {
+        "message": "Kopiert. Die Zwischenablage wird in $SECONDS$ s geleert.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Kopiert, aber das Leeren der Zwischenablage konnte nicht geplant werden."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Für das automatische Leeren ist die Berechtigung für die Zwischenablage erforderlich."
+    },
+    "statusSaveFailed": {
+        "message": "Einstellungen konnten nicht gespeichert werden."
+    },
+    "errorGeneric": {
+        "message": "Es konnte kein Passwort erzeugt werden."
+    },
+    "errorInvalidLength": {
+        "message": "Die Länge muss zwischen $MIN$ und $MAX$ liegen.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Mindestens einen Zeichentyp auswählen."
+    },
+    "errorLengthTooShort": {
+        "message": "Die Länge ist kleiner als die Anzahl der ausgewählten Zeichentypen."
+    },
+    "settingsButtonTitle": {
+        "message": "Einstellungen"
+    },
+    "aboutButtonTitle": {
+        "message": "Über Padlock"
+    },
+    "settingsHeading": {
+        "message": "Einstellungen"
+    },
+    "aboutHeading": {
+        "message": "Info"
+    },
+    "languageLabel": {
+        "message": "Sprache"
+    },
+    "languageAuto": {
+        "message": "Automatisch (Browsersprache)"
+    },
+    "themeLabel": {
+        "message": "Design"
+    },
+    "themeSystem": {
+        "message": "Systemstandard"
+    },
+    "themeLight": {
+        "message": "Hell"
+    },
+    "themeDark": {
+        "message": "Dunkel"
+    },
+    "contextMenuLabel": {
+        "message": "„$ITEM$“ im Kontextmenü anzeigen",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Passwörter unscharf darstellen, bis der Mauszeiger darüber steht"
+    },
+    "resetSettings": {
+        "message": "Standardwerte wiederherstellen"
+    },
+    "settingsReset": {
+        "message": "Einstellungen auf die Standardwerte zurückgesetzt."
+    },
+    "aboutVersion": {
+        "message": "Version $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Erstellt von Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "Open Source, Apache-Lizenz 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "Alles läuft auf dem Gerät. Padlock erfasst keine Daten und sendet nichts irgendwohin."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Quellcode, Probleme und Updates"
+    }
+}

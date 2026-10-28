@@ -27,11 +27,18 @@ inteiramente no seu dispositivo.
   fica.
 - **Popup espaçoso** que usa os 640 × 400 px completos que um popup de extensão pode ter: a senha e sua
   força à esquerda, todas as opções à direita, sem rolagem na tela do gerador.
-- **Localizada** em inglês (EUA), português do Brasil, espanhol, francês, italiano, alemão, russo e polonês.
-  A extensão segue automaticamente o
-  idioma da interface do navegador; qualquer outro idioma usa o inglês. Veja
-  [Localização](#localização).
-- **Tema claro / escuro**, acessível pelo teclado, sem acesso à rede e sem análise de uso.
+- **Localizada em 30 idiomas**, os de mais falantes nativos mais o polonês: inglês, chinês
+  (simplificado e tradicional), espanhol, hindi, bengali, português (Brasil), russo, japonês, punjabi,
+  marati, telugo, turco, coreano, francês, alemão, vietnamita, tâmil, urdu, javanês, italiano, árabe,
+  guzerate, persa, bhojpuri, hauçá, canarim, indonésio, polonês, malaiala e ucraniano. A extensão segue
+  automaticamente o idioma do navegador, ou você escolhe outro nas configurações. Árabe, persa e urdu
+  espelham o layout (da direita para a esquerda). Veja [Localização](#localização).
+- **Tela de configurações** (botão de engrenagem): idioma, tema claro / escuro / do sistema, limpeza
+  automática da área de transferência, histórico de senhas, item do menu de clique direito e desfoque
+  das senhas até passar o mouse. Um botão restaura os padrões.
+- **Tela Sobre** (botão do GitHub): versão, autor, licença, declaração de privacidade e um link para o
+  [código-fonte no GitHub](https://github.com/mgnischor/chrome-padlock).
+- Acessível pelo teclado, sem acesso à rede e sem análise de uso.
 - Abra o popup com `Ctrl+Shift+Y` (`Command+Shift+Y` no macOS); altere o atalho em
   `chrome://extensions/shortcuts`.
 
@@ -65,7 +72,7 @@ Depois de recompilar, clique no botão de recarregar no card da extensão em `ch
 
 ```
 public/                 Arquivos estáticos copiados para dist/ (manifest, HTML, CSS, ícones)
-public/_locales/        Traduções: en_US (padrão), pt_BR, es, fr, it, de, ru e pl
+src/locales/            Traduções, um arquivo JSON por idioma (en_US é a origem)
 scripts/                Ferramentas de build: build, package, minify, zip e gerador de ícones
 src/core/               Lógica pura, sem DOM: random, charsets, generator, entropy
 src/shared/             Configurações, histórico, helper de i18n, tipos de mensagem, helper de hash
@@ -128,33 +135,56 @@ Desativado por padrão. Ative com _Manter um histórico das últimas 50 senhas_ 
 ### Privacidade
 
 As senhas são geradas na memória, exibidas no popup e descartadas quando ele fecha, a menos que você
-ative o histórico (veja acima). Somente as suas escolhas de opções são persistidas (via
-`chrome.storage.sync`, portanto acompanham o seu perfil do Chrome). A extensão não faz nenhuma
-requisição de rede.
+ative o histórico (veja acima). Somente as suas configurações são persistidas (via
+`chrome.storage.sync`, portanto acompanham o seu perfil do Chrome): as opções do gerador, o idioma, o
+tema e os demais controles. A extensão não faz nenhuma requisição de rede. O único link que ela
+contém, para a página do projeto no GitHub na tela Sobre, abre em uma nova aba e só se você clicar nele.
 
 ### Localização
 
-A extensão usa o sistema `chrome.i18n` nativo do Chrome, então o idioma sempre segue o idioma da
-interface do navegador e não precisa de configuração. O Chrome escolhe a melhor correspondência: um
-idioma exato como `pt_BR`, depois o idioma base como `es` e, por fim, o idioma padrão `en_US`.
+O popup e o menu de clique direito são traduzidos para 30 idiomas. Por padrão o idioma segue o idioma
+da interface do navegador, e as configurações permitem escolher outro, o que o `chrome.i18n` não
+consegue fazer. Por isso as traduções são empacotadas na própria extensão e consultadas por
+`src/shared/i18n.ts`, com o mesmo formato de mensagem do Chrome (marcadores `$1` e `$NOME$`). Os
+idiomas do navegador são associados à tradução mais próxima: `pt-PT` usa português do Brasil, `es-419`
+usa espanhol, `zh-TW`/`zh-HK` usam chinês tradicional, qualquer outro chinês usa o simplificado, e o
+resto cai para o inglês.
 
-- **As mensagens** ficam em `public/_locales/<idioma>/messages.json`. O manifest (nome, descrição,
-  dica do botão da barra de ferramentas, descrição do atalho) usa referências `__MSG_<chave>__`.
-- **O texto do popup** é localizado na inicialização por `applyTranslations` em
-  `src/shared/i18n.ts`. O HTML mantém o texto em inglês como alternativa e marca os elementos
+- **As mensagens** ficam em `src/locales/<código>.json`, no formato do `messages.json` do Chrome. O
+  inglês (`en_US`) é a origem; os demais arquivos precisam definir as mesmas chaves e marcadores.
+- **Os textos do próprio Chrome** (nome, descrição, dica da barra de ferramentas, descrição do atalho)
+  vêm de `_locales`. O build gera essas pastas a partir de `src/locales`, mas só para os 26 idiomas que
+  o Chrome suporta. Punjabi, urdu, javanês, bhojpuri e hauçá não existem como idioma da interface do
+  Chrome, então a listagem da loja e a página de extensões mostram inglês para eles. A extensão em si
+  está totalmente traduzida.
+- **O texto do popup** é localizado na inicialização, e de novo sempre que o idioma muda, por
+  `applyTranslations`. O HTML mantém o texto em inglês como alternativa e marca os elementos
   traduzíveis com `data-i18n="chave"`, `data-i18n-title`, `data-i18n-aria-label` ou
   `data-i18n-placeholder`. As mensagens montadas no código usam `t("chave", substituições)`. As chaves
-  de mensagem têm os tipos verificados em relação a `en_US/messages.json`.
+  têm os tipos verificados em relação a `en_US.json`, e `src/shared/catalog.ts` é tipado de modo que um
+  idioma sem alguma mensagem não compile.
 - **O núcleo é neutro quanto ao idioma:** o gerador informa _códigos_ de erro e o módulo de entropia
   informa _níveis_ de força; o popup converte ambos em texto localizado.
-- **As datas** do histórico usam o idioma da interface do navegador.
-- **Adicionar um idioma:** copie `public/_locales/en_US` para uma nova pasta com o nome do idioma (por
-  exemplo `nl` ou `ja`), traduza cada `message` e mantenha os blocos `placeholders` inalterados. Depois
-  adicione o nome da pasta a `EXPECTED_LOCALES` em `tests/i18n.test.ts`. Os testes verificam que cada
-  idioma tem as mesmas chaves e os mesmos placeholders que `en_US`, que nenhuma mensagem está sem uso
-  e que a descrição da extensão respeita o limite de 132 caracteres da Web Store.
-- **Testar um idioma:** inicie o Chrome com `--lang=pt-BR` (ou mude o idioma em
-  `chrome://settings/languages` e reinicie o Chrome) e recarregue a extensão.
+- **Idiomas da direita para a esquerda** (árabe, persa, urdu) definem `dir="rtl"` na página. Senhas,
+  dicas de caracteres e campos numéricos continuam sempre da esquerda para a direita.
+- **As datas** do histórico usam o idioma ativo.
+- **Adicionar um idioma:** copie `src/locales/en_US.json` para `src/locales/<código>.json` e traduza
+  cada `message` (mantenha os blocos `placeholders` como estão); adicione uma entrada a `LOCALES` em
+  `src/shared/locales.ts` (código, nome no próprio idioma, tag do idioma, direção); adicione o import e
+  a entrada em `src/shared/catalog.ts`. Se o Chrome suportar o idioma como idioma da interface, inclua
+  também o código em `MANIFEST_LOCALES` em `scripts/manifest-locales.mjs`. Os testes então verificam
+  que o novo arquivo tem as mesmas chaves e marcadores do inglês, que está traduzido e não é uma cópia,
+  que nenhuma mensagem está sem uso e que a descrição respeita o limite de 132 caracteres da Web Store.
+- **Testar um idioma:** escolha-o nas configurações, ou inicie o Chrome com `--lang=pt-BR` para testar
+  a escolha automática.
+
+### Aparência e configurações
+
+A configuração de tema é _Padrão do sistema_, _Claro_ ou _Escuro_. Ela é aplicada por meio de um
+atributo `data-theme` na página, então as cores são variáveis CSS comuns em `public/popup.css`. O
+popup fica oculto até que o idioma e o tema salvos sejam aplicados, para que nenhum dos dois pisque ao
+abrir. As configurações são validadas ao serem lidas (`sanitizeSettings`), então um idioma ou tema
+desconhecido no armazenamento volta ao padrão em vez de quebrar o popup.
 
 ### Documentação do código
 
@@ -173,7 +203,8 @@ tags porque o TypeScript já os fornece.
 | `popup.css`                    | minificador de CSS do esbuild                                                                                                                 |
 | `popup.html`, `offscreen.html` | `scripts/minify.mjs`: comentários removidos e espaços reduzidos; atributos entre aspas e o conteúdo de `<script>`/`<textarea>` ficam intactos |
 | `manifest.json`                | JSON compacto, com a versão tirada de `package.json`                                                                                          |
-| `_locales/*/messages.json`     | JSON compacto, sem as notas `description` e `example`, que servem só aos tradutores                                                           |
+| `src/locales/*.json`           | Empacotados no JavaScript sem as notas `description` e `example`, que servem só aos tradutores, em UTF-8 e não em escapes `\u`               |
+| `_locales/*/messages.json`     | Gerados: só as cinco mensagens do manifest, JSON compacto, para os 26 idiomas que o Chrome suporta                                            |
 | Ícones                         | Copiados como estão                                                                                                                           |
 
 Em seguida, `npm run package` verifica o build e grava o arquivo para envio à Web Store em
@@ -207,8 +238,6 @@ empacotado contiver `fetch`, `XMLHttpRequest`, `WebSocket`, `eval`, `new Functio
 
 Estes documentos estão em inglês, o idioma usado pela Chrome Web Store.
 
-- [docs/chrome-web-store.md](docs/chrome-web-store.md): respostas para a aba _Práticas de
-  privacidade_ da Chrome Web Store (propósito único e justificativas das permissões).
 - [docs/privacy-policy.md](docs/privacy-policy.md): a política de privacidade. A loja exige que ela
   esteja em uma URL pública. Atualize-a antes de lançar qualquer mudança no que a extensão armazena
   ou transmite.

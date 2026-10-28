@@ -1,0 +1,352 @@
+{
+    "extName": {
+        "message": "Padlock – Secure Password Generator",
+        "description": "Extension name shown in the browser and the Web Store."
+    },
+    "extShortName": {
+        "message": "Padlock",
+        "description": "Short extension name."
+    },
+    "extDescription": {
+        "message": "Generate strong, random passwords with your browser's secure random number generator. Everything stays on your device.",
+        "description": "Extension description. Keep it at 132 characters or fewer (Web Store limit)."
+    },
+    "actionTitle": {
+        "message": "Padlock – generate a password",
+        "description": "Tooltip of the toolbar button."
+    },
+    "commandOpen": {
+        "message": "Open Padlock",
+        "description": "Description of the keyboard shortcut that opens the popup."
+    },
+    "menuInsertPassword": {
+        "message": "Insert secure password",
+        "description": "Context menu entry shown on editable fields."
+    },
+    "tagline": {
+        "message": "Secure password generator",
+        "description": "Subtitle in the popup header."
+    },
+    "generatedPasswordLabel": {
+        "message": "Generated password",
+        "description": "Accessible name of the section that shows the password."
+    },
+    "clickToCopy": {
+        "message": "Click to copy",
+        "description": "Tooltip of the password box."
+    },
+    "copy": {
+        "message": "Copy",
+        "description": "Button that copies a password."
+    },
+    "regenerate": {
+        "message": "Regenerate",
+        "description": "Button that generates a new password."
+    },
+    "regenerateTitle": {
+        "message": "Generate a new password",
+        "description": "Tooltip and accessible name of the Regenerate button."
+    },
+    "historyButton": {
+        "message": "History",
+        "description": "Button that opens the password history."
+    },
+    "historyButtonTitle": {
+        "message": "Show the last $COUNT$ generated passwords",
+        "description": "Tooltip of the History button.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Password strength",
+        "description": "Accessible name of the strength meter."
+    },
+    "strengthLevel0": {
+        "message": "Very weak",
+        "description": "Strength rating."
+    },
+    "strengthLevel1": {
+        "message": "Weak",
+        "description": "Strength rating."
+    },
+    "strengthLevel2": {
+        "message": "Good",
+        "description": "Strength rating."
+    },
+    "strengthLevel3": {
+        "message": "Strong",
+        "description": "Strength rating."
+    },
+    "strengthLevel4": {
+        "message": "Very strong",
+        "description": "Strength rating."
+    },
+    "entropyBits": {
+        "message": "$BITS$ bits of entropy",
+        "description": "Entropy of the password.",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Options",
+        "description": "Accessible name of the options section."
+    },
+    "lengthLabel": {
+        "message": "Length",
+        "description": "Label of the password length field."
+    },
+    "lengthSliderLabel": {
+        "message": "Password length",
+        "description": "Accessible name of the length slider."
+    },
+    "charactersLegend": {
+        "message": "Characters",
+        "description": "Heading of the character type checkboxes."
+    },
+    "lowercase": {
+        "message": "Lowercase",
+        "description": "Character type checkbox."
+    },
+    "uppercase": {
+        "message": "Uppercase",
+        "description": "Character type checkbox."
+    },
+    "digits": {
+        "message": "Digits",
+        "description": "Character type checkbox."
+    },
+    "symbols": {
+        "message": "Symbols",
+        "description": "Character type checkbox."
+    },
+    "avoidLookalikes": {
+        "message": "Avoid look-alikes",
+        "description": "Checkbox that removes easily confused characters such as 0 and O."
+    },
+    "excludeCharsLabel": {
+        "message": "Exclude characters",
+        "description": "Label of the field listing characters to leave out."
+    },
+    "excludeCharsPlaceholder": {
+        "message": "e.g. {}[]",
+        "description": "Placeholder of the exclude characters field."
+    },
+    "clipboardClearLabel": {
+        "message": "Clear clipboard after copying",
+        "description": "Label of the clipboard auto-clear selector."
+    },
+    "clipboardNever": {
+        "message": "Never",
+        "description": "Clipboard auto-clear choice."
+    },
+    "clipboard30": {
+        "message": "30 seconds",
+        "description": "Clipboard auto-clear choice."
+    },
+    "clipboard60": {
+        "message": "1 minute",
+        "description": "Clipboard auto-clear choice."
+    },
+    "clipboard120": {
+        "message": "2 minutes",
+        "description": "Clipboard auto-clear choice."
+    },
+    "keepHistoryLabel": {
+        "message": "Keep a history of the last $COUNT$ passwords",
+        "description": "Checkbox that enables the password history.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Passwords are kept unencrypted in browser memory only and are erased when Chrome closes. Turning this off deletes the history.",
+        "description": "Privacy note shown below the history checkbox."
+    },
+    "footer": {
+        "message": "Passwords are generated locally with the browser's CSPRNG. Nothing is sent anywhere. Right-click a text field to insert one.",
+        "description": "Footer note of the popup. CSPRNG means cryptographically secure pseudo-random number generator."
+    },
+    "historyViewLabel": {
+        "message": "Password history",
+        "description": "Accessible name of the history section."
+    },
+    "historyHeading": {
+        "message": "History",
+        "description": "Heading of the history view."
+    },
+    "historyEmpty": {
+        "message": "No passwords yet.",
+        "description": "Shown when the history is empty."
+    },
+    "back": {
+        "message": "Back",
+        "description": "Button that leaves a screen (history, settings or about) and returns to the generator."
+    },
+    "historyClear": {
+        "message": "Clear history",
+        "description": "Button that deletes the whole history."
+    },
+    "historyCleared": {
+        "message": "History cleared.",
+        "description": "Status shown after the history was deleted."
+    },
+    "statusCopyFailed": {
+        "message": "Copy failed. Select the password and copy it manually.",
+        "description": "Status shown when copying to the clipboard failed."
+    },
+    "statusCopied": {
+        "message": "Copied to clipboard.",
+        "description": "Status shown after copying."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Copied. Auto-clear needs clipboard permission; re-select the option to grant it.",
+        "description": "Status shown when the clipboard auto-clear permission is missing."
+    },
+    "statusCopiedClearIn": {
+        "message": "Copied. The clipboard will be cleared in $SECONDS$ s.",
+        "description": "Status shown after copying when the clipboard will be cleared automatically.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Copied, but scheduling the clipboard clear failed.",
+        "description": "Status shown when the auto-clear timer could not be set."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Clipboard permission is required to clear it automatically.",
+        "description": "Status shown when the user denied the clipboard permission."
+    },
+    "statusSaveFailed": {
+        "message": "Could not save settings.",
+        "description": "Status shown when the settings could not be stored."
+    },
+    "errorGeneric": {
+        "message": "Could not generate a password.",
+        "description": "Fallback error shown in place of the password."
+    },
+    "errorInvalidLength": {
+        "message": "Length must be between $MIN$ and $MAX$.",
+        "description": "Error shown in place of the password.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Select at least one character type.",
+        "description": "Error shown in place of the password."
+    },
+    "errorLengthTooShort": {
+        "message": "Length is shorter than the number of selected character types.",
+        "description": "Error shown in place of the password."
+    },
+    "settingsButtonTitle": {
+        "message": "Settings",
+        "description": "Tooltip and accessible name of the settings button in the popup header."
+    },
+    "aboutButtonTitle": {
+        "message": "About Padlock",
+        "description": "Tooltip and accessible name of the button (GitHub icon) that opens the About screen."
+    },
+    "settingsHeading": {
+        "message": "Settings",
+        "description": "Heading of the settings screen."
+    },
+    "aboutHeading": {
+        "message": "About",
+        "description": "Heading of the About screen."
+    },
+    "languageLabel": {
+        "message": "Language",
+        "description": "Label of the language selector."
+    },
+    "languageAuto": {
+        "message": "Automatic (browser language)",
+        "description": "Language choice that follows the browser's language."
+    },
+    "themeLabel": {
+        "message": "Theme",
+        "description": "Label of the color theme selector."
+    },
+    "themeSystem": {
+        "message": "System default",
+        "description": "Theme choice that follows the operating system."
+    },
+    "themeLight": {
+        "message": "Light",
+        "description": "Theme choice."
+    },
+    "themeDark": {
+        "message": "Dark",
+        "description": "Theme choice."
+    },
+    "contextMenuLabel": {
+        "message": "Show “$ITEM$” in the right-click menu",
+        "description": "Checkbox that shows or hides the context menu entry. $ITEM$ is the entry's own name.",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Blur passwords until hovered",
+        "description": "Checkbox that blurs passwords on screen until the pointer is over them."
+    },
+    "resetSettings": {
+        "message": "Restore defaults",
+        "description": "Button that resets every setting."
+    },
+    "settingsReset": {
+        "message": "Settings restored to defaults.",
+        "description": "Status shown after the settings were reset."
+    },
+    "aboutVersion": {
+        "message": "Version $VERSION$",
+        "description": "Version of the extension on the About screen.",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Created by Miguel Nischor",
+        "description": "Credit line on the About screen. Keep the name unchanged."
+    },
+    "aboutLicense": {
+        "message": "Open source, Apache License 2.0",
+        "description": "License line on the About screen."
+    },
+    "aboutPrivacy": {
+        "message": "Everything runs on your device. Padlock collects no data and sends nothing anywhere.",
+        "description": "Privacy statement on the About screen."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Source code, issues and updates",
+        "description": "Caption above the link to the GitHub repository."
+    }
+}

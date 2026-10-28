@@ -19,6 +19,7 @@
     limitations under the License.
 */
 import { DEFAULT_GENERATOR_OPTIONS, MAX_LENGTH, MIN_LENGTH, type GeneratorOptions } from "../core/generator";
+import { AUTO_LANGUAGE, isLocaleCode } from "./locales";
 
 /** Allowed values for "clear clipboard after", in seconds. 0 disables the feature. */
 export const CLIPBOARD_CLEAR_CHOICES = [0, 30, 60, 120] as const;
@@ -26,17 +27,33 @@ export const CLIPBOARD_CLEAR_CHOICES = [0, 30, 60, 120] as const;
 /** Upper bound for the free-form exclusion field. */
 export const MAX_EXCLUDE_CHARS = 64;
 
+/** Color theme choices: follow the system, or force light or dark. */
+export const THEME_CHOICES = ["system", "light", "dark"] as const;
+
+export type ThemePreference = (typeof THEME_CHOICES)[number];
+
 /** Everything persisted between sessions. Passwords themselves are never stored. */
 export interface Settings extends GeneratorOptions {
     clipboardClearSeconds: number;
     /** Keep the most recently generated passwords (in memory only) so they can be viewed again. */
     keepHistory: boolean;
+    /** `"auto"` follows the browser's language; otherwise the code of a supported language. */
+    language: string;
+    theme: ThemePreference;
+    /** Offer "Insert secure password" in the right-click menu of text fields. */
+    contextMenu: boolean;
+    /** Blur passwords on screen until the pointer is over them. */
+    maskPasswords: boolean;
 }
 
 export const DEFAULT_SETTINGS: Readonly<Settings> = {
     ...DEFAULT_GENERATOR_OPTIONS,
     clipboardClearSeconds: 0,
     keepHistory: false,
+    language: AUTO_LANGUAGE,
+    theme: "system",
+    contextMenu: true,
+    maskPasswords: false,
 };
 
 const STORAGE_KEY = "settings";
@@ -83,6 +100,10 @@ export function sanitizeSettings(raw: unknown): Settings {
         excludeChars: typeof input.excludeChars === "string" ? input.excludeChars.slice(0, MAX_EXCLUDE_CHARS) : "",
         clipboardClearSeconds,
         keepHistory: bool(input.keepHistory, defaults.keepHistory),
+        language: typeof input.language === "string" && isLocaleCode(input.language) ? input.language : AUTO_LANGUAGE,
+        theme: THEME_CHOICES.find((choice) => choice === input.theme) ?? defaults.theme,
+        contextMenu: bool(input.contextMenu, defaults.contextMenu),
+        maskPasswords: bool(input.maskPasswords, defaults.maskPasswords),
     };
 }
 

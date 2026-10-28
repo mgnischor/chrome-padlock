@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – 安全なパスワードジェネレーター"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "ブラウザーの安全な乱数生成器で、強力なランダムパスワードを生成します。すべてお使いのデバイス内で完結します。"
+    },
+    "actionTitle": {
+        "message": "Padlock – パスワードを生成"
+    },
+    "commandOpen": {
+        "message": "Padlock を開く"
+    },
+    "menuInsertPassword": {
+        "message": "安全なパスワードを挿入"
+    },
+    "tagline": {
+        "message": "安全なパスワードジェネレーター"
+    },
+    "generatedPasswordLabel": {
+        "message": "生成されたパスワード"
+    },
+    "clickToCopy": {
+        "message": "クリックしてコピー"
+    },
+    "copy": {
+        "message": "コピー"
+    },
+    "regenerate": {
+        "message": "再生成"
+    },
+    "regenerateTitle": {
+        "message": "新しいパスワードを生成"
+    },
+    "historyButton": {
+        "message": "履歴"
+    },
+    "historyButtonTitle": {
+        "message": "最近生成した $COUNT$ 件のパスワードを表示",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "パスワードの強度"
+    },
+    "strengthLevel0": {
+        "message": "非常に弱い"
+    },
+    "strengthLevel1": {
+        "message": "弱い"
+    },
+    "strengthLevel2": {
+        "message": "良い"
+    },
+    "strengthLevel3": {
+        "message": "強い"
+    },
+    "strengthLevel4": {
+        "message": "非常に強い"
+    },
+    "entropyBits": {
+        "message": "エントロピー $BITS$ ビット",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "オプション"
+    },
+    "lengthLabel": {
+        "message": "長さ"
+    },
+    "lengthSliderLabel": {
+        "message": "パスワードの長さ"
+    },
+    "charactersLegend": {
+        "message": "文字"
+    },
+    "lowercase": {
+        "message": "小文字"
+    },
+    "uppercase": {
+        "message": "大文字"
+    },
+    "digits": {
+        "message": "数字"
+    },
+    "symbols": {
+        "message": "記号"
+    },
+    "avoidLookalikes": {
+        "message": "紛らわしい文字を避ける"
+    },
+    "excludeCharsLabel": {
+        "message": "除外する文字"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "例: {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "コピー後にクリップボードを消去"
+    },
+    "clipboardNever": {
+        "message": "しない"
+    },
+    "clipboard30": {
+        "message": "30 秒"
+    },
+    "clipboard60": {
+        "message": "1 分"
+    },
+    "clipboard120": {
+        "message": "2 分"
+    },
+    "keepHistoryLabel": {
+        "message": "最近の $COUNT$ 件のパスワードの履歴を保持",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "パスワードは暗号化されずにブラウザーのメモリ内にのみ保持され、Chrome を閉じると消去されます。このオプションをオフにすると履歴が削除されます。"
+    },
+    "footer": {
+        "message": "パスワードはブラウザーの CSPRNG を使ってローカルで生成されます。どこにも送信されません。テキスト欄を右クリックして挿入できます。"
+    },
+    "historyViewLabel": {
+        "message": "パスワード履歴"
+    },
+    "historyHeading": {
+        "message": "履歴"
+    },
+    "historyEmpty": {
+        "message": "パスワードはまだありません。"
+    },
+    "back": {
+        "message": "戻る"
+    },
+    "historyClear": {
+        "message": "履歴を消去"
+    },
+    "historyCleared": {
+        "message": "履歴を消去しました。"
+    },
+    "statusCopyFailed": {
+        "message": "コピーに失敗しました。パスワードを選択して手動でコピーしてください。"
+    },
+    "statusCopied": {
+        "message": "クリップボードにコピーしました。"
+    },
+    "statusCopiedNoPermission": {
+        "message": "コピーしました。自動消去にはクリップボードの権限が必要です。権限を付与するにはオプションをもう一度選択してください。"
+    },
+    "statusCopiedClearIn": {
+        "message": "コピーしました。クリップボードは $SECONDS$ 秒後に消去されます。",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "コピーしましたが、クリップボードの消去を予約できませんでした。"
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "クリップボードを自動消去するには、クリップボードの権限が必要です。"
+    },
+    "statusSaveFailed": {
+        "message": "設定を保存できませんでした。"
+    },
+    "errorGeneric": {
+        "message": "パスワードを生成できませんでした。"
+    },
+    "errorInvalidLength": {
+        "message": "長さは $MIN$ から $MAX$ の間で指定してください。",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "文字の種類を 1 つ以上選択してください。"
+    },
+    "errorLengthTooShort": {
+        "message": "長さが、選択した文字の種類の数より短くなっています。"
+    },
+    "settingsButtonTitle": {
+        "message": "設定"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock について"
+    },
+    "settingsHeading": {
+        "message": "設定"
+    },
+    "aboutHeading": {
+        "message": "概要"
+    },
+    "languageLabel": {
+        "message": "言語"
+    },
+    "languageAuto": {
+        "message": "自動（ブラウザーの言語）"
+    },
+    "themeLabel": {
+        "message": "テーマ"
+    },
+    "themeSystem": {
+        "message": "システムの設定に合わせる"
+    },
+    "themeLight": {
+        "message": "ライト"
+    },
+    "themeDark": {
+        "message": "ダーク"
+    },
+    "contextMenuLabel": {
+        "message": "右クリックメニューに「$ITEM$」を表示",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "マウスを重ねるまでパスワードをぼかす"
+    },
+    "resetSettings": {
+        "message": "初期設定に戻す"
+    },
+    "settingsReset": {
+        "message": "設定を初期状態に戻しました。"
+    },
+    "aboutVersion": {
+        "message": "バージョン $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "作成者: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "オープンソース、Apache License 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "すべてお使いのデバイス上で動作します。Padlock はデータを収集せず、どこにも何も送信しません。"
+    },
+    "aboutRepositoryLabel": {
+        "message": "ソースコード、問題報告、更新情報"
+    }
+}

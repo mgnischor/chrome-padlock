@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – Генератор надійних паролів"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Створюйте надійні випадкові паролі за допомогою захищеного генератора випадкових чисел браузера. Усе залишається на вашому пристрої."
+    },
+    "actionTitle": {
+        "message": "Padlock – створити пароль"
+    },
+    "commandOpen": {
+        "message": "Відкрити Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "Вставити надійний пароль"
+    },
+    "tagline": {
+        "message": "Генератор надійних паролів"
+    },
+    "generatedPasswordLabel": {
+        "message": "Створений пароль"
+    },
+    "clickToCopy": {
+        "message": "Натисніть, щоб скопіювати"
+    },
+    "copy": {
+        "message": "Копіювати"
+    },
+    "regenerate": {
+        "message": "Створити інший"
+    },
+    "regenerateTitle": {
+        "message": "Створити новий пароль"
+    },
+    "historyButton": {
+        "message": "Історія"
+    },
+    "historyButtonTitle": {
+        "message": "Показати останні $COUNT$ створених паролів",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Надійність пароля"
+    },
+    "strengthLevel0": {
+        "message": "Дуже слабкий"
+    },
+    "strengthLevel1": {
+        "message": "Слабкий"
+    },
+    "strengthLevel2": {
+        "message": "Добрий"
+    },
+    "strengthLevel3": {
+        "message": "Надійний"
+    },
+    "strengthLevel4": {
+        "message": "Дуже надійний"
+    },
+    "entropyBits": {
+        "message": "$BITS$ біт ентропії",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Параметри"
+    },
+    "lengthLabel": {
+        "message": "Довжина"
+    },
+    "lengthSliderLabel": {
+        "message": "Довжина пароля"
+    },
+    "charactersLegend": {
+        "message": "Символи"
+    },
+    "lowercase": {
+        "message": "Малі літери"
+    },
+    "uppercase": {
+        "message": "Великі літери"
+    },
+    "digits": {
+        "message": "Цифри"
+    },
+    "symbols": {
+        "message": "Спецсимволи"
+    },
+    "avoidLookalikes": {
+        "message": "Уникати схожих символів"
+    },
+    "excludeCharsLabel": {
+        "message": "Виключити символи"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "напр. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Очищати буфер обміну після копіювання"
+    },
+    "clipboardNever": {
+        "message": "Ніколи"
+    },
+    "clipboard30": {
+        "message": "30 секунд"
+    },
+    "clipboard60": {
+        "message": "1 хвилина"
+    },
+    "clipboard120": {
+        "message": "2 хвилини"
+    },
+    "keepHistoryLabel": {
+        "message": "Зберігати історію останніх $COUNT$ паролів",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Паролі зберігаються без шифрування лише в пам’яті браузера й видаляються під час закриття Chrome. Вимкнення цього параметра видаляє історію."
+    },
+    "footer": {
+        "message": "Паролі створюються локально за допомогою CSPRNG браузера. Нічого нікуди не надсилається. Клацніть правою кнопкою миші текстове поле, щоб вставити пароль."
+    },
+    "historyViewLabel": {
+        "message": "Історія паролів"
+    },
+    "historyHeading": {
+        "message": "Історія"
+    },
+    "historyEmpty": {
+        "message": "Паролів поки немає."
+    },
+    "back": {
+        "message": "Назад"
+    },
+    "historyClear": {
+        "message": "Очистити історію"
+    },
+    "historyCleared": {
+        "message": "Історію очищено."
+    },
+    "statusCopyFailed": {
+        "message": "Не вдалося скопіювати. Виділіть пароль і скопіюйте його вручну."
+    },
+    "statusCopied": {
+        "message": "Скопійовано в буфер обміну."
+    },
+    "statusCopiedNoPermission": {
+        "message": "Скопійовано. Для автоматичного очищення потрібен дозвіл на доступ до буфера обміну; виберіть цей параметр ще раз, щоб надати його."
+    },
+    "statusCopiedClearIn": {
+        "message": "Скопійовано. Буфер обміну буде очищено через $SECONDS$ с.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "Скопійовано, але запланувати очищення буфера обміну не вдалося."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Для автоматичного очищення потрібен дозвіл на доступ до буфера обміну."
+    },
+    "statusSaveFailed": {
+        "message": "Не вдалося зберегти налаштування."
+    },
+    "errorGeneric": {
+        "message": "Не вдалося створити пароль."
+    },
+    "errorInvalidLength": {
+        "message": "Довжина має бути від $MIN$ до $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Виберіть принаймні один тип символів."
+    },
+    "errorLengthTooShort": {
+        "message": "Довжина менша за кількість вибраних типів символів."
+    },
+    "settingsButtonTitle": {
+        "message": "Налаштування"
+    },
+    "aboutButtonTitle": {
+        "message": "Про Padlock"
+    },
+    "settingsHeading": {
+        "message": "Налаштування"
+    },
+    "aboutHeading": {
+        "message": "Про розширення"
+    },
+    "languageLabel": {
+        "message": "Мова"
+    },
+    "languageAuto": {
+        "message": "Автоматично (мова браузера)"
+    },
+    "themeLabel": {
+        "message": "Тема"
+    },
+    "themeSystem": {
+        "message": "Як у системі"
+    },
+    "themeLight": {
+        "message": "Світла"
+    },
+    "themeDark": {
+        "message": "Темна"
+    },
+    "contextMenuLabel": {
+        "message": "Показувати «$ITEM$» у контекстному меню",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Розмивати паролі, доки не наведено курсор"
+    },
+    "resetSettings": {
+        "message": "Скинути налаштування"
+    },
+    "settingsReset": {
+        "message": "Налаштування скинуто."
+    },
+    "aboutVersion": {
+        "message": "Версія $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Автор: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "Відкритий код, ліцензія Apache 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "Усе працює на вашому пристрої. Padlock не збирає дані й нічого нікуди не надсилає."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Вихідний код, проблеми й оновлення"
+    }
+}

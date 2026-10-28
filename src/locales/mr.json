@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – सुरक्षित पासवर्ड जनरेटर"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "ब्राउझरच्या सुरक्षित यादृच्छिक संख्या जनरेटरने मजबूत, यादृच्छिक पासवर्ड तयार करा. सर्व काही तुमच्या डिव्हाइसवरच राहते."
+    },
+    "actionTitle": {
+        "message": "Padlock – पासवर्ड तयार करा"
+    },
+    "commandOpen": {
+        "message": "Padlock उघडा"
+    },
+    "menuInsertPassword": {
+        "message": "सुरक्षित पासवर्ड घाला"
+    },
+    "tagline": {
+        "message": "सुरक्षित पासवर्ड जनरेटर"
+    },
+    "generatedPasswordLabel": {
+        "message": "तयार केलेला पासवर्ड"
+    },
+    "clickToCopy": {
+        "message": "कॉपी करण्यासाठी क्लिक करा"
+    },
+    "copy": {
+        "message": "कॉपी करा"
+    },
+    "regenerate": {
+        "message": "पुन्हा तयार करा"
+    },
+    "regenerateTitle": {
+        "message": "नवीन पासवर्ड तयार करा"
+    },
+    "historyButton": {
+        "message": "इतिहास"
+    },
+    "historyButtonTitle": {
+        "message": "अलीकडे तयार केलेले $COUNT$ पासवर्ड दाखवा",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "पासवर्डची ताकद"
+    },
+    "strengthLevel0": {
+        "message": "खूप कमकुवत"
+    },
+    "strengthLevel1": {
+        "message": "कमकुवत"
+    },
+    "strengthLevel2": {
+        "message": "चांगला"
+    },
+    "strengthLevel3": {
+        "message": "मजबूत"
+    },
+    "strengthLevel4": {
+        "message": "खूप मजबूत"
+    },
+    "entropyBits": {
+        "message": "$BITS$ बिट एन्ट्रॉपी",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "पर्याय"
+    },
+    "lengthLabel": {
+        "message": "लांबी"
+    },
+    "lengthSliderLabel": {
+        "message": "पासवर्डची लांबी"
+    },
+    "charactersLegend": {
+        "message": "अक्षरे"
+    },
+    "lowercase": {
+        "message": "लहान अक्षरे"
+    },
+    "uppercase": {
+        "message": "मोठी अक्षरे"
+    },
+    "digits": {
+        "message": "अंक"
+    },
+    "symbols": {
+        "message": "चिन्हे"
+    },
+    "avoidLookalikes": {
+        "message": "सारखी दिसणारी अक्षरे टाळा"
+    },
+    "excludeCharsLabel": {
+        "message": "अक्षरे वगळा"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "उदा. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "कॉपी केल्यानंतर क्लिपबोर्ड साफ करा"
+    },
+    "clipboardNever": {
+        "message": "कधीही नाही"
+    },
+    "clipboard30": {
+        "message": "30 सेकंद"
+    },
+    "clipboard60": {
+        "message": "1 मिनिट"
+    },
+    "clipboard120": {
+        "message": "2 मिनिटे"
+    },
+    "keepHistoryLabel": {
+        "message": "शेवटच्या $COUNT$ पासवर्डचा इतिहास ठेवा",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "पासवर्ड कूटबद्ध न करता फक्त ब्राउझरच्या मेमरीत राहतात आणि Chrome बंद केल्यावर हटवले जातात. हा पर्याय बंद केल्यास इतिहास हटवला जातो."
+    },
+    "footer": {
+        "message": "पासवर्ड ब्राउझरच्या CSPRNG ने स्थानिक पातळीवर तयार होतात. काहीही कुठेही पाठवले जात नाही. पासवर्ड घालण्यासाठी मजकूर फील्डवर राइट-क्लिक करा."
+    },
+    "historyViewLabel": {
+        "message": "पासवर्ड इतिहास"
+    },
+    "historyHeading": {
+        "message": "इतिहास"
+    },
+    "historyEmpty": {
+        "message": "अजून कोणताही पासवर्ड नाही."
+    },
+    "back": {
+        "message": "मागे"
+    },
+    "historyClear": {
+        "message": "इतिहास साफ करा"
+    },
+    "historyCleared": {
+        "message": "इतिहास साफ केला."
+    },
+    "statusCopyFailed": {
+        "message": "कॉपी करता आले नाही. पासवर्ड निवडा आणि हाताने कॉपी करा."
+    },
+    "statusCopied": {
+        "message": "क्लिपबोर्डवर कॉपी केले."
+    },
+    "statusCopiedNoPermission": {
+        "message": "कॉपी केले. आपोआप साफ करण्यासाठी क्लिपबोर्डची परवानगी लागते; परवानगी देण्यासाठी पर्याय पुन्हा निवडा."
+    },
+    "statusCopiedClearIn": {
+        "message": "कॉपी केले. क्लिपबोर्ड $SECONDS$ सेकंदांत साफ होईल.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "कॉपी केले, पण क्लिपबोर्ड साफ करण्याची वेळ ठरवता आली नाही."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "क्लिपबोर्ड आपोआप साफ करण्यासाठी क्लिपबोर्डची परवानगी आवश्यक आहे."
+    },
+    "statusSaveFailed": {
+        "message": "सेटिंग्ज जतन करता आल्या नाहीत."
+    },
+    "errorGeneric": {
+        "message": "पासवर्ड तयार करता आला नाही."
+    },
+    "errorInvalidLength": {
+        "message": "लांबी $MIN$ ते $MAX$ दरम्यान असावी.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "किमान एक अक्षर प्रकार निवडा."
+    },
+    "errorLengthTooShort": {
+        "message": "लांबी निवडलेल्या अक्षर प्रकारांच्या संख्येपेक्षा कमी आहे."
+    },
+    "settingsButtonTitle": {
+        "message": "सेटिंग्ज"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock बद्दल"
+    },
+    "settingsHeading": {
+        "message": "सेटिंग्ज"
+    },
+    "aboutHeading": {
+        "message": "माहिती"
+    },
+    "languageLabel": {
+        "message": "भाषा"
+    },
+    "languageAuto": {
+        "message": "स्वयंचलित (ब्राउझरची भाषा)"
+    },
+    "themeLabel": {
+        "message": "थीम"
+    },
+    "themeSystem": {
+        "message": "सिस्टम डीफॉल्ट"
+    },
+    "themeLight": {
+        "message": "फिकट"
+    },
+    "themeDark": {
+        "message": "गडद"
+    },
+    "contextMenuLabel": {
+        "message": "राइट-क्लिक मेनूमध्ये “$ITEM$” दाखवा",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "माउस नेईपर्यंत पासवर्ड अस्पष्ट ठेवा"
+    },
+    "resetSettings": {
+        "message": "डीफॉल्ट पुनर्संचयित करा"
+    },
+    "settingsReset": {
+        "message": "सेटिंग्ज डीफॉल्टवर पुनर्संचयित केल्या."
+    },
+    "aboutVersion": {
+        "message": "आवृत्ती $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "निर्माता: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "ओपन सोर्स, Apache परवाना 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "सर्व काही तुमच्या डिव्हाइसवर चालते. Padlock कोणताही डेटा गोळा करत नाही आणि कुठेही काहीही पाठवत नाही."
+    },
+    "aboutRepositoryLabel": {
+        "message": "सोर्स कोड, समस्या आणि अद्यतने"
+    }
+}

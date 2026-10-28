@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – பாதுகாப்பான கடவுச்சொல் உருவாக்கி"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "உலாவியின் பாதுகாப்பான சீரற்ற எண் உருவாக்கியால் வலுவான, சீரற்ற கடவுச்சொற்களை உருவாக்குங்கள். அனைத்தும் உங்கள் சாதனத்திலேயே இருக்கும்."
+    },
+    "actionTitle": {
+        "message": "Padlock – கடவுச்சொல்லை உருவாக்கு"
+    },
+    "commandOpen": {
+        "message": "Padlock ஐத் திற"
+    },
+    "menuInsertPassword": {
+        "message": "பாதுகாப்பான கடவுச்சொல்லைச் செருகு"
+    },
+    "tagline": {
+        "message": "பாதுகாப்பான கடவுச்சொல் உருவாக்கி"
+    },
+    "generatedPasswordLabel": {
+        "message": "உருவாக்கப்பட்ட கடவுச்சொல்"
+    },
+    "clickToCopy": {
+        "message": "நகலெடுக்கக் கிளிக் செய்யவும்"
+    },
+    "copy": {
+        "message": "நகலெடு"
+    },
+    "regenerate": {
+        "message": "மீண்டும் உருவாக்கு"
+    },
+    "regenerateTitle": {
+        "message": "புதிய கடவுச்சொல்லை உருவாக்கு"
+    },
+    "historyButton": {
+        "message": "வரலாறு"
+    },
+    "historyButtonTitle": {
+        "message": "சமீபத்தில் உருவாக்கிய $COUNT$ கடவுச்சொற்களைக் காட்டு",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "கடவுச்சொல் வலிமை"
+    },
+    "strengthLevel0": {
+        "message": "மிகவும் பலவீனம்"
+    },
+    "strengthLevel1": {
+        "message": "பலவீனம்"
+    },
+    "strengthLevel2": {
+        "message": "நன்று"
+    },
+    "strengthLevel3": {
+        "message": "வலுவானது"
+    },
+    "strengthLevel4": {
+        "message": "மிகவும் வலுவானது"
+    },
+    "entropyBits": {
+        "message": "$BITS$ பிட் என்ட்ரோபி",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "விருப்பங்கள்"
+    },
+    "lengthLabel": {
+        "message": "நீளம்"
+    },
+    "lengthSliderLabel": {
+        "message": "கடவுச்சொல் நீளம்"
+    },
+    "charactersLegend": {
+        "message": "எழுத்துகள்"
+    },
+    "lowercase": {
+        "message": "சிறிய எழுத்துகள்"
+    },
+    "uppercase": {
+        "message": "பெரிய எழுத்துகள்"
+    },
+    "digits": {
+        "message": "எண்கள்"
+    },
+    "symbols": {
+        "message": "குறியீடுகள்"
+    },
+    "avoidLookalikes": {
+        "message": "ஒரே மாதிரி தெரியும் எழுத்துகளைத் தவிர்"
+    },
+    "excludeCharsLabel": {
+        "message": "எழுத்துகளை விலக்கு"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "எ.கா. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "நகலெடுத்த பிறகு கிளிப்போர்டை அழி"
+    },
+    "clipboardNever": {
+        "message": "ஒருபோதும் இல்லை"
+    },
+    "clipboard30": {
+        "message": "30 வினாடிகள்"
+    },
+    "clipboard60": {
+        "message": "1 நிமிடம்"
+    },
+    "clipboard120": {
+        "message": "2 நிமிடங்கள்"
+    },
+    "keepHistoryLabel": {
+        "message": "கடைசி $COUNT$ கடவுச்சொற்களின் வரலாற்றை வைத்திரு",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "கடவுச்சொற்கள் குறியாக்கம் இல்லாமல் உலாவியின் நினைவகத்தில் மட்டுமே இருக்கும்; Chrome மூடப்படும்போது அழிக்கப்படும். இந்த விருப்பத்தை முடக்கினால் வரலாறு நீக்கப்படும்."
+    },
+    "footer": {
+        "message": "கடவுச்சொற்கள் உலாவியின் CSPRNG மூலம் உள்ளூரில் உருவாக்கப்படும்; எதுவும் அனுப்பப்படாது. செருக, உரைப் புலத்தில் வலது கிளிக் செய்யவும்."
+    },
+    "historyViewLabel": {
+        "message": "கடவுச்சொல் வரலாறு"
+    },
+    "historyHeading": {
+        "message": "வரலாறு"
+    },
+    "historyEmpty": {
+        "message": "இன்னும் கடவுச்சொற்கள் இல்லை."
+    },
+    "back": {
+        "message": "பின்செல்"
+    },
+    "historyClear": {
+        "message": "வரலாற்றை அழி"
+    },
+    "historyCleared": {
+        "message": "வரலாறு அழிக்கப்பட்டது."
+    },
+    "statusCopyFailed": {
+        "message": "நகலெடுக்க முடியவில்லை. கடவுச்சொல்லைத் தேர்ந்தெடுத்து கைமுறையாக நகலெடுக்கவும்."
+    },
+    "statusCopied": {
+        "message": "கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது."
+    },
+    "statusCopiedNoPermission": {
+        "message": "நகலெடுக்கப்பட்டது. தானாக அழிக்க கிளிப்போர்டு அனுமதி தேவை; அனுமதி வழங்க விருப்பத்தை மீண்டும் தேர்ந்தெடுக்கவும்."
+    },
+    "statusCopiedClearIn": {
+        "message": "நகலெடுக்கப்பட்டது. கிளிப்போர்டு $SECONDS$ வினாடிகளில் அழிக்கப்படும்.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "நகலெடுக்கப்பட்டது, ஆனால் கிளிப்போர்டை அழிப்பதை திட்டமிட முடியவில்லை."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "கிளிப்போர்டை தானாக அழிக்க கிளிப்போர்டு அனுமதி தேவை."
+    },
+    "statusSaveFailed": {
+        "message": "அமைப்புகளைச் சேமிக்க முடியவில்லை."
+    },
+    "errorGeneric": {
+        "message": "கடவுச்சொல்லை உருவாக்க முடியவில்லை."
+    },
+    "errorInvalidLength": {
+        "message": "நீளம் $MIN$ முதல் $MAX$ வரை இருக்க வேண்டும்.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "குறைந்தது ஒரு எழுத்து வகையைத் தேர்ந்தெடுக்கவும்."
+    },
+    "errorLengthTooShort": {
+        "message": "நீளம் தேர்ந்தெடுத்த எழுத்து வகைகளின் எண்ணிக்கையை விடக் குறைவாக உள்ளது."
+    },
+    "settingsButtonTitle": {
+        "message": "அமைப்புகள்"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock பற்றி"
+    },
+    "settingsHeading": {
+        "message": "அமைப்புகள்"
+    },
+    "aboutHeading": {
+        "message": "பற்றி"
+    },
+    "languageLabel": {
+        "message": "மொழி"
+    },
+    "languageAuto": {
+        "message": "தானியங்கு (உலாவியின் மொழி)"
+    },
+    "themeLabel": {
+        "message": "தீம்"
+    },
+    "themeSystem": {
+        "message": "கணினி இயல்புநிலை"
+    },
+    "themeLight": {
+        "message": "ஒளி"
+    },
+    "themeDark": {
+        "message": "இருள்"
+    },
+    "contextMenuLabel": {
+        "message": "வலது-கிளிக் மெனுவில் “$ITEM$” ஐக் காட்டு",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "சுட்டி வரும் வரை கடவுச்சொற்களை மங்கலாக்கு"
+    },
+    "resetSettings": {
+        "message": "இயல்புநிலைகளை மீட்டமை"
+    },
+    "settingsReset": {
+        "message": "அமைப்புகள் இயல்புநிலைக்கு மீட்டமைக்கப்பட்டன."
+    },
+    "aboutVersion": {
+        "message": "பதிப்பு $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "உருவாக்கியவர்: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "திறந்த மூலம், Apache உரிமம் 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "அனைத்தும் உங்கள் சாதனத்திலேயே இயங்கும். Padlock எந்த தரவையும் சேகரிக்காது, எங்கும் எதையும் அனுப்பாது."
+    },
+    "aboutRepositoryLabel": {
+        "message": "மூலக் குறியீடு, சிக்கல்கள் மற்றும் புதுப்பிப்புகள்"
+    }
+}
