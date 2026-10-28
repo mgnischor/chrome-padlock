@@ -241,6 +241,12 @@ Estes documentos estão em inglês, o idioma usado pela Chrome Web Store.
 - [docs/privacy-policy.md](docs/privacy-policy.md): a política de privacidade. A loja exige que ela
   esteja em uma URL pública. Atualize-a antes de lançar qualquer mudança no que a extensão armazena
   ou transmite.
+- [store-listing/](store-listing): a descrição da loja, pronta para colar, nos 26 idiomas que a loja
+  aceita para a listagem (um `<código>.txt` por idioma). Cada texto segue as regras de listagem da
+  loja: sem emojis nem símbolos decorativos, sem repetir uma palavra-chave mais de cinco vezes, só com
+  afirmações que correspondem ao que a extensão faz e sem links além do repositório do projeto. O
+  `tests/store-listing.test.ts` verifica tudo isso, então edite os textos e rode `npm test` antes de
+  colar um texto alterado.
 
 ## Limitações
 
