@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – Mai Samar da Kalmar Sirri Mai Tsaro"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "Ƙirƙiri ƙaƙƙarfan kalmomin sirri na bazuwar da na'urar samar da lambobin bazuwar mai tsaro ta burauza. Komai yana nan a na'urarka."
+    },
+    "actionTitle": {
+        "message": "Padlock – ƙirƙiri kalmar sirri"
+    },
+    "commandOpen": {
+        "message": "Buɗe Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "Saka kalmar sirri mai tsaro"
+    },
+    "tagline": {
+        "message": "Mai samar da kalmar sirri mai tsaro"
+    },
+    "generatedPasswordLabel": {
+        "message": "Kalmar sirri da aka ƙirƙira"
+    },
+    "clickToCopy": {
+        "message": "Danna don kwafa"
+    },
+    "copy": {
+        "message": "Kwafa"
+    },
+    "regenerate": {
+        "message": "Sake ƙirƙira"
+    },
+    "regenerateTitle": {
+        "message": "Ƙirƙiri sabuwar kalmar sirri"
+    },
+    "historyButton": {
+        "message": "Tarihi"
+    },
+    "historyButtonTitle": {
+        "message": "Nuna kalmomin sirri $COUNT$ na ƙarshe da aka ƙirƙira",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "Ƙarfin kalmar sirri"
+    },
+    "strengthLevel0": {
+        "message": "Mai rauni sosai"
+    },
+    "strengthLevel1": {
+        "message": "Mai rauni"
+    },
+    "strengthLevel2": {
+        "message": "Mai kyau"
+    },
+    "strengthLevel3": {
+        "message": "Mai ƙarfi"
+    },
+    "strengthLevel4": {
+        "message": "Mai ƙarfi sosai"
+    },
+    "entropyBits": {
+        "message": "entropy na bit $BITS$",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "Zaɓuɓɓuka"
+    },
+    "lengthLabel": {
+        "message": "Tsawo"
+    },
+    "lengthSliderLabel": {
+        "message": "Tsawon kalmar sirri"
+    },
+    "charactersLegend": {
+        "message": "Haruffa"
+    },
+    "lowercase": {
+        "message": "Ƙananan haruffa"
+    },
+    "uppercase": {
+        "message": "Manyan haruffa"
+    },
+    "digits": {
+        "message": "Lambobi"
+    },
+    "symbols": {
+        "message": "Alamomi"
+    },
+    "avoidLookalikes": {
+        "message": "Guji haruffa masu kama da juna"
+    },
+    "excludeCharsLabel": {
+        "message": "Cire haruffa"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "misali {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "Share allon kwafi bayan an kwafa"
+    },
+    "clipboardNever": {
+        "message": "Ba za a taɓa yi ba"
+    },
+    "clipboard30": {
+        "message": "daƙiƙa 30"
+    },
+    "clipboard60": {
+        "message": "minti 1"
+    },
+    "clipboard120": {
+        "message": "minti 2"
+    },
+    "keepHistoryLabel": {
+        "message": "Ajiye tarihin kalmomin sirri $COUNT$ na ƙarshe",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "Ana ajiye kalmomin sirri ba tare da ɓoyewa ba a cikin ƙwaƙwalwar burauza kawai, kuma ana share su idan an rufe Chrome. Kashe wannan zaɓi yana share tarihin."
+    },
+    "footer": {
+        "message": "Ana ƙirƙirar kalmomin sirri a cikin na'urarka da CSPRNG na burauza. Ba a aika komai zuwa ko'ina. Danna dama a filin rubutu don saka kalmar sirri."
+    },
+    "historyViewLabel": {
+        "message": "Tarihin kalmomin sirri"
+    },
+    "historyHeading": {
+        "message": "Tarihi"
+    },
+    "historyEmpty": {
+        "message": "Babu kalmar sirri tukuna."
+    },
+    "back": {
+        "message": "Koma baya"
+    },
+    "historyClear": {
+        "message": "Share tarihi"
+    },
+    "historyCleared": {
+        "message": "An share tarihi."
+    },
+    "statusCopyFailed": {
+        "message": "Kwafa ya gaza. Zaɓi kalmar sirri ka kwafa da hannu."
+    },
+    "statusCopied": {
+        "message": "An kwafa zuwa allon kwafi."
+    },
+    "statusCopiedNoPermission": {
+        "message": "An kwafa. Sharewa ta atomatik tana buƙatar izinin allon kwafi; sake zaɓar zaɓin don ba da izini."
+    },
+    "statusCopiedClearIn": {
+        "message": "An kwafa. Za a share allon kwafi cikin daƙiƙa $SECONDS$.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "An kwafa, amma an kasa tsara sharewar allon kwafi."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "Ana buƙatar izinin allon kwafi don share shi ta atomatik."
+    },
+    "statusSaveFailed": {
+        "message": "Ba a iya adana saituna ba."
+    },
+    "errorGeneric": {
+        "message": "Ba a iya ƙirƙirar kalmar sirri ba."
+    },
+    "errorInvalidLength": {
+        "message": "Tsawo dole ya kasance tsakanin $MIN$ da $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "Zaɓi aƙalla nau'in haruffa ɗaya."
+    },
+    "errorLengthTooShort": {
+        "message": "Tsawon bai kai yawan nau'ikan haruffan da aka zaɓa ba."
+    },
+    "settingsButtonTitle": {
+        "message": "Saituna"
+    },
+    "aboutButtonTitle": {
+        "message": "Game da Padlock"
+    },
+    "settingsHeading": {
+        "message": "Saituna"
+    },
+    "aboutHeading": {
+        "message": "Game da"
+    },
+    "languageLabel": {
+        "message": "Harshe"
+    },
+    "languageAuto": {
+        "message": "Na atomatik (harshen burauza)"
+    },
+    "themeLabel": {
+        "message": "Jigo"
+    },
+    "themeSystem": {
+        "message": "Tsohuwar tsarin"
+    },
+    "themeLight": {
+        "message": "Haske"
+    },
+    "themeDark": {
+        "message": "Duhu"
+    },
+    "contextMenuLabel": {
+        "message": "Nuna “$ITEM$” a menu na danna dama",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "Rufe kalmomin sirri sai an kai maɓallin linzamin kansu"
+    },
+    "resetSettings": {
+        "message": "Mayar da na asali"
+    },
+    "settingsReset": {
+        "message": "An mayar da saituna zuwa na asali."
+    },
+    "aboutVersion": {
+        "message": "Sigar $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "Miguel Nischor ne ya ƙirƙira"
+    },
+    "aboutLicense": {
+        "message": "Buɗaɗɗen tushe, Lasisin Apache 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "Komai yana gudana a na'urarka. Padlock ba ya tattara bayanai kuma ba ya aika komai zuwa ko'ina."
+    },
+    "aboutRepositoryLabel": {
+        "message": "Lambar tushe, matsaloli da sabuntawa"
+    }
+}
