@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – ಸುರಕ್ಷಿತ ಪಾಸ್‌ವರ್ಡ್ ಜನರೇಟರ್"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "ಬ್ರೌಸರ್‌ನ ಸುರಕ್ಷಿತ ಯಾದೃಚ್ಛಿಕ ಸಂಖ್ಯೆ ಜನರೇಟರ್‌ನಿಂದ ಬಲವಾದ, ಯಾದೃಚ್ಛಿಕ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ರಚಿಸಿ. ಎಲ್ಲವೂ ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ಇರುತ್ತದೆ."
+    },
+    "actionTitle": {
+        "message": "Padlock – ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಿ"
+    },
+    "commandOpen": {
+        "message": "Padlock ತೆರೆಯಿರಿ"
+    },
+    "menuInsertPassword": {
+        "message": "ಸುರಕ್ಷಿತ ಪಾಸ್‌ವರ್ಡ್ ಸೇರಿಸಿ"
+    },
+    "tagline": {
+        "message": "ಸುರಕ್ಷಿತ ಪಾಸ್‌ವರ್ಡ್ ಜನರೇಟರ್"
+    },
+    "generatedPasswordLabel": {
+        "message": "ರಚಿಸಿದ ಪಾಸ್‌ವರ್ಡ್"
+    },
+    "clickToCopy": {
+        "message": "ನಕಲಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ"
+    },
+    "copy": {
+        "message": "ನಕಲಿಸಿ"
+    },
+    "regenerate": {
+        "message": "ಮತ್ತೆ ರಚಿಸಿ"
+    },
+    "regenerateTitle": {
+        "message": "ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಿ"
+    },
+    "historyButton": {
+        "message": "ಇತಿಹಾಸ"
+    },
+    "historyButtonTitle": {
+        "message": "ಇತ್ತೀಚೆಗೆ ರಚಿಸಿದ $COUNT$ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ತೋರಿಸಿ",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "ಪಾಸ್‌ವರ್ಡ್ ಬಲ"
+    },
+    "strengthLevel0": {
+        "message": "ತುಂಬಾ ದುರ್ಬಲ"
+    },
+    "strengthLevel1": {
+        "message": "ದುರ್ಬಲ"
+    },
+    "strengthLevel2": {
+        "message": "ಉತ್ತಮ"
+    },
+    "strengthLevel3": {
+        "message": "ಬಲವಾದ"
+    },
+    "strengthLevel4": {
+        "message": "ತುಂಬಾ ಬಲವಾದ"
+    },
+    "entropyBits": {
+        "message": "$BITS$ ಬಿಟ್ ಎಂಟ್ರೊಪಿ",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "ಆಯ್ಕೆಗಳು"
+    },
+    "lengthLabel": {
+        "message": "ಉದ್ದ"
+    },
+    "lengthSliderLabel": {
+        "message": "ಪಾಸ್‌ವರ್ಡ್ ಉದ್ದ"
+    },
+    "charactersLegend": {
+        "message": "ಅಕ್ಷರಗಳು"
+    },
+    "lowercase": {
+        "message": "ಸಣ್ಣ ಅಕ್ಷರಗಳು"
+    },
+    "uppercase": {
+        "message": "ದೊಡ್ಡ ಅಕ್ಷರಗಳು"
+    },
+    "digits": {
+        "message": "ಅಂಕಿಗಳು"
+    },
+    "symbols": {
+        "message": "ಚಿಹ್ನೆಗಳು"
+    },
+    "avoidLookalikes": {
+        "message": "ಒಂದೇ ರೀತಿ ಕಾಣುವ ಅಕ್ಷರಗಳನ್ನು ತಪ್ಪಿಸಿ"
+    },
+    "excludeCharsLabel": {
+        "message": "ಅಕ್ಷರಗಳನ್ನು ಹೊರತುಪಡಿಸಿ"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "ಉದಾ. {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "ನಕಲಿಸಿದ ನಂತರ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ತೆರವುಗೊಳಿಸಿ"
+    },
+    "clipboardNever": {
+        "message": "ಎಂದಿಗೂ ಇಲ್ಲ"
+    },
+    "clipboard30": {
+        "message": "30 ಸೆಕೆಂಡುಗಳು"
+    },
+    "clipboard60": {
+        "message": "1 ನಿಮಿಷ"
+    },
+    "clipboard120": {
+        "message": "2 ನಿಮಿಷಗಳು"
+    },
+    "keepHistoryLabel": {
+        "message": "ಕೊನೆಯ $COUNT$ ಪಾಸ್‌ವರ್ಡ್‌ಗಳ ಇತಿಹಾಸ ಇರಿಸಿ",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡದೆ ಬ್ರೌಸರ್‌ನ ಮೆಮೊರಿಯಲ್ಲಿ ಮಾತ್ರ ಇರಿಸಲಾಗುತ್ತದೆ ಮತ್ತು Chrome ಮುಚ್ಚಿದಾಗ ಅಳಿಸಲಾಗುತ್ತದೆ. ಈ ಆಯ್ಕೆಯನ್ನು ಆಫ್ ಮಾಡಿದರೆ ಇತಿಹಾಸ ಅಳಿಸಲ್ಪಡುತ್ತದೆ."
+    },
+    "footer": {
+        "message": "ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಬ್ರೌಸರ್‌ನ CSPRNG ಮೂಲಕ ಸ್ಥಳೀಯವಾಗಿ ರಚಿಸಲಾಗುತ್ತದೆ. ಯಾವುದನ್ನೂ ಎಲ್ಲಿಯೂ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ. ಪಾಸ್‌ವರ್ಡ್ ಸೇರಿಸಲು ಪಠ್ಯ ಕ್ಷೇತ್ರದ ಮೇಲೆ ಬಲ-ಕ್ಲಿಕ್ ಮಾಡಿ."
+    },
+    "historyViewLabel": {
+        "message": "ಪಾಸ್‌ವರ್ಡ್ ಇತಿಹಾಸ"
+    },
+    "historyHeading": {
+        "message": "ಇತಿಹಾಸ"
+    },
+    "historyEmpty": {
+        "message": "ಇನ್ನೂ ಯಾವುದೇ ಪಾಸ್‌ವರ್ಡ್ ಇಲ್ಲ."
+    },
+    "back": {
+        "message": "ಹಿಂದೆ"
+    },
+    "historyClear": {
+        "message": "ಇತಿಹಾಸ ತೆರವುಗೊಳಿಸಿ"
+    },
+    "historyCleared": {
+        "message": "ಇತಿಹಾಸ ತೆರವುಗೊಂಡಿದೆ."
+    },
+    "statusCopyFailed": {
+        "message": "ನಕಲಿಸಲು ಆಗಲಿಲ್ಲ. ಪಾಸ್‌ವರ್ಡ್ ಆಯ್ಕೆಮಾಡಿ ಕೈಯಾರೆ ನಕಲಿಸಿ."
+    },
+    "statusCopied": {
+        "message": "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲಾಗಿದೆ."
+    },
+    "statusCopiedNoPermission": {
+        "message": "ನಕಲಿಸಲಾಗಿದೆ. ಸ್ವಯಂಚಾಲಿತ ತೆರವಿಗೆ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ಅನುಮತಿ ಬೇಕು; ಅನುಮತಿ ನೀಡಲು ಆಯ್ಕೆಯನ್ನು ಮತ್ತೆ ಆರಿಸಿ."
+    },
+    "statusCopiedClearIn": {
+        "message": "ನಕಲಿಸಲಾಗಿದೆ. ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ $SECONDS$ ಸೆಕೆಂಡುಗಳಲ್ಲಿ ತೆರವುಗೊಳ್ಳುತ್ತದೆ.",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "ನಕಲಿಸಲಾಗಿದೆ, ಆದರೆ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ತೆರವುಗೊಳಿಸುವುದನ್ನು ನಿಗದಿಪಡಿಸಲು ಆಗಲಿಲ್ಲ."
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ಅನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ತೆರವುಗೊಳಿಸಲು ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ಅನುಮತಿ ಅಗತ್ಯ."
+    },
+    "statusSaveFailed": {
+        "message": "ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಉಳಿಸಲು ಆಗಲಿಲ್ಲ."
+    },
+    "errorGeneric": {
+        "message": "ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಲು ಆಗಲಿಲ್ಲ."
+    },
+    "errorInvalidLength": {
+        "message": "ಉದ್ದ $MIN$ ಮತ್ತು $MAX$ ನಡುವೆ ಇರಬೇಕು.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "ಕನಿಷ್ಠ ಒಂದು ಅಕ್ಷರ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ."
+    },
+    "errorLengthTooShort": {
+        "message": "ಉದ್ದವು ಆಯ್ಕೆಮಾಡಿದ ಅಕ್ಷರ ಪ್ರಕಾರಗಳ ಸಂಖ್ಯೆಗಿಂತ ಕಡಿಮೆ ಇದೆ."
+    },
+    "settingsButtonTitle": {
+        "message": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+    },
+    "aboutButtonTitle": {
+        "message": "Padlock ಬಗ್ಗೆ"
+    },
+    "settingsHeading": {
+        "message": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+    },
+    "aboutHeading": {
+        "message": "ಬಗ್ಗೆ"
+    },
+    "languageLabel": {
+        "message": "ಭಾಷೆ"
+    },
+    "languageAuto": {
+        "message": "ಸ್ವಯಂಚಾಲಿತ (ಬ್ರೌಸರ್ ಭಾಷೆ)"
+    },
+    "themeLabel": {
+        "message": "ಥೀಮ್"
+    },
+    "themeSystem": {
+        "message": "ಸಿಸ್ಟಮ್ ಡೀಫಾಲ್ಟ್"
+    },
+    "themeLight": {
+        "message": "ಬೆಳಕು"
+    },
+    "themeDark": {
+        "message": "ಗಾಢ"
+    },
+    "contextMenuLabel": {
+        "message": "ಬಲ-ಕ್ಲಿಕ್ ಮೆನುವಿನಲ್ಲಿ “$ITEM$” ತೋರಿಸಿ",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "ಮೌಸ್ ತರುವವರೆಗೆ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಮಸುಕುಗೊಳಿಸಿ"
+    },
+    "resetSettings": {
+        "message": "ಡೀಫಾಲ್ಟ್‌ಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಿ"
+    },
+    "settingsReset": {
+        "message": "ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಡೀಫಾಲ್ಟ್‌ಗೆ ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ."
+    },
+    "aboutVersion": {
+        "message": "ಆವೃತ್ತಿ $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "ರಚನೆ: Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "ಮುಕ್ತ ಮೂಲ, Apache ಪರವಾನಗಿ 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "ಎಲ್ಲವೂ ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ಚಲಿಸುತ್ತದೆ. Padlock ಯಾವುದೇ ಡೇಟಾ ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ ಮತ್ತು ಎಲ್ಲಿಯೂ ಏನನ್ನೂ ಕಳುಹಿಸುವುದಿಲ್ಲ."
+    },
+    "aboutRepositoryLabel": {
+        "message": "ಮೂಲ ಕೋಡ್, ಸಮಸ್ಯೆಗಳು ಮತ್ತು ನವೀಕರಣಗಳು"
+    }
+}
