@@ -1,0 +1,276 @@
+{
+    "extName": {
+        "message": "Padlock – 安全密碼產生器"
+    },
+    "extShortName": {
+        "message": "Padlock"
+    },
+    "extDescription": {
+        "message": "使用瀏覽器的安全隨機數產生器，產生強大的隨機密碼。所有內容都保留在您的裝置上。"
+    },
+    "actionTitle": {
+        "message": "Padlock – 產生密碼"
+    },
+    "commandOpen": {
+        "message": "開啟 Padlock"
+    },
+    "menuInsertPassword": {
+        "message": "插入安全密碼"
+    },
+    "tagline": {
+        "message": "安全密碼產生器"
+    },
+    "generatedPasswordLabel": {
+        "message": "已產生的密碼"
+    },
+    "clickToCopy": {
+        "message": "按一下即可複製"
+    },
+    "copy": {
+        "message": "複製"
+    },
+    "regenerate": {
+        "message": "重新產生"
+    },
+    "regenerateTitle": {
+        "message": "產生新密碼"
+    },
+    "historyButton": {
+        "message": "歷史記錄"
+    },
+    "historyButtonTitle": {
+        "message": "顯示最近產生的 $COUNT$ 個密碼",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "strengthMeterLabel": {
+        "message": "密碼強度"
+    },
+    "strengthLevel0": {
+        "message": "非常弱"
+    },
+    "strengthLevel1": {
+        "message": "弱"
+    },
+    "strengthLevel2": {
+        "message": "良好"
+    },
+    "strengthLevel3": {
+        "message": "強"
+    },
+    "strengthLevel4": {
+        "message": "非常強"
+    },
+    "entropyBits": {
+        "message": "$BITS$ 位元熵",
+        "placeholders": {
+            "bits": {
+                "content": "$1",
+                "example": "128"
+            }
+        }
+    },
+    "optionsLabel": {
+        "message": "選項"
+    },
+    "lengthLabel": {
+        "message": "長度"
+    },
+    "lengthSliderLabel": {
+        "message": "密碼長度"
+    },
+    "charactersLegend": {
+        "message": "字元"
+    },
+    "lowercase": {
+        "message": "小寫字母"
+    },
+    "uppercase": {
+        "message": "大寫字母"
+    },
+    "digits": {
+        "message": "數字"
+    },
+    "symbols": {
+        "message": "符號"
+    },
+    "avoidLookalikes": {
+        "message": "避免易混淆字元"
+    },
+    "excludeCharsLabel": {
+        "message": "排除字元"
+    },
+    "excludeCharsPlaceholder": {
+        "message": "例如 {}[]"
+    },
+    "clipboardClearLabel": {
+        "message": "複製後清除剪貼簿"
+    },
+    "clipboardNever": {
+        "message": "永不"
+    },
+    "clipboard30": {
+        "message": "30 秒"
+    },
+    "clipboard60": {
+        "message": "1 分鐘"
+    },
+    "clipboard120": {
+        "message": "2 分鐘"
+    },
+    "keepHistoryLabel": {
+        "message": "保留最近 $COUNT$ 個密碼的歷史記錄",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "50"
+            }
+        }
+    },
+    "keepHistoryHint": {
+        "message": "密碼會以未加密形式僅儲存在瀏覽器記憶體中，關閉 Chrome 時會被清除。關閉此選項將刪除歷史記錄。"
+    },
+    "footer": {
+        "message": "密碼使用瀏覽器的 CSPRNG 在本機產生，不會傳送到任何地方。在文字欄位上按一下滑鼠右鍵即可插入密碼。"
+    },
+    "historyViewLabel": {
+        "message": "密碼歷史記錄"
+    },
+    "historyHeading": {
+        "message": "歷史記錄"
+    },
+    "historyEmpty": {
+        "message": "尚無密碼。"
+    },
+    "back": {
+        "message": "返回"
+    },
+    "historyClear": {
+        "message": "清除歷史記錄"
+    },
+    "historyCleared": {
+        "message": "歷史記錄已清除。"
+    },
+    "statusCopyFailed": {
+        "message": "複製失敗。請選取密碼後手動複製。"
+    },
+    "statusCopied": {
+        "message": "已複製到剪貼簿。"
+    },
+    "statusCopiedNoPermission": {
+        "message": "已複製。自動清除需要剪貼簿權限；請重新選取該選項以授予權限。"
+    },
+    "statusCopiedClearIn": {
+        "message": "已複製。剪貼簿將在 $SECONDS$ 秒後清除。",
+        "placeholders": {
+            "seconds": {
+                "content": "$1",
+                "example": "30"
+            }
+        }
+    },
+    "statusScheduleFailed": {
+        "message": "已複製，但無法排定清除剪貼簿。"
+    },
+    "statusClipboardPermissionRequired": {
+        "message": "自動清除剪貼簿需要剪貼簿權限。"
+    },
+    "statusSaveFailed": {
+        "message": "無法儲存設定。"
+    },
+    "errorGeneric": {
+        "message": "無法產生密碼。"
+    },
+    "errorInvalidLength": {
+        "message": "長度必須介於 $MIN$ 到 $MAX$ 之間。",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "4"
+            },
+            "max": {
+                "content": "$2",
+                "example": "128"
+            }
+        }
+    },
+    "errorNoCharset": {
+        "message": "請至少選取一種字元類型。"
+    },
+    "errorLengthTooShort": {
+        "message": "長度小於所選字元類型的數量。"
+    },
+    "settingsButtonTitle": {
+        "message": "設定"
+    },
+    "aboutButtonTitle": {
+        "message": "關於 Padlock"
+    },
+    "settingsHeading": {
+        "message": "設定"
+    },
+    "aboutHeading": {
+        "message": "關於"
+    },
+    "languageLabel": {
+        "message": "語言"
+    },
+    "languageAuto": {
+        "message": "自動（瀏覽器語言）"
+    },
+    "themeLabel": {
+        "message": "主題"
+    },
+    "themeSystem": {
+        "message": "跟隨系統"
+    },
+    "themeLight": {
+        "message": "淺色"
+    },
+    "themeDark": {
+        "message": "深色"
+    },
+    "contextMenuLabel": {
+        "message": "在右鍵選單中顯示「$ITEM$」",
+        "placeholders": {
+            "item": {
+                "content": "$1",
+                "example": "Insert secure password"
+            }
+        }
+    },
+    "maskPasswordsLabel": {
+        "message": "滑鼠停留前模糊顯示密碼"
+    },
+    "resetSettings": {
+        "message": "還原預設值"
+    },
+    "settingsReset": {
+        "message": "設定已還原為預設值。"
+    },
+    "aboutVersion": {
+        "message": "版本 $VERSION$",
+        "placeholders": {
+            "version": {
+                "content": "$1",
+                "example": "1.0.0"
+            }
+        }
+    },
+    "aboutAuthor": {
+        "message": "作者：Miguel Nischor"
+    },
+    "aboutLicense": {
+        "message": "開放原始碼，Apache 授權條款 2.0"
+    },
+    "aboutPrivacy": {
+        "message": "一切都在您的裝置上執行。Padlock 不會收集資料，也不會將任何內容傳送到任何地方。"
+    },
+    "aboutRepositoryLabel": {
+        "message": "原始碼、問題回報與更新"
+    }
+}
