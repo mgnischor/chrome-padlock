@@ -228,6 +228,11 @@ if an HTML page has an inline script, or if the bundled JavaScript contains `fet
 
 - [docs/privacy-policy.md](docs/privacy-policy.md): the privacy policy. The store needs it at a public
   URL. Update it before releasing any change to what the extension stores or transmits.
+- [store-listing/](store-listing): the store description, ready to paste, in the 26 languages the
+  store accepts for a listing (one `<code>.txt` per language). Each text follows the store's listing
+  rules: no emoji or decorative symbols, no keyword repeated more than five times, only claims that
+  match what the extension does, and no link except the project's repository. `tests/store-listing.test.ts`
+  checks all of this, so edit the texts and run `npm test` before pasting a changed one.
 
 ## Limitations
 
