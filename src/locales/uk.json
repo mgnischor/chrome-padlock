@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Вихідний код, проблеми й оновлення"
+    },
+    "checkerButtonTitle": {
+        "message": "Перевірити надійність пароля"
+    },
+    "checkerInputLabel": {
+        "message": "Введіть або вставте пароль для перевірки"
+    },
+    "checkerShowLabel": {
+        "message": "Показати пароль"
+    },
+    "checkerTimeHeading": {
+        "message": "Орієнтовний час злому"
+    },
+    "crackOnlineSlow": {
+        "message": "Онлайн-атака з обмеженням ($RATE$ спроб на годину)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Онлайн-атака без обмежень ($RATE$ спроб на секунду)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Офлайн-атака, повільний хеш на кшталт bcrypt ($RATE$ спроб на секунду)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Офлайн-атака, швидкий хеш на GPU ($RATE$ спроб на секунду)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Менше секунди"
+    },
+    "crackBeyondUniverse": {
+        "message": "Довше, ніж вік Всесвіту"
+    },
+    "checkWarnCommon": {
+        "message": "Це один із найпоширеніших паролів."
+    },
+    "checkWarnPattern": {
+        "message": "Повтори, послідовності, клавіатурні шаблони та роки легко вгадати."
+    },
+    "checkWarnShort": {
+        "message": "Використовуйте щонайменше $COUNT$ символів.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Аналіз виконується на вашому пристрої, пароль ніколи не зберігається й не надсилається. Результат — оцінка за довжиною, різноманітністю символів і поширеними шаблонами; вона не знає, чи витікав пароль і чи складається він зі звичайних слів. Час указано в середньому."
     }
 }
