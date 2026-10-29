@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "સોર્સ કોડ, સમસ્યાઓ અને અપડેટ્સ"
+    },
+    "checkerButtonTitle": {
+        "message": "પાસવર્ડની મજબૂતી ચકાસો"
+    },
+    "checkerInputLabel": {
+        "message": "ચકાસવા માટે પાસવર્ડ લખો અથવા પેસ્ટ કરો"
+    },
+    "checkerShowLabel": {
+        "message": "પાસવર્ડ બતાવો"
+    },
+    "checkerTimeHeading": {
+        "message": "તોડવાનો અંદાજિત સમય"
+    },
+    "crackOnlineSlow": {
+        "message": "ઑનલાઇન હુમલો, મર્યાદિત પ્રયાસો (કલાકે $RATE$ પ્રયાસો)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "ઑનલાઇન હુમલો, મર્યાદા વગર (સેકન્ડે $RATE$ પ્રયાસો)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "ઑફલાઇન હુમલો, ધીમું હેશ જેમ કે bcrypt (સેકન્ડે $RATE$ પ્રયાસો)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "ઑફલાઇન હુમલો, GPU પર ઝડપી હેશ (સેકન્ડે $RATE$ પ્રયાસો)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "એક સેકન્ડથી ઓછું"
+    },
+    "crackBeyondUniverse": {
+        "message": "બ્રહ્માંડની ઉંમર કરતાં વધુ"
+    },
+    "checkWarnCommon": {
+        "message": "આ સૌથી વધુ વપરાતા પાસવર્ડમાંનો એક છે."
+    },
+    "checkWarnPattern": {
+        "message": "પુનરાવર્તન, ક્રમ, કીબોર્ડ પેટર્ન અને વર્ષોનું અનુમાન લગાવવું સરળ છે."
+    },
+    "checkWarnShort": {
+        "message": "ઓછામાં ઓછા $COUNT$ અક્ષરો વાપરો.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "વિશ્લેષણ તમારા ઉપકરણ પર થાય છે અને પાસવર્ડ ક્યારેય સાચવવામાં કે મોકલવામાં આવતો નથી. પરિણામ લંબાઈ, અક્ષરોની વિવિધતા અને સામાન્ય પેટર્ન પર આધારિત અંદાજ છે; પાસવર્ડ લીક થયો છે કે સામાન્ય શબ્દોથી બન્યો છે તે તે જાણી શકતું નથી. સમય સરેરાશ છે."
     }
 }
