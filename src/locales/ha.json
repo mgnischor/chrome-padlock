@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Lambar tushe, matsaloli da sabuntawa"
+    },
+    "checkerButtonTitle": {
+        "message": "Gwada ƙarfin kalmar sirri"
+    },
+    "checkerInputLabel": {
+        "message": "Rubuta ko liƙa kalmar sirri don a gwada"
+    },
+    "checkerShowLabel": {
+        "message": "Nuna kalmar sirri"
+    },
+    "checkerTimeHeading": {
+        "message": "Kimanin lokacin fasawa"
+    },
+    "crackOnlineSlow": {
+        "message": "Harin kan layi, da iyaka ($RATE$ yunƙuri a awa ɗaya)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Harin kan layi, ba iyaka ($RATE$ yunƙuri a daƙiƙa ɗaya)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Harin ba kan layi ba, hash mai jinkiri kamar bcrypt ($RATE$ yunƙuri a daƙiƙa ɗaya)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Harin ba kan layi ba, hash mai sauri a GPU ($RATE$ yunƙuri a daƙiƙa ɗaya)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Ƙasa da daƙiƙa ɗaya"
+    },
+    "crackBeyondUniverse": {
+        "message": "Ya fi shekarun sararin samaniya tsawo"
+    },
+    "checkWarnCommon": {
+        "message": "Wannan na ɗaya daga cikin kalmomin sirri da aka fi amfani da su."
+    },
+    "checkWarnPattern": {
+        "message": "Maimaitawa, jerin haruffa, tsarin madannai da shekaru suna da sauƙin hasashe."
+    },
+    "checkWarnShort": {
+        "message": "Yi amfani da haruffa aƙalla $COUNT$.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Ana bincike a na'urarka kuma ba a taɓa adana ko aika kalmar sirri ba. Sakamakon kimantawa ne bisa tsawo, nau'ikan haruffa da tsare-tsare na gama-gari; ba ya iya sanin ko kalmar sirri ta fita ko an gina ta da kalmomi na yau da kullum. Lokutan matsakaici ne."
     }
 }
