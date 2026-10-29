@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "原始碼、問題回報與更新"
+    },
+    "checkerButtonTitle": {
+        "message": "測試密碼強度"
+    },
+    "checkerInputLabel": {
+        "message": "輸入或貼上要測試的密碼"
+    },
+    "checkerShowLabel": {
+        "message": "顯示密碼"
+    },
+    "checkerTimeHeading": {
+        "message": "預估破解時間"
+    },
+    "crackOnlineSlow": {
+        "message": "線上攻擊，有次數限制（每小時 $RATE$ 次嘗試）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "線上攻擊，無限制（每秒 $RATE$ 次嘗試）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "離線攻擊，慢速雜湊如 bcrypt（每秒 $RATE$ 次嘗試）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "離線攻擊，GPU 上的快速雜湊（每秒 $RATE$ 次嘗試）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "不到一秒"
+    },
+    "crackBeyondUniverse": {
+        "message": "超過宇宙的年齡"
+    },
+    "checkWarnCommon": {
+        "message": "這是最常用的密碼之一。"
+    },
+    "checkWarnPattern": {
+        "message": "重複、序列、鍵盤模式和年份都很容易被猜到。"
+    },
+    "checkWarnShort": {
+        "message": "請至少使用 $COUNT$ 個字元。",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "在您的裝置上分析，絕不會儲存或傳送。結果是根據長度、字元種類和常見模式得出的估算，無法得知密碼是否已外洩，也無法得知它是否由常見詞語組成。時間均為平均值。"
     }
 }
