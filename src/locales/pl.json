@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Kod źródłowy, zgłoszenia i aktualizacje"
+    },
+    "checkerButtonTitle": {
+        "message": "Sprawdź siłę hasła"
+    },
+    "checkerInputLabel": {
+        "message": "Wpisz lub wklej hasło do sprawdzenia"
+    },
+    "checkerShowLabel": {
+        "message": "Pokaż hasło"
+    },
+    "checkerTimeHeading": {
+        "message": "Szacowany czas złamania"
+    },
+    "crackOnlineSlow": {
+        "message": "Atak online z limitem ($RATE$ prób na godzinę)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Atak online bez limitu ($RATE$ prób na sekundę)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Atak offline, wolny hasz, np. bcrypt ($RATE$ prób na sekundę)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Atak offline, szybki hasz na GPU ($RATE$ prób na sekundę)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Mniej niż sekunda"
+    },
+    "crackBeyondUniverse": {
+        "message": "Dłużej niż wiek wszechświata"
+    },
+    "checkWarnCommon": {
+        "message": "To jedno z najczęściej używanych haseł."
+    },
+    "checkWarnPattern": {
+        "message": "Powtórzenia, ciągi, wzory z klawiatury i lata łatwo odgadnąć."
+    },
+    "checkWarnShort": {
+        "message": "Użyj co najmniej $COUNT$ znaków.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Analiza odbywa się na Twoim urządzeniu, a hasło nigdy nie jest zapisywane ani wysyłane. Wynik to oszacowanie na podstawie długości, różnorodności znaków i typowych wzorców; nie wie, czy hasło wyciekło ani czy składa się ze zwykłych słów. Czasy to wartości średnie."
     }
 }
