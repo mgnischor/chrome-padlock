@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Kaynak kodu, sorunlar ve güncellemeler"
+    },
+    "checkerButtonTitle": {
+        "message": "Parola gücünü test et"
+    },
+    "checkerInputLabel": {
+        "message": "Test etmek için bir parola yazın veya yapıştırın"
+    },
+    "checkerShowLabel": {
+        "message": "Parolayı göster"
+    },
+    "checkerTimeHeading": {
+        "message": "Kırılması için tahmini süre"
+    },
+    "crackOnlineSlow": {
+        "message": "Çevrimiçi saldırı, sınırlı ($RATE$ deneme/saat)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Çevrimiçi saldırı, sınırsız ($RATE$ deneme/saniye)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Çevrimdışı saldırı, bcrypt gibi yavaş özet ($RATE$ deneme/saniye)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Çevrimdışı saldırı, GPU'larda hızlı özet ($RATE$ deneme/saniye)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Bir saniyeden az"
+    },
+    "crackBeyondUniverse": {
+        "message": "Evrenin yaşından uzun"
+    },
+    "checkWarnCommon": {
+        "message": "Bu, en sık kullanılan parolalardan biridir."
+    },
+    "checkWarnPattern": {
+        "message": "Tekrarlar, diziler, klavye desenleri ve yıllar kolay tahmin edilir."
+    },
+    "checkWarnShort": {
+        "message": "En az $COUNT$ karakter kullanın.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Cihazınızda analiz edilir; parola asla saklanmaz veya gönderilmez. Sonuç; uzunluğa, karakter çeşitliliğine ve yaygın desenlere dayanan bir tahmindir ve parolanın sızıp sızmadığını ya da sıradan sözcüklerden oluşup oluşmadığını bilemez. Süreler ortalamadır."
     }
 }
