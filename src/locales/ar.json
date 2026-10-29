@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "الشيفرة المصدرية والمشكلات والتحديثات"
+    },
+    "checkerButtonTitle": {
+        "message": "اختبار قوة كلمة المرور"
+    },
+    "checkerInputLabel": {
+        "message": "اكتب كلمة مرور أو الصقها لاختبارها"
+    },
+    "checkerShowLabel": {
+        "message": "إظهار كلمة المرور"
+    },
+    "checkerTimeHeading": {
+        "message": "الوقت التقديري للاختراق"
+    },
+    "crackOnlineSlow": {
+        "message": "هجوم عبر الإنترنت مع حد للمحاولات ($RATE$ محاولة في الساعة)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "هجوم عبر الإنترنت دون حد ($RATE$ محاولة في الثانية)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "هجوم دون اتصال، تجزئة بطيئة مثل bcrypt ($RATE$ محاولة في الثانية)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "هجوم دون اتصال، تجزئة سريعة على وحدات GPU ($RATE$ محاولة في الثانية)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "أقل من ثانية"
+    },
+    "crackBeyondUniverse": {
+        "message": "أطول من عمر الكون"
+    },
+    "checkWarnCommon": {
+        "message": "هذه من أكثر كلمات المرور استخدامًا."
+    },
+    "checkWarnPattern": {
+        "message": "من السهل تخمين التكرارات والتسلسلات وأنماط لوحة المفاتيح والسنوات."
+    },
+    "checkWarnShort": {
+        "message": "استخدم $COUNT$ أحرف على الأقل.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "يُجرى التحليل على جهازك ولا تُحفظ كلمة المرور ولا تُرسل أبدًا. النتيجة تقدير يعتمد على الطول وتنوع الأحرف والأنماط الشائعة، ولا يمكنه معرفة ما إذا كانت كلمة المرور قد سُرّبت أو كانت مكوّنة من كلمات شائعة. الأزمنة متوسطات."
     }
 }
