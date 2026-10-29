@@ -33,6 +33,33 @@
                 <h1>Padlock</h1>
                 <span class="tagline" data-i18n="tagline">Secure password generator</span>
                 <button
+                    id="checker-open"
+                    type="button"
+                    class="icon-button"
+                    title="Test password strength"
+                    aria-label="Test password strength"
+                    data-i18n-title="checkerButtonTitle"
+                    data-i18n-aria-label="checkerButtonTitle"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <mask id="shield-check">
+                            <rect width="24" height="24" fill="#fff" />
+                            <path
+                                d="M8.2 12.2l2.8 2.8 5-5.2"
+                                fill="none"
+                                stroke="#000"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </mask>
+                        <path
+                            mask="url(#shield-check)"
+                            d="M12 2.2 4.4 5.1v5.8c0 4.8 3.2 8.9 7.6 10.7 4.4-1.8 7.6-5.9 7.6-10.7V5.1L12 2.2z"
+                        />
+                    </svg>
+                </button>
+                <button
                     id="settings-open"
                     type="button"
                     class="icon-button"
@@ -135,8 +162,8 @@
                     </section>
 
                     <footer class="footer" data-i18n="footer">
-                        Passwords are generated locally with the browser's CSPRNG. Nothing is sent anywhere.
-                        Right-click a text field to insert one.
+                        Passwords are generated locally with the browser's CSPRNG. Nothing is sent anywhere. Right-click
+                        a text field to insert one.
                     </footer>
                 </div>
 
@@ -218,6 +245,69 @@
             </section>
 
             <section
+                id="checker-view"
+                class="card view"
+                aria-label="Test password strength"
+                data-i18n-aria-label="checkerButtonTitle"
+                hidden
+            >
+                <div class="view-head">
+                    <button id="checker-back" type="button" class="primary" data-i18n="back">Back</button>
+                    <h2 data-i18n="checkerButtonTitle">Test password strength</h2>
+                </div>
+                <div class="checker-body">
+                    <div class="checker-column">
+                        <input
+                            id="checker-input"
+                            type="password"
+                            autocomplete="off"
+                            autocapitalize="off"
+                            autocorrect="off"
+                            spellcheck="false"
+                            maxlength="1024"
+                            placeholder="Type or paste a password to test"
+                            aria-label="Type or paste a password to test"
+                            data-i18n-placeholder="checkerInputLabel"
+                            data-i18n-aria-label="checkerInputLabel"
+                        />
+                        <label class="check">
+                            <input id="checker-show" type="checkbox" />
+                            <span data-i18n="checkerShowLabel">Show password</span>
+                        </label>
+                        <div id="checker-result" class="checker-result" hidden>
+                            <div
+                                id="checker-meter"
+                                class="meter"
+                                data-level="0"
+                                role="meter"
+                                aria-label="Password strength"
+                                data-i18n-aria-label="strengthMeterLabel"
+                                aria-valuemin="0"
+                                aria-valuemax="4"
+                                aria-valuenow="0"
+                            >
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="strength-text">
+                                <strong id="checker-strength"></strong>
+                                <span id="checker-entropy" class="muted"></span>
+                            </div>
+                            <ul id="checker-warnings" class="warnings"></ul>
+                        </div>
+                        <p class="hint checker-note" data-i18n="checkerNote">
+                            Analyzed on your device and never stored or sent. The result is an estimate based on length,
+                            character variety and common patterns; it cannot know whether a password has leaked or is
+                            made of ordinary words. Times are averages.
+                        </p>
+                    </div>
+                    <div id="checker-times-block" class="checker-column" hidden>
+                        <h3 data-i18n="checkerTimeHeading">Estimated time to crack</h3>
+                        <div id="checker-times" class="crack-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section
                 id="settings-view"
                 class="card view"
                 aria-label="Settings"
@@ -265,8 +355,8 @@
                                 <span data-i18n="keepHistoryLabel">Keep a history of the last 50 passwords</span>
                             </label>
                             <p class="hint" data-i18n="keepHistoryHint">
-                                Passwords are kept unencrypted in browser memory only and are erased when Chrome
-                                closes. Turning this off deletes the history.
+                                Passwords are kept unencrypted in browser memory only and are erased when Chrome closes.
+                                Turning this off deletes the history.
                             </p>
                         </div>
                         <label class="check">
