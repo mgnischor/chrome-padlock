@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "سورس کوڈ، مسائل اور اپ ڈیٹس"
+    },
+    "checkerButtonTitle": {
+        "message": "پاس ورڈ کی مضبوطی جانچیں"
+    },
+    "checkerInputLabel": {
+        "message": "جانچنے کے لیے پاس ورڈ لکھیں یا پیسٹ کریں"
+    },
+    "checkerShowLabel": {
+        "message": "پاس ورڈ دکھائیں"
+    },
+    "checkerTimeHeading": {
+        "message": "توڑنے کا اندازاً وقت"
+    },
+    "crackOnlineSlow": {
+        "message": "آن لائن حملہ، محدود کوششیں (فی گھنٹہ $RATE$ کوششیں)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "آن لائن حملہ، بغیر حد (فی سیکنڈ $RATE$ کوششیں)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "آف لائن حملہ، سست ہیش جیسے bcrypt (فی سیکنڈ $RATE$ کوششیں)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "آف لائن حملہ، GPU پر تیز ہیش (فی سیکنڈ $RATE$ کوششیں)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "ایک سیکنڈ سے کم"
+    },
+    "crackBeyondUniverse": {
+        "message": "کائنات کی عمر سے بھی زیادہ"
+    },
+    "checkWarnCommon": {
+        "message": "یہ سب سے زیادہ استعمال ہونے والے پاس ورڈز میں سے ایک ہے۔"
+    },
+    "checkWarnPattern": {
+        "message": "تکرار، ترتیب، کی بورڈ کے نمونے اور سال کا اندازہ لگانا آسان ہے۔"
+    },
+    "checkWarnShort": {
+        "message": "کم از کم $COUNT$ حروف استعمال کریں۔",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "تجزیہ آپ کے آلے پر ہوتا ہے اور پاس ورڈ کبھی محفوظ یا ارسال نہیں کیا جاتا۔ نتیجہ لمبائی، حروف کی اقسام اور عام نمونوں پر مبنی اندازہ ہے؛ یہ نہیں بتا سکتا کہ پاس ورڈ لیک ہوا ہے یا عام الفاظ سے بنا ہے۔ اوقات اوسط ہیں۔"
     }
 }
