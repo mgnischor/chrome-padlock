@@ -211,7 +211,8 @@ main {
 .history-password,
 code,
 input[type="number"],
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     direction: ltr;
     unicode-bidi: isolate;
 }
@@ -425,6 +426,7 @@ input[type="range"] {
 
 input[type="number"],
 input[type="text"],
+input[type="password"],
 select {
     width: 100%;
     padding: 5px 8px;
@@ -633,4 +635,76 @@ h2 {
 .link-button span {
     direction: ltr;
     unicode-bidi: isolate;
+}
+
+/* Password strength test: the field and the verdict on one side, the crack times on the other. */
+.checker-body {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+    gap: 14px 20px;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.checker-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.checker-result {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.warnings {
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 18px;
+    color: var(--level-1);
+    font-size: 12px;
+}
+
+.crack-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Each attack: the time in bold, and what the attack assumes in small print below it. */
+.crack-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.crack-time {
+    font-size: 12.5px;
+    line-height: 1.3;
+}
+
+.crack-label {
+    min-width: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.checker-note {
+    margin-top: auto;
+}
+
+#checker-input {
+    font:
+        600 14px ui-monospace,
+        "Cascadia Mono",
+        Consolas,
+        monospace;
 }
