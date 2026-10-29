@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "ಮೂಲ ಕೋಡ್, ಸಮಸ್ಯೆಗಳು ಮತ್ತು ನವೀಕರಣಗಳು"
+    },
+    "checkerButtonTitle": {
+        "message": "ಪಾಸ್‌ವರ್ಡ್ ಬಲವನ್ನು ಪರೀಕ್ಷಿಸಿ"
+    },
+    "checkerInputLabel": {
+        "message": "ಪರೀಕ್ಷಿಸಲು ಪಾಸ್‌ವರ್ಡ್ ಟೈಪ್ ಮಾಡಿ ಅಥವಾ ಅಂಟಿಸಿ"
+    },
+    "checkerShowLabel": {
+        "message": "ಪಾಸ್‌ವರ್ಡ್ ತೋರಿಸಿ"
+    },
+    "checkerTimeHeading": {
+        "message": "ಭೇದಿಸಲು ಅಂದಾಜು ಸಮಯ"
+    },
+    "crackOnlineSlow": {
+        "message": "ಆನ್‌ಲೈನ್ ದಾಳಿ, ಮಿತಿಯೊಂದಿಗೆ (ಗಂಟೆಗೆ $RATE$ ಪ್ರಯತ್ನಗಳು)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "ಆನ್‌ಲೈನ್ ದಾಳಿ, ಮಿತಿಯಿಲ್ಲದೆ (ಸೆಕೆಂಡಿಗೆ $RATE$ ಪ್ರಯತ್ನಗಳು)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "ಆಫ್‌ಲೈನ್ ದಾಳಿ, bcrypt ನಂತಹ ನಿಧಾನ ಹ್ಯಾಶ್ (ಸೆಕೆಂಡಿಗೆ $RATE$ ಪ್ರಯತ್ನಗಳು)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "ಆಫ್‌ಲೈನ್ ದಾಳಿ, GPU ಗಳಲ್ಲಿ ವೇಗದ ಹ್ಯಾಶ್ (ಸೆಕೆಂಡಿಗೆ $RATE$ ಪ್ರಯತ್ನಗಳು)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "ಒಂದು ಸೆಕೆಂಡ್‌ಗಿಂತ ಕಡಿಮೆ"
+    },
+    "crackBeyondUniverse": {
+        "message": "ಬ್ರಹ್ಮಾಂಡದ ವಯಸ್ಸಿಗಿಂತ ಹೆಚ್ಚು"
+    },
+    "checkWarnCommon": {
+        "message": "ಇದು ಹೆಚ್ಚು ಬಳಸುವ ಪಾಸ್‌ವರ್ಡ್‌ಗಳಲ್ಲಿ ಒಂದು."
+    },
+    "checkWarnPattern": {
+        "message": "ಪುನರಾವರ್ತನೆ, ಅನುಕ್ರಮ, ಕೀಬೋರ್ಡ್ ಮಾದರಿ ಮತ್ತು ವರ್ಷಗಳನ್ನು ಊಹಿಸುವುದು ಸುಲಭ."
+    },
+    "checkWarnShort": {
+        "message": "ಕನಿಷ್ಠ $COUNT$ ಅಕ್ಷರಗಳನ್ನು ಬಳಸಿ.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "ವಿಶ್ಲೇಷಣೆ ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ನಡೆಯುತ್ತದೆ; ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಎಂದಿಗೂ ಉಳಿಸಲಾಗುವುದಿಲ್ಲ ಅಥವಾ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ. ಫಲಿತಾಂಶವು ಉದ್ದ, ಅಕ್ಷರ ವೈವಿಧ್ಯ ಮತ್ತು ಸಾಮಾನ್ಯ ಮಾದರಿಗಳ ಆಧಾರದ ಅಂದಾಜು; ಪಾಸ್‌ವರ್ಡ್ ಸೋರಿಕೆಯಾಗಿದೆಯೇ ಅಥವಾ ಸಾಮಾನ್ಯ ಪದಗಳಿಂದ ಮಾಡಲ್ಪಟ್ಟಿದೆಯೇ ಎಂಬುದು ಅದಕ್ಕೆ ತಿಳಿಯದು. ಸಮಯಗಳು ಸರಾಸರಿ."
     }
 }
