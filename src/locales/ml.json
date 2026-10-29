@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "സോഴ്സ് കോഡ്, പ്രശ്നങ്ങൾ, അപ്‌ഡേറ്റുകൾ"
+    },
+    "checkerButtonTitle": {
+        "message": "പാസ്‌വേഡ് ശക്തി പരിശോധിക്കുക"
+    },
+    "checkerInputLabel": {
+        "message": "പരിശോധിക്കാൻ ഒരു പാസ്‌വേഡ് ടൈപ്പ് ചെയ്യുകയോ പേസ്റ്റ് ചെയ്യുകയോ ചെയ്യുക"
+    },
+    "checkerShowLabel": {
+        "message": "പാസ്‌വേഡ് കാണിക്കുക"
+    },
+    "checkerTimeHeading": {
+        "message": "തകർക്കാൻ കണക്കാക്കിയ സമയം"
+    },
+    "crackOnlineSlow": {
+        "message": "ഓൺലൈൻ, പരിധിയോടെ (മണിക്കൂറിൽ $RATE$ ശ്രമങ്ങൾ)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "ഓൺലൈൻ, പരിധിയില്ലാതെ (സെക്കൻഡിൽ $RATE$ ശ്രമങ്ങൾ)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "ഓഫ്‌ലൈൻ, മന്ദ ഹാഷ് bcrypt (സെക്കൻഡിൽ $RATE$ ശ്രമങ്ങൾ)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "ഓഫ്‌ലൈൻ, വേഗ ഹാഷ് GPU (സെക്കൻഡിൽ $RATE$ ശ്രമങ്ങൾ)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "ഒരു സെക്കൻഡിൽ താഴെ"
+    },
+    "crackBeyondUniverse": {
+        "message": "പ്രപഞ്ചത്തിന്റെ പ്രായത്തിലധികം"
+    },
+    "checkWarnCommon": {
+        "message": "ഏറ്റവും കൂടുതൽ ഉപയോഗിക്കുന്ന പാസ്‌വേഡുകളിൽ ഒന്നാണിത്."
+    },
+    "checkWarnPattern": {
+        "message": "ആവർത്തനങ്ങൾ, ക്രമങ്ങൾ, കീബോർഡ് മാതൃകകൾ, വർഷങ്ങൾ എന്നിവ ഊഹിക്കാൻ എളുപ്പമാണ്."
+    },
+    "checkWarnShort": {
+        "message": "കുറഞ്ഞത് $COUNT$ അക്ഷരങ്ങൾ ഉപയോഗിക്കുക.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "വിശകലനം നിങ്ങളുടെ ഉപകരണത്തിൽ തന്നെ നടക്കുന്നു; പാസ്‌വേഡ് ഒരിക്കലും സൂക്ഷിക്കുകയോ അയയ്ക്കുകയോ ചെയ്യില്ല. ഫലം നീളം, അക്ഷര വൈവിധ്യം, സാധാരണ മാതൃകകൾ എന്നിവ അടിസ്ഥാനമാക്കിയുള്ള ഒരു കണക്കാണ്; പാസ്‌വേഡ് ചോർന്നിട്ടുണ്ടോ എന്നോ സാധാരണ വാക്കുകൾ കൊണ്ട് നിർമ്മിച്ചതാണോ എന്നോ അതിന് അറിയാൻ കഴിയില്ല. സമയങ്ങൾ ശരാശരിയാണ്."
     }
 }
