@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "ソースコード、問題報告、更新情報"
+    },
+    "checkerButtonTitle": {
+        "message": "パスワードの強度をテスト"
+    },
+    "checkerInputLabel": {
+        "message": "テストするパスワードを入力または貼り付け"
+    },
+    "checkerShowLabel": {
+        "message": "パスワードを表示"
+    },
+    "checkerTimeHeading": {
+        "message": "解読にかかる推定時間"
+    },
+    "crackOnlineSlow": {
+        "message": "オンライン攻撃、回数制限あり（1 時間あたり $RATE$ 回）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "オンライン攻撃、制限なし（1 秒あたり $RATE$ 回）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "オフライン攻撃、bcrypt などの低速ハッシュ（1 秒あたり $RATE$ 回）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "オフライン攻撃、GPU による高速ハッシュ（1 秒あたり $RATE$ 回）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "1 秒未満"
+    },
+    "crackBeyondUniverse": {
+        "message": "宇宙の年齢より長い"
+    },
+    "checkWarnCommon": {
+        "message": "よく使われているパスワードの 1 つです。"
+    },
+    "checkWarnPattern": {
+        "message": "繰り返し、連続、キーボード配列、年号は推測されやすいです。"
+    },
+    "checkWarnShort": {
+        "message": "$COUNT$ 文字以上にしてください。",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "分析はお使いのデバイス上で行われ、保存も送信もされません。結果は、長さ、文字の種類、よくあるパターンに基づく推定で、パスワードが漏えいしたか、ありふれた単語でできているかどうかはわかりません。時間は平均値です。"
     }
 }
