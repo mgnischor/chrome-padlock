@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "সোর্স কোড, সমস্যা ও আপডেট"
+    },
+    "checkerButtonTitle": {
+        "message": "পাসওয়ার্ডের শক্তি পরীক্ষা করুন"
+    },
+    "checkerInputLabel": {
+        "message": "পরীক্ষার জন্য একটি পাসওয়ার্ড লিখুন বা পেস্ট করুন"
+    },
+    "checkerShowLabel": {
+        "message": "পাসওয়ার্ড দেখান"
+    },
+    "checkerTimeHeading": {
+        "message": "ভাঙতে আনুমানিক সময়"
+    },
+    "crackOnlineSlow": {
+        "message": "অনলাইন আক্রমণ, সীমিত চেষ্টা (ঘণ্টায় $RATE$টি চেষ্টা)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "অনলাইন আক্রমণ, সীমাহীন (সেকেন্ডে $RATE$টি চেষ্টা)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "অফলাইন আক্রমণ, ধীর হ্যাশ যেমন bcrypt (সেকেন্ডে $RATE$টি চেষ্টা)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "অফলাইন আক্রমণ, GPU-তে দ্রুত হ্যাশ (সেকেন্ডে $RATE$টি চেষ্টা)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "এক সেকেন্ডেরও কম"
+    },
+    "crackBeyondUniverse": {
+        "message": "মহাবিশ্বের বয়সের চেয়েও বেশি"
+    },
+    "checkWarnCommon": {
+        "message": "এটি সবচেয়ে বেশি ব্যবহৃত পাসওয়ার্ডগুলির একটি।"
+    },
+    "checkWarnPattern": {
+        "message": "পুনরাবৃত্তি, ক্রম, কিবোর্ডের ধরন ও সাল অনুমান করা সহজ।"
+    },
+    "checkWarnShort": {
+        "message": "কমপক্ষে $COUNT$টি অক্ষর ব্যবহার করুন।",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "বিশ্লেষণ আপনার ডিভাইসেই হয়, পাসওয়ার্ড কখনও সংরক্ষণ বা পাঠানো হয় না। ফলাফল দৈর্ঘ্য, অক্ষরের বৈচিত্র্য ও সাধারণ ধরনের ভিত্তিতে একটি অনুমান; পাসওয়ার্ড ফাঁস হয়েছে কি না, বা সাধারণ শব্দ দিয়ে তৈরি কি না, তা এটি জানতে পারে না। সময়গুলো গড়।"
     }
 }
