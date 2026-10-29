@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Mã nguồn, sự cố và bản cập nhật"
+    },
+    "checkerButtonTitle": {
+        "message": "Kiểm tra độ mạnh mật khẩu"
+    },
+    "checkerInputLabel": {
+        "message": "Nhập hoặc dán mật khẩu cần kiểm tra"
+    },
+    "checkerShowLabel": {
+        "message": "Hiện mật khẩu"
+    },
+    "checkerTimeHeading": {
+        "message": "Thời gian ước tính để bẻ khóa"
+    },
+    "crackOnlineSlow": {
+        "message": "Tấn công trực tuyến, có giới hạn ($RATE$ lượt đoán mỗi giờ)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Tấn công trực tuyến, không giới hạn ($RATE$ lượt đoán mỗi giây)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Tấn công ngoại tuyến, băm chậm như bcrypt ($RATE$ lượt đoán mỗi giây)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Tấn công ngoại tuyến, băm nhanh trên GPU ($RATE$ lượt đoán mỗi giây)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Dưới một giây"
+    },
+    "crackBeyondUniverse": {
+        "message": "Lâu hơn tuổi của vũ trụ"
+    },
+    "checkWarnCommon": {
+        "message": "Đây là một trong những mật khẩu được dùng nhiều nhất."
+    },
+    "checkWarnPattern": {
+        "message": "Lặp lại, dãy số, mẫu bàn phím và năm rất dễ đoán."
+    },
+    "checkWarnShort": {
+        "message": "Hãy dùng ít nhất $COUNT$ ký tự.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Được phân tích ngay trên thiết bị của bạn và không bao giờ được lưu hay gửi đi. Kết quả là ước tính dựa trên độ dài, độ đa dạng ký tự và các mẫu phổ biến; nó không biết mật khẩu đã bị lộ hay chưa, hay có được tạo từ những từ thông thường hay không. Thời gian là giá trị trung bình."
     }
 }
