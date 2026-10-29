@@ -1,0 +1,17 @@
+Padlock tworzy silne, losowe hasła na Twoim urządzeniu. Skopiuj wynik jednym kliknięciem albo wstaw go prosto do pola tekstowego.
+
+Jak to działa
+- Każdy znak jest losowany za pomocą kryptograficznie bezpiecznego generatora liczb losowych przeglądarki, a wskaźnik siły pokazuje dokładną entropię w bitach.
+- Wybierz długość (od 4 do 128 znaków) i typy znaków: małe litery, wielkie litery, cyfry i symbole. Możesz unikać podobnie wyglądających znaków, takich jak 0, O, 1, l i I, oraz wykluczać dowolne niechciane znaki.
+- Skopiuj wynik albo kliknij pole tekstowe prawym przyciskiem myszy i wybierz „Wstaw bezpieczne hasło”.
+- Opcjonalnie: schowek jest czyszczony automatycznie od 30 sekund do 2 minut po skopiowaniu.
+- Opcjonalnie: lista ostatnich 50 wygenerowanych haseł. Domyślnie jest wyłączona, przechowywana bez szyfrowania wyłącznie w pamięci przeglądarki i usuwana po zamknięciu Chrome.
+- Jasny i ciemny motyw oraz 30 języków interfejsu.
+
+Prywatność
+Padlock działa w całości na Twoim urządzeniu. Nie zbiera danych, nie wysyła żadnych żądań sieciowych i nie zawiera reklam ani analityki. To nie jest menedżer haseł: niczego nie zapisuje ani nie synchronizuje.
+
+Uprawnienia
+Padlock uzyskuje dostęp do strony tylko wtedy, gdy używasz jego pozycji w menu kontekstowym, i tylko do karty i pola, których dotyczy ta czynność. Uprawnienia schowka są opcjonalne i wymagane tylko po włączeniu automatycznego czyszczenia schowka.
+
+Otwarte oprogramowanie (licencja Apache 2.0): github.com/mgnischor/chrome-padlock
