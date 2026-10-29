@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Código-fonte, problemas e atualizações"
+    },
+    "checkerButtonTitle": {
+        "message": "Testar a força da senha"
+    },
+    "checkerInputLabel": {
+        "message": "Digite ou cole uma senha para testar"
+    },
+    "checkerShowLabel": {
+        "message": "Mostrar a senha"
+    },
+    "checkerTimeHeading": {
+        "message": "Tempo estimado para quebrar"
+    },
+    "crackOnlineSlow": {
+        "message": "Ataque online com limite de tentativas ($RATE$ por hora)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Ataque online sem limite ($RATE$ por segundo)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Ataque offline, hash lento como bcrypt ($RATE$ por segundo)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Ataque offline, hash rápido em GPUs ($RATE$ por segundo)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Menos de um segundo"
+    },
+    "crackBeyondUniverse": {
+        "message": "Mais do que a idade do universo"
+    },
+    "checkWarnCommon": {
+        "message": "Esta é uma das senhas mais usadas."
+    },
+    "checkWarnPattern": {
+        "message": "Repetições, sequências, padrões de teclado e anos são fáceis de adivinhar."
+    },
+    "checkWarnShort": {
+        "message": "Use pelo menos $COUNT$ caracteres.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Analisada no seu dispositivo e nunca armazenada nem enviada. O resultado é uma estimativa baseada no tamanho, na variedade de caracteres e em padrões comuns; ele não sabe se uma senha vazou nem se é feita de palavras comuns. Os tempos são médias."
     }
 }
