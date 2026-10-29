@@ -1,0 +1,17 @@
+Padlock erzeugt starke Zufallspasswörter auf Ihrem Gerät. Kopieren Sie das Ergebnis mit einem Klick oder fügen Sie es direkt in ein Textfeld ein.
+
+So funktioniert es
+- Jedes Zeichen wird mit dem kryptografisch sicheren Zufallszahlengenerator Ihres Browsers gezogen, und die Stärkeanzeige zeigt die genaue Entropie in Bit.
+- Wählen Sie die Länge (4 bis 128 Zeichen) und die Zeichentypen: Klein- und Großbuchstaben, Ziffern und Sonderzeichen. Sie können ähnlich aussehende Zeichen wie 0, O, 1, l und I vermeiden und beliebige Zeichen ausschließen.
+- Kopieren Sie das Ergebnis oder klicken Sie mit der rechten Maustaste auf ein Textfeld und wählen Sie „Sicheres Passwort einfügen“.
+- Optional: Die Zwischenablage wird 30 Sekunden bis 2 Minuten nach dem Kopieren automatisch geleert.
+- Optional: Eine Liste der letzten 50 erzeugten Passwörter wird geführt. Sie ist standardmäßig aus, liegt unverschlüsselt nur im Arbeitsspeicher des Browsers und wird beim Schließen von Chrome gelöscht.
+- Helles und dunkles Design sowie 30 Oberflächensprachen.
+
+Datenschutz
+Padlock läuft vollständig auf Ihrem Gerät. Es erfasst keine Daten, stellt keine Netzwerkanfragen und enthält weder Werbung noch Analyse. Es ist kein Passwortmanager: Es speichert und synchronisiert nichts.
+
+Berechtigungen
+Padlock greift nur dann auf eine Seite zu, wenn Sie den Eintrag im Kontextmenü verwenden, und nur auf den Tab und das Feld, die Sie benutzt haben. Die Berechtigungen für die Zwischenablage sind optional und werden nur angefordert, wenn Sie das automatische Leeren der Zwischenablage einschalten.
+
+Open Source (Apache-Lizenz 2.0): github.com/mgnischor/chrome-padlock
