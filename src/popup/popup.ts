@@ -21,6 +21,16 @@
 import { CHARSETS } from "../core/charsets";
 import { classifyStrength } from "../core/entropy";
 import { analyze, generatePassword, GeneratorError, MAX_LENGTH, MIN_LENGTH } from "../core/generator";
+import {
+    ATTACK_SCENARIOS,
+    MIN_RECOMMENDED_LENGTH,
+    analyzePassword,
+    crackTime,
+    type AttackScenario,
+    type CrackTime,
+    type StrengthWarning,
+} from "../core/strength";
+import { formatDuration, formatRate } from "../shared/format";
 import { sha256Hex } from "../shared/hash";
 import { HISTORY_LIMIT, clearHistory, loadHistory, recordPassword } from "../shared/history";
 import {
@@ -56,8 +66,16 @@ const STRENGTH_MESSAGES = [
     "strengthLevel4",
 ] as const satisfies readonly MessageKey[];
 
+/** Message key of the label of each attack scenario in the strength test. */
+const SCENARIO_MESSAGES = {
+    onlineSlow: "crackOnlineSlow",
+    onlineFast: "crackOnlineFast",
+    offlineSlow: "crackOfflineSlow",
+    offlineFast: "crackOfflineFast",
+} as const satisfies Record<AttackScenario["id"], MessageKey>;
+
 /** The screens of the popup. Only one is visible at a time. */
-type View = "main" | "history" | "settings" | "about";
+type View = "main" | "history" | "settings" | "about" | "checker";
 
 /**
  * Finds an element by id.
@@ -112,6 +130,18 @@ const ui = {
     maskPasswords: el<HTMLInputElement>("mask-passwords"),
     aboutView: el<HTMLElement>("about-view"),
     aboutBack: el<HTMLButtonElement>("about-back"),
+    checkerOpen: el<HTMLButtonElement>("checker-open"),
+    checkerView: el<HTMLElement>("checker-view"),
+    checkerBack: el<HTMLButtonElement>("checker-back"),
+    checkerInput: el<HTMLInputElement>("checker-input"),
+    checkerShow: el<HTMLInputElement>("checker-show"),
+    checkerResult: el<HTMLElement>("checker-result"),
+    checkerMeter: el<HTMLElement>("checker-meter"),
+    checkerStrength: el<HTMLElement>("checker-strength"),
+    checkerEntropy: el<HTMLElement>("checker-entropy"),
+    checkerWarnings: el<HTMLUListElement>("checker-warnings"),
+    checkerTimesBlock: el<HTMLElement>("checker-times-block"),
+    checkerTimes: el<HTMLElement>("checker-times"),
 };
 
 /** The view each screen lives in, and the status line it shows messages on. */
@@ -120,6 +150,7 @@ const VIEWS: Record<View, { element: HTMLElement; status: HTMLElement }> = {
     history: { element: ui.historyView, status: ui.historyStatus },
     settings: { element: ui.settingsView, status: ui.settingsStatus },
     about: { element: ui.aboutView, status: ui.status },
+    checker: { element: ui.checkerView, status: ui.status },
 };
 
 let settings: Settings;
@@ -274,6 +305,7 @@ function refreshLanguage(): void {
     renderStrength();
     if (current === null) regenerate();
     if (currentView === "history") void renderHistory();
+    if (currentView === "checker") renderChecker();
 }
 
 /** Fills the language selector with every supported language, each named in its own language. */
@@ -371,6 +403,75 @@ async function renderHistory(): Promise<void> {
 }
 
 /**
+ * Turns a crack time into text in the active language.
+ *
+ * @param time - The estimated time.
+ * @returns For example "3 days", "12 thousand years" or "Longer than the age of the universe".
+ */
+function describeCrackTime(time: CrackTime): string {
+    if (time.kind === "instant") return t("crackInstant");
+    if (time.kind === "universe") return t("crackBeyondUniverse");
+    return formatDuration(time, languageTag());
+}
+
+/** Analyzes the password in the strength test field and shows its entropy, warnings and crack times. */
+function renderChecker(): void {
+    const password = ui.checkerInput.value;
+    const empty = password === "";
+    ui.checkerResult.hidden = empty;
+    ui.checkerTimesBlock.hidden = empty;
+    if (empty) {
+        ui.checkerWarnings.replaceChildren();
+        ui.checkerTimes.replaceChildren();
+        return;
+    }
+
+    const analysis = analyzePassword(password);
+    const level = classifyStrength(analysis.entropyBits);
+    ui.checkerMeter.dataset.level = String(level);
+    ui.checkerMeter.setAttribute("aria-valuenow", String(level));
+    ui.checkerStrength.textContent = t(STRENGTH_MESSAGES[level]);
+    ui.checkerEntropy.textContent = t("entropyBits", String(Math.floor(analysis.entropyBits)));
+
+    const warningText: Record<StrengthWarning, string> = {
+        common: t("checkWarnCommon"),
+        pattern: t("checkWarnPattern"),
+        short: t("checkWarnShort", String(MIN_RECOMMENDED_LENGTH)),
+    };
+    ui.checkerWarnings.replaceChildren(
+        ...analysis.warnings.map((warning) => {
+            const item = document.createElement("li");
+            item.textContent = warningText[warning];
+            return item;
+        })
+    );
+
+    const tag = languageTag();
+    ui.checkerTimes.replaceChildren(
+        ...ATTACK_SCENARIOS.map((scenario) => {
+            const row = document.createElement("div");
+            row.className = "crack-row";
+            const label = document.createElement("span");
+            label.className = "crack-label";
+            label.textContent = t(SCENARIO_MESSAGES[scenario.id], formatRate(scenario.displayRate, tag));
+            const time = document.createElement("strong");
+            time.className = "crack-time";
+            time.textContent = describeCrackTime(crackTime(analysis.entropyBits, scenario.guessesPerSecond));
+            row.append(time, label);
+            return row;
+        })
+    );
+}
+
+/** Empties the strength test field and its results, so a tested password never lingers on the page. */
+function clearChecker(): void {
+    ui.checkerInput.value = "";
+    ui.checkerShow.checked = false;
+    ui.checkerInput.type = "password";
+    renderChecker();
+}
+
+/**
  * Shows one screen of the popup and hides the others.
  *
  * @param view - The screen to show.
@@ -380,6 +481,8 @@ function showView(view: View): void {
     for (const [name, { element }] of Object.entries(VIEWS)) element.hidden = name !== view;
     activeStatus = VIEWS[view].status;
     setStatus("");
+    if (view !== "checker") clearChecker();
+    if (view === "checker") ui.checkerInput.focus();
     if (view === "history") void renderHistory();
 }
 
@@ -556,10 +659,15 @@ function bindEvents(): void {
     ui.maskPasswords.addEventListener("change", onMaskChanged);
     ui.settingsReset.addEventListener("click", () => void onResetSettings());
 
+    ui.checkerOpen.addEventListener("click", () => showView("checker"));
+    ui.checkerInput.addEventListener("input", renderChecker);
+    ui.checkerShow.addEventListener("change", () => {
+        ui.checkerInput.type = ui.checkerShow.checked ? "text" : "password";
+    });
     ui.settingsOpen.addEventListener("click", () => showView("settings"));
     ui.aboutOpen.addEventListener("click", () => showView("about"));
     ui.historyOpen.addEventListener("click", () => showView("history"));
-    for (const back of [ui.historyBack, ui.settingsBack, ui.aboutBack]) {
+    for (const back of [ui.historyBack, ui.settingsBack, ui.aboutBack, ui.checkerBack]) {
         back.addEventListener("click", () => showView("main"));
     }
     document.addEventListener("keydown", (event) => {
