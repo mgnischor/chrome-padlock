@@ -1,0 +1,17 @@
+Padlock, cihazınızda güçlü ve rastgele parolalar oluşturur. Sonucu tek tıkla kopyalayın veya doğrudan bir metin alanına ekleyin.
+
+Nasıl çalışır
+- Her karakter, tarayıcınızın kriptografik olarak güvenli rastgele sayı üreteciyle seçilir ve güç göstergesi bit cinsinden tam entropiyi gösterir.
+- Uzunluğu (4 ile 128 karakter arası) ve karakter türlerini seçin: küçük harfler, büyük harfler, rakamlar ve simgeler. 0, O, 1, l ve I gibi birbirine benzeyen karakterlerden kaçınabilir, istemediğiniz karakterleri hariç tutabilirsiniz.
+- Sonucu kopyalayın veya bir metin alanına sağ tıklayıp “Güvenli parola ekle” öğesini seçin.
+- İsteğe bağlı: kopyaladıktan 30 saniye ile 2 dakika sonra pano otomatik olarak temizlenir.
+- İsteğe bağlı: son 50 oluşturulan parolanın listesi. Varsayılan olarak kapalıdır, şifrelenmeden yalnızca tarayıcı belleğinde tutulur ve Chrome kapandığında silinir.
+- Açık ve koyu temalar ile 30 arayüz dili.
+
+Gizlilik
+Padlock tamamen cihazınızda çalışır. Veri toplamaz, ağ isteği yapmaz; reklam veya analiz içermez. Bir parola yöneticisi değildir: hiçbir şeyi kaydetmez veya eşitlemez.
+
+İzinler
+Padlock bir sayfaya yalnızca sağ tık menüsündeki öğesini kullandığınızda ve yalnızca kullandığınız sekmeye ve alana erişir. Pano izinleri isteğe bağlıdır ve yalnızca otomatik pano temizlemeyi açarsanız istenir.
+
+Açık kaynak (Apache Lisansı 2.0): github.com/mgnischor/chrome-padlock
