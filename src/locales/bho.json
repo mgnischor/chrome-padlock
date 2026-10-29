@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "सोर्स कोड, समस्या आ अपडेट"
+    },
+    "checkerButtonTitle": {
+        "message": "पासवर्ड के मजबूती जाँचीं"
+    },
+    "checkerInputLabel": {
+        "message": "जाँचे खातिर पासवर्ड लिखीं भा चिपकाईं"
+    },
+    "checkerShowLabel": {
+        "message": "पासवर्ड देखाईं"
+    },
+    "checkerTimeHeading": {
+        "message": "तोड़े में लागे वाला अनुमानित समय"
+    },
+    "crackOnlineSlow": {
+        "message": "ऑनलाइन हमला, सीमित कोसिस (हर घंटा $RATE$ कोसिस)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "ऑनलाइन हमला, बिना सीमा (हर सेकंड $RATE$ कोसिस)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "ऑफ़लाइन हमला, धीमा हैश जइसे bcrypt (हर सेकंड $RATE$ कोसिस)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "ऑफ़लाइन हमला, GPU पर तेज हैश (हर सेकंड $RATE$ कोसिस)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "एक सेकंड से कम"
+    },
+    "crackBeyondUniverse": {
+        "message": "ब्रह्मांड के उमिर से भी जादा"
+    },
+    "checkWarnCommon": {
+        "message": "ई सबसे जादा इस्तेमाल होखे वाला पासवर्ड में से एगो बा।"
+    },
+    "checkWarnPattern": {
+        "message": "दोहराव, क्रम, कीबोर्ड के पैटर्न आ साल के अनुमान लगावल आसान होला।"
+    },
+    "checkWarnShort": {
+        "message": "कम से कम $COUNT$ अक्षर इस्तेमाल करीं।",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "जाँच रउरा डिवाइस पर होला आ पासवर्ड कबो सहेजल भा भेजल ना जाला। नतीजा लंबाई, अक्षर के किसिम आ आम पैटर्न पर आधारित अंदाजा बा; ई ना बता सकेला कि पासवर्ड लीक भइल बा कि आम शब्दन से बनल बा। समय औसत बा।"
     }
 }
