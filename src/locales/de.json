@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Quellcode, Probleme und Updates"
+    },
+    "checkerButtonTitle": {
+        "message": "Passwortstärke testen"
+    },
+    "checkerInputLabel": {
+        "message": "Passwort zum Testen eingeben oder einfügen"
+    },
+    "checkerShowLabel": {
+        "message": "Passwort anzeigen"
+    },
+    "checkerTimeHeading": {
+        "message": "Geschätzte Zeit zum Knacken"
+    },
+    "crackOnlineSlow": {
+        "message": "Online-Angriff mit Begrenzung ($RATE$ Versuche pro Stunde)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Online-Angriff ohne Begrenzung ($RATE$ Versuche pro Sekunde)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Offline-Angriff, langsamer Hash wie bcrypt ($RATE$ Versuche pro Sekunde)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Offline-Angriff, schneller Hash auf GPUs ($RATE$ Versuche pro Sekunde)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Weniger als eine Sekunde"
+    },
+    "crackBeyondUniverse": {
+        "message": "Länger als das Alter des Universums"
+    },
+    "checkWarnCommon": {
+        "message": "Dies ist eines der am häufigsten verwendeten Passwörter."
+    },
+    "checkWarnPattern": {
+        "message": "Wiederholungen, Folgen, Tastaturmuster und Jahreszahlen sind leicht zu erraten."
+    },
+    "checkWarnShort": {
+        "message": "Verwenden Sie mindestens $COUNT$ Zeichen.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Wird auf Ihrem Gerät analysiert und nie gespeichert oder gesendet. Das Ergebnis ist eine Schätzung anhand von Länge, Zeichenvielfalt und gängigen Mustern; ob ein Passwort bereits geleakt wurde oder aus gewöhnlichen Wörtern besteht, kann es nicht wissen. Die Zeiten sind Durchschnittswerte."
     }
 }
