@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "源代码、问题反馈与更新"
+    },
+    "checkerButtonTitle": {
+        "message": "测试密码强度"
+    },
+    "checkerInputLabel": {
+        "message": "输入或粘贴要测试的密码"
+    },
+    "checkerShowLabel": {
+        "message": "显示密码"
+    },
+    "checkerTimeHeading": {
+        "message": "预计破解时间"
+    },
+    "crackOnlineSlow": {
+        "message": "在线攻击，有次数限制（每小时 $RATE$ 次尝试）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "在线攻击，无限制（每秒 $RATE$ 次尝试）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "离线攻击，慢速哈希如 bcrypt（每秒 $RATE$ 次尝试）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "离线攻击，GPU 上的快速哈希（每秒 $RATE$ 次尝试）",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "不到一秒"
+    },
+    "crackBeyondUniverse": {
+        "message": "超过宇宙的年龄"
+    },
+    "checkWarnCommon": {
+        "message": "这是最常用的密码之一。"
+    },
+    "checkWarnPattern": {
+        "message": "重复、序列、键盘模式和年份都很容易被猜到。"
+    },
+    "checkWarnShort": {
+        "message": "请至少使用 $COUNT$ 个字符。",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "在您的设备上分析，绝不会存储或发送。结果是根据长度、字符种类和常见模式得出的估算，无法得知密码是否已泄露，也无法得知它是否由常见词语组成。时间均为平均值。"
     }
 }
