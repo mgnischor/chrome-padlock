@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "کد منبع، مشکلات و به‌روزرسانی‌ها"
+    },
+    "checkerButtonTitle": {
+        "message": "آزمایش قدرت گذرواژه"
+    },
+    "checkerInputLabel": {
+        "message": "برای آزمایش، یک گذرواژه بنویسید یا جای‌گذاری کنید"
+    },
+    "checkerShowLabel": {
+        "message": "نمایش گذرواژه"
+    },
+    "checkerTimeHeading": {
+        "message": "زمان تخمینی برای شکستن"
+    },
+    "crackOnlineSlow": {
+        "message": "حملهٔ آنلاین با محدودیت ($RATE$ تلاش در ساعت)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "حملهٔ آنلاین بدون محدودیت ($RATE$ تلاش در ثانیه)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "حملهٔ آفلاین، هش کند مانند bcrypt ($RATE$ تلاش در ثانیه)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "حملهٔ آفلاین، هش سریع روی GPU ($RATE$ تلاش در ثانیه)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "کمتر از یک ثانیه"
+    },
+    "crackBeyondUniverse": {
+        "message": "بیشتر از عمر جهان"
+    },
+    "checkWarnCommon": {
+        "message": "این یکی از پراستفاده‌ترین گذرواژه‌هاست."
+    },
+    "checkWarnPattern": {
+        "message": "تکرارها، دنباله‌ها، الگوهای صفحه‌کلید و سال‌ها به‌آسانی حدس زده می‌شوند."
+    },
+    "checkWarnShort": {
+        "message": "دست‌کم $COUNT$ نویسه به کار ببرید.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "تحلیل روی دستگاه شما انجام می‌شود و گذرواژه هرگز ذخیره یا ارسال نمی‌شود. نتیجه تخمینی بر پایهٔ طول، تنوع نویسه‌ها و الگوهای رایج است و نمی‌داند گذرواژه‌ای لو رفته یا از واژه‌های معمولی ساخته شده است یا نه. زمان‌ها میانگین‌اند."
     }
 }
