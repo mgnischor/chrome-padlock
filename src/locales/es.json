@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Código fuente, incidencias y actualizaciones"
+    },
+    "checkerButtonTitle": {
+        "message": "Probar la seguridad de la contraseña"
+    },
+    "checkerInputLabel": {
+        "message": "Escribe o pega una contraseña para probarla"
+    },
+    "checkerShowLabel": {
+        "message": "Mostrar la contraseña"
+    },
+    "checkerTimeHeading": {
+        "message": "Tiempo estimado para descifrarla"
+    },
+    "crackOnlineSlow": {
+        "message": "Ataque en línea con límite de intentos ($RATE$ por hora)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Ataque en línea sin límite ($RATE$ por segundo)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Ataque sin conexión, hash lento como bcrypt ($RATE$ por segundo)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Ataque sin conexión, hash rápido en GPU ($RATE$ por segundo)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Menos de un segundo"
+    },
+    "crackBeyondUniverse": {
+        "message": "Más que la edad del universo"
+    },
+    "checkWarnCommon": {
+        "message": "Esta es una de las contraseñas más usadas."
+    },
+    "checkWarnPattern": {
+        "message": "Las repeticiones, secuencias, patrones de teclado y años son fáciles de adivinar."
+    },
+    "checkWarnShort": {
+        "message": "Usa al menos $COUNT$ caracteres.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Se analiza en tu dispositivo y nunca se guarda ni se envía. El resultado es una estimación basada en la longitud, la variedad de caracteres y los patrones comunes; no puede saber si una contraseña se ha filtrado ni si está hecha de palabras comunes. Los tiempos son promedios."
     }
 }
