@@ -348,5 +348,91 @@
     "aboutRepositoryLabel": {
         "message": "Source code, issues and updates",
         "description": "Caption above the link to the GitHub repository."
+    },
+    "checkerButtonTitle": {
+        "message": "Test password strength",
+        "description": "Tooltip and accessible name of the header button that opens the strength test, and the heading of that screen."
+    },
+    "checkerInputLabel": {
+        "message": "Type or paste a password to test",
+        "description": "Placeholder and accessible name of the field where the user enters a password to test."
+    },
+    "checkerShowLabel": {
+        "message": "Show password",
+        "description": "Checkbox that reveals the password typed in the strength test."
+    },
+    "checkerTimeHeading": {
+        "message": "Estimated time to crack",
+        "description": "Heading of the list of crack times."
+    },
+    "crackOnlineSlow": {
+        "message": "Online attack, rate-limited ($RATE$ guesses per hour)",
+        "description": "An attack scenario. $RATE$ is a formatted number such as 100.",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Online attack, no limit ($RATE$ guesses per second)",
+        "description": "An attack scenario. $RATE$ is a formatted number such as 10.",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Offline attack, slow hash such as bcrypt ($RATE$ guesses per second)",
+        "description": "An attack scenario. $RATE$ is a formatted number such as 10 thousand.",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Offline attack, fast hash on GPUs ($RATE$ guesses per second)",
+        "description": "An attack scenario. $RATE$ is a formatted number such as 10 billion.",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Less than a second",
+        "description": "Crack time shown when it is below one second."
+    },
+    "crackBeyondUniverse": {
+        "message": "Longer than the age of the universe",
+        "description": "Crack time shown when it exceeds about 13.8 billion years."
+    },
+    "checkWarnCommon": {
+        "message": "This is one of the most commonly used passwords.",
+        "description": "Warning about a password found in the built-in list of common passwords."
+    },
+    "checkWarnPattern": {
+        "message": "Repeats, sequences, keyboard patterns and years are easy to guess.",
+        "description": "Warning about a password that contains an easily guessed pattern."
+    },
+    "checkWarnShort": {
+        "message": "Use at least $COUNT$ characters.",
+        "description": "Warning about a short password. $COUNT$ is the recommended minimum length.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Analyzed on your device and never stored or sent. The result is an estimate based on length, character variety and common patterns; it cannot know whether a password has leaked or is made of ordinary words. Times are averages.",
+        "description": "Note at the bottom of the strength test screen."
     }
 }
