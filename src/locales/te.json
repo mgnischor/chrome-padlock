@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "సోర్స్ కోడ్, సమస్యలు మరియు అప్‌డేట్‌లు"
+    },
+    "checkerButtonTitle": {
+        "message": "పాస్‌వర్డ్ బలాన్ని పరీక్షించండి"
+    },
+    "checkerInputLabel": {
+        "message": "పరీక్షించడానికి పాస్‌వర్డ్‌ను టైప్ చేయండి లేదా అతికించండి"
+    },
+    "checkerShowLabel": {
+        "message": "పాస్‌వర్డ్‌ను చూపించు"
+    },
+    "checkerTimeHeading": {
+        "message": "ఛేదించడానికి అంచనా సమయం"
+    },
+    "crackOnlineSlow": {
+        "message": "ఆన్‌లైన్ దాడి, పరిమిత ప్రయత్నాలు (గంటకు $RATE$ ప్రయత్నాలు)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "ఆన్‌లైన్ దాడి, పరిమితి లేకుండా (సెకనుకు $RATE$ ప్రయత్నాలు)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "ఆఫ్‌లైన్ దాడి, నెమ్మదైన హ్యాష్ (bcrypt వంటివి) (సెకనుకు $RATE$ ప్రయత్నాలు)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "ఆఫ్‌లైన్ దాడి, GPUలపై వేగవంతమైన హ్యాష్ (సెకనుకు $RATE$ ప్రయత్నాలు)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "ఒక సెకను కంటే తక్కువ"
+    },
+    "crackBeyondUniverse": {
+        "message": "విశ్వం వయసు కంటే ఎక్కువ"
+    },
+    "checkWarnCommon": {
+        "message": "ఇది ఎక్కువగా ఉపయోగించే పాస్‌వర్డ్‌లలో ఒకటి."
+    },
+    "checkWarnPattern": {
+        "message": "పునరావృతాలు, క్రమాలు, కీబోర్డ్ నమూనాలు మరియు సంవత్సరాలను ఊహించడం సులభం."
+    },
+    "checkWarnShort": {
+        "message": "కనీసం $COUNT$ అక్షరాలు ఉపయోగించండి.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "విశ్లేషణ మీ పరికరంలోనే జరుగుతుంది; పాస్‌వర్డ్ ఎప్పుడూ సేవ్ చేయబడదు లేదా పంపబడదు. ఫలితం పొడవు, అక్షరాల వైవిధ్యం మరియు సాధారణ నమూనాల ఆధారంగా అంచనా మాత్రమే; పాస్‌వర్డ్ లీక్ అయిందో లేదో, లేదా సాధారణ పదాలతో తయారైందో లేదో అది చెప్పలేదు. సమయాలు సగటులు."
     }
 }
