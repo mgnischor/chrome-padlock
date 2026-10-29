@@ -33,6 +33,12 @@ inteiramente no seu dispositivo.
   guzerate, persa, bhojpuri, hauçá, canarim, indonésio, polonês, malaiala e ucraniano. A extensão segue
   automaticamente o idioma do navegador, ou você escolhe outro nas configurações. Árabe, persa e urdu
   espelham o layout (da direita para a esquerda). Veja [Localização](#localização).
+- **Teste de força de senha** (botão de escudo, ao lado da engrenagem): digite ou cole qualquer senha
+  para ver a entropia estimada em bits, uma classificação de força, avisos sobre padrões fáceis e
+  quanto tempo levaria para quebrá-la em quatro tipos de ataque, de um login web com limite de
+  tentativas a um ataque offline contra um hash rápido com GPUs. A senha é analisada no seu
+  dispositivo, nunca é armazenada nem enviada, e o campo é esvaziado assim que você sai da tela. Veja
+  [Teste de força](#teste-de-força).
 - **Tela de configurações** (botão de engrenagem): idioma, tema claro / escuro / do sistema, limpeza
   automática da área de transferência, histórico de senhas, item do menu de clique direito e desfoque
   das senhas até passar o mouse. Um botão restaura os padrões.
@@ -74,7 +80,7 @@ Depois de recompilar, clique no botão de recarregar no card da extensão em `ch
 public/                 Arquivos estáticos copiados para dist/ (manifest, HTML, CSS, ícones)
 src/locales/            Traduções, um arquivo JSON por idioma (en_US é a origem)
 scripts/                Ferramentas de build: build, package, minify, zip e gerador de ícones
-src/core/               Lógica pura, sem DOM: random, charsets, generator, entropy
+src/core/               Lógica pura, sem DOM: random, charsets, generator, entropy, teste de força
 src/shared/             Configurações, histórico, helper de i18n, tipos de mensagem, helper de hash
 src/popup/              Interface do popup
 src/background/         Service worker: menu de contexto, timer de limpeza da área de transferência
@@ -177,6 +183,40 @@ resto cai para o inglês.
   que nenhuma mensagem está sem uso e que a descrição respeita o limite de 132 caracteres da Web Store.
 - **Testar um idioma:** escolha-o nas configurações, ou inicie o Chrome com `--lang=pt-BR` para testar
   a escolha automática.
+
+### Teste de força
+
+O teste funciona com qualquer senha, e não só com as que o Padlock cria, então não pode supor que a
+senha seja aleatória. `analyzePassword` (`src/core/strength.ts`) divide a senha em partes e dá a cada
+uma um preço em bits de esforço de adivinhação, do jeito que um atacante tentaria, e fica com a divisão
+mais barata:
+
+| Parte                                                | Preço                                                         |
+| ---------------------------------------------------- | ------------------------------------------------------------- |
+| Uma senha ou palavra comum (cerca de 160 embutidas)  | `log2(posição)`, mais um bit para maiúsculas ou trocas (`P@ssw0rd`) |
+| Uma repetição (`aaaa`, `abcabc`)                     | a unidade repetida, mais `log2(vezes)`                        |
+| Uma sequência (`abcd`, `4321`) ou trecho de teclado (`asdf`) | um ponto de partida mais `log2(tamanho)`              |
+| Um ano de 1900 a 2039                                | cerca de 8 bits                                               |
+| Qualquer outra coisa                                 | `log2(conjunto)` por caractere, sendo o conjunto os tipos de caractere usados |
+
+Para uma senha aleatória isso dá `tamanho × log2(conjunto)`; para uma senha escolhida por uma pessoa é
+menos, muitas vezes bem menos. O tempo de quebra é a média, que é metade de todas as tentativas,
+`2^(bits − 1)`, dividida pela velocidade do atacante. As quatro velocidades são as do estimador
+zxcvbn: 100 por hora (login web com limite), 10 por segundo (login web sem limite), 10 mil por segundo
+(ataque offline contra um hash lento como o bcrypt) e 10 bilhões por segundo (ataque offline contra
+um hash rápido como o MD5, com GPUs). As durações são escritas por `Intl.NumberFormat`
+(`src/shared/format.ts`), então unidades e plurais vêm dos dados de localidade do navegador em todos os
+idiomas.
+
+Limites, que a própria tela também informa: é uma **estimativa**. Ela conhece só os padrões acima e uma
+lista curta de senhas comuns, então uma senha feita de palavras comuns (uma frase como "correct horse
+battery staple") recebe uma nota maior do que merece, porque não há dicionário. Ela não sabe se uma
+senha já apareceu em um vazamento. "Muito forte" significa, portanto, "nenhum padrão fácil
+encontrado", e não "segura para usar": use uma senha que ninguém nunca viu, como as que o Padlock
+gera.
+
+A senha digitada nunca sai da página: não é armazenada, não vai em mensagens, não entra no histórico e
+não é registrada, e o campo é esvaziado ao sair da tela ou ao pressionar Esc.
 
 ### Aparência e configurações
 
