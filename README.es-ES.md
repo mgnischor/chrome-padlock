@@ -34,6 +34,12 @@ fuertes íntegramente en tu dispositivo.
   bhoyapurí, hausa, canarés, indonesio, polaco, malayalam y ucraniano. La extensión sigue
   automáticamente el idioma del navegador, o puedes elegir otro en los ajustes. El árabe, el persa y el
   urdu invierten el diseño (de derecha a izquierda). Consulta [Localización](#localización).
+- **Prueba de seguridad de contraseñas** (botón de escudo, junto al engranaje): escribe o pega
+  cualquier contraseña para ver su entropía estimada en bits, una clasificación de fortaleza, avisos
+  sobre patrones fáciles y cuánto tardaría en descifrarse con cuatro tipos de ataque, desde un inicio
+  de sesión web con límite de intentos hasta un ataque sin conexión contra un hash rápido con GPU. La
+  contraseña se analiza en tu dispositivo, nunca se guarda ni se envía, y el campo se vacía en cuanto
+  sales de la pantalla. Consulta [Prueba de seguridad](#prueba-de-seguridad).
 - **Pantalla de ajustes** (botón de engranaje): idioma, tema claro / oscuro / del sistema, borrado
   automático del portapapeles, historial de contraseñas, entrada del menú contextual y desenfoque de
   las contraseñas hasta pasar el ratón. Un botón restaura los valores predeterminados.
@@ -76,7 +82,7 @@ Después de recompilar, pulsa el botón de recargar en la tarjeta de la extensi�
 public/                 Archivos estáticos copiados a dist/ (manifest, HTML, CSS, iconos)
 src/locales/            Traducciones, un archivo JSON por idioma (en_US es el origen)
 scripts/                Herramientas de compilación: build, package, minify, zip y generador de iconos
-src/core/               Lógica pura, sin DOM: random, charsets, generator, entropy
+src/core/               Lógica pura, sin DOM: random, charsets, generator, entropy, prueba de seguridad
 src/shared/             Ajustes, historial, helper de i18n, tipos de mensaje, helper de hash
 src/popup/              Interfaz del popup
 src/background/         Service worker: menú contextual, temporizador de borrado del portapapeles
@@ -183,6 +189,40 @@ resto recurre al inglés.
   respeta el límite de 132 caracteres de la Web Store.
 - **Probar un idioma:** elígelo en los ajustes, o inicia Chrome con `--lang=es` para probar la
   elección automática.
+
+### Prueba de seguridad
+
+La prueba funciona con cualquier contraseña, no solo con las que crea Padlock, así que no puede dar por
+hecho que sea aleatoria. `analyzePassword` (`src/core/strength.ts`) divide la contraseña en trozos y
+asigna a cada uno un precio en bits de esfuerzo de adivinación, como lo intentaría un atacante, y se
+queda con la división más barata:
+
+| Trozo                                                | Precio                                                        |
+| ---------------------------------------------------- | ------------------------------------------------------------- |
+| Una contraseña o palabra común (unas 160 incluidas)  | `log2(posición)`, más un bit por mayúsculas o sustituciones (`P@ssw0rd`) |
+| Una repetición (`aaaa`, `abcabc`)                    | la unidad repetida, más `log2(veces)`                         |
+| Una secuencia (`abcd`, `4321`) o tramo de teclado (`asdf`) | un punto de partida más `log2(longitud)`                |
+| Un año de 1900 a 2039                                | unos 8 bits                                                   |
+| Cualquier otra cosa                                  | `log2(conjunto)` por carácter, siendo el conjunto los tipos de carácter usados |
+
+Para una contraseña aleatoria esto da `longitud × log2(conjunto)`; para una elegida por una persona es
+menos, a menudo mucho menos. El tiempo de descifrado es el promedio, que es la mitad de todos los
+intentos, `2^(bits − 1)`, dividido por la velocidad del atacante. Las cuatro velocidades son las del
+estimador zxcvbn: 100 por hora (inicio de sesión web con límite), 10 por segundo (inicio de sesión web
+sin límite), 10 mil por segundo (ataque sin conexión contra un hash lento como bcrypt) y 10 mil
+millones por segundo (ataque sin conexión contra un hash rápido como MD5, con GPU). Las duraciones las
+escribe `Intl.NumberFormat` (`src/shared/format.ts`), de modo que las unidades y los plurales proceden
+de los datos de localización del navegador en todos los idiomas.
+
+Límites, que la propia pantalla también indica: es una **estimación**. Solo conoce los patrones de
+arriba y una lista corta de contraseñas comunes, así que una contraseña hecha de palabras corrientes
+(una frase como "correct horse battery staple") recibe una nota mayor de la que merece, porque no hay
+diccionario. No puede saber si una contraseña ha aparecido en una filtración. "Muy fuerte" significa,
+por tanto, "no se encontró ningún patrón fácil", y no "segura para usar": usa una contraseña que nadie
+haya visto nunca, como las que genera Padlock.
+
+La contraseña escrita nunca sale de la página: no se guarda, no se envía en mensajes, no entra en el
+historial y no se registra, y el campo se vacía al salir de la pantalla o al pulsar Esc.
 
 ### Apariencia y ajustes
 
