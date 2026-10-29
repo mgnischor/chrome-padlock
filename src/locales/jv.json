@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Kode sumber, masalah, lan nganyari"
+    },
+    "checkerButtonTitle": {
+        "message": "Tes kekuwatan sandi"
+    },
+    "checkerInputLabel": {
+        "message": "Ketik utawa tempel sandi sing arep dites"
+    },
+    "checkerShowLabel": {
+        "message": "Tampilake sandi"
+    },
+    "checkerTimeHeading": {
+        "message": "Prakiraan wektu kanggo mbobol"
+    },
+    "crackOnlineSlow": {
+        "message": "Serangan online, diwatesi ($RATE$ tebakan saben jam)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Serangan online, tanpa wates ($RATE$ tebakan saben detik)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Serangan offline, hash alon kaya bcrypt ($RATE$ tebakan saben detik)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Serangan offline, hash cepet ing GPU ($RATE$ tebakan saben detik)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Kurang saka sedetik"
+    },
+    "crackBeyondUniverse": {
+        "message": "Luwih suwe tinimbang umure alam semesta"
+    },
+    "checkWarnCommon": {
+        "message": "Iki salah sijine sandi sing paling akeh digunakake."
+    },
+    "checkWarnPattern": {
+        "message": "Pambaleni, urutan, pola keyboard, lan taun gampang ditebak."
+    },
+    "checkWarnShort": {
+        "message": "Gunakna paling ora $COUNT$ karakter.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Dianalisis ing piranti sampeyan lan ora tau disimpen utawa dikirim. Asile minangka prakiraan adhedhasar dawa, ragam karakter, lan pola umum; ora bisa ngerti apa sandi wis bocor utawa digawe saka tembung umum. Wektu iku rata-rata."
     }
 }
