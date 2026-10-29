@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Исходный код, проблемы и обновления"
+    },
+    "checkerButtonTitle": {
+        "message": "Проверить надёжность пароля"
+    },
+    "checkerInputLabel": {
+        "message": "Введите или вставьте пароль для проверки"
+    },
+    "checkerShowLabel": {
+        "message": "Показать пароль"
+    },
+    "checkerTimeHeading": {
+        "message": "Примерное время взлома"
+    },
+    "crackOnlineSlow": {
+        "message": "Онлайн-атака с ограничением ($RATE$ попыток в час)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Онлайн-атака без ограничений ($RATE$ попыток в секунду)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Офлайн-атака, медленный хеш вроде bcrypt ($RATE$ попыток в секунду)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Офлайн-атака, быстрый хеш на GPU ($RATE$ попыток в секунду)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Меньше секунды"
+    },
+    "crackBeyondUniverse": {
+        "message": "Дольше, чем возраст Вселенной"
+    },
+    "checkWarnCommon": {
+        "message": "Это один из самых распространённых паролей."
+    },
+    "checkWarnPattern": {
+        "message": "Повторы, последовательности, клавиатурные шаблоны и годы легко угадать."
+    },
+    "checkWarnShort": {
+        "message": "Используйте не менее $COUNT$ символов.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Анализ выполняется на вашем устройстве, пароль нигде не сохраняется и не отправляется. Результат — оценка по длине, разнообразию символов и распространённым шаблонам; она не знает, утекал ли пароль и состоит ли он из обычных слов. Время указано в среднем."
     }
 }
