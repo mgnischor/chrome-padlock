@@ -54,6 +54,13 @@ password it copied, and overwrites the clipboard with a blank value only if they
 you copied in the meantime is left untouched. The clipboard content is never stored, logged or
 transmitted. You can revoke these permissions at any time in `chrome://extensions`.
 
+## Password strength test
+
+The **strength test** screen analyzes a password you type or paste into its field. The analysis runs
+entirely in the popup, on your device. The password is not stored, not added to the history, not sent
+to the extension's background process or to any server, and not logged, and the field is emptied as
+soon as you leave the screen.
+
 ## Web page content
 
 Padlock does not read, collect or transmit the content of the pages you visit. When you choose
