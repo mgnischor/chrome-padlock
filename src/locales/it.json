@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Codice sorgente, segnalazioni e aggiornamenti"
+    },
+    "checkerButtonTitle": {
+        "message": "Verifica la robustezza della password"
+    },
+    "checkerInputLabel": {
+        "message": "Digita o incolla una password da verificare"
+    },
+    "checkerShowLabel": {
+        "message": "Mostra la password"
+    },
+    "checkerTimeHeading": {
+        "message": "Tempo stimato per violarla"
+    },
+    "crackOnlineSlow": {
+        "message": "Attacco online con limite di tentativi ($RATE$ all'ora)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Attacco online senza limiti ($RATE$ al secondo)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Attacco offline, hash lento come bcrypt ($RATE$ al secondo)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Attacco offline, hash veloce su GPU ($RATE$ al secondo)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Meno di un secondo"
+    },
+    "crackBeyondUniverse": {
+        "message": "Più dell'età dell'universo"
+    },
+    "checkWarnCommon": {
+        "message": "È una delle password più usate."
+    },
+    "checkWarnPattern": {
+        "message": "Ripetizioni, sequenze, schemi di tastiera e anni sono facili da indovinare."
+    },
+    "checkWarnShort": {
+        "message": "Usa almeno $COUNT$ caratteri.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Analizzata sul tuo dispositivo, mai salvata né inviata. Il risultato è una stima basata su lunghezza, varietà di caratteri e schemi comuni; non può sapere se una password è stata divulgata né se è fatta di parole comuni. I tempi sono medie."
     }
 }
