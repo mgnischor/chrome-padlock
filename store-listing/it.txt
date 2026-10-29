@@ -1,0 +1,17 @@
+Padlock crea password forti e casuali sul tuo dispositivo. Copia il risultato con un clic oppure inseriscilo direttamente in un campo di testo.
+
+Come funziona
+- Ogni carattere viene estratto con il generatore di numeri casuali crittograficamente sicuro del browser, e l'indicatore di robustezza mostra l'entropia esatta in bit.
+- Scegli la lunghezza (da 4 a 128 caratteri) e i tipi di caratteri: minuscole, maiuscole, cifre e simboli. Puoi evitare i caratteri simili, come 0, O, 1, l e I, ed escludere quelli che non vuoi.
+- Copia il risultato oppure fai clic con il pulsante destro su un campo di testo e scegli «Inserisci password sicura».
+- Facoltativo: cancella automaticamente gli appunti da 30 secondi a 2 minuti dopo la copia.
+- Facoltativo: conserva un elenco delle ultime 50 password generate. È disattivato per impostazione predefinita, resta senza crittografia solo nella memoria del browser e viene cancellato alla chiusura di Chrome.
+- Temi chiaro e scuro e 30 lingue dell'interfaccia.
+
+Privacy
+Padlock funziona interamente sul tuo dispositivo. Non raccoglie dati, non effettua richieste di rete e non contiene pubblicità né analisi. Non è un gestore di password: non salva né sincronizza nulla.
+
+Autorizzazioni
+Padlock accede a una pagina solo quando usi la sua voce del menu contestuale, e soltanto alla scheda e al campo che hai usato. Le autorizzazioni per gli appunti sono facoltative e richieste solo se attivi la cancellazione automatica degli appunti.
+
+Open source (licenza Apache 2.0): github.com/mgnischor/chrome-padlock
