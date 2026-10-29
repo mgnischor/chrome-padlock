@@ -1,0 +1,17 @@
+O Padlock cria senhas fortes e aleatórias no seu dispositivo. Copie o resultado com um clique ou insira-o direto em um campo de texto.
+
+Como funciona
+- Cada caractere é sorteado com o gerador de números aleatórios criptograficamente seguro do seu navegador, e o medidor de força mostra a entropia exata em bits.
+- Escolha o tamanho (de 4 a 128 caracteres) e os tipos de caracteres: minúsculas, maiúsculas, dígitos e símbolos. Você pode evitar caracteres parecidos, como 0, O, 1, l e I, e excluir os que não quiser.
+- Copie o resultado ou clique com o botão direito em um campo de texto e escolha “Inserir senha segura”.
+- Opcional: limpe a área de transferência automaticamente de 30 segundos a 2 minutos depois de copiar.
+- Opcional: mantenha uma lista das últimas 50 senhas geradas. Ela vem desativada, fica sem criptografia apenas na memória do navegador e é apagada quando o Chrome fecha.
+- Temas claro e escuro e 30 idiomas de interface.
+
+Privacidade
+O Padlock funciona inteiramente no seu dispositivo. Não coleta dados, não faz requisições de rede e não tem anúncios nem análise de uso. Não é um gerenciador de senhas: não salva nem sincroniza nada.
+
+Permissões
+O Padlock acessa uma página somente quando você usa o item do menu de clique direito, e apenas a aba e o campo que você usou. As permissões da área de transferência são opcionais e só são pedidas se você ativar a limpeza automática da área de transferência.
+
+Código aberto (Licença Apache 2.0): github.com/mgnischor/chrome-padlock
