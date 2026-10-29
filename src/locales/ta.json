@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "மூலக் குறியீடு, சிக்கல்கள் மற்றும் புதுப்பிப்புகள்"
+    },
+    "checkerButtonTitle": {
+        "message": "கடவுச்சொல் வலிமையைச் சோதிக்கவும்"
+    },
+    "checkerInputLabel": {
+        "message": "சோதிக்க ஒரு கடவுச்சொல்லை உள்ளிடவும் அல்லது ஒட்டவும்"
+    },
+    "checkerShowLabel": {
+        "message": "கடவுச்சொல்லைக் காட்டு"
+    },
+    "checkerTimeHeading": {
+        "message": "உடைக்க மதிப்பிடப்பட்ட நேரம்"
+    },
+    "crackOnlineSlow": {
+        "message": "ஆன்லைன், வரம்புடன் (மணிக்கு $RATE$ முயற்சிகள்)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "ஆன்லைன், வரம்பின்றி (வினாடிக்கு $RATE$ முயற்சிகள்)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "ஆஃப்லைன், மெதுவான ஹாஷ் bcrypt (வினாடிக்கு $RATE$ முயற்சிகள்)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "ஆஃப்லைன், வேகமான ஹாஷ் GPU (வினாடிக்கு $RATE$ முயற்சிகள்)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "ஒரு வினாடிக்கும் குறைவு"
+    },
+    "crackBeyondUniverse": {
+        "message": "பிரபஞ்சத்தின் வயதை விட அதிகம்"
+    },
+    "checkWarnCommon": {
+        "message": "இது மிகவும் அதிகமாகப் பயன்படுத்தப்படும் கடவுச்சொற்களில் ஒன்று."
+    },
+    "checkWarnPattern": {
+        "message": "மீண்டும் வருவன, தொடர்வரிசைகள், விசைப்பலகை வடிவங்கள், ஆண்டுகள் ஆகியவற்றை ஊகிப்பது எளிது."
+    },
+    "checkWarnShort": {
+        "message": "குறைந்தது $COUNT$ எழுத்துகளைப் பயன்படுத்தவும்.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "பகுப்பாய்வு உங்கள் சாதனத்திலேயே நடக்கும்; கடவுச்சொல் ஒருபோதும் சேமிக்கப்படவோ அனுப்பப்படவோ படாது. முடிவு நீளம், எழுத்து வகைகள், பொதுவான வடிவங்கள் அடிப்படையிலான மதிப்பீடு; கடவுச்சொல் கசிந்ததா, அல்லது சாதாரண சொற்களால் ஆனதா என்பதை அதனால் அறிய முடியாது. நேரங்கள் சராசரிகள்."
     }
 }
