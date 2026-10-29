@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Kode sumber, masalah, dan pembaruan"
+    },
+    "checkerButtonTitle": {
+        "message": "Uji kekuatan kata sandi"
+    },
+    "checkerInputLabel": {
+        "message": "Ketik atau tempel kata sandi untuk diuji"
+    },
+    "checkerShowLabel": {
+        "message": "Tampilkan kata sandi"
+    },
+    "checkerTimeHeading": {
+        "message": "Perkiraan waktu untuk membobolnya"
+    },
+    "crackOnlineSlow": {
+        "message": "Serangan online dengan pembatasan ($RATE$ tebakan per jam)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Serangan online tanpa batas ($RATE$ tebakan per detik)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Serangan offline, hash lambat seperti bcrypt ($RATE$ tebakan per detik)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Serangan offline, hash cepat di GPU ($RATE$ tebakan per detik)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Kurang dari satu detik"
+    },
+    "crackBeyondUniverse": {
+        "message": "Lebih lama dari usia alam semesta"
+    },
+    "checkWarnCommon": {
+        "message": "Ini salah satu kata sandi yang paling sering dipakai."
+    },
+    "checkWarnPattern": {
+        "message": "Pengulangan, urutan, pola keyboard, dan tahun mudah ditebak."
+    },
+    "checkWarnShort": {
+        "message": "Gunakan setidaknya $COUNT$ karakter.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Dianalisis di perangkat Anda dan tidak pernah disimpan atau dikirim. Hasilnya adalah perkiraan berdasarkan panjang, ragam karakter, dan pola umum; alat ini tidak dapat mengetahui apakah kata sandi pernah bocor atau disusun dari kata-kata biasa. Waktu berupa rata-rata."
     }
 }
