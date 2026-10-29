@@ -1,0 +1,17 @@
+Padlock crea contraseñas fuertes y aleatorias en tu dispositivo. Copia el resultado con un clic o insértalo directamente en un campo de texto.
+
+Cómo funciona
+- Cada carácter se elige con el generador de números aleatorios criptográficamente seguro de tu navegador, y el medidor de fortaleza muestra la entropía exacta en bits.
+- Elige la longitud (de 4 a 128 caracteres) y los tipos de caracteres: minúsculas, mayúsculas, dígitos y símbolos. Puedes evitar caracteres parecidos, como 0, O, 1, l e I, y excluir los que no quieras.
+- Copia el resultado o haz clic derecho en un campo de texto y elige «Insertar contraseña segura».
+- Opcional: borra el portapapeles automáticamente entre 30 segundos y 2 minutos después de copiar.
+- Opcional: conserva una lista de las últimas 50 contraseñas generadas. Está desactivada por defecto, se guarda sin cifrar solo en la memoria del navegador y se borra al cerrar Chrome.
+- Temas claro y oscuro y 30 idiomas de interfaz.
+
+Privacidad
+Padlock funciona por completo en tu dispositivo. No recopila datos, no realiza solicitudes de red y no incluye anuncios ni analíticas. No es un gestor de contraseñas: no guarda ni sincroniza nada.
+
+Permisos
+Padlock accede a una página solo cuando usas su entrada del menú contextual, y únicamente a la pestaña y al campo que usaste. Los permisos del portapapeles son opcionales y solo se solicitan si activas el borrado automático del portapapeles.
+
+Código abierto (Licencia Apache 2.0): github.com/mgnischor/chrome-padlock
