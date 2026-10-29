@@ -1,0 +1,17 @@
+Padlock crée des mots de passe forts et aléatoires sur votre appareil. Copiez le résultat d'un clic ou insérez-le directement dans un champ de texte.
+
+Fonctionnement
+- Chaque caractère est tiré avec le générateur de nombres aléatoires cryptographiquement sûr de votre navigateur, et l'indicateur de robustesse affiche l'entropie exacte en bits.
+- Choisissez la longueur (de 4 à 128 caractères) et les types de caractères : minuscules, majuscules, chiffres et symboles. Vous pouvez éviter les caractères qui se ressemblent, comme 0, O, 1, l et I, et exclure ceux dont vous ne voulez pas.
+- Copiez le résultat, ou faites un clic droit sur un champ de texte et choisissez « Insérer un mot de passe sécurisé ».
+- Facultatif : videz automatiquement le presse-papiers de 30 secondes à 2 minutes après la copie.
+- Facultatif : conservez une liste des 50 derniers mots de passe générés. Elle est désactivée par défaut, conservée sans chiffrement dans la mémoire du navigateur uniquement, et effacée à la fermeture de Chrome.
+- Thèmes clair et sombre, et 30 langues d'interface.
+
+Confidentialité
+Padlock fonctionne entièrement sur votre appareil. Il ne collecte aucune donnée, n'effectue aucune requête réseau et ne contient ni publicité ni outil d'analyse. Ce n'est pas un gestionnaire de mots de passe : il n'enregistre ni ne synchronise rien.
+
+Autorisations
+Padlock n'accède à une page que lorsque vous utilisez son entrée du menu contextuel, et uniquement à l'onglet et au champ concernés. Les autorisations du presse-papiers sont facultatives et demandées seulement si vous activez le vidage automatique du presse-papiers.
+
+Open source (licence Apache 2.0) : github.com/mgnischor/chrome-padlock
