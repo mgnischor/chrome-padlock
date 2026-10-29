@@ -32,6 +32,11 @@ entirely on your device.
   Ukrainian. The extension follows the browser's language automatically, or you can pick one in the
   settings. Arabic, Persian and Urdu switch the layout to right-to-left. See
   [Localization](#localization).
+- **Password strength test** (shield button, next to the gear): type or paste any password to see
+  its estimated entropy in bits, a strength rating, warnings about easy patterns, and how long it
+  would take to crack under four kinds of attack, from a rate-limited web login to an offline attack
+  on a fast hash with GPUs. The password is analyzed on your device and is never stored or sent, and
+  the field is emptied as soon as you leave the screen. See [Strength test](#strength-test).
 - **Settings screen** (gear button): language, light / dark / system theme, clipboard auto-clear, the
   password history, the right-click menu entry, and blurring passwords until you hover over them. One
   button restores the defaults.
@@ -73,7 +78,7 @@ After a rebuild, press the reload button on the extension's card in `chrome://ex
 public/                 Static files copied to dist/ (manifest, HTML, CSS, icons)
 src/locales/            Translations, one JSON file per language (en_US is the source)
 scripts/                Build tooling: build, package, minify, zip and icon generator
-src/core/               Pure, DOM-free logic: random, charsets, generator, entropy
+src/core/               Pure, DOM-free logic: random, charsets, generator, entropy, strength test
 src/shared/             Settings, history, i18n helper, message types, hashing helper
 src/popup/              Popup UI
 src/background/         Service worker: context menu, clipboard-clear timer
@@ -171,6 +176,37 @@ everything else falls back to English.
   and that the description stays within the Web Store limit of 132 characters.
 - **Testing a language:** pick it in the settings, or start Chrome with `--lang=pt-BR` to test the
   automatic choice.
+
+### Strength test
+
+The test works on any password, not only the ones Padlock creates, so it cannot assume the password
+is random. `analyzePassword` (`src/core/strength.ts`) splits the password into pieces and prices each
+one in bits of guessing effort, the way an attacker would try it, then keeps the cheapest split:
+
+| Piece                                              | Price                                             |
+| -------------------------------------------------- | ------------------------------------------------- |
+| A common password or word (about 160 built in)     | `log2(rank)`, plus a bit for capitals or look-alikes (`P@ssw0rd`) |
+| A repeat (`aaaa`, `abcabc`)                        | the repeated unit, plus `log2(times)`             |
+| A sequence (`abcd`, `4321`) or keyboard run (`asdf`) | a starting point plus `log2(length)`            |
+| A year from 1900 to 2039                           | about 8 bits                                      |
+| Anything else                                      | `log2(pool)` per character, the pool being the character types used |
+
+For a random password this equals `length × log2(pool)`; for a chosen one it is lower, often far
+lower. The crack time is the average, which is half of all guesses, `2^(bits − 1)`, divided by the
+guess rate. The four rates are the ones the zxcvbn estimator uses: 100 per hour (a throttled web
+login), 10 per second (an unthrottled one), 10 thousand per second (an offline attack on a slow
+hash such as bcrypt) and 10 billion per second (an offline attack on a fast hash such as MD5, with
+GPUs). Durations are written by `Intl.NumberFormat` (`src/shared/format.ts`), so units and plurals
+come from the browser's locale data in every language.
+
+Limits, which the screen also states: it is an **estimate**. It knows only the patterns above and a
+short list of common passwords, so a password made of ordinary words (a passphrase such as "correct
+horse battery staple") is rated higher than it deserves, because there is no dictionary. It cannot know
+whether a password has appeared in a breach. A rating of "very strong" therefore means "no easy
+pattern found", not "safe to use": use a password nobody has ever seen, such as one Padlock generates.
+
+The typed password never leaves the page: it is not stored, not sent in a message, not added to the
+history and not logged, and the field is cleared when you leave the screen or press Escape.
 
 ### Appearance and settings
 
