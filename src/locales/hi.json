@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "सोर्स कोड, समस्याएँ और अपडेट"
+    },
+    "checkerButtonTitle": {
+        "message": "पासवर्ड की मज़बूती जाँचें"
+    },
+    "checkerInputLabel": {
+        "message": "जाँचने के लिए पासवर्ड लिखें या चिपकाएँ"
+    },
+    "checkerShowLabel": {
+        "message": "पासवर्ड दिखाएँ"
+    },
+    "checkerTimeHeading": {
+        "message": "तोड़ने में लगने वाला अनुमानित समय"
+    },
+    "crackOnlineSlow": {
+        "message": "ऑनलाइन हमला, सीमित प्रयास (प्रति घंटा $RATE$ प्रयास)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "ऑनलाइन हमला, बिना सीमा (प्रति सेकंड $RATE$ प्रयास)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "ऑफ़लाइन हमला, धीमा हैश जैसे bcrypt (प्रति सेकंड $RATE$ प्रयास)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "ऑफ़लाइन हमला, GPU पर तेज़ हैश (प्रति सेकंड $RATE$ प्रयास)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "एक सेकंड से कम"
+    },
+    "crackBeyondUniverse": {
+        "message": "ब्रह्मांड की आयु से भी अधिक"
+    },
+    "checkWarnCommon": {
+        "message": "यह सबसे ज़्यादा इस्तेमाल होने वाले पासवर्ड में से एक है।"
+    },
+    "checkWarnPattern": {
+        "message": "दोहराव, क्रम, कीबोर्ड पैटर्न और साल का अनुमान लगाना आसान होता है।"
+    },
+    "checkWarnShort": {
+        "message": "कम से कम $COUNT$ अक्षर इस्तेमाल करें।",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "विश्लेषण आपके डिवाइस पर होता है और पासवर्ड कभी सहेजा या भेजा नहीं जाता। नतीजा लंबाई, अक्षरों की विविधता और आम पैटर्न पर आधारित अनुमान है; यह नहीं बता सकता कि पासवर्ड लीक हुआ है या आम शब्दों से बना है। समय औसत हैं।"
     }
 }
