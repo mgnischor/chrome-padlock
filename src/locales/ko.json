@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "소스 코드, 이슈 및 업데이트"
+    },
+    "checkerButtonTitle": {
+        "message": "비밀번호 강도 테스트"
+    },
+    "checkerInputLabel": {
+        "message": "테스트할 비밀번호를 입력하거나 붙여넣으세요"
+    },
+    "checkerShowLabel": {
+        "message": "비밀번호 표시"
+    },
+    "checkerTimeHeading": {
+        "message": "해독 예상 시간"
+    },
+    "crackOnlineSlow": {
+        "message": "온라인 공격, 시도 횟수 제한(시간당 $RATE$회 시도)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "온라인 공격, 제한 없음(초당 $RATE$회 시도)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "오프라인 공격, bcrypt 같은 느린 해시(초당 $RATE$회 시도)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "오프라인 공격, GPU의 빠른 해시(초당 $RATE$회 시도)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "1초 미만"
+    },
+    "crackBeyondUniverse": {
+        "message": "우주의 나이보다 긺"
+    },
+    "checkWarnCommon": {
+        "message": "가장 많이 쓰이는 비밀번호 중 하나입니다."
+    },
+    "checkWarnPattern": {
+        "message": "반복, 연속된 문자, 키보드 패턴, 연도는 추측하기 쉽습니다."
+    },
+    "checkWarnShort": {
+        "message": "$COUNT$자 이상으로 만드세요.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "분석은 기기에서만 이루어지며 비밀번호는 저장되거나 전송되지 않습니다. 결과는 길이, 문자 종류, 흔한 패턴을 바탕으로 한 추정치이며 비밀번호가 유출되었는지, 흔한 단어로 이루어졌는지는 알 수 없습니다. 시간은 평균값입니다."
     }
 }
