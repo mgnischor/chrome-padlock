@@ -1,0 +1,17 @@
+Padlock membuat kata sandi acak yang kuat di perangkat Anda. Salin hasilnya dengan satu klik atau sisipkan langsung ke kolom teks.
+
+Cara kerja
+- Setiap karakter dipilih dengan generator angka acak yang aman secara kriptografis milik browser Anda, dan meter kekuatan menampilkan entropi yang tepat dalam bit.
+- Pilih panjang (4 sampai 128 karakter) dan jenis karakter: huruf kecil, huruf besar, angka, dan simbol. Anda dapat menghindari karakter yang mirip seperti 0, O, 1, l, dan I, serta mengecualikan karakter yang tidak diinginkan.
+- Salin hasilnya, atau klik kanan pada kolom teks lalu pilih “Sisipkan kata sandi aman”.
+- Opsional: papan klip dibersihkan otomatis 30 detik hingga 2 menit setelah menyalin.
+- Opsional: simpan daftar 50 kata sandi terakhir yang dibuat. Fitur ini nonaktif secara default, disimpan tanpa enkripsi hanya di memori browser, dan dihapus saat Chrome ditutup.
+- Tema terang dan gelap serta 30 bahasa antarmuka.
+
+Privasi
+Padlock berjalan sepenuhnya di perangkat Anda. Padlock tidak mengumpulkan data, tidak membuat permintaan jaringan, dan tidak memuat iklan maupun analitik. Ini bukan pengelola kata sandi: tidak menyimpan atau menyinkronkan apa pun.
+
+Izin
+Padlock hanya mengakses halaman saat Anda memakai entri menu klik kanannya, dan hanya tab serta kolom yang Anda gunakan. Izin papan klip bersifat opsional dan hanya diminta jika Anda mengaktifkan pembersihan otomatis papan klip.
+
+Sumber terbuka (Lisensi Apache 2.0): github.com/mgnischor/chrome-padlock
