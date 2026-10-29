@@ -272,5 +272,77 @@
     },
     "aboutRepositoryLabel": {
         "message": "Code source, tickets et mises à jour"
+    },
+    "checkerButtonTitle": {
+        "message": "Tester la robustesse du mot de passe"
+    },
+    "checkerInputLabel": {
+        "message": "Saisissez ou collez un mot de passe à tester"
+    },
+    "checkerShowLabel": {
+        "message": "Afficher le mot de passe"
+    },
+    "checkerTimeHeading": {
+        "message": "Temps estimé pour le casser"
+    },
+    "crackOnlineSlow": {
+        "message": "Attaque en ligne limitée ($RATE$ essais par heure)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "100"
+            }
+        }
+    },
+    "crackOnlineFast": {
+        "message": "Attaque en ligne sans limite ($RATE$ essais par seconde)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10"
+            }
+        }
+    },
+    "crackOfflineSlow": {
+        "message": "Attaque hors ligne, hachage lent comme bcrypt ($RATE$ essais par seconde)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 thousand"
+            }
+        }
+    },
+    "crackOfflineFast": {
+        "message": "Attaque hors ligne, hachage rapide sur GPU ($RATE$ essais par seconde)",
+        "placeholders": {
+            "rate": {
+                "content": "$1",
+                "example": "10 billion"
+            }
+        }
+    },
+    "crackInstant": {
+        "message": "Moins d'une seconde"
+    },
+    "crackBeyondUniverse": {
+        "message": "Plus que l'âge de l'univers"
+    },
+    "checkWarnCommon": {
+        "message": "C'est l'un des mots de passe les plus utilisés."
+    },
+    "checkWarnPattern": {
+        "message": "Les répétitions, suites, motifs de clavier et années sont faciles à deviner."
+    },
+    "checkWarnShort": {
+        "message": "Utilisez au moins $COUNT$ caractères.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "8"
+            }
+        }
+    },
+    "checkerNote": {
+        "message": "Analysé sur votre appareil, jamais enregistré ni envoyé. Le résultat est une estimation fondée sur la longueur, la variété des caractères et les motifs courants ; il ne peut pas savoir si un mot de passe a fuité ni s'il est fait de mots courants. Les durées sont des moyennes."
     }
 }
