@@ -1,0 +1,17 @@
+Padlock tạo mật khẩu mạnh, ngẫu nhiên ngay trên thiết bị của bạn. Sao chép kết quả bằng một cú nhấp hoặc chèn trực tiếp vào ô văn bản.
+
+Cách hoạt động
+- Mỗi ký tự được chọn bằng bộ tạo số ngẫu nhiên an toàn về mặt mật mã của trình duyệt, và thanh đo độ mạnh hiển thị chính xác entropy theo bit.
+- Chọn độ dài (từ 4 đến 128 ký tự) và loại ký tự: chữ thường, chữ hoa, chữ số và ký hiệu. Bạn có thể tránh các ký tự dễ nhầm như 0, O, 1, l và I, và loại trừ bất kỳ ký tự nào không muốn.
+- Sao chép kết quả, hoặc nhấp chuột phải vào ô văn bản rồi chọn “Chèn mật khẩu an toàn”.
+- Tùy chọn: tự động xóa bộ nhớ tạm sau 30 giây đến 2 phút kể từ khi sao chép.
+- Tùy chọn: lưu danh sách 50 mật khẩu gần nhất đã tạo. Mặc định tắt, được giữ không mã hóa chỉ trong bộ nhớ trình duyệt và bị xóa khi đóng Chrome.
+- Giao diện sáng và tối, cùng 30 ngôn ngữ.
+
+Quyền riêng tư
+Padlock chạy hoàn toàn trên thiết bị của bạn. Padlock không thu thập dữ liệu, không gửi yêu cầu mạng và không có quảng cáo hay công cụ phân tích. Đây không phải trình quản lý mật khẩu: nó không lưu hay đồng bộ bất cứ thứ gì.
+
+Quyền
+Padlock chỉ truy cập một trang khi bạn dùng mục trong menu chuột phải của nó, và chỉ truy cập tab và ô bạn đã dùng. Các quyền đối với bộ nhớ tạm là tùy chọn và chỉ được yêu cầu nếu bạn bật tính năng tự động xóa bộ nhớ tạm.
+
+Mã nguồn mở (Giấy phép Apache 2.0): github.com/mgnischor/chrome-padlock
