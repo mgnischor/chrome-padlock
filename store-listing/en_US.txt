@@ -1,0 +1,17 @@
+Padlock creates strong, random passwords on your device. Copy the result with a click, or insert it straight into a text field.
+
+How it works
+- Every character is drawn with your browser's cryptographically secure random number generator, and the strength meter shows the exact entropy in bits.
+- Choose the length (4 to 128 characters) and the character types: lowercase, uppercase, digits and symbols. You can avoid look-alike characters such as 0, O, 1, l and I, and exclude any characters you do not want.
+- Copy the result, or right-click a text field and choose “Insert secure password”.
+- Optional: clear the clipboard automatically 30 seconds to 2 minutes after copying.
+- Optional: keep a list of the last 50 generated passwords. It is off by default, held unencrypted in browser memory only, and erased when Chrome closes.
+- Light and dark themes, and 30 interface languages.
+
+Privacy
+Padlock runs entirely on your device. It collects no data, makes no network requests and contains no ads or analytics. It is not a password manager: it does not save or sync anything.
+
+Permissions
+Padlock accesses a page only when you use its right-click menu entry, and only the tab and field you used. The clipboard permissions are optional and requested only if you turn on automatic clipboard clearing.
+
+Open source (Apache License 2.0): github.com/mgnischor/chrome-padlock
