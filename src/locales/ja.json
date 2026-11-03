@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock を開く"
     },
+    "commandInsert": {
+        "message": "フォーカス中の入力欄に安全なパスワードを挿入"
+    },
     "menuInsertPassword": {
         "message": "安全なパスワードを挿入"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "例: {}[]"
+    },
+    "modePassword": {
+        "message": "パスワード"
+    },
+    "modePassphrase": {
+        "message": "パスフレーズ"
+    },
+    "wordsLabel": {
+        "message": "単語数"
+    },
+    "separatorLabel": {
+        "message": "区切り文字"
+    },
+    "separatorHyphen": {
+        "message": "ハイフン (-)"
+    },
+    "separatorSpace": {
+        "message": "スペース"
+    },
+    "separatorPeriod": {
+        "message": "ピリオド (.)"
+    },
+    "separatorUnderscore": {
+        "message": "アンダースコア (_)"
+    },
+    "separatorNone": {
+        "message": "なし"
+    },
+    "capitalizeWordsLabel": {
+        "message": "単語の先頭を大文字にする"
+    },
+    "includeNumberLabel": {
+        "message": "数字を追加"
+    },
+    "passphraseHint": {
+        "message": "各単語は$COUNT$語のリストからランダムに選ばれます。",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "コピー後にクリップボードを消去"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "長さが、選択した文字の種類の数より短くなっています。"
     },
+    "errorInvalidWordCount": {
+        "message": "単語数は$MIN$〜$MAX$の範囲で指定してください。",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "設定"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "マウスを重ねるまでパスワードをぼかす"
+    },
+    "shortcutsLabel": {
+        "message": "キーボードショートカット"
+    },
+    "shortcutsButton": {
+        "message": "変更"
     },
     "resetSettings": {
         "message": "初期設定に戻す"
