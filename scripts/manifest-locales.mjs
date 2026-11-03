@@ -27,7 +27,7 @@
  */
 
 /** Messages the manifest refers to with `__MSG_<key>__`. */
-export const MANIFEST_KEYS = ["extName", "extShortName", "extDescription", "actionTitle", "commandOpen"];
+export const MANIFEST_KEYS = ["extName", "extShortName", "extDescription", "actionTitle", "commandOpen", "commandInsert"];
 
 /**
  * Languages with a `_locales` folder in the package: those in Chrome's list of supported
