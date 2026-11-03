@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock'u aç"
     },
+    "commandInsert": {
+        "message": "Odaklanılan alana güvenli bir parola ekle"
+    },
     "menuInsertPassword": {
         "message": "Güvenli parola ekle"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "örn. {}[]"
+    },
+    "modePassword": {
+        "message": "Parola"
+    },
+    "modePassphrase": {
+        "message": "Parola cümlesi"
+    },
+    "wordsLabel": {
+        "message": "Kelimeler"
+    },
+    "separatorLabel": {
+        "message": "Ayırıcı"
+    },
+    "separatorHyphen": {
+        "message": "Tire (-)"
+    },
+    "separatorSpace": {
+        "message": "Boşluk"
+    },
+    "separatorPeriod": {
+        "message": "Nokta (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Alt çizgi (_)"
+    },
+    "separatorNone": {
+        "message": "Yok"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Kelimeleri büyük harfle başlat"
+    },
+    "includeNumberLabel": {
+        "message": "Rakam ekle"
+    },
+    "passphraseHint": {
+        "message": "Her kelime, $COUNT$ kelimelik bir listeden rastgele seçilir.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Kopyaladıktan sonra panoyu temizle"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "Uzunluk, seçilen karakter türlerinin sayısından kısa."
     },
+    "errorInvalidWordCount": {
+        "message": "Kelime sayısı $MIN$ ile $MAX$ arasında olmalıdır.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Ayarlar"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Fare üzerine gelene kadar parolaları bulanıklaştır"
+    },
+    "shortcutsLabel": {
+        "message": "Klavye kısayolları"
+    },
+    "shortcutsButton": {
+        "message": "Özelleştir"
     },
     "resetSettings": {
         "message": "Varsayılanları geri yükle"
