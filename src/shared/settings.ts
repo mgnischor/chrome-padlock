@@ -18,7 +18,9 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-import { DEFAULT_GENERATOR_OPTIONS, MAX_LENGTH, MIN_LENGTH, type GeneratorOptions } from "../core/generator";
+import { DEFAULT_GENERATOR_OPTIONS, MAX_LENGTH, MIN_LENGTH } from "../core/generator";
+import { DEFAULT_PASSPHRASE_OPTIONS, sanitizePassphraseOptions } from "../core/passphrase";
+import { GENERATOR_MODES, type SecretOptions } from "../core/secret";
 import { AUTO_LANGUAGE, isLocaleCode } from "./locales";
 
 /** Allowed values for "clear clipboard after", in seconds. 0 disables the feature. */
@@ -33,7 +35,7 @@ export const THEME_CHOICES = ["system", "light", "dark"] as const;
 export type ThemePreference = (typeof THEME_CHOICES)[number];
 
 /** Everything persisted between sessions. Passwords themselves are never stored. */
-export interface Settings extends GeneratorOptions {
+export interface Settings extends SecretOptions {
     clipboardClearSeconds: number;
     /** Keep the most recently generated passwords (in memory only) so they can be viewed again. */
     keepHistory: boolean;
@@ -48,6 +50,8 @@ export interface Settings extends GeneratorOptions {
 
 export const DEFAULT_SETTINGS: Readonly<Settings> = {
     ...DEFAULT_GENERATOR_OPTIONS,
+    mode: "password",
+    passphrase: DEFAULT_PASSPHRASE_OPTIONS,
     clipboardClearSeconds: 0,
     keepHistory: false,
     language: AUTO_LANGUAGE,
@@ -98,6 +102,8 @@ export function sanitizeSettings(raw: unknown): Settings {
         symbols: bool(input.symbols, defaults.symbols),
         excludeAmbiguous: bool(input.excludeAmbiguous, defaults.excludeAmbiguous),
         excludeChars: typeof input.excludeChars === "string" ? input.excludeChars.slice(0, MAX_EXCLUDE_CHARS) : "",
+        mode: GENERATOR_MODES.find((choice) => choice === input.mode) ?? defaults.mode,
+        passphrase: sanitizePassphraseOptions(input.passphrase),
         clipboardClearSeconds,
         keepHistory: bool(input.keepHistory, defaults.keepHistory),
         language: typeof input.language === "string" && isLocaleCode(input.language) ? input.language : AUTO_LANGUAGE,
