@@ -20,7 +20,7 @@
 */
 import { describe, expect, it } from "vitest";
 import type { DurationUnit } from "../src/core/strength";
-import { formatDuration, formatRate } from "../src/shared/format";
+import { formatCount, formatDuration, formatRate } from "../src/shared/format";
 import { LOCALES } from "../src/shared/locales";
 
 /**
@@ -75,6 +75,26 @@ describe("formatDuration", () => {
 
     it("falls back to English for a tag the runtime rejects", () => {
         expect(formatDuration(duration(3, "day"), "not a valid tag!")).toBe("3 days");
+    });
+});
+
+describe("formatCount", () => {
+    it("keeps every digit and groups them the way the language does", () => {
+        expect(formatCount(7776, "en-US")).toBe("7,776");
+        expect(formatCount(7776, "de")).toBe("7.776");
+        expect(formatCount(7776, "pt-BR")).toBe("7.776");
+    });
+
+    it("always writes the digits as 0-9, in every supported language", () => {
+        for (const { tag } of LOCALES) {
+            const text = formatCount(7776, tag);
+            expect(text.replace(/\D/g, ""), tag).toBe("7776");
+            expect(text, tag).not.toMatch(/[٠-٩۰-۹०-९০-৯]/);
+        }
+    });
+
+    it("falls back to English for a tag the runtime rejects", () => {
+        expect(formatCount(7776, "not a valid tag!")).toBe("7,776");
     });
 });
 
