@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Відкрити Padlock"
     },
+    "commandInsert": {
+        "message": "Вставити надійний пароль в активне поле"
+    },
     "menuInsertPassword": {
         "message": "Вставити надійний пароль"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "напр. {}[]"
+    },
+    "modePassword": {
+        "message": "Пароль"
+    },
+    "modePassphrase": {
+        "message": "Парольна фраза"
+    },
+    "wordsLabel": {
+        "message": "Слова"
+    },
+    "separatorLabel": {
+        "message": "Роздільник"
+    },
+    "separatorHyphen": {
+        "message": "Дефіс (-)"
+    },
+    "separatorSpace": {
+        "message": "Пробіл"
+    },
+    "separatorPeriod": {
+        "message": "Крапка (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Підкреслення (_)"
+    },
+    "separatorNone": {
+        "message": "Немає"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Слова з великої літери"
+    },
+    "includeNumberLabel": {
+        "message": "Додати цифру"
+    },
+    "passphraseHint": {
+        "message": "Кожне слово випадково обирається зі списку з $COUNT$ слів.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Очищати буфер обміну після копіювання"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "Довжина менша за кількість вибраних типів символів."
     },
+    "errorInvalidWordCount": {
+        "message": "Кількість слів має бути від $MIN$ до $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Налаштування"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Розмивати паролі, доки не наведено курсор"
+    },
+    "shortcutsLabel": {
+        "message": "Комбінації клавіш"
+    },
+    "shortcutsButton": {
+        "message": "Налаштувати"
     },
     "resetSettings": {
         "message": "Скинути налаштування"
