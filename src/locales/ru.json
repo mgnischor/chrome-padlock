@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Открыть Padlock"
     },
+    "commandInsert": {
+        "message": "Вставить надёжный пароль в активное поле"
+    },
     "menuInsertPassword": {
         "message": "Вставить надёжный пароль"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "напр. {}[]"
+    },
+    "modePassword": {
+        "message": "Пароль"
+    },
+    "modePassphrase": {
+        "message": "Парольная фраза"
+    },
+    "wordsLabel": {
+        "message": "Слова"
+    },
+    "separatorLabel": {
+        "message": "Разделитель"
+    },
+    "separatorHyphen": {
+        "message": "Дефис (-)"
+    },
+    "separatorSpace": {
+        "message": "Пробел"
+    },
+    "separatorPeriod": {
+        "message": "Точка (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Подчёркивание (_)"
+    },
+    "separatorNone": {
+        "message": "Нет"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Слова с заглавной буквы"
+    },
+    "includeNumberLabel": {
+        "message": "Добавить цифру"
+    },
+    "passphraseHint": {
+        "message": "Каждое слово случайно выбирается из списка в $COUNT$ слов.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Очищать буфер обмена после копирования"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "Длина меньше количества выбранных типов символов."
     },
+    "errorInvalidWordCount": {
+        "message": "Количество слов должно быть от $MIN$ до $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Настройки"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Размывать пароли, пока не наведён курсор"
+    },
+    "shortcutsLabel": {
+        "message": "Сочетания клавиш"
+    },
+    "shortcutsButton": {
+        "message": "Настроить"
     },
     "resetSettings": {
         "message": "Сбросить настройки"
