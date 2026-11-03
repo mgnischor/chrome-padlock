@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock 열기"
     },
+    "commandInsert": {
+        "message": "선택한 입력란에 안전한 비밀번호 삽입"
+    },
     "menuInsertPassword": {
         "message": "보안 비밀번호 삽입"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "예: {}[]"
+    },
+    "modePassword": {
+        "message": "비밀번호"
+    },
+    "modePassphrase": {
+        "message": "암호 문구"
+    },
+    "wordsLabel": {
+        "message": "단어 수"
+    },
+    "separatorLabel": {
+        "message": "구분 기호"
+    },
+    "separatorHyphen": {
+        "message": "하이픈 (-)"
+    },
+    "separatorSpace": {
+        "message": "공백"
+    },
+    "separatorPeriod": {
+        "message": "마침표 (.)"
+    },
+    "separatorUnderscore": {
+        "message": "밑줄 (_)"
+    },
+    "separatorNone": {
+        "message": "없음"
+    },
+    "capitalizeWordsLabel": {
+        "message": "단어를 대문자로 시작"
+    },
+    "includeNumberLabel": {
+        "message": "숫자 추가"
+    },
+    "passphraseHint": {
+        "message": "각 단어는 $COUNT$개 단어 목록에서 무작위로 선택됩니다.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "복사 후 클립보드 지우기"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "길이가 선택한 문자 유형의 수보다 짧습니다."
     },
+    "errorInvalidWordCount": {
+        "message": "단어 수는 $MIN$~$MAX$ 사이여야 합니다.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "설정"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "마우스를 올릴 때까지 비밀번호 흐리게 표시"
+    },
+    "shortcutsLabel": {
+        "message": "키보드 단축키"
+    },
+    "shortcutsButton": {
+        "message": "변경"
     },
     "resetSettings": {
         "message": "기본값 복원"
