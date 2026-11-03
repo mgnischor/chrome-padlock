@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Otwórz Padlock"
     },
+    "commandInsert": {
+        "message": "Wstaw bezpieczne hasło w aktywnym polu"
+    },
     "menuInsertPassword": {
         "message": "Wstaw bezpieczne hasło"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "np. {}[]"
+    },
+    "modePassword": {
+        "message": "Hasło"
+    },
+    "modePassphrase": {
+        "message": "Fraza hasłowa"
+    },
+    "wordsLabel": {
+        "message": "Słowa"
+    },
+    "separatorLabel": {
+        "message": "Separator"
+    },
+    "separatorHyphen": {
+        "message": "Łącznik (-)"
+    },
+    "separatorSpace": {
+        "message": "Spacja"
+    },
+    "separatorPeriod": {
+        "message": "Kropka (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Podkreślenie (_)"
+    },
+    "separatorNone": {
+        "message": "Brak"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Wielkie litery na początku słów"
+    },
+    "includeNumberLabel": {
+        "message": "Dodaj cyfrę"
+    },
+    "passphraseHint": {
+        "message": "Każde słowo jest losowane z listy $COUNT$ słów.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Wyczyść schowek po skopiowaniu"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "Długość jest mniejsza niż liczba wybranych typów znaków."
     },
+    "errorInvalidWordCount": {
+        "message": "Liczba słów musi mieścić się w zakresie od $MIN$ do $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Ustawienia"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Rozmywaj hasła, dopóki nie najedziesz kursorem"
+    },
+    "shortcutsLabel": {
+        "message": "Skróty klawiszowe"
+    },
+    "shortcutsButton": {
+        "message": "Dostosuj"
     },
     "resetSettings": {
         "message": "Przywróć domyślne"
