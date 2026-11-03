@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Buɗe Padlock"
     },
+    "commandInsert": {
+        "message": "Saka amintaccen kalmar sirri a filin da aka zaɓa"
+    },
     "menuInsertPassword": {
         "message": "Saka kalmar sirri mai tsaro"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "misali {}[]"
+    },
+    "modePassword": {
+        "message": "Kalmar sirri"
+    },
+    "modePassphrase": {
+        "message": "Jimlar sirri"
+    },
+    "wordsLabel": {
+        "message": "Kalmomi"
+    },
+    "separatorLabel": {
+        "message": "Mai raba"
+    },
+    "separatorHyphen": {
+        "message": "Layi (-)"
+    },
+    "separatorSpace": {
+        "message": "Sarari"
+    },
+    "separatorPeriod": {
+        "message": "Digo (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Layi na ƙasa (_)"
+    },
+    "separatorNone": {
+        "message": "Babu"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Fara kalmomi da babban harafi"
+    },
+    "includeNumberLabel": {
+        "message": "Ƙara lamba"
+    },
+    "passphraseHint": {
+        "message": "Ana zaɓar kowace kalma ba da gangan ba daga jerin kalmomi $COUNT$.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Share allon kwafi bayan an kwafa"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "Tsawon bai kai yawan nau'ikan haruffan da aka zaɓa ba."
     },
+    "errorInvalidWordCount": {
+        "message": "Adadin kalmomi dole ne ya kasance tsakanin $MIN$ da $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Saituna"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Rufe kalmomin sirri sai an kai maɓallin linzamin kansu"
+    },
+    "shortcutsLabel": {
+        "message": "Gajerun hanyoyin maɓalli"
+    },
+    "shortcutsButton": {
+        "message": "Keɓance"
     },
     "resetSettings": {
         "message": "Mayar da na asali"
