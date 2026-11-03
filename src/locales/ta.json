@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock ஐத் திற"
     },
+    "commandInsert": {
+        "message": "கவனத்தில் உள்ள புலத்தில் பாதுகாப்பான கடவுச்சொல்லைச் செருகு"
+    },
     "menuInsertPassword": {
         "message": "பாதுகாப்பான கடவுச்சொல்லைச் செருகு"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "எ.கா. {}[]"
+    },
+    "modePassword": {
+        "message": "கடவுச்சொல்"
+    },
+    "modePassphrase": {
+        "message": "கடவுச்சொற்றொடர்"
+    },
+    "wordsLabel": {
+        "message": "சொற்கள்"
+    },
+    "separatorLabel": {
+        "message": "பிரிப்பான்"
+    },
+    "separatorHyphen": {
+        "message": "ஹைபன் (-)"
+    },
+    "separatorSpace": {
+        "message": "இடைவெளி"
+    },
+    "separatorPeriod": {
+        "message": "புள்ளி (.)"
+    },
+    "separatorUnderscore": {
+        "message": "அடிக்கோடு (_)"
+    },
+    "separatorNone": {
+        "message": "இல்லை"
+    },
+    "capitalizeWordsLabel": {
+        "message": "சொற்களைப் பெரிய எழுத்தில் தொடங்கு"
+    },
+    "includeNumberLabel": {
+        "message": "எண்ணைச் சேர்"
+    },
+    "passphraseHint": {
+        "message": "ஒவ்வொரு சொல்லும் $COUNT$ சொற்பட்டியலிலிருந்து தற்செயலாகத் தேர்வாகும்.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "நகலெடுத்த பிறகு கிளிப்போர்டை அழி"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "நீளம் தேர்ந்தெடுத்த எழுத்து வகைகளின் எண்ணிக்கையை விடக் குறைவாக உள்ளது."
     },
+    "errorInvalidWordCount": {
+        "message": "சொற்களின் எண்ணிக்கை $MIN$ முதல் $MAX$ வரை இருக்க வேண்டும்.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "அமைப்புகள்"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "சுட்டி வரும் வரை கடவுச்சொற்களை மங்கலாக்கு"
+    },
+    "shortcutsLabel": {
+        "message": "விசைப்பலகை குறுக்குவழிகள்"
+    },
+    "shortcutsButton": {
+        "message": "தனிப்பயனாக்கு"
     },
     "resetSettings": {
         "message": "இயல்புநிலைகளை மீட்டமை"
