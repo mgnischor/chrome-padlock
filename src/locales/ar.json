@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "فتح Padlock"
     },
+    "commandInsert": {
+        "message": "إدراج كلمة مرور آمنة في الحقل المحدد"
+    },
     "menuInsertPassword": {
         "message": "إدراج كلمة مرور آمنة"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "مثال: {}[]"
+    },
+    "modePassword": {
+        "message": "كلمة مرور"
+    },
+    "modePassphrase": {
+        "message": "عبارة مرور"
+    },
+    "wordsLabel": {
+        "message": "الكلمات"
+    },
+    "separatorLabel": {
+        "message": "الفاصل"
+    },
+    "separatorHyphen": {
+        "message": "شرطة (-)"
+    },
+    "separatorSpace": {
+        "message": "مسافة"
+    },
+    "separatorPeriod": {
+        "message": "نقطة (.)"
+    },
+    "separatorUnderscore": {
+        "message": "شرطة سفلية (_)"
+    },
+    "separatorNone": {
+        "message": "بلا"
+    },
+    "capitalizeWordsLabel": {
+        "message": "جعل أول حرف من كل كلمة كبيرًا"
+    },
+    "includeNumberLabel": {
+        "message": "إضافة رقم"
+    },
+    "passphraseHint": {
+        "message": "تُختار كل كلمة عشوائيًا من قائمة تضم $COUNT$ كلمة.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "مسح الحافظة بعد النسخ"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "الطول أقل من عدد أنواع الأحرف المحددة."
     },
+    "errorInvalidWordCount": {
+        "message": "يجب أن يكون عدد الكلمات بين $MIN$ و$MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "الإعدادات"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "تمويه كلمات المرور حتى مرور المؤشر فوقها"
+    },
+    "shortcutsLabel": {
+        "message": "اختصارات لوحة المفاتيح"
+    },
+    "shortcutsButton": {
+        "message": "تخصيص"
     },
     "resetSettings": {
         "message": "استعادة الإعدادات الافتراضية"
