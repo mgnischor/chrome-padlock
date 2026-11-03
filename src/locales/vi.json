@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Mở Padlock"
     },
+    "commandInsert": {
+        "message": "Chèn mật khẩu an toàn vào trường đang chọn"
+    },
     "menuInsertPassword": {
         "message": "Chèn mật khẩu an toàn"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "ví dụ {}[]"
+    },
+    "modePassword": {
+        "message": "Mật khẩu"
+    },
+    "modePassphrase": {
+        "message": "Cụm mật khẩu"
+    },
+    "wordsLabel": {
+        "message": "Từ"
+    },
+    "separatorLabel": {
+        "message": "Dấu phân cách"
+    },
+    "separatorHyphen": {
+        "message": "Dấu gạch nối (-)"
+    },
+    "separatorSpace": {
+        "message": "Dấu cách"
+    },
+    "separatorPeriod": {
+        "message": "Dấu chấm (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Dấu gạch dưới (_)"
+    },
+    "separatorNone": {
+        "message": "Không"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Viết hoa chữ cái đầu mỗi từ"
+    },
+    "includeNumberLabel": {
+        "message": "Thêm một chữ số"
+    },
+    "passphraseHint": {
+        "message": "Mỗi từ được chọn ngẫu nhiên từ danh sách $COUNT$ từ.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Xóa bộ nhớ tạm sau khi sao chép"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "Độ dài ngắn hơn số loại ký tự đã chọn."
     },
+    "errorInvalidWordCount": {
+        "message": "Số từ phải nằm trong khoảng từ $MIN$ đến $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Cài đặt"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Làm mờ mật khẩu cho đến khi rê chuột"
+    },
+    "shortcutsLabel": {
+        "message": "Phím tắt"
+    },
+    "shortcutsButton": {
+        "message": "Tùy chỉnh"
     },
     "resetSettings": {
         "message": "Khôi phục mặc định"
