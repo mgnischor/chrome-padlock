@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock ખોલો"
     },
+    "commandInsert": {
+        "message": "ફોકસમાં રહેલા ફીલ્ડમાં સુરક્ષિત પાસવર્ડ દાખલ કરો"
+    },
     "menuInsertPassword": {
         "message": "સુરક્ષિત પાસવર્ડ દાખલ કરો"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "દા.ત. {}[]"
+    },
+    "modePassword": {
+        "message": "પાસવર્ડ"
+    },
+    "modePassphrase": {
+        "message": "પાસફ્રેઝ"
+    },
+    "wordsLabel": {
+        "message": "શબ્દો"
+    },
+    "separatorLabel": {
+        "message": "વિભાજક"
+    },
+    "separatorHyphen": {
+        "message": "હાઇફન (-)"
+    },
+    "separatorSpace": {
+        "message": "સ્પેસ"
+    },
+    "separatorPeriod": {
+        "message": "પૂર્ણવિરામ (.)"
+    },
+    "separatorUnderscore": {
+        "message": "અંડરસ્કોર (_)"
+    },
+    "separatorNone": {
+        "message": "કોઈ નહીં"
+    },
+    "capitalizeWordsLabel": {
+        "message": "શબ્દો મોટા અક્ષરથી શરૂ કરો"
+    },
+    "includeNumberLabel": {
+        "message": "એક સંખ્યા ઉમેરો"
+    },
+    "passphraseHint": {
+        "message": "દરેક શબ્દ $COUNT$ શબ્દોની યાદીમાંથી રેન્ડમ રીતે પસંદ થાય છે.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "કૉપિ કર્યા પછી ક્લિપબોર્ડ સાફ કરો"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "લંબાઈ પસંદ કરેલા અક્ષર પ્રકારોની સંખ્યા કરતાં ઓછી છે."
     },
+    "errorInvalidWordCount": {
+        "message": "શબ્દોની સંખ્યા $MIN$ અને $MAX$ વચ્ચે હોવી જોઈએ.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "સેટિંગ્સ"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "માઉસ લાવો ત્યાં સુધી પાસવર્ડ ઝાંખા રાખો"
+    },
+    "shortcutsLabel": {
+        "message": "કીબોર્ડ શૉર્ટકટ"
+    },
+    "shortcutsButton": {
+        "message": "કસ્ટમાઇઝ કરો"
     },
     "resetSettings": {
         "message": "ડિફૉલ્ટ પાછા લાવો"
