@@ -169,57 +169,102 @@
 
                 <div class="column">
                     <section class="card options" aria-label="Options" data-i18n-aria-label="optionsLabel">
-                        <div class="length-row">
-                            <label for="length-number" data-i18n="lengthLabel">Length</label>
-                            <input
-                                id="length"
-                                type="range"
-                                aria-label="Password length"
-                                data-i18n-aria-label="lengthSliderLabel"
-                            />
-                            <input id="length-number" type="number" inputmode="numeric" />
+                        <div class="mode" role="radiogroup" aria-label="Options" data-i18n-aria-label="optionsLabel">
+                            <label class="mode-choice">
+                                <input id="mode-password" type="radio" name="mode" value="password" />
+                                <span data-i18n="modePassword">Password</span>
+                            </label>
+                            <label class="mode-choice">
+                                <input id="mode-passphrase" type="radio" name="mode" value="passphrase" />
+                                <span data-i18n="modePassphrase">Passphrase</span>
+                            </label>
                         </div>
 
-                        <fieldset>
-                            <legend data-i18n="charactersLegend">Characters</legend>
-                            <label class="check">
-                                <input id="lowercase" type="checkbox" />
-                                <span data-i18n="lowercase">Lowercase</span>
-                                <code>a–z</code>
-                            </label>
-                            <label class="check">
-                                <input id="uppercase" type="checkbox" />
-                                <span data-i18n="uppercase">Uppercase</span>
-                                <code>A–Z</code>
-                            </label>
-                            <label class="check">
-                                <input id="digits" type="checkbox" />
-                                <span data-i18n="digits">Digits</span>
-                                <code>0–9</code>
-                            </label>
-                            <label class="check">
-                                <input id="symbols" type="checkbox" />
-                                <span data-i18n="symbols">Symbols</span>
-                                <code>!@#$…</code>
-                            </label>
-                        </fieldset>
+                        <div id="password-options" class="mode-panel">
+                            <div class="length-row">
+                                <label for="length-number" data-i18n="lengthLabel">Length</label>
+                                <input
+                                    id="length"
+                                    type="range"
+                                    aria-label="Password length"
+                                    data-i18n-aria-label="lengthSliderLabel"
+                                />
+                                <input id="length-number" type="number" inputmode="numeric" />
+                            </div>
 
-                        <label class="check">
-                            <input id="ambiguous" type="checkbox" />
-                            <span data-i18n="avoidLookalikes">Avoid look-alikes</span>
-                            <code>0 O 1 l I |</code>
-                        </label>
+                            <fieldset>
+                                <legend data-i18n="charactersLegend">Characters</legend>
+                                <label class="check">
+                                    <input id="lowercase" type="checkbox" />
+                                    <span data-i18n="lowercase">Lowercase</span>
+                                    <code>a–z</code>
+                                </label>
+                                <label class="check">
+                                    <input id="uppercase" type="checkbox" />
+                                    <span data-i18n="uppercase">Uppercase</span>
+                                    <code>A–Z</code>
+                                </label>
+                                <label class="check">
+                                    <input id="digits" type="checkbox" />
+                                    <span data-i18n="digits">Digits</span>
+                                    <code>0–9</code>
+                                </label>
+                                <label class="check">
+                                    <input id="symbols" type="checkbox" />
+                                    <span data-i18n="symbols">Symbols</span>
+                                    <code>!@#$…</code>
+                                </label>
+                            </fieldset>
 
-                        <div class="field">
-                            <label for="exclude" data-i18n="excludeCharsLabel">Exclude characters</label>
-                            <input
-                                id="exclude"
-                                type="text"
-                                autocomplete="off"
-                                spellcheck="false"
-                                placeholder="e.g. {}[]"
-                                data-i18n-placeholder="excludeCharsPlaceholder"
-                            />
+                            <label class="check">
+                                <input id="ambiguous" type="checkbox" />
+                                <span data-i18n="avoidLookalikes">Avoid look-alikes</span>
+                                <code>0 O 1 l I |</code>
+                            </label>
+
+                            <div class="field">
+                                <label for="exclude" data-i18n="excludeCharsLabel">Exclude characters</label>
+                                <input
+                                    id="exclude"
+                                    type="text"
+                                    autocomplete="off"
+                                    spellcheck="false"
+                                    placeholder="e.g. {}[]"
+                                    data-i18n-placeholder="excludeCharsPlaceholder"
+                                />
+                            </div>
+                        </div>
+
+                        <div id="passphrase-options" class="mode-panel" hidden>
+                            <div class="length-row">
+                                <label for="words-number" data-i18n="wordsLabel">Words</label>
+                                <input id="words" type="range" aria-label="Words" data-i18n-aria-label="wordsLabel" />
+                                <input id="words-number" type="number" inputmode="numeric" />
+                            </div>
+
+                            <div class="field">
+                                <label for="separator" data-i18n="separatorLabel">Separator</label>
+                                <select id="separator">
+                                    <option value="-" data-i18n="separatorHyphen">Hyphen (-)</option>
+                                    <option value=" " data-i18n="separatorSpace">Space</option>
+                                    <option value="." data-i18n="separatorPeriod">Period (.)</option>
+                                    <option value="_" data-i18n="separatorUnderscore">Underscore (_)</option>
+                                    <option value="" data-i18n="separatorNone">None</option>
+                                </select>
+                            </div>
+
+                            <label class="check">
+                                <input id="capitalize" type="checkbox" />
+                                <span data-i18n="capitalizeWordsLabel">Capitalize words</span>
+                            </label>
+                            <label class="check">
+                                <input id="include-number" type="checkbox" />
+                                <span data-i18n="includeNumberLabel">Add a number</span>
+                            </label>
+
+                            <p class="hint" data-i18n="passphraseHint">
+                                Each word is picked at random from a list of 7,776 words.
+                            </p>
                         </div>
                     </section>
                 </div>
@@ -317,7 +362,7 @@
                 <div class="view-head">
                     <button id="settings-back" type="button" class="primary" data-i18n="back">Back</button>
                     <h2 data-i18n="settingsHeading">Settings</h2>
-                    <span class="spacer"></span>
+                    <span id="settings-status" class="status spacer" role="status" aria-live="polite"></span>
                     <button id="settings-reset" type="button" data-i18n="resetSettings">Restore defaults</button>
                 </div>
                 <div class="settings-grid">
@@ -347,6 +392,13 @@
                                 <option value="120" data-i18n="clipboard120">2 minutes</option>
                             </select>
                         </div>
+                        <div class="field">
+                            <div class="field-head">
+                                <label for="shortcuts-open" data-i18n="shortcutsLabel">Keyboard shortcuts</label>
+                                <button id="shortcuts-open" type="button" data-i18n="shortcutsButton">Customize</button>
+                            </div>
+                            <ul id="shortcuts-list" class="shortcuts"></ul>
+                        </div>
                     </div>
                     <div class="settings-column">
                         <div class="field">
@@ -371,7 +423,6 @@
                         </label>
                     </div>
                 </div>
-                <p id="settings-status" class="status" role="status" aria-live="polite"></p>
             </section>
 
             <section
