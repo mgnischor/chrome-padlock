@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock খুলুন"
     },
+    "commandInsert": {
+        "message": "ফোকাস করা ফিল্ডে একটি নিরাপদ পাসওয়ার্ড বসান"
+    },
     "menuInsertPassword": {
         "message": "নিরাপদ পাসওয়ার্ড সন্নিবেশ করুন"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "যেমন {}[]"
+    },
+    "modePassword": {
+        "message": "পাসওয়ার্ড"
+    },
+    "modePassphrase": {
+        "message": "পাসফ্রেজ"
+    },
+    "wordsLabel": {
+        "message": "শব্দ"
+    },
+    "separatorLabel": {
+        "message": "বিভাজক"
+    },
+    "separatorHyphen": {
+        "message": "হাইফেন (-)"
+    },
+    "separatorSpace": {
+        "message": "স্পেস"
+    },
+    "separatorPeriod": {
+        "message": "ফুলস্টপ (.)"
+    },
+    "separatorUnderscore": {
+        "message": "আন্ডারস্কোর (_)"
+    },
+    "separatorNone": {
+        "message": "কোনোটিই নয়"
+    },
+    "capitalizeWordsLabel": {
+        "message": "প্রতিটি শব্দ বড় হাতের অক্ষরে শুরু করুন"
+    },
+    "includeNumberLabel": {
+        "message": "একটি সংখ্যা যোগ করুন"
+    },
+    "passphraseHint": {
+        "message": "প্রতিটি শব্দ $COUNT$টি শব্দের তালিকা থেকে এলোমেলোভাবে বাছা হয়।",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "কপি করার পরে ক্লিপবোর্ড মুছুন"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "দৈর্ঘ্য নির্বাচিত অক্ষরের ধরনের সংখ্যার চেয়ে কম।"
     },
+    "errorInvalidWordCount": {
+        "message": "শব্দের সংখ্যা $MIN$ থেকে $MAX$ এর মধ্যে হতে হবে।",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "সেটিংস"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "মাউস না আনা পর্যন্ত পাসওয়ার্ড ঝাপসা রাখুন"
+    },
+    "shortcutsLabel": {
+        "message": "কীবোর্ড শর্টকাট"
+    },
+    "shortcutsButton": {
+        "message": "কাস্টমাইজ করুন"
     },
     "resetSettings": {
         "message": "ডিফল্ট পুনরুদ্ধার করুন"
