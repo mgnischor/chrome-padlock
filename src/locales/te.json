@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock తెరవండి"
     },
+    "commandInsert": {
+        "message": "ఫోకస్‌లో ఉన్న ఫీల్డ్‌లో సురక్షిత పాస్‌వర్డ్‌ను చొప్పించండి"
+    },
     "menuInsertPassword": {
         "message": "సురక్షిత పాస్‌వర్డ్‌ను చొప్పించండి"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "ఉదా. {}[]"
+    },
+    "modePassword": {
+        "message": "పాస్‌వర్డ్"
+    },
+    "modePassphrase": {
+        "message": "పాస్‌ఫ్రేజ్"
+    },
+    "wordsLabel": {
+        "message": "పదాలు"
+    },
+    "separatorLabel": {
+        "message": "విభజన చిహ్నం"
+    },
+    "separatorHyphen": {
+        "message": "హైఫన్ (-)"
+    },
+    "separatorSpace": {
+        "message": "ఖాళీ"
+    },
+    "separatorPeriod": {
+        "message": "పీరియడ్ (.)"
+    },
+    "separatorUnderscore": {
+        "message": "అండర్‌స్కోర్ (_)"
+    },
+    "separatorNone": {
+        "message": "ఏదీ కాదు"
+    },
+    "capitalizeWordsLabel": {
+        "message": "పదాలను పెద్ద అక్షరంతో ప్రారంభించండి"
+    },
+    "includeNumberLabel": {
+        "message": "ఒక సంఖ్యను జోడించండి"
+    },
+    "passphraseHint": {
+        "message": "ప్రతి పదం $COUNT$ పదాల జాబితా నుండి యాదృచ్ఛికంగా ఎంపిక చేయబడుతుంది.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "కాపీ చేసిన తర్వాత క్లిప్‌బోర్డ్‌ను క్లియర్ చేయండి"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "పొడవు ఎంచుకున్న అక్షర రకాల సంఖ్య కంటే తక్కువగా ఉంది."
     },
+    "errorInvalidWordCount": {
+        "message": "పదాల సంఖ్య $MIN$ నుండి $MAX$ మధ్య ఉండాలి.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "సెట్టింగ్‌లు"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "మౌస్ పెట్టే వరకు పాస్‌వర్డ్‌లను అస్పష్టంగా ఉంచండి"
+    },
+    "shortcutsLabel": {
+        "message": "కీబోర్డ్ షార్ట్‌కట్‌లు"
+    },
+    "shortcutsButton": {
+        "message": "అనుకూలీకరించు"
     },
     "resetSettings": {
         "message": "డిఫాల్ట్‌లను పునరుద్ధరించు"
