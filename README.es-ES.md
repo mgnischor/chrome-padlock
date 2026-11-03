@@ -17,8 +17,14 @@ fuertes íntegramente en tu dispositivo.
   inclusión–exclusión sobre los tipos seleccionados (`src/core/entropy.ts`).
 - **Opciones** – longitud de 4 a 128, minúsculas / mayúsculas / dígitos / símbolos, eliminación
   opcional de caracteres parecidos (`0 O 1 l I |`) y una lista personalizada de caracteres excluidos.
+- **Modo frase de contraseña** – cambia de _Contraseña_ a _Frase de contraseña_ para obtener de 3 a 12
+  palabras aleatorias, por ejemplo `abruptly-frosting-gamble-wiry-snowman-cabbage`: más fácil de
+  escribir y recordar que caracteres aleatorios, con el mismo cálculo exacto de entropía (unos 12,9
+  bits por palabra). Elige el separador, las mayúsculas y un dígito opcional. Consulta
+  [Frases de contraseña](#frases-de-contraseña).
 - **Insertar en una página** – haz clic derecho en cualquier campo de texto y elige _Insertar
-  contraseña segura_.
+  contraseña segura_, o pulsa `Ctrl+Shift+U` (`Command+Shift+U` en macOS) con el campo enfocado. Ambos
+  usan el modo y las opciones que has seleccionado.
 - **Borrado automático del portapapeles** (opcional) – borra el portapapeles entre 30 s y 2 min
   después de copiar, pero solo si todavía contiene la contraseña copiada.
 - **Historial de contraseñas** (opcional, desactivado por defecto) – cuando se activa en el popup, un
@@ -42,12 +48,15 @@ fuertes íntegramente en tu dispositivo.
   sales de la pantalla. Consulta [Prueba de seguridad](#prueba-de-seguridad).
 - **Pantalla de ajustes** (botón de engranaje): idioma, tema claro / oscuro / del sistema, borrado
   automático del portapapeles, historial de contraseñas, entrada del menú contextual y desenfoque de
-  las contraseñas hasta pasar el ratón. Un botón restaura los valores predeterminados.
+  las contraseñas hasta pasar el ratón y los atajos de teclado, con un botón que abre la página de
+  Chrome para cambiarlos. Un botón restaura los valores predeterminados.
 - **Pantalla Acerca de** (botón de GitHub): versión, autor, licencia, declaración de privacidad y un
   enlace al [código fuente en GitHub](https://github.com/mgnischor/chrome-padlock).
 - Accesible con el teclado, sin acceso a la red y sin analíticas.
-- Abre el popup con `Ctrl+Shift+Y` (`Command+Shift+Y` en macOS); cambia el atajo en
-  `chrome://extensions/shortcuts`.
+- Atajos de teclado: `Ctrl+Shift+Y` (`Command+Shift+Y` en macOS) abre el popup y `Ctrl+Shift+U`
+  (`Command+Shift+U`) inserta una contraseña en el campo enfocado. Cámbialos en
+  `chrome://extensions/shortcuts`; si otra extensión ya usa una de las teclas, Chrome deja el comando
+  sin atajo hasta que elijas uno.
 
 ## Instalación (desde el código fuente)
 
@@ -76,16 +85,21 @@ descomprimida** y selecciona la carpeta `dist/`.
 Después de recompilar, pulsa el botón de recargar en la tarjeta de la extensión en
 `chrome://extensions`.
 
+GitHub Actions (`.github/workflows/ci.yml`) ejecuta `npm run check` en Node 22 y 24, compila y verifica
+el paquete de la tienda (`npm run package`, conservando el zip como artefacto) y ejecuta `npm audit` en
+cada push y pull request, y cada semana. Dependabot propone actualizaciones de dependencias.
+
 ### Estructura del proyecto
 
 ```
 public/                 Archivos estáticos copiados a dist/ (manifest, HTML, CSS, iconos)
 src/locales/            Traducciones, un archivo JSON por idioma (en_US es el origen)
 scripts/                Herramientas de compilación: build, package, minify, zip y generador de iconos
-src/core/               Lógica pura, sin DOM: random, charsets, generator, entropy, prueba de seguridad
+src/core/               Lógica pura, sin DOM: random, charsets, generator, frase de contraseña y su
+                        lista de palabras, entropy, prueba de seguridad
 src/shared/             Ajustes, historial, helper de i18n, tipos de mensaje, helper de hash
 src/popup/              Interfaz del popup
-src/background/         Service worker: menú contextual, temporizador de borrado del portapapeles
+src/background/         Service worker: menú contextual, atajo de teclado, temporizador de borrado del portapapeles
 src/offscreen/          Documento offscreen que borra el portapapeles
 tests/                  Pruebas unitarias Vitest de core/, ajustes, historial e idiomas
 ```
@@ -102,17 +116,50 @@ válidas, y la entropía es `log2(N)` con `N` calculado de forma exacta. El cost
 despreciable (aproximadamente un intento para longitudes normales; unos cien intentos baratos en el
 peor caso, con longitud 4).
 
+### Frases de contraseña
+
+Una frase de contraseña es un conjunto de `words` palabras elegidas de forma uniforme e independiente
+de la EFF Large Wordlist, con 7.776 palabras (`src/core/wordlist.ts`), usando el mismo `secureRandomInt`,
+sin sesgo, que las contraseñas. Cada palabra vale, por tanto, exactamente `log2(7776) ≈ 12,92` bits, y
+seis palabras (el valor predeterminado) dan unos 77 bits. El dígito opcional se añade a una palabra
+elegida al azar y suma `log2(words × 10)` bits; las mayúsculas y el separador los fijan las opciones y
+no suman nada, así que nunca se cuentan (`passphraseEntropyBits` en `src/core/passphrase.ts`). Sin
+separador, algunas elecciones distintas de palabras pueden formar el mismo texto; la diferencia es
+despreciable.
+
+La clasificación de fortaleza usa la misma escala que las contraseñas, así que una frase de contraseña
+necesita ocho palabras (unos 103 bits) para llegar a "muy fuerte". El valor de entropía presupone un
+atacante que conoce la lista y las opciones, que es la suposición correcta para una extensión de código
+abierto. La lista está solo en inglés.
+
+Los dos modos comparten un único punto de entrada, `generateSecret` (`src/core/secret.ts`), al que
+llaman el popup, el menú contextual y el atajo de teclado, así que todos siguen el modo seleccionado.
+
+La lista de palabras es obra de la Electronic Frontier Foundation, usada bajo la licencia
+[Creative Commons Attribution 3.0 United States](https://creativecommons.org/licenses/by/3.0/us/):
+[anuncio de las listas por la EFF](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
+Está sin modificar, salvo que se han quitado los números de los dados.
+
+### Atajo de teclado para insertar una contraseña
+
+El comando `insert-password` (`Ctrl+Shift+U`) hace lo que el menú contextual, sin el ratón. Invocar un
+comando concede `activeTab` para esa pestaña, así que no hace falta ningún permiso adicional. El
+service worker primero pregunta a cada frame de la pestaña, con un script que devuelve solo `true` o
+`false`, cuál tiene un campo de texto enfocado, y solo entonces envía la nueva contraseña a ese frame,
+de modo que nunca llega a frames que no la necesitaban. Si ningún campo de texto tiene el foco, la
+insignia del botón de la barra muestra `!` y no se inserta nada.
+
 ### Permisos
 
 | Permiso                                          | Motivo                                                                        |
 | ------------------------------------------------ | ----------------------------------------------------------------------------- |
 | `storage`                                        | Recordar tus opciones y mantener en memoria el historial opcional             |
-| `contextMenus`, `scripting`, `activeTab`         | "Insertar contraseña segura" en el campo sobre el que haces clic derecho      |
+| `contextMenus`, `scripting`, `activeTab`         | "Insertar contraseña segura" en el campo sobre el que haces clic derecho o que tiene el foco (atajo) |
 | `alarms`, `offscreen`                            | Temporizador y documento auxiliar para el borrado automático del portapapeles |
 | `clipboardRead`, `clipboardWrite` _(opcionales)_ | Se solicitan solo cuando activas el borrado automático del portapapeles       |
 
 No se solicita ningún permiso de host. `activeTab` solo concede acceso a la pestaña en la que invocas
-el menú contextual, para esa única acción.
+el menú contextual o el atajo de teclado, para esa única acción.
 
 ### Borrado automático del portapapeles
 
@@ -299,7 +346,8 @@ Estos documentos están en inglés, el idioma que usa la Chrome Web Store.
 
 ## Limitaciones
 
-- Solo contraseñas de caracteres aleatorios; no hay modo de frase de contraseña (passphrase).
+- La lista de palabras de las frases de contraseña está solo en inglés, sea cual sea el idioma de la
+  interfaz.
 - "Insertar contraseña segura" rellena únicamente el campo que tiene el foco. No rellena un campo de
   "confirmar contraseña"; copia la contraseña y pégala allí.
 - La extensión no es un gestor de contraseñas. El historial opcional es una comodidad de corta
