@@ -19,6 +19,10 @@
         "message": "Open Padlock",
         "description": "Description of the keyboard shortcut that opens the popup."
     },
+    "commandInsert": {
+        "message": "Insert a secure password into the focused field",
+        "description": "Description of the keyboard shortcut that inserts a generated password into the focused text field."
+    },
     "menuInsertPassword": {
         "message": "Insert secure password",
         "description": "Context menu entry shown on editable fields."
@@ -138,6 +142,60 @@
     "excludeCharsPlaceholder": {
         "message": "e.g. {}[]",
         "description": "Placeholder of the exclude characters field."
+    },
+    "modePassword": {
+        "message": "Password",
+        "description": "Option that makes the generator produce random characters."
+    },
+    "modePassphrase": {
+        "message": "Passphrase",
+        "description": "Option that makes the generator produce random words."
+    },
+    "wordsLabel": {
+        "message": "Words",
+        "description": "Label of the number of words in a passphrase."
+    },
+    "separatorLabel": {
+        "message": "Separator",
+        "description": "Label of the choice of what goes between the words of a passphrase."
+    },
+    "separatorHyphen": {
+        "message": "Hyphen (-)",
+        "description": "Separator choice: a hyphen. Keep the (-) sign."
+    },
+    "separatorSpace": {
+        "message": "Space",
+        "description": "Separator choice: a space."
+    },
+    "separatorPeriod": {
+        "message": "Period (.)",
+        "description": "Separator choice: a period. Keep the (.) sign."
+    },
+    "separatorUnderscore": {
+        "message": "Underscore (_)",
+        "description": "Separator choice: an underscore. Keep the (_) sign."
+    },
+    "separatorNone": {
+        "message": "None",
+        "description": "Separator choice: nothing between the words."
+    },
+    "capitalizeWordsLabel": {
+        "message": "Capitalize words",
+        "description": "Checkbox: start every word of a passphrase with a capital letter."
+    },
+    "includeNumberLabel": {
+        "message": "Add a number",
+        "description": "Checkbox: add one random digit to a passphrase."
+    },
+    "passphraseHint": {
+        "message": "Each word is picked at random from a list of $COUNT$ words.",
+        "description": "Explains where passphrase words come from. $COUNT$ is the size of the word list, such as 7,776.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Clear clipboard after copying",
@@ -261,6 +319,20 @@
         "message": "Length is shorter than the number of selected character types.",
         "description": "Error shown in place of the password."
     },
+    "errorInvalidWordCount": {
+        "message": "The number of words must be between $MIN$ and $MAX$.",
+        "description": "Error shown in place of the passphrase. $MIN$ and $MAX$ are the allowed word counts.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Settings",
         "description": "Tooltip and accessible name of the settings button in the popup header."
@@ -314,6 +386,14 @@
     "maskPasswordsLabel": {
         "message": "Blur passwords until hovered",
         "description": "Checkbox that blurs passwords on screen until the pointer is over them."
+    },
+    "shortcutsLabel": {
+        "message": "Keyboard shortcuts",
+        "description": "Label of the keyboard shortcuts row in the settings."
+    },
+    "shortcutsButton": {
+        "message": "Customize",
+        "description": "Button that opens Chrome's page for changing keyboard shortcuts."
     },
     "resetSettings": {
         "message": "Restore defaults",
