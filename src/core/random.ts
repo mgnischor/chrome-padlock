@@ -26,8 +26,12 @@
  * `Math.random` is never used.
  */
 
-/** Fills the given typed array with random 32-bit values. */
-export type RandomFill = (buffer: Uint32Array) => Uint32Array;
+/**
+ * Fills the given typed array with random 32-bit values. The buffer is typed as backed by a plain
+ * `ArrayBuffer`, which is what `crypto.getRandomValues` accepts since TypeScript 6; a
+ * `SharedArrayBuffer`-backed array would not be allowed there.
+ */
+export type RandomFill = (buffer: Uint32Array<ArrayBuffer>) => Uint32Array<ArrayBuffer>;
 
 /** Number of distinct values a Uint32 can take (2^32). */
 const UINT32_RANGE = 0x1_0000_0000;
