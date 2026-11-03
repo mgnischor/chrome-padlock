@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "打开 Padlock"
     },
+    "commandInsert": {
+        "message": "在当前输入框中插入安全密码"
+    },
     "menuInsertPassword": {
         "message": "插入安全密码"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "例如 {}[]"
+    },
+    "modePassword": {
+        "message": "密码"
+    },
+    "modePassphrase": {
+        "message": "密码短语"
+    },
+    "wordsLabel": {
+        "message": "单词数"
+    },
+    "separatorLabel": {
+        "message": "分隔符"
+    },
+    "separatorHyphen": {
+        "message": "连字符 (-)"
+    },
+    "separatorSpace": {
+        "message": "空格"
+    },
+    "separatorPeriod": {
+        "message": "句点 (.)"
+    },
+    "separatorUnderscore": {
+        "message": "下划线 (_)"
+    },
+    "separatorNone": {
+        "message": "无"
+    },
+    "capitalizeWordsLabel": {
+        "message": "单词首字母大写"
+    },
+    "includeNumberLabel": {
+        "message": "添加数字"
+    },
+    "passphraseHint": {
+        "message": "每个单词都从包含 $COUNT$ 个单词的列表中随机选取。",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "复制后清空剪贴板"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "长度小于所选字符类型的数量。"
     },
+    "errorInvalidWordCount": {
+        "message": "单词数必须在 $MIN$ 到 $MAX$ 之间。",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "设置"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "鼠标悬停前模糊密码"
+    },
+    "shortcutsLabel": {
+        "message": "键盘快捷键"
+    },
+    "shortcutsButton": {
+        "message": "自定义"
     },
     "resetSettings": {
         "message": "恢复默认设置"
