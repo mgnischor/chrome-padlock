@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Apri Padlock"
     },
+    "commandInsert": {
+        "message": "Inserisci una password sicura nel campo attivo"
+    },
     "menuInsertPassword": {
         "message": "Inserisci password sicura"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "es. {}[]"
+    },
+    "modePassword": {
+        "message": "Password"
+    },
+    "modePassphrase": {
+        "message": "Passphrase"
+    },
+    "wordsLabel": {
+        "message": "Parole"
+    },
+    "separatorLabel": {
+        "message": "Separatore"
+    },
+    "separatorHyphen": {
+        "message": "Trattino (-)"
+    },
+    "separatorSpace": {
+        "message": "Spazio"
+    },
+    "separatorPeriod": {
+        "message": "Punto (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Trattino basso (_)"
+    },
+    "separatorNone": {
+        "message": "Nessuno"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Parole con l’iniziale maiuscola"
+    },
+    "includeNumberLabel": {
+        "message": "Aggiungi un numero"
+    },
+    "passphraseHint": {
+        "message": "Ogni parola viene scelta a caso da un elenco di $COUNT$ parole.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Cancella gli appunti dopo la copia"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "La lunghezza è inferiore al numero di tipi di caratteri selezionati."
     },
+    "errorInvalidWordCount": {
+        "message": "Il numero di parole deve essere compreso tra $MIN$ e $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Impostazioni"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Sfoca le password finché non ci passi sopra"
+    },
+    "shortcutsLabel": {
+        "message": "Scorciatoie da tastiera"
+    },
+    "shortcutsButton": {
+        "message": "Personalizza"
     },
     "resetSettings": {
         "message": "Ripristina predefiniti"
