@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Abrir o Padlock"
     },
+    "commandInsert": {
+        "message": "Inserir uma senha segura no campo em foco"
+    },
     "menuInsertPassword": {
         "message": "Inserir senha segura"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "ex.: {}[]"
+    },
+    "modePassword": {
+        "message": "Senha"
+    },
+    "modePassphrase": {
+        "message": "Frase-senha"
+    },
+    "wordsLabel": {
+        "message": "Palavras"
+    },
+    "separatorLabel": {
+        "message": "Separador"
+    },
+    "separatorHyphen": {
+        "message": "Hífen (-)"
+    },
+    "separatorSpace": {
+        "message": "Espaço"
+    },
+    "separatorPeriod": {
+        "message": "Ponto (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Sublinhado (_)"
+    },
+    "separatorNone": {
+        "message": "Nenhum"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Palavras com inicial maiúscula"
+    },
+    "includeNumberLabel": {
+        "message": "Adicionar um número"
+    },
+    "passphraseHint": {
+        "message": "Cada palavra é sorteada de uma lista de $COUNT$ palavras.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Limpar a área de transferência após copiar"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "O tamanho é menor que o número de tipos de caracteres selecionados."
     },
+    "errorInvalidWordCount": {
+        "message": "O número de palavras deve estar entre $MIN$ e $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Configurações"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Desfocar as senhas até passar o mouse"
+    },
+    "shortcutsLabel": {
+        "message": "Atalhos de teclado"
+    },
+    "shortcutsButton": {
+        "message": "Personalizar"
     },
     "resetSettings": {
         "message": "Restaurar padrões"
