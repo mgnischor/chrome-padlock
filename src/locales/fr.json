@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Ouvrir Padlock"
     },
+    "commandInsert": {
+        "message": "Insérer un mot de passe sécurisé dans le champ actif"
+    },
     "menuInsertPassword": {
         "message": "Insérer un mot de passe sécurisé"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "p. ex. {}[]"
+    },
+    "modePassword": {
+        "message": "Mot de passe"
+    },
+    "modePassphrase": {
+        "message": "Phrase secrète"
+    },
+    "wordsLabel": {
+        "message": "Mots"
+    },
+    "separatorLabel": {
+        "message": "Séparateur"
+    },
+    "separatorHyphen": {
+        "message": "Trait d’union (-)"
+    },
+    "separatorSpace": {
+        "message": "Espace"
+    },
+    "separatorPeriod": {
+        "message": "Point (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Tiret bas (_)"
+    },
+    "separatorNone": {
+        "message": "Aucun"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Mots avec majuscule"
+    },
+    "includeNumberLabel": {
+        "message": "Ajouter un chiffre"
+    },
+    "passphraseHint": {
+        "message": "Chaque mot est tiré au hasard dans une liste de $COUNT$ mots.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Vider le presse-papiers après la copie"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "La longueur est inférieure au nombre de types de caractères sélectionnés."
     },
+    "errorInvalidWordCount": {
+        "message": "Le nombre de mots doit être compris entre $MIN$ et $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Paramètres"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Flouter les mots de passe jusqu'au survol"
+    },
+    "shortcutsLabel": {
+        "message": "Raccourcis clavier"
+    },
+    "shortcutsButton": {
+        "message": "Personnaliser"
     },
     "resetSettings": {
         "message": "Rétablir les valeurs par défaut"
