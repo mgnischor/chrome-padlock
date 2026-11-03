@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "باز کردن Padlock"
     },
+    "commandInsert": {
+        "message": "درج گذرواژهٔ امن در فیلد فعال"
+    },
     "menuInsertPassword": {
         "message": "درج گذرواژهٔ امن"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "مثلاً {}[]"
+    },
+    "modePassword": {
+        "message": "گذرواژه"
+    },
+    "modePassphrase": {
+        "message": "عبارت عبور"
+    },
+    "wordsLabel": {
+        "message": "کلمه‌ها"
+    },
+    "separatorLabel": {
+        "message": "جداکننده"
+    },
+    "separatorHyphen": {
+        "message": "خط تیره (-)"
+    },
+    "separatorSpace": {
+        "message": "فاصله"
+    },
+    "separatorPeriod": {
+        "message": "نقطه (.)"
+    },
+    "separatorUnderscore": {
+        "message": "زیرخط (_)"
+    },
+    "separatorNone": {
+        "message": "هیچ"
+    },
+    "capitalizeWordsLabel": {
+        "message": "بزرگ‌کردن حرف اول کلمه‌ها"
+    },
+    "includeNumberLabel": {
+        "message": "افزودن یک عدد"
+    },
+    "passphraseHint": {
+        "message": "هر کلمه به‌طور تصادفی از فهرستی با $COUNT$ کلمه انتخاب می‌شود.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "پاک‌کردن کلیپ‌بورد پس از کپی"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "طول کمتر از تعداد انواع نویسهٔ انتخاب‌شده است."
     },
+    "errorInvalidWordCount": {
+        "message": "تعداد کلمه‌ها باید بین $MIN$ و $MAX$ باشد.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "تنظیمات"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "تار کردن گذرواژه‌ها تا زمان قرارگرفتن نشانگر روی آن‌ها"
+    },
+    "shortcutsLabel": {
+        "message": "میان‌برهای صفحه‌کلید"
+    },
+    "shortcutsButton": {
+        "message": "سفارشی‌سازی"
     },
     "resetSettings": {
         "message": "بازگردانی پیش‌فرض‌ها"
