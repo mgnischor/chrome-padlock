@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock തുറക്കുക"
     },
+    "commandInsert": {
+        "message": "ഫോക്കസിലുള്ള ഫീൽഡിൽ സുരക്ഷിത പാസ്‌വേഡ് ചേർക്കുക"
+    },
     "menuInsertPassword": {
         "message": "സുരക്ഷിത പാസ്‌വേഡ് ചേർക്കുക"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "ഉദാ. {}[]"
+    },
+    "modePassword": {
+        "message": "പാസ്‌വേഡ്"
+    },
+    "modePassphrase": {
+        "message": "പാസ്‌ഫ്രേസ്"
+    },
+    "wordsLabel": {
+        "message": "വാക്കുകൾ"
+    },
+    "separatorLabel": {
+        "message": "വിഭജകം"
+    },
+    "separatorHyphen": {
+        "message": "ഹൈഫൻ (-)"
+    },
+    "separatorSpace": {
+        "message": "സ്പേസ്"
+    },
+    "separatorPeriod": {
+        "message": "പീരിയഡ് (.)"
+    },
+    "separatorUnderscore": {
+        "message": "അണ്ടർസ്കോർ (_)"
+    },
+    "separatorNone": {
+        "message": "ഒന്നുമില്ല"
+    },
+    "capitalizeWordsLabel": {
+        "message": "വാക്കുകൾ വലിയക്ഷരത്തിൽ തുടങ്ങുക"
+    },
+    "includeNumberLabel": {
+        "message": "ഒരു സംഖ്യ ചേർക്കുക"
+    },
+    "passphraseHint": {
+        "message": "ഓരോ വാക്കും $COUNT$ വാക്കുകളുടെ പട്ടികയിൽ നിന്ന് ക്രമരഹിതമായി തിരഞ്ഞെടുക്കുന്നു.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "പകർത്തിയ ശേഷം ക്ലിപ്പ്ബോർഡ് മായ്ക്കുക"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "നീളം തിരഞ്ഞെടുത്ത അക്ഷര തരങ്ങളുടെ എണ്ണത്തേക്കാൾ കുറവാണ്."
     },
+    "errorInvalidWordCount": {
+        "message": "വാക്കുകളുടെ എണ്ണം $MIN$-നും $MAX$-നും ഇടയിലായിരിക്കണം.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "ക്രമീകരണങ്ങൾ"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "മൗസ് കൊണ്ടുവരുന്നതുവരെ പാസ്‌വേഡുകൾ മങ്ങിക്കുക"
+    },
+    "shortcutsLabel": {
+        "message": "കീബോർഡ് കുറുക്കുവഴികൾ"
+    },
+    "shortcutsButton": {
+        "message": "മാറ്റുക"
     },
     "resetSettings": {
         "message": "ഡിഫോൾട്ടുകൾ പുനഃസ്ഥാപിക്കുക"
