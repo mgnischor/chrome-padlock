@@ -17,8 +17,13 @@ inteiramente no seu dispositivo.
   inclusão–exclusão sobre os tipos selecionados (`src/core/entropy.ts`).
 - **Opções** – tamanho de 4 a 128, minúsculas / maiúsculas / dígitos / símbolos, remoção opcional de
   caracteres parecidos (`0 O 1 l I |`) e uma lista personalizada de caracteres excluídos.
+- **Modo frase-senha** – troque de _Senha_ para _Frase-senha_ para obter de 3 a 12 palavras aleatórias,
+  por exemplo `abruptly-frosting-gamble-wiry-snowman-cabbage`: mais fácil de digitar e de lembrar do que
+  caracteres aleatórios, com a mesma contagem exata de entropia (cerca de 12,9 bits por palavra).
+  Escolha o separador, letras maiúsculas e um dígito opcional. Veja [Frases-senha](#frases-senha).
 - **Inserir em uma página** – clique com o botão direito em qualquer campo de texto e escolha
-  _Inserir senha segura_.
+  _Inserir senha segura_, ou pressione `Ctrl+Shift+U` (`Command+Shift+U` no macOS) com o campo em
+  foco. Os dois usam o modo e as opções que você selecionou.
 - **Limpeza automática da área de transferência** (opcional) – limpa a área de transferência de 30 s a
   2 min depois de copiar, mas somente se ela ainda contiver a senha copiada.
 - **Histórico de senhas** (opcional, desativado por padrão) – quando ativado no popup, um botão
@@ -41,12 +46,14 @@ inteiramente no seu dispositivo.
   [Teste de força](#teste-de-força).
 - **Tela de configurações** (botão de engrenagem): idioma, tema claro / escuro / do sistema, limpeza
   automática da área de transferência, histórico de senhas, item do menu de clique direito e desfoque
-  das senhas até passar o mouse. Um botão restaura os padrões.
+  das senhas até passar o mouse e os atalhos de teclado, com um botão que abre a página do Chrome para
+  alterá-los. Um botão restaura os padrões.
 - **Tela Sobre** (botão do GitHub): versão, autor, licença, declaração de privacidade e um link para o
   [código-fonte no GitHub](https://github.com/mgnischor/chrome-padlock).
 - Acessível pelo teclado, sem acesso à rede e sem análise de uso.
-- Abra o popup com `Ctrl+Shift+Y` (`Command+Shift+Y` no macOS); altere o atalho em
-  `chrome://extensions/shortcuts`.
+- Atalhos de teclado: `Ctrl+Shift+Y` (`Command+Shift+Y` no macOS) abre o popup e `Ctrl+Shift+U`
+  (`Command+Shift+U`) insere uma senha no campo em foco. Altere-os em `chrome://extensions/shortcuts`;
+  se outra extensão já usar uma das teclas, o Chrome deixa o comando sem atalho até você escolher um.
 
 ## Instalação (a partir do código-fonte)
 
@@ -74,16 +81,21 @@ compactação** e selecione a pasta `dist/`.
 
 Depois de recompilar, clique no botão de recarregar no card da extensão em `chrome://extensions`.
 
+O GitHub Actions (`.github/workflows/ci.yml`) executa `npm run check` no Node 22 e 24, compila e verifica
+o pacote da loja (`npm run package`, guardando o zip como artefato) e executa `npm audit` a cada push e
+pull request, e toda semana. O Dependabot propõe atualizações de dependências.
+
 ### Estrutura do projeto
 
 ```
 public/                 Arquivos estáticos copiados para dist/ (manifest, HTML, CSS, ícones)
 src/locales/            Traduções, um arquivo JSON por idioma (en_US é a origem)
 scripts/                Ferramentas de build: build, package, minify, zip e gerador de ícones
-src/core/               Lógica pura, sem DOM: random, charsets, generator, entropy, teste de força
+src/core/               Lógica pura, sem DOM: random, charsets, generator, frase-senha e sua lista
+                        de palavras, entropy, teste de força
 src/shared/             Configurações, histórico, helper de i18n, tipos de mensagem, helper de hash
 src/popup/              Interface do popup
-src/background/         Service worker: menu de contexto, timer de limpeza da área de transferência
+src/background/         Service worker: menu de contexto, atalho de teclado, timer de limpeza da área de transferência
 src/offscreen/          Documento offscreen que limpa a área de transferência
 tests/                  Testes unitários Vitest de core/, configurações, histórico e idiomas
 ```
@@ -100,17 +112,49 @@ sequências válidas, e a entropia é `log2(N)` com `N` calculado de forma exata
 tentativas é desprezível (cerca de uma tentativa para tamanhos normais; umas cem tentativas baratas no
 pior caso, com tamanho 4).
 
+### Frases-senha
+
+Uma frase-senha é um conjunto de `words` palavras sorteadas de forma uniforme e independente da EFF
+Large Wordlist, com 7.776 palavras (`src/core/wordlist.ts`), usando o mesmo `secureRandomInt`, sem viés,
+das senhas. Cada palavra vale, portanto, exatamente `log2(7776) ≈ 12,92` bits, e seis palavras (o
+padrão) dão cerca de 77 bits. O dígito opcional vai em uma palavra escolhida ao acaso e soma
+`log2(words × 10)` bits; as letras maiúsculas e o separador são definidos pelas opções e não somam
+nada, então nunca são contados (`passphraseEntropyBits` em `src/core/passphrase.ts`). Sem separador,
+algumas escolhas diferentes de palavras podem formar o mesmo texto; a diferença é desprezível.
+
+A classificação de força usa a mesma escala das senhas, então uma frase-senha precisa de oito palavras
+(cerca de 103 bits) para chegar a "muito forte". O valor de entropia presume um atacante que conhece a
+lista e as opções, que é a suposição correta para uma extensão de código aberto. A lista é apenas em
+inglês.
+
+Os dois modos compartilham um único ponto de entrada, `generateSecret` (`src/core/secret.ts`), que o
+popup, o menu de clique direito e o atalho de teclado chamam, então todos seguem o modo selecionado.
+
+A lista de palavras é obra da Electronic Frontier Foundation, usada sob a licença
+[Creative Commons Attribution 3.0 United States](https://creativecommons.org/licenses/by/3.0/us/):
+[anúncio das listas pela EFF](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
+Ela está inalterada, exceto pela remoção dos números dos dados.
+
+### Atalho de teclado para inserir uma senha
+
+O comando `insert-password` (`Ctrl+Shift+U`) faz o que o menu de clique direito faz, sem o mouse. Acionar
+um comando concede `activeTab` para aquela aba, então nenhuma permissão adicional é necessária. O service
+worker primeiro pergunta a cada frame da aba, com um script que devolve apenas `true` ou `false`, qual
+tem um campo de texto em foco, e só então envia a nova senha a esse frame, de modo que ela nunca chega a
+frames que não precisavam dela. Se nenhum campo de texto estiver em foco, o selo do botão da barra mostra
+`!` e nada é inserido.
+
 ### Permissões
 
 | Permissão                                       | Motivo                                                                              |
 | ----------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `storage`                                       | Lembrar suas opções e manter o histórico opcional na memória                        |
-| `contextMenus`, `scripting`, `activeTab`        | "Inserir senha segura" no campo em que você clica com o botão direito               |
+| `contextMenus`, `scripting`, `activeTab`        | "Inserir senha segura" no campo em que você clica com o botão direito ou que está em foco (atalho) |
 | `alarms`, `offscreen`                           | Timer e documento auxiliar para a limpeza automática da área de transferência       |
 | `clipboardRead`, `clipboardWrite` _(opcionais)_ | Solicitadas somente quando você ativa a limpeza automática da área de transferência |
 
 Nenhuma permissão de host é solicitada. `activeTab` só concede acesso à aba em que você aciona o menu
-de contexto, para essa única ação.
+de contexto ou o atalho de teclado, para essa única ação.
 
 ### Limpeza automática da área de transferência
 
@@ -290,7 +334,7 @@ Estes documentos estão em inglês, o idioma usado pela Chrome Web Store.
 
 ## Limitações
 
-- Somente senhas de caracteres aleatórios; não há modo de frase secreta (passphrase).
+- A lista de palavras das frases-senha é apenas em inglês, qualquer que seja o idioma da interface.
 - "Inserir senha segura" preenche apenas o campo em foco. Não preenche um campo de "confirmar senha";
   copie a senha e cole nele.
 - A extensão não é um gerenciador de senhas. O histórico opcional é uma conveniência de curta duração,
