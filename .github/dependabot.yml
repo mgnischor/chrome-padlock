@@ -1,0 +1,17 @@
+version: 2
+
+updates:
+    - package-ecosystem: npm
+      directory: /
+      schedule:
+          interval: weekly
+      open-pull-requests-limit: 5
+      groups:
+          # One pull request for the tools the build and the tests share, instead of one per package.
+          dev-tools:
+              patterns: ["*"]
+
+    - package-ecosystem: github-actions
+      directory: /
+      schedule:
+          interval: weekly
