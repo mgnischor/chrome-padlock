@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock खोलें"
     },
+    "commandInsert": {
+        "message": "फ़ोकस वाले फ़ील्ड में सुरक्षित पासवर्ड डालें"
+    },
     "menuInsertPassword": {
         "message": "सुरक्षित पासवर्ड डालें"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "जैसे {}[]"
+    },
+    "modePassword": {
+        "message": "पासवर्ड"
+    },
+    "modePassphrase": {
+        "message": "पासफ़्रेज़"
+    },
+    "wordsLabel": {
+        "message": "शब्द"
+    },
+    "separatorLabel": {
+        "message": "विभाजक"
+    },
+    "separatorHyphen": {
+        "message": "हाइफ़न (-)"
+    },
+    "separatorSpace": {
+        "message": "स्पेस"
+    },
+    "separatorPeriod": {
+        "message": "पूर्ण विराम (.)"
+    },
+    "separatorUnderscore": {
+        "message": "अंडरस्कोर (_)"
+    },
+    "separatorNone": {
+        "message": "कोई नहीं"
+    },
+    "capitalizeWordsLabel": {
+        "message": "शब्दों को कैपिटल अक्षर से शुरू करें"
+    },
+    "includeNumberLabel": {
+        "message": "एक संख्या जोड़ें"
+    },
+    "passphraseHint": {
+        "message": "हर शब्द $COUNT$ शब्दों की सूची से यादृच्छिक रूप से चुना जाता है।",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "कॉपी करने के बाद क्लिपबोर्ड साफ़ करें"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "लंबाई चुने गए अक्षर-प्रकारों की संख्या से कम है।"
     },
+    "errorInvalidWordCount": {
+        "message": "शब्दों की संख्या $MIN$ और $MAX$ के बीच होनी चाहिए।",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "सेटिंग"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "माउस ले जाने तक पासवर्ड धुंधले रखें"
+    },
+    "shortcutsLabel": {
+        "message": "कीबोर्ड शॉर्टकट"
+    },
+    "shortcutsButton": {
+        "message": "अनुकूलित करें"
     },
     "resetSettings": {
         "message": "डिफ़ॉल्ट बहाल करें"
