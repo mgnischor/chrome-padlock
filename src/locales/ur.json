@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock کھولیں"
     },
+    "commandInsert": {
+        "message": "فعال فیلڈ میں محفوظ پاس ورڈ داخل کریں"
+    },
     "menuInsertPassword": {
         "message": "محفوظ پاس ورڈ داخل کریں"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "مثلاً {}[]"
+    },
+    "modePassword": {
+        "message": "پاس ورڈ"
+    },
+    "modePassphrase": {
+        "message": "پاس فریز"
+    },
+    "wordsLabel": {
+        "message": "الفاظ"
+    },
+    "separatorLabel": {
+        "message": "علیحدہ کرنے والا نشان"
+    },
+    "separatorHyphen": {
+        "message": "ہائفن (-)"
+    },
+    "separatorSpace": {
+        "message": "خالی جگہ"
+    },
+    "separatorPeriod": {
+        "message": "نقطہ (.)"
+    },
+    "separatorUnderscore": {
+        "message": "انڈر اسکور (_)"
+    },
+    "separatorNone": {
+        "message": "کوئی نہیں"
+    },
+    "capitalizeWordsLabel": {
+        "message": "الفاظ کا پہلا حرف بڑا کریں"
+    },
+    "includeNumberLabel": {
+        "message": "ایک نمبر شامل کریں"
+    },
+    "passphraseHint": {
+        "message": "ہر لفظ $COUNT$ الفاظ کی فہرست سے بے ترتیب منتخب کیا جاتا ہے۔",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "کاپی کرنے کے بعد کلپ بورڈ صاف کریں"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "لمبائی منتخب کردہ حروف کی اقسام کی تعداد سے کم ہے۔"
     },
+    "errorInvalidWordCount": {
+        "message": "الفاظ کی تعداد $MIN$ اور $MAX$ کے درمیان ہونی چاہیے۔",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "ترتیبات"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "ماؤس لانے تک پاس ورڈ دھندلے رکھیں"
+    },
+    "shortcutsLabel": {
+        "message": "کی بورڈ شارٹ کٹس"
+    },
+    "shortcutsButton": {
+        "message": "حسبِ ضرورت بنائیں"
     },
     "resetSettings": {
         "message": "ڈیفالٹ بحال کریں"
