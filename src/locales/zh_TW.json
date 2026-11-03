@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "開啟 Padlock"
     },
+    "commandInsert": {
+        "message": "在目前的輸入欄位插入安全密碼"
+    },
     "menuInsertPassword": {
         "message": "插入安全密碼"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "例如 {}[]"
+    },
+    "modePassword": {
+        "message": "密碼"
+    },
+    "modePassphrase": {
+        "message": "密碼短語"
+    },
+    "wordsLabel": {
+        "message": "單字數"
+    },
+    "separatorLabel": {
+        "message": "分隔符號"
+    },
+    "separatorHyphen": {
+        "message": "連字號 (-)"
+    },
+    "separatorSpace": {
+        "message": "空格"
+    },
+    "separatorPeriod": {
+        "message": "句號 (.)"
+    },
+    "separatorUnderscore": {
+        "message": "底線 (_)"
+    },
+    "separatorNone": {
+        "message": "無"
+    },
+    "capitalizeWordsLabel": {
+        "message": "單字首字母大寫"
+    },
+    "includeNumberLabel": {
+        "message": "加入數字"
+    },
+    "passphraseHint": {
+        "message": "每個單字都從包含 $COUNT$ 個單字的清單中隨機選取。",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "複製後清除剪貼簿"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "長度小於所選字元類型的數量。"
     },
+    "errorInvalidWordCount": {
+        "message": "單字數必須介於 $MIN$ 到 $MAX$ 之間。",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "設定"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "滑鼠停留前模糊顯示密碼"
+    },
+    "shortcutsLabel": {
+        "message": "鍵盤快速鍵"
+    },
+    "shortcutsButton": {
+        "message": "自訂"
     },
     "resetSettings": {
         "message": "還原預設值"
