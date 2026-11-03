@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock ਖੋਲ੍ਹੋ"
     },
+    "commandInsert": {
+        "message": "ਫੋਕਸ ਵਾਲੇ ਖੇਤਰ ਵਿੱਚ ਸੁਰੱਖਿਅਤ ਪਾਸਵਰਡ ਪਾਓ"
+    },
     "menuInsertPassword": {
         "message": "ਸੁਰੱਖਿਅਤ ਪਾਸਵਰਡ ਪਾਓ"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "ਜਿਵੇਂ {}[]"
+    },
+    "modePassword": {
+        "message": "ਪਾਸਵਰਡ"
+    },
+    "modePassphrase": {
+        "message": "ਪਾਸਫ੍ਰੇਜ਼"
+    },
+    "wordsLabel": {
+        "message": "ਸ਼ਬਦ"
+    },
+    "separatorLabel": {
+        "message": "ਵੱਖਰਾਕਾਰ"
+    },
+    "separatorHyphen": {
+        "message": "ਹਾਈਫ਼ਨ (-)"
+    },
+    "separatorSpace": {
+        "message": "ਸਪੇਸ"
+    },
+    "separatorPeriod": {
+        "message": "ਪੂਰਨ ਵਿਰਾਮ (.)"
+    },
+    "separatorUnderscore": {
+        "message": "ਅੰਡਰਸਕੋਰ (_)"
+    },
+    "separatorNone": {
+        "message": "ਕੋਈ ਨਹੀਂ"
+    },
+    "capitalizeWordsLabel": {
+        "message": "ਸ਼ਬਦ ਵੱਡੇ ਅੱਖਰ ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ"
+    },
+    "includeNumberLabel": {
+        "message": "ਇੱਕ ਅੰਕ ਜੋੜੋ"
+    },
+    "passphraseHint": {
+        "message": "ਹਰ ਸ਼ਬਦ $COUNT$ ਸ਼ਬਦਾਂ ਦੀ ਸੂਚੀ ਵਿੱਚੋਂ ਬੇਤਰਤੀਬ ਚੁਣਿਆ ਜਾਂਦਾ ਹੈ।",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "ਕਾਪੀ ਕਰਨ ਤੋਂ ਬਾਅਦ ਕਲਿੱਪਬੋਰਡ ਸਾਫ਼ ਕਰੋ"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "ਲੰਬਾਈ ਚੁਣੀਆਂ ਗਈਆਂ ਅੱਖਰ-ਕਿਸਮਾਂ ਦੀ ਗਿਣਤੀ ਤੋਂ ਘੱਟ ਹੈ।"
     },
+    "errorInvalidWordCount": {
+        "message": "ਸ਼ਬਦਾਂ ਦੀ ਗਿਣਤੀ $MIN$ ਅਤੇ $MAX$ ਵਿਚਕਾਰ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "ਸੈਟਿੰਗਾਂ"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "ਮਾਊਸ ਲਿਜਾਣ ਤੱਕ ਪਾਸਵਰਡ ਧੁੰਦਲੇ ਰੱਖੋ"
+    },
+    "shortcutsLabel": {
+        "message": "ਕੀਬੋਰਡ ਸ਼ਾਰਟਕੱਟ"
+    },
+    "shortcutsButton": {
+        "message": "ਕਸਟਮਾਈਜ਼ ਕਰੋ"
     },
     "resetSettings": {
         "message": "ਡਿਫ਼ਾਲਟ ਬਹਾਲ ਕਰੋ"
