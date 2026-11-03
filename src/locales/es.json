@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Abrir Padlock"
     },
+    "commandInsert": {
+        "message": "Insertar una contraseña segura en el campo con el foco"
+    },
     "menuInsertPassword": {
         "message": "Insertar contraseña segura"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "p. ej. {}[]"
+    },
+    "modePassword": {
+        "message": "Contraseña"
+    },
+    "modePassphrase": {
+        "message": "Frase de contraseña"
+    },
+    "wordsLabel": {
+        "message": "Palabras"
+    },
+    "separatorLabel": {
+        "message": "Separador"
+    },
+    "separatorHyphen": {
+        "message": "Guion (-)"
+    },
+    "separatorSpace": {
+        "message": "Espacio"
+    },
+    "separatorPeriod": {
+        "message": "Punto (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Guion bajo (_)"
+    },
+    "separatorNone": {
+        "message": "Ninguno"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Palabras con mayúscula inicial"
+    },
+    "includeNumberLabel": {
+        "message": "Añadir un número"
+    },
+    "passphraseHint": {
+        "message": "Cada palabra se elige al azar de una lista de $COUNT$ palabras.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Borrar el portapapeles después de copiar"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "La longitud es menor que el número de tipos de caracteres seleccionados."
     },
+    "errorInvalidWordCount": {
+        "message": "El número de palabras debe estar entre $MIN$ y $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Configuración"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Desenfocar las contraseñas hasta pasar el ratón"
+    },
+    "shortcutsLabel": {
+        "message": "Atajos de teclado"
+    },
+    "shortcutsButton": {
+        "message": "Personalizar"
     },
     "resetSettings": {
         "message": "Restaurar valores predeterminados"
