@@ -5,7 +5,7 @@
         "url": "https://github.com/mgnischor/chrome-padlock"
     },
     "name": "padlock-password-generator",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "private": true,
     "description": "Chrome extension that generates cryptographically secure passwords.",
     "type": "module",
