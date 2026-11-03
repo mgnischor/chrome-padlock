@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Buka Padlock"
     },
+    "commandInsert": {
+        "message": "Sisipkan kata sandi aman ke kolom yang aktif"
+    },
     "menuInsertPassword": {
         "message": "Sisipkan kata sandi aman"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "mis. {}[]"
+    },
+    "modePassword": {
+        "message": "Kata sandi"
+    },
+    "modePassphrase": {
+        "message": "Frasa sandi"
+    },
+    "wordsLabel": {
+        "message": "Kata"
+    },
+    "separatorLabel": {
+        "message": "Pemisah"
+    },
+    "separatorHyphen": {
+        "message": "Tanda hubung (-)"
+    },
+    "separatorSpace": {
+        "message": "Spasi"
+    },
+    "separatorPeriod": {
+        "message": "Titik (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Garis bawah (_)"
+    },
+    "separatorNone": {
+        "message": "Tidak ada"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Awali setiap kata dengan huruf kapital"
+    },
+    "includeNumberLabel": {
+        "message": "Tambahkan angka"
+    },
+    "passphraseHint": {
+        "message": "Setiap kata dipilih secara acak dari daftar berisi $COUNT$ kata.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Bersihkan papan klip setelah menyalin"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "Panjang kurang dari jumlah jenis karakter yang dipilih."
     },
+    "errorInvalidWordCount": {
+        "message": "Jumlah kata harus antara $MIN$ dan $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Pengaturan"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Buramkan kata sandi sampai kursor diarahkan"
+    },
+    "shortcutsLabel": {
+        "message": "Pintasan keyboard"
+    },
+    "shortcutsButton": {
+        "message": "Sesuaikan"
     },
     "resetSettings": {
         "message": "Pulihkan default"
