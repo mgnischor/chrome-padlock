@@ -67,6 +67,26 @@ describe("manifest permissions", () => {
     });
 });
 
+describe("keyboard commands", () => {
+    it("declares the shortcut that opens the popup and the one that inserts a password", () => {
+        expect(Object.keys(manifest.commands).sort()).toEqual(["_execute_action", "insert-password"]);
+    });
+
+    it("suggests different keys for each command, on every platform", () => {
+        const keys = Object.values<{ suggested_key: Record<string, string> }>(manifest.commands).flatMap((command) =>
+            Object.values(command.suggested_key)
+        );
+        expect(new Set(keys).size).toBe(keys.length);
+        for (const key of keys) expect(key, key).toMatch(/^(Ctrl|Command)\+Shift\+[A-Z]$/);
+    });
+
+    it("describes every command with a translated message", () => {
+        for (const command of Object.values<{ description: string }>(manifest.commands)) {
+            expect(command.description).toMatch(/^__MSG_[A-Za-z0-9_]+__$/);
+        }
+    });
+});
+
 describe("content security policy", () => {
     const policy: string = manifest.content_security_policy.extension_pages;
     const directives = new Map(
