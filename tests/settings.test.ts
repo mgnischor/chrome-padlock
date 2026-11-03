@@ -39,6 +39,8 @@ describe("sanitizeSettings", () => {
       symbols: false,
       excludeAmbiguous: true,
       excludeChars: "xyz",
+      mode: "passphrase",
+      passphrase: { words: 8, separator: " ", capitalize: true, includeNumber: true },
       clipboardClearSeconds: 60,
       keepHistory: true,
       language: "ja",
@@ -70,6 +72,20 @@ describe("sanitizeSettings", () => {
     expect(sanitizeSettings({ contextMenu: "no", maskPasswords: "yes" })).toMatchObject({
       contextMenu: true,
       maskPasswords: false,
+    });
+  });
+
+  it("defaults to password mode and repairs a bad mode or passphrase section", () => {
+    expect(DEFAULT_SETTINGS.mode).toBe("password");
+    for (const mode of ["words", "", 1, null, "PASSPHRASE"]) {
+      expect(sanitizeSettings({ mode }).mode, String(mode)).toBe("password");
+    }
+    expect(sanitizeSettings({ mode: "passphrase" }).mode).toBe("passphrase");
+    // Settings saved before the passphrase mode existed have no passphrase section.
+    expect(sanitizeSettings({ length: 30 }).passphrase).toEqual(DEFAULT_SETTINGS.passphrase);
+    expect(sanitizeSettings({ passphrase: { words: 100, separator: "?" } }).passphrase).toMatchObject({
+      words: 12,
+      separator: "-",
     });
   });
 
