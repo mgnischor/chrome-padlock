@@ -63,6 +63,17 @@ export function formatDuration(time: Extract<CrackTime, { kind: "duration" }>, t
 }
 
 /**
+ * Formats a whole number in a language, such as `7,776` or `7.776`, with Latin digits.
+ *
+ * @param value - The number.
+ * @param tag - A BCP 47 language tag such as `pt-BR`.
+ * @returns The formatted number.
+ */
+export function formatCount(value: number, tag: string): string {
+    return numberFormat(tag, { numberingSystem: "latn" }).format(value);
+}
+
+/**
  * Formats a number of guesses, such as "10 billion", in a language.
  *
  * @param rate - The number of guesses.
