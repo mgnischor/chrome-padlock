@@ -32,6 +32,13 @@
                 "mac": "Command+Shift+Y"
             },
             "description": "__MSG_commandOpen__"
+        },
+        "insert-password": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+U",
+                "mac": "Command+Shift+U"
+            },
+            "description": "__MSG_commandInsert__"
         }
     },
     "content_security_policy": {
