@@ -51,7 +51,7 @@ export const DEFAULT_GENERATOR_OPTIONS: Readonly<GeneratorOptions> = {
     excludeChars: "",
 };
 
-export type GeneratorErrorCode = "INVALID_LENGTH" | "NO_CHARSET" | "LENGTH_TOO_SHORT";
+export type GeneratorErrorCode = "INVALID_LENGTH" | "NO_CHARSET" | "LENGTH_TOO_SHORT" | "INVALID_WORD_COUNT";
 
 /** Error thrown when the generator options cannot produce a password. */
 export class GeneratorError extends Error {
