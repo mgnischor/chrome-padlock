@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock öffnen"
     },
+    "commandInsert": {
+        "message": "Ein sicheres Passwort in das aktive Feld einfügen"
+    },
     "menuInsertPassword": {
         "message": "Sicheres Passwort einfügen"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "z. B. {}[]"
+    },
+    "modePassword": {
+        "message": "Passwort"
+    },
+    "modePassphrase": {
+        "message": "Passphrase"
+    },
+    "wordsLabel": {
+        "message": "Wörter"
+    },
+    "separatorLabel": {
+        "message": "Trennzeichen"
+    },
+    "separatorHyphen": {
+        "message": "Bindestrich (-)"
+    },
+    "separatorSpace": {
+        "message": "Leerzeichen"
+    },
+    "separatorPeriod": {
+        "message": "Punkt (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Unterstrich (_)"
+    },
+    "separatorNone": {
+        "message": "Keines"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Wörter großschreiben"
+    },
+    "includeNumberLabel": {
+        "message": "Zahl hinzufügen"
+    },
+    "passphraseHint": {
+        "message": "Jedes Wort wird zufällig aus einer Liste mit $COUNT$ Wörtern gewählt.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Zwischenablage nach dem Kopieren leeren"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "Die Länge ist kleiner als die Anzahl der ausgewählten Zeichentypen."
     },
+    "errorInvalidWordCount": {
+        "message": "Die Anzahl der Wörter muss zwischen $MIN$ und $MAX$ liegen.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Einstellungen"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Passwörter unscharf darstellen, bis der Mauszeiger darüber steht"
+    },
+    "shortcutsLabel": {
+        "message": "Tastenkombinationen"
+    },
+    "shortcutsButton": {
+        "message": "Anpassen"
     },
     "resetSettings": {
         "message": "Standardwerte wiederherstellen"
