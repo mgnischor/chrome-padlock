@@ -20,7 +20,9 @@
 */
 import { CHARSETS } from "../core/charsets";
 import { classifyStrength } from "../core/entropy";
-import { analyze, generatePassword, GeneratorError, MAX_LENGTH, MIN_LENGTH } from "../core/generator";
+import { GeneratorError, MAX_LENGTH, MIN_LENGTH } from "../core/generator";
+import { MAX_WORDS, MIN_WORDS } from "../core/passphrase";
+import { generateSecret, secretEntropyBits, type GeneratorMode } from "../core/secret";
 import {
     ATTACK_SCENARIOS,
     MIN_RECOMMENDED_LENGTH,
@@ -30,7 +32,8 @@ import {
     type CrackTime,
     type StrengthWarning,
 } from "../core/strength";
-import { formatDuration, formatRate } from "../shared/format";
+import { WORDLIST } from "../core/wordlist";
+import { formatCount, formatDuration, formatRate } from "../shared/format";
 import { sha256Hex } from "../shared/hash";
 import { HISTORY_LIMIT, clearHistory, loadHistory, recordPassword } from "../shared/history";
 import {
@@ -74,6 +77,19 @@ const SCENARIO_MESSAGES = {
     offlineFast: "crackOfflineFast",
 } as const satisfies Record<AttackScenario["id"], MessageKey>;
 
+/**
+ * Keyboard commands listed in the settings, and the message that names each one. The insert
+ * command is named like the right-click menu entry that does the same, which is shorter than
+ * the description Chrome shows on its shortcuts page.
+ */
+const SHORTCUT_MESSAGES: Readonly<Record<string, MessageKey>> = {
+    _execute_action: "commandOpen",
+    "insert-password": "menuInsertPassword",
+};
+
+/** Where Chrome lets the user change the shortcuts of extensions. */
+const SHORTCUTS_PAGE = "chrome://extensions/shortcuts";
+
 /** The screens of the popup. Only one is visible at a time. */
 type View = "main" | "history" | "settings" | "about" | "checker";
 
@@ -107,6 +123,15 @@ const ui = {
     symbols: el<HTMLInputElement>("symbols"),
     ambiguous: el<HTMLInputElement>("ambiguous"),
     exclude: el<HTMLInputElement>("exclude"),
+    modePassword: el<HTMLInputElement>("mode-password"),
+    modePassphrase: el<HTMLInputElement>("mode-passphrase"),
+    passwordOptions: el<HTMLElement>("password-options"),
+    passphraseOptions: el<HTMLElement>("passphrase-options"),
+    wordsRange: el<HTMLInputElement>("words"),
+    wordsNumber: el<HTMLInputElement>("words-number"),
+    separator: el<HTMLSelectElement>("separator"),
+    capitalize: el<HTMLInputElement>("capitalize"),
+    includeNumber: el<HTMLInputElement>("include-number"),
     settingsOpen: el<HTMLButtonElement>("settings-open"),
     aboutOpen: el<HTMLButtonElement>("about-open"),
     mainView: el<HTMLElement>("main-view"),
@@ -128,6 +153,8 @@ const ui = {
     keepHistory: el<HTMLInputElement>("keep-history"),
     contextMenu: el<HTMLInputElement>("context-menu"),
     maskPasswords: el<HTMLInputElement>("mask-passwords"),
+    shortcutsOpen: el<HTMLButtonElement>("shortcuts-open"),
+    shortcutsList: el<HTMLUListElement>("shortcuts-list"),
     aboutView: el<HTMLElement>("about-view"),
     aboutBack: el<HTMLButtonElement>("about-back"),
     checkerOpen: el<HTMLButtonElement>("checker-open"),
@@ -213,7 +240,7 @@ function renderPassword(password: string): void {
 
 /** Updates the strength meter, its label and the entropy readout for the current options. */
 function renderStrength(): void {
-    const { entropyBits } = analyze(settings);
+    const entropyBits = secretEntropyBits(settings);
     if (entropyBits === 0) {
         ui.meter.dataset.level = "0";
         ui.meter.setAttribute("aria-valuenow", "0");
@@ -243,13 +270,15 @@ function describeError(error: unknown): string {
             return t("errorNoCharset");
         case "LENGTH_TOO_SHORT":
             return t("errorLengthTooShort");
+        case "INVALID_WORD_COUNT":
+            return t("errorInvalidWordCount", [String(MIN_WORDS), String(MAX_WORDS)]);
     }
 }
 
-/** Generates a new password with the current options and refreshes the display. */
+/** Generates a new password or passphrase with the current options and refreshes the display. */
 function regenerate(): void {
     try {
-        current = generatePassword(settings);
+        current = generateSecret(settings);
         renderPassword(current);
         setStatus("");
     } catch (error) {
@@ -289,6 +318,7 @@ function substitutions(): Partial<Record<MessageKey, Substitutions>> {
         historyButtonTitle: String(HISTORY_LIMIT),
         keepHistoryLabel: String(HISTORY_LIMIT),
         contextMenuLabel: t("menuInsertPassword"),
+        passphraseHint: formatCount(WORDLIST.length, languageTag()),
         aboutVersion: chrome.runtime.getManifest().version,
     };
 }
@@ -303,6 +333,7 @@ function refreshLanguage(): void {
     document.documentElement.dir = textDirection();
     applyTranslations(document, substitutions());
     renderStrength();
+    void renderShortcuts();
     if (current === null) regenerate();
     if (currentView === "history") void renderHistory();
     if (currentView === "checker") renderChecker();
@@ -319,8 +350,46 @@ function populateLanguages(): void {
     }
 }
 
+/** Lists the extension's keyboard shortcuts with the keys currently assigned to each. */
+async function renderShortcuts(): Promise<void> {
+    let commands: chrome.commands.Command[];
+    try {
+        commands = await chrome.commands.getAll();
+    } catch {
+        commands = [];
+    }
+    ui.shortcutsList.replaceChildren(
+        ...commands
+            .filter((command) => command.name !== undefined && command.name in SHORTCUT_MESSAGES)
+            .map((command) => {
+                const item = document.createElement("li");
+                const description = document.createElement("span");
+                description.textContent = t(SHORTCUT_MESSAGES[command.name!]!);
+                const keys = document.createElement("kbd");
+                keys.textContent = command.shortcut || "–";
+                item.append(description, keys);
+                return item;
+            })
+    );
+}
+
+/** Shows the options of the selected mode and hides those of the other. */
+function applyMode(): void {
+    const passphrase = settings.mode === "passphrase";
+    ui.passwordOptions.hidden = passphrase;
+    ui.passphraseOptions.hidden = !passphrase;
+}
+
 /** Pushes the current settings into the form controls. */
 function renderForm(): void {
+    ui.modePassword.checked = settings.mode === "password";
+    ui.modePassphrase.checked = settings.mode === "passphrase";
+    applyMode();
+    ui.wordsRange.value = String(settings.passphrase.words);
+    ui.wordsNumber.value = String(settings.passphrase.words);
+    ui.separator.value = settings.passphrase.separator;
+    ui.capitalize.checked = settings.passphrase.capitalize;
+    ui.includeNumber.checked = settings.passphrase.includeNumber;
     ui.lengthRange.value = String(settings.length);
     ui.lengthNumber.value = String(settings.length);
     ui.lowercase.checked = settings.lowercase;
@@ -519,6 +588,43 @@ function onOptionsChanged(source?: "range" | "number"): void {
     scheduleSave();
 }
 
+/**
+ * Reads the passphrase controls back into settings, then regenerates and persists.
+ *
+ * @param source - Which word count control triggered the change, if any.
+ */
+function onPassphraseChanged(source?: "range" | "number"): void {
+    const rawWords = source === "number" ? ui.wordsNumber.value : ui.wordsRange.value;
+    settings = sanitizeSettings({
+        ...settings,
+        passphrase: {
+            words: rawWords === "" ? settings.passphrase.words : Number(rawWords),
+            separator: ui.separator.value,
+            capitalize: ui.capitalize.checked,
+            includeNumber: ui.includeNumber.checked,
+        },
+    });
+    applyMode();
+    // Same as the length controls: leave the field being typed in alone.
+    ui.wordsRange.value = String(settings.passphrase.words);
+    if (source !== "number") ui.wordsNumber.value = String(settings.passphrase.words);
+    regenerate();
+    scheduleSave();
+}
+
+/**
+ * Applies the Password / Passphrase switch.
+ *
+ * @param mode - The mode that was selected.
+ */
+function onModeChanged(mode: GeneratorMode): void {
+    settings = sanitizeSettings({ ...settings, mode });
+    applyMode();
+    regenerate();
+    recordCurrent();
+    scheduleSave();
+}
+
 /** Applies the language selector: every text of the popup switches immediately. */
 function onLanguageChanged(): void {
     settings = sanitizeSettings({ ...settings, language: ui.language.value });
@@ -651,6 +757,27 @@ function bindEvents(): void {
     ui.exclude.addEventListener("input", () => onOptionsChanged());
     ui.exclude.addEventListener("change", recordCurrent);
 
+    ui.modePassword.addEventListener("change", () => onModeChanged("password"));
+    ui.modePassphrase.addEventListener("change", () => onModeChanged("passphrase"));
+    ui.wordsRange.addEventListener("input", () => onPassphraseChanged("range"));
+    ui.wordsNumber.addEventListener("input", () => {
+        if (ui.wordsNumber.value !== "") onPassphraseChanged("number");
+    });
+    // As with the length: only the settled passphrase goes to the history.
+    ui.wordsRange.addEventListener("change", recordCurrent);
+    ui.wordsNumber.addEventListener("change", () => {
+        onPassphraseChanged("number");
+        ui.wordsNumber.value = String(settings.passphrase.words);
+        recordCurrent();
+    });
+    for (const control of [ui.separator, ui.capitalize, ui.includeNumber]) {
+        control.addEventListener("change", () => {
+            onPassphraseChanged();
+            recordCurrent();
+        });
+    }
+    ui.shortcutsOpen.addEventListener("click", () => void chrome.tabs.create({ url: SHORTCUTS_PAGE }));
+
     ui.language.addEventListener("change", onLanguageChanged);
     ui.theme.addEventListener("change", onThemeChanged);
     ui.clipboardClear.addEventListener("change", () => void onClipboardClearChanged());
@@ -701,6 +828,8 @@ async function init(): Promise<void> {
         ui.lengthRange.min = ui.lengthNumber.min = String(MIN_LENGTH);
         ui.lengthRange.max = ui.lengthNumber.max = String(MAX_LENGTH);
         ui.exclude.maxLength = MAX_EXCLUDE_CHARS;
+        ui.wordsRange.min = ui.wordsNumber.min = String(MIN_WORDS);
+        ui.wordsRange.max = ui.wordsNumber.max = String(MAX_WORDS);
 
         renderForm();
         bindEvents();
