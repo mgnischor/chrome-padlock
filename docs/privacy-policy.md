@@ -15,9 +15,11 @@ explains what the extension does with your information.
 
 ## What Padlock does
 
-Padlock generates passwords with your browser's cryptographically secure random number generator. You
-can copy a password from the popup, or right-click a text field and choose **Insert secure password**
-to have Padlock write one into that field.
+Padlock generates passwords, or passphrases made of random words, with your browser's cryptographically
+secure random number generator. You can copy the result from the popup, or right-click a text field and
+choose **Insert secure password**, or press the keyboard shortcut while the field has focus, to have
+Padlock write one into that field. The list of words used for passphrases is built into the extension;
+it is not downloaded and no word is ever looked up online.
 
 ## Information we collect
 
@@ -28,7 +30,7 @@ activity, no page content, no clipboard content, no device or usage data.
 
 | Information                                                                                                            | Where it is stored                                                   | Purpose                                                         |
 | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Your preferences (length, character types, excluded characters, language, theme, clipboard-clear delay, and the on/off switches of the history, the right-click menu entry and password blurring) | `chrome.storage.sync`                                                | Remember your settings between sessions. Contains no passwords. |
+| Your preferences (password or passphrase mode, length, character types, excluded characters, number of words, separator and capitalization of passphrases, language, theme, clipboard-clear delay, and the on/off switches of the history, the right-click menu entry and password blurring) | `chrome.storage.sync`                                                | Remember your settings between sessions. Contains no passwords. |
 | Recently generated passwords (last 50), **only if you enable the history**                                             | `chrome.storage.session`: browser memory only, never written to disk | Let you view passwords you generated earlier.                   |
 | A SHA-256 hash of the last copied password, **only if you enable clipboard auto-clear**                                | `chrome.storage.session`: browser memory only                        | Clear the clipboard only if it still holds that password.       |
 
@@ -64,9 +66,11 @@ soon as you leave the screen.
 ## Web page content
 
 Padlock does not read, collect or transmit the content of the pages you visit. When you choose
-**Insert secure password**, it temporarily gains access to that one tab (through Chrome's `activeTab`
-permission) and writes the generated password into the field you right-clicked. It requests no
-permission to access websites in the background.
+**Insert secure password**, or use the keyboard shortcut for it, it temporarily gains access to that one
+tab (through Chrome's `activeTab` permission) and writes the generated password into the field you
+right-clicked or that has focus. With the shortcut, Padlock first checks, with a script that returns
+only yes or no, which part of the page has a text field in focus, and sends the password to that part
+only. It requests no permission to access websites in the background.
 
 ## The link to GitHub
 
@@ -88,7 +92,9 @@ policy.
 ## Third parties
 
 Padlock does not use third-party services, SDKs, advertising or analytics, and it does not sell or
-share data with anyone. Its use of information complies with the
+share data with anyone. The only third-party material it contains is the passphrase word list, the EFF
+Large Wordlist by the Electronic Frontier Foundation, used under the Creative Commons Attribution 3.0
+United States license; it is static text inside the extension and involves no data exchange. Padlock's use of information complies with the
 [Chrome Web Store User Data Policy](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq),
 including the Limited Use requirements.
 
