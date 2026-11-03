@@ -17,7 +17,13 @@ entirely on your device.
   inclusion–exclusion over the selected classes (`src/core/entropy.ts`).
 - **Options** – length 4–128, lowercase / uppercase / digits / symbols, optional removal of
   look-alike characters (`0 O 1 l I |`), and a custom list of excluded characters.
-- **Insert into a page** – right-click any text field and choose _Insert secure password_.
+- **Passphrase mode** – switch from _Password_ to _Passphrase_ to get 3–12 random words, for example
+  `abruptly-frosting-gamble-wiry-snowman-cabbage`: easier to type and remember than random
+  characters, with the same exact accounting of entropy (about 12.9 bits per word). Choose the
+  separator, capital letters and an optional digit. See [Passphrases](#passphrases).
+- **Insert into a page** – right-click any text field and choose _Insert secure password_, or press
+  `Ctrl+Shift+U` (`Command+Shift+U` on macOS) while the field has focus. Either one uses the mode and
+  the options you have selected.
 - **Clipboard auto-clear** (optional) – clears the clipboard 30 s – 2 min after copying, but only if
   it still contains the copied password.
 - **Password history** (optional, off by default) – when enabled in the popup, a _History_ button
@@ -38,13 +44,16 @@ entirely on your device.
   on a fast hash with GPUs. The password is analyzed on your device and is never stored or sent, and
   the field is emptied as soon as you leave the screen. See [Strength test](#strength-test).
 - **Settings screen** (gear button): language, light / dark / system theme, clipboard auto-clear, the
-  password history, the right-click menu entry, and blurring passwords until you hover over them. One
-  button restores the defaults.
+  password history, the right-click menu entry, blurring passwords until you hover over them, and the
+  keyboard shortcuts with a button that opens Chrome's page for changing them. One button restores
+  the defaults.
 - **About screen** (GitHub button): version, author, license, privacy statement and a link to the
   [source code on GitHub](https://github.com/mgnischor/chrome-padlock).
 - Keyboard accessible, no network access, no analytics.
-- Open the popup with `Ctrl+Shift+Y` (`Command+Shift+Y` on macOS); rebind it at
-  `chrome://extensions/shortcuts`.
+- Keyboard shortcuts: `Ctrl+Shift+Y` (`Command+Shift+Y` on macOS) opens the popup and `Ctrl+Shift+U`
+  (`Command+Shift+U`) inserts a password into the focused field. Rebind them at
+  `chrome://extensions/shortcuts`; if another extension already uses a key, Chrome leaves that command
+  unassigned until you pick one.
 
 ## Install (from source)
 
@@ -72,16 +81,21 @@ Then open `chrome://extensions`, enable **Developer mode**, click **Load unpacke
 
 After a rebuild, press the reload button on the extension's card in `chrome://extensions`.
 
+GitHub Actions (`.github/workflows/ci.yml`) runs `npm run check` on Node 22 and 24, builds and verifies
+the store package (`npm run package`, keeping the zip as an artifact) and runs `npm audit` on every
+push and pull request, and weekly. Dependabot proposes dependency updates.
+
 ### Project layout
 
 ```
 public/                 Static files copied to dist/ (manifest, HTML, CSS, icons)
 src/locales/            Translations, one JSON file per language (en_US is the source)
 scripts/                Build tooling: build, package, minify, zip and icon generator
-src/core/               Pure, DOM-free logic: random, charsets, generator, entropy, strength test
+src/core/               Pure, DOM-free logic: random, charsets, generator, passphrase and its word
+                        list, entropy, strength test
 src/shared/             Settings, history, i18n helper, message types, hashing helper
 src/popup/              Popup UI
-src/background/         Service worker: context menu, clipboard-clear timer
+src/background/         Service worker: context menu, keyboard shortcut, clipboard-clear timer
 src/offscreen/          Offscreen document that performs the clipboard clear
 tests/                  Vitest unit tests for core/, settings, history and locales
 ```
@@ -97,17 +111,48 @@ class is missing. The result is exactly uniform over the valid strings, and the 
 `log2(N)` with `N` computed exactly. The retry cost is negligible (about one attempt for normal
 lengths; roughly a hundred cheap attempts in the worst case of length 4).
 
+### Passphrases
+
+A passphrase is `words` words drawn uniformly and independently from the 7,776-word EFF Large
+Wordlist (`src/core/wordlist.ts`), using the same bias-free `secureRandomInt` as passwords. Each word
+is therefore worth exactly `log2(7776) ≈ 12.92` bits, and six words (the default) give about 77 bits.
+The optional digit goes on one randomly chosen word and adds `log2(words × 10)` bits; capital letters
+and the separator are fixed by the options and add nothing, so they are never counted
+(`passphraseEntropyBits` in `src/core/passphrase.ts`). With no separator, a few different choices of
+words can spell the same text; the difference is negligible.
+
+Strength ratings use the same scale as passwords, so a passphrase needs eight words (about 103 bits)
+to reach "very strong". The entropy figure assumes an attacker who knows the list and the options,
+which is the right assumption for an open-source extension. The list is English only.
+
+Both modes share one entry point, `generateSecret` (`src/core/secret.ts`), which the popup, the
+right-click menu and the keyboard shortcut all call, so each of them follows the mode you selected.
+
+The word list is the work of the Electronic Frontier Foundation, used under the
+[Creative Commons Attribution 3.0 United States](https://creativecommons.org/licenses/by/3.0/us/)
+license: [EFF's announcement of the lists](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
+It is unchanged apart from dropping the dice numbers.
+
+### Keyboard shortcut for inserting a password
+
+The `insert-password` command (`Ctrl+Shift+U`) does what the right-click menu does, without the
+mouse. Invoking a command grants `activeTab` for that tab, so no further permission is needed. The
+service worker first asks every frame of the tab, with a script that returns only `true` or `false`,
+which one has a text field in focus, and then sends the new password to that frame alone, so it never
+reaches frames that did not need it. If no text field has focus, the toolbar badge shows `!` and
+nothing is inserted.
+
 ### Permissions
 
 | Permission                                     | Why                                                          |
 | ---------------------------------------------- | ------------------------------------------------------------ |
 | `storage`                                      | Remember your options, and hold the opt-in history in memory |
-| `contextMenus`, `scripting`, `activeTab`       | "Insert secure password" on the field you right-click        |
+| `contextMenus`, `scripting`, `activeTab`       | "Insert secure password" on the field you right-click or have focused (shortcut) |
 | `alarms`, `offscreen`                          | Timer and helper document for clipboard auto-clear           |
 | `clipboardRead`, `clipboardWrite` _(optional)_ | Requested only when you enable clipboard auto-clear          |
 
 No host permissions are requested. `activeTab` only grants access to the tab you invoke the context
-menu on, for that one action.
+menu or the keyboard shortcut on, for that one action.
 
 ### Clipboard auto-clear
 
@@ -272,7 +317,7 @@ if an HTML page has an inline script, or if the bundled JavaScript contains `fet
 
 ## Limitations
 
-- Random character passwords only; there is no passphrase mode.
+- The passphrase word list is English only, whatever language the interface is in.
 - "Insert secure password" fills the focused field only. It does not fill a "confirm password"
   field; copy the password and paste it there.
 - The extension is not a password manager. The optional history is a short-lived convenience, not
