@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Bukak Padlock"
     },
+    "commandInsert": {
+        "message": "Selehake tembung sandi sing aman ing kolom sing aktif"
+    },
     "menuInsertPassword": {
         "message": "Selehake sandi aman"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "contone {}[]"
+    },
+    "modePassword": {
+        "message": "Tembung sandi"
+    },
+    "modePassphrase": {
+        "message": "Frasa sandi"
+    },
+    "wordsLabel": {
+        "message": "Tembung"
+    },
+    "separatorLabel": {
+        "message": "Pamisah"
+    },
+    "separatorHyphen": {
+        "message": "Tanda hubung (-)"
+    },
+    "separatorSpace": {
+        "message": "Spasi"
+    },
+    "separatorPeriod": {
+        "message": "Titik (.)"
+    },
+    "separatorUnderscore": {
+        "message": "Garis ngisor (_)"
+    },
+    "separatorNone": {
+        "message": "Ora ana"
+    },
+    "capitalizeWordsLabel": {
+        "message": "Wiwiti saben tembung nganggo aksara kapital"
+    },
+    "includeNumberLabel": {
+        "message": "Tambahake angka"
+    },
+    "passphraseHint": {
+        "message": "Saben tembung dipilih kanthi acak saka dhaptar $COUNT$ tembung.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "Resiki clipboard sawisé disalin"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "Dawa kurang saka cacahé jinis karakter sing dipilih."
     },
+    "errorInvalidWordCount": {
+        "message": "Cacahe tembung kudu antara $MIN$ lan $MAX$.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "Setelan"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "Buremake sandi nganti kursor ana ing ndhuwur"
+    },
+    "shortcutsLabel": {
+        "message": "Trabasan keyboard"
+    },
+    "shortcutsButton": {
+        "message": "Sesuaikan"
     },
     "resetSettings": {
         "message": "Balekake standar"
