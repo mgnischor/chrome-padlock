@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock ತೆರೆಯಿರಿ"
     },
+    "commandInsert": {
+        "message": "ಫೋಕಸ್‌ನಲ್ಲಿರುವ ಕ್ಷೇತ್ರಕ್ಕೆ ಸುರಕ್ಷಿತ ಪಾಸ್‌ವರ್ಡ್ ಸೇರಿಸಿ"
+    },
     "menuInsertPassword": {
         "message": "ಸುರಕ್ಷಿತ ಪಾಸ್‌ವರ್ಡ್ ಸೇರಿಸಿ"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "ಉದಾ. {}[]"
+    },
+    "modePassword": {
+        "message": "ಪಾಸ್‌ವರ್ಡ್"
+    },
+    "modePassphrase": {
+        "message": "ಪಾಸ್‌ಫ್ರೇಸ್"
+    },
+    "wordsLabel": {
+        "message": "ಪದಗಳು"
+    },
+    "separatorLabel": {
+        "message": "ವಿಭಜಕ"
+    },
+    "separatorHyphen": {
+        "message": "ಹೈಫನ್ (-)"
+    },
+    "separatorSpace": {
+        "message": "ಸ್ಪೇಸ್"
+    },
+    "separatorPeriod": {
+        "message": "ಪೂರ್ಣವಿರಾಮ (.)"
+    },
+    "separatorUnderscore": {
+        "message": "ಅಂಡರ್‌ಸ್ಕೋರ್ (_)"
+    },
+    "separatorNone": {
+        "message": "ಯಾವುದೂ ಇಲ್ಲ"
+    },
+    "capitalizeWordsLabel": {
+        "message": "ಪದಗಳನ್ನು ದೊಡ್ಡ ಅಕ್ಷರದಿಂದ ಪ್ರಾರಂಭಿಸಿ"
+    },
+    "includeNumberLabel": {
+        "message": "ಒಂದು ಸಂಖ್ಯೆ ಸೇರಿಸಿ"
+    },
+    "passphraseHint": {
+        "message": "ಪ್ರತಿ ಪದವನ್ನು $COUNT$ ಪದಗಳ ಪಟ್ಟಿಯಿಂದ ಯಾದೃಚ್ಛಿಕವಾಗಿ ಆರಿಸಲಾಗುತ್ತದೆ.",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "ನಕಲಿಸಿದ ನಂತರ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ತೆರವುಗೊಳಿಸಿ"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "ಉದ್ದವು ಆಯ್ಕೆಮಾಡಿದ ಅಕ್ಷರ ಪ್ರಕಾರಗಳ ಸಂಖ್ಯೆಗಿಂತ ಕಡಿಮೆ ಇದೆ."
     },
+    "errorInvalidWordCount": {
+        "message": "ಪದಗಳ ಸಂಖ್ಯೆ $MIN$ ಮತ್ತು $MAX$ ನಡುವೆ ಇರಬೇಕು.",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "ಮೌಸ್ ತರುವವರೆಗೆ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಮಸುಕುಗೊಳಿಸಿ"
+    },
+    "shortcutsLabel": {
+        "message": "ಕೀಬೋರ್ಡ್ ಶಾರ್ಟ್‌ಕಟ್‌ಗಳು"
+    },
+    "shortcutsButton": {
+        "message": "ಕಸ್ಟಮೈಸ್ ಮಾಡಿ"
     },
     "resetSettings": {
         "message": "ಡೀಫಾಲ್ಟ್‌ಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಿ"
