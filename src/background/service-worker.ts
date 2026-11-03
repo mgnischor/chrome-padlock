@@ -18,7 +18,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-import { generatePassword } from "../core/generator";
+import { generateSecret } from "../core/secret";
 import {
     CLIPBOARD_CLEAR_ALARM,
     PENDING_HASH_KEY,
@@ -30,6 +30,8 @@ import { browserLanguage, setLanguage, t } from "../shared/i18n";
 import { loadSettings } from "../shared/settings";
 
 const MENU_ID = "insert-password";
+/** Name of the keyboard command declared in the manifest. */
+const INSERT_COMMAND = "insert-password";
 const OFFSCREEN_URL = "offscreen.html";
 const BADGE_RESET_MS = 2000;
 const SETTINGS_STORAGE_KEY = "settings";
@@ -69,10 +71,11 @@ chrome.storage.onChanged.addListener((changes, area) => {
  * must be fully self-contained. Sets the value through the native setter and
  * fires events so frameworks such as React notice the change.
  *
- * @param password - Password to insert into the focused field.
- * @returns `true` when a text field had focus and received the password.
+ * @param password - Password to insert into the focused field, or `null` to only check
+ * whether a text field has focus.
+ * @returns `true` when a text field had focus and, unless `password` is `null`, received the password.
  */
-function insertIntoFocusedField(password: string): boolean {
+function insertIntoFocusedField(password: string | null): boolean {
     let active: Element | null = document.activeElement;
     while (active?.shadowRoot?.activeElement) active = active.shadowRoot.activeElement;
 
@@ -83,6 +86,7 @@ function insertIntoFocusedField(password: string): boolean {
         setter = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value")?.set;
     }
     if (!active || !setter) return false;
+    if (password === null) return true;
 
     setter.call(active, password);
     active.dispatchEvent(new Event("input", { bubbles: true, composed: true }));
@@ -101,16 +105,40 @@ function flashBadge(tabId: number, text: string): void {
     setTimeout(() => void chrome.action.setBadgeText({ tabId, text: "" }), BADGE_RESET_MS);
 }
 
-chrome.contextMenus.onClicked.addListener(async (info, tab) => {
-    if (info.menuItemId !== MENU_ID || tab?.id === undefined) return;
-    const tabId = tab.id;
+/**
+ * Finds the frame of a tab that has a text field in focus.
+ *
+ * @param tabId - Tab to look in.
+ * @returns The id of the frame, or `undefined` when no text field has focus.
+ */
+async function findFocusedFrame(tabId: number): Promise<number | undefined> {
+    const probes = await chrome.scripting.executeScript({
+        target: { tabId, allFrames: true },
+        func: insertIntoFocusedField,
+        args: [null],
+    });
+    return probes.find((probe) => probe.result)?.frameId;
+}
 
+/**
+ * Generates a password or passphrase with the saved settings and inserts it into the focused text
+ * field, then shows the outcome on the toolbar badge.
+ *
+ * @param tabId - Tab to insert into.
+ * @param frameId - Frame that has the field; when omitted, the frame with a focused text field is looked up.
+ */
+async function insertSecret(tabId: number, frameId?: number): Promise<void> {
     try {
+        const target = frameId ?? (await findFocusedFrame(tabId));
+        if (target === undefined) {
+            flashBadge(tabId, "!");
+            return;
+        }
         const settings = await loadSettings();
-        const password = generatePassword(settings);
+        const password = generateSecret(settings);
         if (settings.keepHistory) await recordPassword(password);
         const [result] = await chrome.scripting.executeScript({
-            target: info.frameId === undefined ? { tabId } : { tabId, frameIds: [info.frameId] },
+            target: { tabId, frameIds: [target] },
             func: insertIntoFocusedField,
             args: [password],
         });
@@ -119,6 +147,17 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
         // Restricted pages (chrome://, the Web Store, ...) cannot be scripted.
         flashBadge(tabId, "!");
     }
+}
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId !== MENU_ID || tab?.id === undefined) return;
+    void insertSecret(tab.id, info.frameId ?? 0);
+});
+
+// Invoking a command grants `activeTab` for that tab, just as the right-click menu does.
+chrome.commands.onCommand.addListener((command, tab) => {
+    if (command !== INSERT_COMMAND || tab?.id === undefined) return;
+    void insertSecret(tab.id);
 });
 
 // ---------------------------------------------------------------------------
