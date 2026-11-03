@@ -46,7 +46,7 @@ jobs:
             # Builds with minification and verifies the result: no network code, no dev files, every
             # file the manifest points to is present.
             - run: npm run package
-            - uses: actions/upload-artifact@v4
+            - uses: actions/upload-artifact@v7
               with:
                   name: padlock-package
                   path: release/*.zip
