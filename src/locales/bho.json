@@ -14,6 +14,9 @@
     "commandOpen": {
         "message": "Padlock खोलीं"
     },
+    "commandInsert": {
+        "message": "फोकस वाला फील्ड में सुरक्षित पासवर्ड डालीं"
+    },
     "menuInsertPassword": {
         "message": "सुरक्षित पासवर्ड डालीं"
     },
@@ -106,6 +109,48 @@
     },
     "excludeCharsPlaceholder": {
         "message": "जइसे {}[]"
+    },
+    "modePassword": {
+        "message": "पासवर्ड"
+    },
+    "modePassphrase": {
+        "message": "पासफ्रेज"
+    },
+    "wordsLabel": {
+        "message": "शब्द"
+    },
+    "separatorLabel": {
+        "message": "अलगावे वाला चिन्हा"
+    },
+    "separatorHyphen": {
+        "message": "हाइफन (-)"
+    },
+    "separatorSpace": {
+        "message": "खाली जगह"
+    },
+    "separatorPeriod": {
+        "message": "बिंदु (.)"
+    },
+    "separatorUnderscore": {
+        "message": "अंडरस्कोर (_)"
+    },
+    "separatorNone": {
+        "message": "कुछ ना"
+    },
+    "capitalizeWordsLabel": {
+        "message": "शब्द के पहिला अक्षर बड़ा करीं"
+    },
+    "includeNumberLabel": {
+        "message": "एगो संख्या जोड़ीं"
+    },
+    "passphraseHint": {
+        "message": "हर शब्द $COUNT$ शब्द के सूची से बेतरतीब चुनाला।",
+        "placeholders": {
+            "count": {
+                "content": "$1",
+                "example": "7,776"
+            }
+        }
     },
     "clipboardClearLabel": {
         "message": "कॉपी कइला के बाद क्लिपबोर्ड साफ करीं"
@@ -204,6 +249,19 @@
     "errorLengthTooShort": {
         "message": "लंबाई चुनल अक्षर-किसिम के गिनती से कम बा।"
     },
+    "errorInvalidWordCount": {
+        "message": "शब्द के गिनती $MIN$ से $MAX$ के बीच होखे के चाहीं।",
+        "placeholders": {
+            "min": {
+                "content": "$1",
+                "example": "3"
+            },
+            "max": {
+                "content": "$2",
+                "example": "12"
+            }
+        }
+    },
     "settingsButtonTitle": {
         "message": "सेटिंग"
     },
@@ -245,6 +303,12 @@
     },
     "maskPasswordsLabel": {
         "message": "माउस ले जाए तक पासवर्ड धुंधला रखीं"
+    },
+    "shortcutsLabel": {
+        "message": "कीबोर्ड शॉर्टकट"
+    },
+    "shortcutsButton": {
+        "message": "अपना मन से बदलीं"
     },
     "resetSettings": {
         "message": "डिफ़ॉल्ट बहाल करीं"
