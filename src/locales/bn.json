@@ -69,13 +69,16 @@
         "message": "খুব শক্তিশালী"
     },
     "entropyBits": {
-        "message": "$BITS$ বিট এনট্রপি",
+        "message": "$BITS$ এনট্রপি",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "এই পাসওয়ার্ড পরীক্ষা করুন"
     },
     "optionsLabel": {
         "message": "বিকল্প"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "ভাঙতে আনুমানিক সময়"
+    },
+    "checkerGenerate": {
+        "message": "শক্তিশালী পাসওয়ার্ড তৈরি করুন"
     },
     "crackOnlineSlow": {
         "message": "অনলাইন আক্রমণ, সীমিত চেষ্টা (ঘণ্টায় $RATE$টি চেষ্টা)",
