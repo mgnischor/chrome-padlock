@@ -18,20 +18,21 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */
-import { COMMON_PASSWORDS } from "./common-passwords";
+import { MAX_DICTIONARY_LENGTH, lookupDictionary, type DictionaryKind } from "./dictionary";
 
 /**
  * How the strength of a password is estimated.
  *
  * The password is split into pieces, and every piece is priced in bits of "guessing effort" the way
- * an attacker would try it: a common password costs `log2(rank)`, a repeat costs the repeated unit
- * plus `log2(times)`, a sequence or keyboard run costs a starting point plus its length, a year
- * costs about seven bits, and anything else costs `log2(pool)` per character, where the pool is the
- * set of character types used. The cheapest way to split the password gives the estimate. For a
- * random password this equals `length * log2(pool)`; for a chosen one it is lower, often far lower.
+ * an attacker would try it: a common password or English word costs `log2(rank)` on its list (see
+ * `dictionary.ts`), a repeat costs the repeated unit plus `log2(times)`, a sequence or keyboard run
+ * costs a starting point plus its length, a year costs about seven bits, a separator between words
+ * costs two, and anything else costs `log2(pool)` per character, where the pool is the set of
+ * character types used. The cheapest way to split the password gives the estimate. For a random
+ * password this equals `length * log2(pool)`; for a chosen one it is lower, often far lower.
  *
- * This is an estimate, not a proof: it knows only the patterns coded here and a short list of common
- * passwords, and it cannot tell whether a password has leaked.
+ * This is an estimate, not a proof: it knows only the patterns coded here and the word lists, which
+ * are English, and it cannot tell whether a password has leaked.
  */
 
 /** Passwords shorter than this get a warning. */
@@ -57,10 +58,23 @@ const RUN_START_BITS = 5;
 /** Bits to pick a year between 1900 and 2039, plus one for "this is a year". */
 const YEAR_BITS = Math.log2(140) + 1;
 
+/**
+ * What people put between the words of a phrase, and what choosing one costs. A phrase uses the same
+ * separator throughout, so only the first one is charged (see `separatorRefund` below).
+ */
+const SEPARATORS: ReadonlySet<string> = new Set(["-", "_", ".", " "]);
+const SEPARATOR_BITS = 1;
+
+/**
+ * A single leaked password must make up this share of the password to warn that it is common. One
+ * piece, not several: a phrase of unrelated words that each turn up in some leak is no leaked password.
+ */
+const COMMON_SHARE = 0.6;
+
 /** Keyboard rows; a run of neighbouring keys, in either direction, is a pattern. */
 const KEYBOARD_ROWS = ["qwertyuiop", "asdfghjkl", "zxcvbnm", "1234567890"] as const;
 
-/** Look-alike substitutions undone before matching the common-password list. */
+/** Look-alike substitutions undone before matching the word lists. */
 const LEET: Readonly<Record<string, string>> = {
     "@": "a",
     "4": "a",
@@ -77,16 +91,8 @@ const LEET: Readonly<Record<string, string>> = {
     "2": "z",
 };
 
-/** Common password -> rank (1 is the most common). */
-const COMMON_RANK: ReadonlyMap<string, number> = new Map(
-    COMMON_PASSWORDS.map((word, index) => [word, index + 1] as const).reverse()
-);
-
-/** Longest entry of the common-password list, which bounds the pieces tried against it. */
-const MAX_COMMON_LENGTH = Math.max(...COMMON_PASSWORDS.map((word) => word.length));
-
 /** What a piece of the password was recognized as. */
-type PieceKind = "random" | "common" | "repeat" | "sequence" | "keyboard" | "year";
+type PieceKind = DictionaryKind | "random" | "repeat" | "sequence" | "keyboard" | "year" | "separator";
 
 /** A warning the strength test can raise. */
 export type StrengthWarning = "common" | "pattern" | "short";
@@ -143,21 +149,43 @@ function undoLeet(text: string): string {
 }
 
 /**
- * Finds how well a piece of the password matches the common-password list.
+ * Finds how well a piece of the password matches the word lists.
  *
  * @param piece - A run of the password's characters.
- * @returns The price in bits, or `undefined` when the piece is not in the list.
+ * @returns The price in bits and the kind of list, or `undefined` when the piece is on no list.
  */
-function commonCost(piece: string): number | undefined {
+function dictionaryCost(piece: string): { bits: number; kind: DictionaryKind } | undefined {
     const lower = piece.toLowerCase();
-    const plain = COMMON_RANK.get(lower);
-    const leet = COMMON_RANK.get(undoLeet(lower));
-    const rank = plain ?? leet;
-    if (rank === undefined) return undefined;
+    const plain = lookupDictionary(lower);
+    const match = plain ?? lookupDictionary(undoLeet(lower));
+    if (match === undefined) return undefined;
     // A little extra for capitals and look-alike substitutions: they widen what must be tried.
     const caseExtra = piece !== lower ? 1 : 0;
     const leetExtra = plain === undefined ? 1 : 0;
-    return Math.log2(rank + 1) + caseExtra + leetExtra;
+    return { bits: match.bits + caseExtra + leetExtra, kind: match.kind };
+}
+
+/**
+ * Tells whether a word starts with a capital letter and has no other.
+ *
+ * @param characters - The word's characters.
+ * @returns `true` for `Frosting`, `false` for `frosting`, `FROSTING` and `fRosting`.
+ */
+function isCapitalized(characters: readonly string[]): boolean {
+    const [first, ...rest] = characters;
+    return first !== undefined && first !== first.toLowerCase() && rest.every((ch) => ch === ch.toLowerCase());
+}
+
+/**
+ * Tells whether the cheapest split up to a point ends in a word of a phrase: a dictionary word, or
+ * the single digit people add to one of them (`snowman3`).
+ *
+ * @param last - The last piece of the cheapest split.
+ * @param lastCharacter - The character the split ends with.
+ * @returns `true` when a separator could follow.
+ */
+function endsPhraseWord(last: { kind: PieceKind }, lastCharacter: string): boolean {
+    return last.kind === "word" || (last.kind === "random" && lastCharacter >= "0" && lastCharacter <= "9");
 }
 
 /**
@@ -245,11 +273,21 @@ export function analyzePassword(password: string): PasswordAnalysis {
         best[end] = best[end - 1]! + bitsPerCharacter;
         choice[end] = { from: end - 1, kind: "random" };
 
+        // A separator right after a word (or a digit that follows one) is one of a few usual ones, not any character.
+        if (end >= 2 && SEPARATORS.has(characters[end - 1]!) && endsPhraseWord(choice[end - 1]!, characters[end - 2]!)) {
+            const total = best[end - 1]! + SEPARATOR_BITS;
+            if (total < best[end]!) {
+                best[end] = total;
+                choice[end] = { from: end - 1, kind: "separator" };
+            }
+        }
+
         for (let start = 0; start < end - 2; start++) {
             const pieceLength = end - start;
             const piece = characters.slice(start, end);
+            const dictionary = pieceLength <= MAX_DICTIONARY_LENGTH ? dictionaryCost(piece.join("")) : undefined;
             const candidates: Array<[number | undefined, PieceKind]> = [
-                [pieceLength <= MAX_COMMON_LENGTH ? commonCost(piece.join("")) : undefined, "common"],
+                [dictionary?.bits, dictionary?.kind ?? "word"],
                 [repeatCost(piece, bitsPerCharacter), "repeat"],
                 [pieceLength <= MAX_RUN_LENGTH ? sequenceCost(piece) : undefined, "sequence"],
                 [pieceLength <= MAX_RUN_LENGTH ? keyboardCost(piece) : undefined, "keyboard"],
@@ -267,24 +305,40 @@ export function analyzePassword(password: string): PasswordAnalysis {
     }
 
     // Walk the cheapest split back to see which kinds of piece it used.
-    let commonCovered = 0;
+    let longestCommon = 0;
     let hasPattern = false;
+    let words = 0;
+    let capitalizedWords = 0;
+    const separators: string[] = [];
     for (let end = analyzed; end > 0; ) {
         const { from, kind } = choice[end]!;
-        if (kind === "common") commonCovered += end - from;
-        else if (kind !== "random") hasPattern = true;
+        if (kind === "password") longestCommon = Math.max(longestCommon, end - from);
+        else if (kind === "repeat" || kind === "sequence" || kind === "keyboard" || kind === "year") hasPattern = true;
+        else if (kind === "separator") separators.push(characters[from]!);
+        else if (kind === "word") {
+            words++;
+            if (isCapitalized(characters.slice(from, end))) capitalizedWords++;
+        }
         end = from;
     }
+    // A phrase capitalizes its words the same way throughout, so the capital letters of all but the
+    // first word give an attacker nothing more to try. The same goes for the separator.
+    const capitalRefund = words > 1 && capitalizedWords === words ? words - 1 : 0;
+    const separatorRefund =
+        separators.length > 1 && separators.every((separator) => separator === separators[0])
+            ? (separators.length - 1) * SEPARATOR_BITS
+            : 0;
 
+    // Ordinary words lower the estimate but are no reason to warn; leaked passwords are.
     const warnings: StrengthWarning[] = [];
-    if (commonCovered >= analyzed * 0.6) warnings.push("common");
+    if (longestCommon >= analyzed * COMMON_SHARE) warnings.push("common");
     if (hasPattern) warnings.push("pattern");
     if (length < MIN_RECOMMENDED_LENGTH) warnings.push("short");
 
     return {
         length,
         poolSize,
-        entropyBits: best[analyzed]! + (length - analyzed) * bitsPerCharacter,
+        entropyBits: best[analyzed]! - capitalRefund - separatorRefund + (length - analyzed) * bitsPerCharacter,
         warnings,
     };
 }
