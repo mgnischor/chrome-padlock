@@ -69,13 +69,16 @@
         "message": "மிகவும் வலுவானது"
     },
     "entropyBits": {
-        "message": "$BITS$ பிட் என்ட்ரோபி",
+        "message": "$BITS$ என்ட்ரோபி",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "இந்த கடவுச்சொல்லைச் சோதி"
     },
     "optionsLabel": {
         "message": "விருப்பங்கள்"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "உடைக்க மதிப்பிடப்பட்ட நேரம்"
+    },
+    "checkerGenerate": {
+        "message": "புதிய கடவுச்சொல்"
     },
     "crackOnlineSlow": {
         "message": "ஆன்லைன், வரம்புடன் (மணிக்கு $RATE$ முயற்சிகள்)",
