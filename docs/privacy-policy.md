@@ -92,9 +92,11 @@ policy.
 ## Third parties
 
 Padlock does not use third-party services, SDKs, advertising or analytics, and it does not sell or
-share data with anyone. The only third-party material it contains is the passphrase word list, the EFF
-Large Wordlist by the Electronic Frontier Foundation, used under the Creative Commons Attribution 3.0
-United States license; it is static text inside the extension and involves no data exchange. Padlock's use of information complies with the
+share data with anyone. The only third-party material it contains is word lists: the EFF Large Wordlist
+by the Electronic Frontier Foundation, used under the Creative Commons Attribution 3.0 United States
+license, and lists of common passwords and English words used by the strength test, under their own
+licenses (see THIRD_PARTY_NOTICES.md in the project's repository). They are static text inside the
+extension and involve no data exchange. Padlock's use of information complies with the
 [Chrome Web Store User Data Policy](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq),
 including the Limited Use requirements.
 
