@@ -69,13 +69,16 @@
         "message": "Muy fuerte"
     },
     "entropyBits": {
-        "message": "$BITS$ bits de entropía",
+        "message": "$BITS$ de entropía",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "Probar esta contraseña"
     },
     "optionsLabel": {
         "message": "Opciones"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "Tiempo estimado para descifrarla"
+    },
+    "checkerGenerate": {
+        "message": "Generar una contraseña segura"
     },
     "crackOnlineSlow": {
         "message": "Ataque en línea con límite de intentos ($RATE$ por hora)",
