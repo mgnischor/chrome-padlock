@@ -69,13 +69,16 @@
         "message": "Очень надёжный"
     },
     "entropyBits": {
-        "message": "$BITS$ бит энтропии",
+        "message": "$BITS$ энтропии",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "Проверить этот пароль"
     },
     "optionsLabel": {
         "message": "Параметры"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "Примерное время взлома"
+    },
+    "checkerGenerate": {
+        "message": "Создать надёжный пароль"
     },
     "crackOnlineSlow": {
         "message": "Онлайн-атака с ограничением ($RATE$ попыток в час)",
