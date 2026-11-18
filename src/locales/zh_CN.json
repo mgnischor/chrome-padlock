@@ -69,13 +69,16 @@
         "message": "非常强"
     },
     "entropyBits": {
-        "message": "$BITS$ 位熵",
+        "message": "$BITS$熵",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "测试此密码"
     },
     "optionsLabel": {
         "message": "选项"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "预计破解时间"
+    },
+    "checkerGenerate": {
+        "message": "生成强密码"
     },
     "crackOnlineSlow": {
         "message": "在线攻击，有次数限制（每小时 $RATE$ 次尝试）",
