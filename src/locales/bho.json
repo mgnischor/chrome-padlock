@@ -69,13 +69,16 @@
         "message": "बहुत मजबूत"
     },
     "entropyBits": {
-        "message": "$BITS$ बिट एंट्रॉपी",
+        "message": "$BITS$ एंट्रॉपी",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "ई पासवर्ड जाँचीं"
     },
     "optionsLabel": {
         "message": "विकल्प"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "तोड़े में लागे वाला अनुमानित समय"
+    },
+    "checkerGenerate": {
+        "message": "मजबूत पासवर्ड बनाईं"
     },
     "crackOnlineSlow": {
         "message": "ऑनलाइन हमला, सीमित कोसिस (हर घंटा $RATE$ कोसिस)",
