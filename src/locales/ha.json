@@ -69,13 +69,16 @@
         "message": "Mai ƙarfi sosai"
     },
     "entropyBits": {
-        "message": "entropy na bit $BITS$",
+        "message": "entropy na $BITS$",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "Gwada wannan kalmar sirri"
     },
     "optionsLabel": {
         "message": "Zaɓuɓɓuka"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "Kimanin lokacin fasawa"
+    },
+    "checkerGenerate": {
+        "message": "Ƙirƙiri kalmar sirri mai ƙarfi"
     },
     "crackOnlineSlow": {
         "message": "Harin kan layi, da iyaka ($RATE$ yunƙuri a awa ɗaya)",
