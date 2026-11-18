@@ -69,13 +69,16 @@
         "message": "Bardzo silne"
     },
     "entropyBits": {
-        "message": "$BITS$ bitów entropii",
+        "message": "$BITS$ entropii",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "Sprawdź to hasło"
     },
     "optionsLabel": {
         "message": "Opcje"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "Szacowany czas złamania"
+    },
+    "checkerGenerate": {
+        "message": "Wygeneruj silne hasło"
     },
     "crackOnlineSlow": {
         "message": "Atak online z limitem ($RATE$ prób na godzinę)",
