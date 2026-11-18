@@ -1,17 +1,19 @@
-Padlock tworzy silne, losowe hasła na Twoim urządzeniu. Skopiuj wynik jednym kliknięciem albo wstaw go prosto do pola tekstowego.
+Padlock tworzy silne, losowe hasła lub frazy z losowych słów na Twoim urządzeniu. Skopiuj wynik jednym kliknięciem albo wstaw go prosto do pola tekstowego.
 
 Jak to działa
-- Każdy znak jest losowany za pomocą kryptograficznie bezpiecznego generatora liczb losowych przeglądarki, a wskaźnik siły pokazuje dokładną entropię w bitach.
+- Każdy znak lub słowo jest losowane za pomocą kryptograficznie bezpiecznego generatora liczb losowych przeglądarki, a wskaźnik siły pokazuje dokładną entropię w bitach.
 - Wybierz długość (od 4 do 128 znaków) i typy znaków: małe litery, wielkie litery, cyfry i symbole. Możesz unikać podobnie wyglądających znaków, takich jak 0, O, 1, l i I, oraz wykluczać dowolne niechciane znaki.
-- Skopiuj wynik albo kliknij pole tekstowe prawym przyciskiem myszy i wybierz „Wstaw bezpieczne hasło”.
+- Frazy: przełącz na tryb fraz, aby dostać od 3 do 12 losowych słów, na przykład abruptly-frosting-gamble-wiry-snowman-cabbage. Wybierz separator, wielkie litery i opcjonalną cyfrę. Słowa pochodzą z wbudowanej listy 7776 angielskich słów.
+- Skopiuj wynik albo kliknij pole tekstowe prawym przyciskiem myszy i wybierz „Wstaw bezpieczne hasło”. Możesz też nacisnąć Ctrl+Shift+U (Command+Shift+U na komputerze Mac), aby wstawić je w polu, w którym piszesz.
+- Test siły: wpisz lub wklej hasło, aby zobaczyć szacowaną entropię w bitach i czas potrzebny na jego złamanie. Analiza odbywa się na Twoim urządzeniu, a nic nie jest zapisywane ani wysyłane.
 - Opcjonalnie: schowek jest czyszczony automatycznie od 30 sekund do 2 minut po skopiowaniu.
 - Opcjonalnie: lista ostatnich 50 wygenerowanych haseł. Domyślnie jest wyłączona, przechowywana bez szyfrowania wyłącznie w pamięci przeglądarki i usuwana po zamknięciu Chrome.
 - Jasny i ciemny motyw oraz 30 języków interfejsu.
 
 Prywatność
-Padlock działa w całości na Twoim urządzeniu. Nie zbiera danych, nie wysyła żadnych żądań sieciowych i nie zawiera reklam ani analityki. To nie jest menedżer haseł: niczego nie zapisuje ani nie synchronizuje.
+Padlock działa w całości na Twoim urządzeniu. Nie zbiera danych, nie wysyła żadnych żądań sieciowych i nie zawiera reklam ani analityki. To nie jest menedżer haseł: nigdy nie zapisuje ani nie synchronizuje tego, co wygeneruje.
 
 Uprawnienia
-Padlock uzyskuje dostęp do strony tylko wtedy, gdy używasz jego pozycji w menu kontekstowym, i tylko do karty i pola, których dotyczy ta czynność. Uprawnienia schowka są opcjonalne i wymagane tylko po włączeniu automatycznego czyszczenia schowka.
+Padlock uzyskuje dostęp do strony tylko wtedy, gdy użyjesz pozycji w menu prawego przycisku myszy lub skrótu klawiszowego, i tylko do karty oraz pola, z których korzystasz. Uprawnienia schowka są opcjonalne i wymagane tylko po włączeniu automatycznego czyszczenia schowka.
 
 Otwarte oprogramowanie (licencja Apache 2.0): github.com/mgnischor/chrome-padlock
