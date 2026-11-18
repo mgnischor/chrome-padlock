@@ -69,13 +69,16 @@
         "message": "Çok güçlü"
     },
     "entropyBits": {
-        "message": "$BITS$ bit entropi",
+        "message": "$BITS$ entropi",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "Bu parolayı test et"
     },
     "optionsLabel": {
         "message": "Seçenekler"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "Kırılması için tahmini süre"
+    },
+    "checkerGenerate": {
+        "message": "Güçlü bir parola oluştur"
     },
     "crackOnlineSlow": {
         "message": "Çevrimiçi saldırı, sınırlı ($RATE$ deneme/saat)",
