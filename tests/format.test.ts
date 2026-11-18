@@ -20,7 +20,7 @@
 */
 import { describe, expect, it } from "vitest";
 import type { DurationUnit } from "../src/core/strength";
-import { formatCount, formatDuration, formatRate } from "../src/shared/format";
+import { formatBits, formatCount, formatDuration, formatRate } from "../src/shared/format";
 import { LOCALES } from "../src/shared/locales";
 
 /**
@@ -75,6 +75,36 @@ describe("formatDuration", () => {
 
     it("falls back to English for a tag the runtime rejects", () => {
         expect(formatDuration(duration(3, "day"), "not a valid tag!")).toBe("3 days");
+    });
+});
+
+describe("formatBits", () => {
+    it("uses the singular for one bit and the plural for the rest", () => {
+        expect(formatBits(1, "en-US")).toBe("1 bit");
+        expect(formatBits(2, "en-US")).toBe("2 bits");
+        expect(formatBits(77, "en-US")).toBe("77 bits");
+        expect(formatBits(0, "en-US")).toBe("0 bits");
+    });
+
+    it("follows the plural rules of the language", () => {
+        expect(formatBits(2, "pl")).toBe("2 bity");
+        expect(formatBits(5, "pl")).toBe("5 bitów");
+        expect(formatBits(2, "ru")).toBe("2 бита");
+        expect(formatBits(5, "ru")).toBe("5 бит");
+    });
+
+    it("rounds to whole bits", () => {
+        expect(formatBits(77.6, "en-US")).toBe("78 bits");
+    });
+
+    it("always writes the digits as 0-9, in every supported language", () => {
+        for (const { tag } of LOCALES) {
+            expect(formatBits(77, tag).replace(/\D/g, ""), tag).toBe("77");
+        }
+    });
+
+    it("falls back to English for a tag the runtime rejects", () => {
+        expect(formatBits(2, "not a valid tag!")).toBe("2 bits");
     });
 });
 
