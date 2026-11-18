@@ -69,13 +69,16 @@
         "message": "ખૂબ મજબૂત"
     },
     "entropyBits": {
-        "message": "$BITS$ બિટ એન્ટ્રોપી",
+        "message": "$BITS$ એન્ટ્રોપી",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "આ પાસવર્ડ ચકાસો"
     },
     "optionsLabel": {
         "message": "વિકલ્પો"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "તોડવાનો અંદાજિત સમય"
+    },
+    "checkerGenerate": {
+        "message": "મજબૂત પાસવર્ડ બનાવો"
     },
     "crackOnlineSlow": {
         "message": "ઑનલાઇન હુમલો, મર્યાદિત પ્રયાસો (કલાકે $RATE$ પ્રયાસો)",
