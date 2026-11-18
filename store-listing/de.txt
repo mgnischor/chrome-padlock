@@ -1,17 +1,19 @@
-Padlock erzeugt starke Zufallspasswörter auf Ihrem Gerät. Kopieren Sie das Ergebnis mit einem Klick oder fügen Sie es direkt in ein Textfeld ein.
+Padlock erzeugt starke Zufallspasswörter oder Phrasen aus Zufallswörtern auf Ihrem Gerät. Kopieren Sie das Ergebnis mit einem Klick oder fügen Sie es direkt in ein Textfeld ein.
 
 So funktioniert es
-- Jedes Zeichen wird mit dem kryptografisch sicheren Zufallszahlengenerator Ihres Browsers gezogen, und die Stärkeanzeige zeigt die genaue Entropie in Bit.
+- Jedes Zeichen oder Wort wird mit dem kryptografisch sicheren Zufallszahlengenerator Ihres Browsers gezogen, und die Stärkeanzeige zeigt die genaue Entropie in Bit.
 - Wählen Sie die Länge (4 bis 128 Zeichen) und die Zeichentypen: Klein- und Großbuchstaben, Ziffern und Sonderzeichen. Sie können ähnlich aussehende Zeichen wie 0, O, 1, l und I vermeiden und beliebige Zeichen ausschließen.
-- Kopieren Sie das Ergebnis oder klicken Sie mit der rechten Maustaste auf ein Textfeld und wählen Sie „Sicheres Passwort einfügen“.
+- Passphrasen: Wechseln Sie in den Passphrasen-Modus für 3 bis 12 zufällige Wörter, zum Beispiel abruptly-frosting-gamble-wiry-snowman-cabbage. Wählen Sie Trennzeichen, Großbuchstaben und eine optionale Ziffer. Die Wörter stammen aus einer integrierten Liste mit 7.776 englischen Wörtern.
+- Kopieren Sie das Ergebnis oder klicken Sie mit der rechten Maustaste auf ein Textfeld und wählen Sie „Sicheres Passwort einfügen“. Sie können auch Ctrl+Shift+U (Command+Shift+U auf dem Mac) drücken, um eines in das Feld einzufügen, in dem Sie gerade tippen.
+- Stärketest: Geben Sie ein Passwort ein oder fügen Sie es ein, um die geschätzte Entropie in Bit und die Zeit bis zum Knacken zu sehen. Die Analyse läuft auf Ihrem Gerät, nichts wird gespeichert oder gesendet.
 - Optional: Die Zwischenablage wird 30 Sekunden bis 2 Minuten nach dem Kopieren automatisch geleert.
 - Optional: Eine Liste der letzten 50 erzeugten Passwörter wird geführt. Sie ist standardmäßig aus, liegt unverschlüsselt nur im Arbeitsspeicher des Browsers und wird beim Schließen von Chrome gelöscht.
 - Helles und dunkles Design sowie 30 Oberflächensprachen.
 
 Datenschutz
-Padlock läuft vollständig auf Ihrem Gerät. Es erfasst keine Daten, stellt keine Netzwerkanfragen und enthält weder Werbung noch Analyse. Es ist kein Passwortmanager: Es speichert und synchronisiert nichts.
+Padlock läuft vollständig auf Ihrem Gerät. Es erfasst keine Daten, stellt keine Netzwerkanfragen und enthält weder Werbung noch Analyse. Es ist kein Passwortmanager: Es speichert oder synchronisiert nie, was es erzeugt.
 
 Berechtigungen
-Padlock greift nur dann auf eine Seite zu, wenn Sie den Eintrag im Kontextmenü verwenden, und nur auf den Tab und das Feld, die Sie benutzt haben. Die Berechtigungen für die Zwischenablage sind optional und werden nur angefordert, wenn Sie das automatische Leeren der Zwischenablage einschalten.
+Padlock greift nur auf eine Seite zu, wenn Sie den Eintrag im Rechtsklickmenü oder die Tastenkombination verwenden, und nur auf den Tab und das Feld, die Sie benutzt haben. Die Berechtigungen für die Zwischenablage sind optional und werden nur angefordert, wenn Sie das automatische Leeren der Zwischenablage einschalten.
 
 Open Source (Apache-Lizenz 2.0): github.com/mgnischor/chrome-padlock
