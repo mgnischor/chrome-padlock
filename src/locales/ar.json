@@ -69,13 +69,16 @@
         "message": "قوية جدًا"
     },
     "entropyBits": {
-        "message": "إنتروبيا $BITS$ بت",
+        "message": "إنتروبيا $BITS$",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "اختبر كلمة المرور هذه"
     },
     "optionsLabel": {
         "message": "الخيارات"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "الوقت التقديري للاختراق"
+    },
+    "checkerGenerate": {
+        "message": "أنشئ كلمة مرور قوية"
     },
     "crackOnlineSlow": {
         "message": "هجوم عبر الإنترنت مع حد للمحاولات ($RATE$ محاولة في الساعة)",
