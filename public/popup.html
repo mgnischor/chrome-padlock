@@ -158,7 +158,12 @@
                                 <span id="entropy" class="muted"></span>
                             </div>
                         </div>
-                        <p id="status" class="status" role="status" aria-live="polite"></p>
+                        <div class="status-row">
+                            <p id="status" class="status" role="status" aria-live="polite"></p>
+                            <button id="test-password" type="button" class="small" data-i18n="testThisPassword">
+                                Test this password
+                            </button>
+                        </div>
                     </section>
 
                     <footer class="footer" data-i18n="footer">
@@ -299,7 +304,12 @@
                 <div class="view-head">
                     <button id="checker-back" type="button" class="primary" data-i18n="back">Back</button>
                     <h2 data-i18n="checkerButtonTitle">Test password strength</h2>
+                    <span class="spacer"></span>
+                    <button id="checker-generate" type="button" class="small" data-i18n="checkerGenerate" hidden>
+                        Generate a strong password
+                    </button>
                 </div>
+                <p id="checker-live" class="sr-only" role="status" aria-live="polite"></p>
                 <div class="checker-body">
                     <div class="checker-column">
                         <input
