@@ -33,7 +33,7 @@ import {
     type StrengthWarning,
 } from "../core/strength";
 import { WORDLIST } from "../core/wordlist";
-import { formatCount, formatDuration, formatRate } from "../shared/format";
+import { formatBits, formatCount, formatDuration, formatRate } from "../shared/format";
 import { sha256Hex } from "../shared/hash";
 import { HISTORY_LIMIT, clearHistory, loadHistory, recordPassword } from "../shared/history";
 import {
@@ -59,6 +59,12 @@ import {
 
 /** Delay before persisting, so dragging the slider does not hammer storage.sync. */
 const SAVE_DEBOUNCE_MS = 400;
+
+/** Pause in typing after which a screen reader is told the result of the strength test. */
+const ANNOUNCE_DEBOUNCE_MS = 700;
+
+/** The strength test offers a new password for results below this level ("Strong" is level 3). */
+const GENERATE_BELOW_LEVEL = 3;
 
 /** Message keys of the strength ratings, indexed by strength level. */
 const STRENGTH_MESSAGES = [
@@ -166,6 +172,9 @@ const ui = {
     checkerMeter: el<HTMLElement>("checker-meter"),
     checkerStrength: el<HTMLElement>("checker-strength"),
     checkerEntropy: el<HTMLElement>("checker-entropy"),
+    checkerLive: el<HTMLElement>("checker-live"),
+    checkerGenerate: el<HTMLButtonElement>("checker-generate"),
+    testPassword: el<HTMLButtonElement>("test-password"),
     checkerWarnings: el<HTMLUListElement>("checker-warnings"),
     checkerTimesBlock: el<HTMLElement>("checker-times-block"),
     checkerTimes: el<HTMLElement>("checker-times"),
@@ -190,6 +199,7 @@ let historyQueue: Promise<void> = Promise.resolve();
 let current: string | null = null;
 let saveTimer: number | undefined;
 let statusTimer: number | undefined;
+let announceTimer: number | undefined;
 
 /**
  * Shows a message on the status line of the visible view.
@@ -244,6 +254,7 @@ function renderStrength(): void {
     if (entropyBits === 0) {
         ui.meter.dataset.level = "0";
         ui.meter.setAttribute("aria-valuenow", "0");
+        ui.meter.removeAttribute("aria-valuetext");
         ui.strengthLabel.textContent = "–";
         ui.entropy.textContent = "";
         return;
@@ -252,7 +263,18 @@ function renderStrength(): void {
     ui.meter.dataset.level = String(level);
     ui.meter.setAttribute("aria-valuenow", String(level));
     ui.strengthLabel.textContent = t(STRENGTH_MESSAGES[level]);
-    ui.entropy.textContent = t("entropyBits", String(Math.floor(entropyBits)));
+    ui.meter.setAttribute("aria-valuetext", ui.strengthLabel.textContent);
+    ui.entropy.textContent = describeEntropy(entropyBits);
+}
+
+/**
+ * Writes an amount of entropy in the active language, for example "77 bits of entropy".
+ *
+ * @param bits - The entropy in bits.
+ * @returns The text, with the unit and its plural form chosen by the browser's locale data.
+ */
+function describeEntropy(bits: number): string {
+    return t("entropyBits", formatBits(Math.floor(bits), languageTag()));
 }
 
 /**
@@ -287,6 +309,7 @@ function regenerate(): void {
         ui.password.textContent = describeError(error);
     }
     ui.copy.disabled = current === null;
+    ui.testPassword.disabled = current === null;
     renderStrength();
 }
 
@@ -492,6 +515,9 @@ function renderChecker(): void {
     if (empty) {
         ui.checkerWarnings.replaceChildren();
         ui.checkerTimes.replaceChildren();
+        ui.checkerGenerate.hidden = true;
+        window.clearTimeout(announceTimer);
+        ui.checkerLive.textContent = "";
         return;
     }
 
@@ -500,7 +526,15 @@ function renderChecker(): void {
     ui.checkerMeter.dataset.level = String(level);
     ui.checkerMeter.setAttribute("aria-valuenow", String(level));
     ui.checkerStrength.textContent = t(STRENGTH_MESSAGES[level]);
-    ui.checkerEntropy.textContent = t("entropyBits", String(Math.floor(analysis.entropyBits)));
+    ui.checkerMeter.setAttribute("aria-valuetext", ui.checkerStrength.textContent);
+    ui.checkerEntropy.textContent = describeEntropy(analysis.entropyBits);
+    ui.checkerGenerate.hidden = level >= GENERATE_BELOW_LEVEL;
+
+    // Tell screen readers the verdict once typing pauses, not after every key.
+    window.clearTimeout(announceTimer);
+    announceTimer = window.setTimeout(() => {
+        ui.checkerLive.textContent = `${ui.checkerStrength.textContent}. ${ui.checkerEntropy.textContent}`;
+    }, ANNOUNCE_DEBOUNCE_MS);
 
     const warningText: Record<StrengthWarning, string> = {
         common: t("checkWarnCommon"),
@@ -538,6 +572,22 @@ function clearChecker(): void {
     ui.checkerShow.checked = false;
     ui.checkerInput.type = "password";
     renderChecker();
+}
+
+/** Opens the strength test with the password on screen already typed in. */
+function onTestCurrent(): void {
+    if (current === null) return;
+    const password = current;
+    showView("checker");
+    ui.checkerInput.value = password;
+    renderChecker();
+}
+
+/** Leaves the strength test for the generator and shows a new password, for a result that was weak. */
+function onCheckerGenerate(): void {
+    showView("main");
+    regenerate();
+    recordCurrent();
 }
 
 /**
@@ -788,6 +838,8 @@ function bindEvents(): void {
 
     ui.checkerOpen.addEventListener("click", () => showView("checker"));
     ui.checkerInput.addEventListener("input", renderChecker);
+    ui.testPassword.addEventListener("click", onTestCurrent);
+    ui.checkerGenerate.addEventListener("click", onCheckerGenerate);
     ui.checkerShow.addEventListener("change", () => {
         ui.checkerInput.type = ui.checkerShow.checked ? "text" : "password";
     });
