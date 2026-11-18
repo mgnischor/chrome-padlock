@@ -1,17 +1,19 @@
-Padlock, cihazınızda güçlü ve rastgele parolalar oluşturur. Sonucu tek tıkla kopyalayın veya doğrudan bir metin alanına ekleyin.
+Padlock, cihazınızda güçlü ve rastgele parolalar veya rastgele kelimelerden oluşan ifadeler oluşturur. Sonucu tek tıkla kopyalayın veya doğrudan bir metin alanına ekleyin.
 
 Nasıl çalışır
-- Her karakter, tarayıcınızın kriptografik olarak güvenli rastgele sayı üreteciyle seçilir ve güç göstergesi bit cinsinden tam entropiyi gösterir.
+- Her karakter ya da kelime, tarayıcınızın kriptografik olarak güvenli rastgele sayı üreteciyle seçilir ve güç göstergesi bit cinsinden tam entropiyi gösterir.
 - Uzunluğu (4 ile 128 karakter arası) ve karakter türlerini seçin: küçük harfler, büyük harfler, rakamlar ve simgeler. 0, O, 1, l ve I gibi birbirine benzeyen karakterlerden kaçınabilir, istemediğiniz karakterleri hariç tutabilirsiniz.
-- Sonucu kopyalayın veya bir metin alanına sağ tıklayıp “Güvenli parola ekle” öğesini seçin.
+- İfadeler: 3 ila 12 rastgele kelime için ifade moduna geçin, örneğin abruptly-frosting-gamble-wiry-snowman-cabbage. Ayırıcıyı, büyük harfleri ve isteğe bağlı bir rakamı seçin. Kelimeler, yerleşik 7776 İngilizce kelimelik bir listeden gelir.
+- Sonucu kopyalayın veya bir metin alanına sağ tıklayıp “Güvenli parola ekle” öğesini seçin. Ayrıca Ctrl+Shift+U (Mac'te Command+Shift+U) tuşlarına basarak yazdığınız alana bir tane ekleyebilirsiniz.
+- Güç testi: tahmini entropisini bit cinsinden ve kırılmasının ne kadar süreceğini görmek için bir parola yazın veya yapıştırın. Analiz cihazınızda yapılır; hiçbir şey saklanmaz veya gönderilmez.
 - İsteğe bağlı: kopyaladıktan 30 saniye ile 2 dakika sonra pano otomatik olarak temizlenir.
 - İsteğe bağlı: son 50 oluşturulan parolanın listesi. Varsayılan olarak kapalıdır, şifrelenmeden yalnızca tarayıcı belleğinde tutulur ve Chrome kapandığında silinir.
 - Açık ve koyu temalar ile 30 arayüz dili.
 
 Gizlilik
-Padlock tamamen cihazınızda çalışır. Veri toplamaz, ağ isteği yapmaz; reklam veya analiz içermez. Bir parola yöneticisi değildir: hiçbir şeyi kaydetmez veya eşitlemez.
+Padlock tamamen cihazınızda çalışır. Veri toplamaz, ağ isteği yapmaz; reklam veya analiz içermez. Parola yöneticisi değildir: ürettiklerini asla kaydetmez veya eşitlemez.
 
 İzinler
-Padlock bir sayfaya yalnızca sağ tık menüsündeki öğesini kullandığınızda ve yalnızca kullandığınız sekmeye ve alana erişir. Pano izinleri isteğe bağlıdır ve yalnızca otomatik pano temizlemeyi açarsanız istenir.
+Padlock bir sayfaya yalnızca sağ tık menüsü öğesini veya klavye kısayolunu kullandığınızda erişir ve yalnızca kullandığınız sekmeye ve alana erişir. Pano izinleri isteğe bağlıdır ve yalnızca otomatik pano temizlemeyi açarsanız istenir.
 
 Açık kaynak (Apache Lisansı 2.0): github.com/mgnischor/chrome-padlock
