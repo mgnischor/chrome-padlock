@@ -69,13 +69,16 @@
         "message": "非常に強い"
     },
     "entropyBits": {
-        "message": "エントロピー $BITS$ ビット",
+        "message": "エントロピー $BITS$",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "このパスワードをテスト"
     },
     "optionsLabel": {
         "message": "オプション"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "解読にかかる推定時間"
+    },
+    "checkerGenerate": {
+        "message": "強力なパスワードを生成"
     },
     "crackOnlineSlow": {
         "message": "オンライン攻撃、回数制限あり（1 時間あたり $RATE$ 回）",
