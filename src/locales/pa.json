@@ -69,13 +69,16 @@
         "message": "ਬਹੁਤ ਮਜ਼ਬੂਤ"
     },
     "entropyBits": {
-        "message": "$BITS$ ਬਿੱਟ ਐਂਟਰੌਪੀ",
+        "message": "$BITS$ ਐਂਟਰੌਪੀ",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "ਇਹ ਪਾਸਵਰਡ ਜਾਂਚੋ"
     },
     "optionsLabel": {
         "message": "ਵਿਕਲਪ"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "ਤੋੜਨ ਲਈ ਅੰਦਾਜ਼ਨ ਸਮਾਂ"
+    },
+    "checkerGenerate": {
+        "message": "ਮਜ਼ਬੂਤ ਪਾਸਵਰਡ ਬਣਾਓ"
     },
     "crackOnlineSlow": {
         "message": "ਔਨਲਾਈਨ ਹਮਲਾ, ਸੀਮਤ ਕੋਸ਼ਿਸ਼ਾਂ (ਪ੍ਰਤੀ ਘੰਟਾ $RATE$ ਕੋਸ਼ਿਸ਼ਾਂ)",
