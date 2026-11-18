@@ -90,14 +90,18 @@
         "description": "Strength rating."
     },
     "entropyBits": {
-        "message": "$BITS$ bits of entropy",
-        "description": "Entropy of the password.",
+        "message": "$BITS$ of entropy",
+        "description": "Entropy of the password. $BITS$ is the number with its unit, such as 77 bits.",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "Test this password",
+        "description": "Button on the main screen that opens the strength test with the password on screen."
     },
     "optionsLabel": {
         "message": "Options",
@@ -444,6 +448,10 @@
     "checkerTimeHeading": {
         "message": "Estimated time to crack",
         "description": "Heading of the list of crack times."
+    },
+    "checkerGenerate": {
+        "message": "Generate a strong password",
+        "description": "Button in the strength test, shown for a weak result, that goes back and makes a new strong password."
     },
     "crackOnlineSlow": {
         "message": "Online attack, rate-limited ($RATE$ guesses per hour)",
