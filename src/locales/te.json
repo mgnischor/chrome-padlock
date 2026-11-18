@@ -69,13 +69,16 @@
         "message": "చాలా బలమైనది"
     },
     "entropyBits": {
-        "message": "$BITS$ బిట్ల ఎంట్రోపీ",
+        "message": "$BITS$ ఎంట్రోపీ",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "ఈ పాస్‌వర్డ్‌ను పరీక్షించండి"
     },
     "optionsLabel": {
         "message": "ఎంపికలు"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "ఛేదించడానికి అంచనా సమయం"
+    },
+    "checkerGenerate": {
+        "message": "బలమైన పాస్‌వర్డ్‌ను రూపొందించండి"
     },
     "crackOnlineSlow": {
         "message": "ఆన్‌లైన్ దాడి, పరిమిత ప్రయత్నాలు (గంటకు $RATE$ ప్రయత్నాలు)",
