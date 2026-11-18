@@ -69,13 +69,16 @@
         "message": "بہت مضبوط"
     },
     "entropyBits": {
-        "message": "$BITS$ بٹ اینٹروپی",
+        "message": "$BITS$ اینٹروپی",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "اس پاس ورڈ کو جانچیں"
     },
     "optionsLabel": {
         "message": "اختیارات"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "توڑنے کا اندازاً وقت"
+    },
+    "checkerGenerate": {
+        "message": "مضبوط پاس ورڈ بنائیں"
     },
     "crackOnlineSlow": {
         "message": "آن لائن حملہ، محدود کوششیں (فی گھنٹہ $RATE$ کوششیں)",
