@@ -69,13 +69,16 @@
         "message": "വളരെ ശക്തം"
     },
     "entropyBits": {
-        "message": "$BITS$ ബിറ്റ് എൻട്രോപ്പി",
+        "message": "$BITS$ എൻട്രോപ്പി",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "ഈ പാസ്‌വേഡ് പരിശോധിക്കുക"
     },
     "optionsLabel": {
         "message": "ഓപ്ഷനുകൾ"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "തകർക്കാൻ കണക്കാക്കിയ സമയം"
+    },
+    "checkerGenerate": {
+        "message": "പുതിയ പാസ്‌വേഡ്"
     },
     "crackOnlineSlow": {
         "message": "ഓൺലൈൻ, പരിധിയോടെ (മണിക്കൂറിൽ $RATE$ ശ്രമങ്ങൾ)",
