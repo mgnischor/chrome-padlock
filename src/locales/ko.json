@@ -69,13 +69,16 @@
         "message": "매우 강함"
     },
     "entropyBits": {
-        "message": "엔트로피 $BITS$비트",
+        "message": "엔트로피 $BITS$",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "이 비밀번호 테스트"
     },
     "optionsLabel": {
         "message": "옵션"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "해독 예상 시간"
+    },
+    "checkerGenerate": {
+        "message": "강력한 비밀번호 생성"
     },
     "crackOnlineSlow": {
         "message": "온라인 공격, 시도 횟수 제한(시간당 $RATE$회 시도)",
