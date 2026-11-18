@@ -21,6 +21,8 @@
     "devDependencies": {
         "@types/chrome": "^0.0.326",
         "@types/node": "^22.20.5",
+        "@zxcvbn-ts/language-common": "4.2.0",
+        "@zxcvbn-ts/language-en": "4.1.2",
         "esbuild": "^0.28.2",
         "typescript": "^7.0.2",
         "vitest": "^5.0.5"
