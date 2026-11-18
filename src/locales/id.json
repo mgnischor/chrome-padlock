@@ -69,13 +69,16 @@
         "message": "Sangat kuat"
     },
     "entropyBits": {
-        "message": "Entropi $BITS$ bit",
+        "message": "Entropi $BITS$",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "Uji kata sandi ini"
     },
     "optionsLabel": {
         "message": "Opsi"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "Perkiraan waktu untuk membobolnya"
+    },
+    "checkerGenerate": {
+        "message": "Buat kata sandi yang kuat"
     },
     "crackOnlineSlow": {
         "message": "Serangan online dengan pembatasan ($RATE$ tebakan per jam)",
