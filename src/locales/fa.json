@@ -69,13 +69,16 @@
         "message": "بسیار قوی"
     },
     "entropyBits": {
-        "message": "$BITS$ بیت آنتروپی",
+        "message": "$BITS$ آنتروپی",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "آزمون این گذرواژه"
     },
     "optionsLabel": {
         "message": "گزینه‌ها"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "زمان تخمینی برای شکستن"
+    },
+    "checkerGenerate": {
+        "message": "ساخت گذرواژهٔ قوی"
     },
     "crackOnlineSlow": {
         "message": "حملهٔ آنلاین با محدودیت ($RATE$ تلاش در ساعت)",
