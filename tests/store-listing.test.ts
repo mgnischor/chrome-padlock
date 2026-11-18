@@ -27,13 +27,22 @@ import { HISTORY_LIMIT } from "../src/shared/history";
 import { CLIPBOARD_CLEAR_CHOICES } from "../src/shared/settings";
 import { LOCALES } from "../src/shared/locales";
 import { MAX_LENGTH, MIN_LENGTH } from "../src/core/generator";
+import { MAX_WORDS, MIN_WORDS } from "../src/core/passphrase";
+import { WORDLIST } from "../src/core/wordlist";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LISTING_DIR = path.join(ROOT, "store-listing");
 const REPOSITORY = "github.com/mgnischor/chrome-padlock";
+const manifest = JSON.parse(readFileSync(path.join(ROOT, "public", "manifest.json"), "utf8"));
 
 /** The store limits a description to 16,000 characters. */
 const MAX_DESCRIPTION = 16_000;
+
+/**
+ * Bullets under "How it works": random characters, character options, passphrases, copy and insert,
+ * strength test, clipboard clearing, history, and themes and languages.
+ */
+const BULLETS = 8;
 
 /**
  * The stem of the word for "password" in each language. The store treats the same keyword repeated
@@ -70,9 +79,10 @@ const PASSWORD_STEMS: Record<string, RegExp> = {
 
 /**
  * Grammar words that happen to be five or more letters long: "and" in Kannada and Telugu (five code
- * points each) and "not" in Vietnamese. They are not keywords, which is what the store's rule is about.
+ * points each), "not" in Vietnamese and "or" in Marathi. They are not keywords, which is what the
+ * store's rule is about.
  */
-const FUNCTION_WORDS = new Set(["ಮತ್ತು", "మరియు", "không"]);
+const FUNCTION_WORDS = new Set(["ಮತ್ತು", "మరియు", "không", "किंवा"]);
 
 const present = existsSync(LISTING_DIR);
 
@@ -113,7 +123,7 @@ describe.skipIf(!present)("store descriptions", () => {
         expect(text.length).toBeLessThanOrEqual(MAX_DESCRIPTION);
         // Intro, how it works, privacy, permissions and the open-source line.
         expect(text.trim().split(/\n\s*\n/)).toHaveLength(5);
-        expect(text.split("\n").filter((line) => line.startsWith("- "))).toHaveLength(6);
+        expect(text.split("\n").filter((line) => line.startsWith("- "))).toHaveLength(BULLETS);
         expect(text.endsWith("\n")).toBe(true);
     });
 
@@ -167,6 +177,18 @@ describe.skipIf(!present)("store descriptions", () => {
         expect(text).toContain(String(LOCALES.length - 1));
         const delays = CLIPBOARD_CLEAR_CHOICES.filter((delay) => delay > 0);
         expect(text).toContain(String(Math.min(...delays)));
+    });
+
+    it.each(MANIFEST_LOCALES)("%s describes the passphrases and the shortcut as they really are", (code) => {
+        const text = listing(code);
+        expect(text).toContain(String(MIN_WORDS));
+        expect(text).toContain(String(MAX_WORDS));
+        // The size of the word list, however the language groups its digits: 7,776, 7.776 or 7 776.
+        expect(text.replace(/[\s.,’'  ]/g, "")).toContain(String(WORDLIST.length));
+        for (const command of Object.values<{ suggested_key: Record<string, string> }>(manifest.commands)) {
+            if (command === manifest.commands._execute_action) continue;
+            for (const key of Object.values(command.suggested_key)) expect(text, key).toContain(key);
+        }
     });
 
     it.each(MANIFEST_LOCALES.filter((code) => code !== "en_US"))("%s is translated, not the English text", (code) => {
