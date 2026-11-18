@@ -239,34 +239,50 @@ resto recurre al inglés.
 
 ### Prueba de seguridad
 
-La prueba funciona con cualquier contraseña, no solo con las que crea Padlock, así que no puede dar por
-hecho que sea aleatoria. `analyzePassword` (`src/core/strength.ts`) divide la contraseña en trozos y
-asigna a cada uno un precio en bits de esfuerzo de adivinación, como lo intentaría un atacante, y se
+La prueba funciona con cualquier contraseña, no solo con las que crea Padlock, así que no puede asumir
+que la contraseña sea aleatoria. `analyzePassword` (`src/core/strength.ts`) divide la contraseña en
+partes y da a cada una un precio en bits de esfuerzo de adivinación, como lo intentaría un atacante, y se
 queda con la división más barata:
 
-| Trozo                                                | Precio                                                        |
-| ---------------------------------------------------- | ------------------------------------------------------------- |
-| Una contraseña o palabra común (unas 160 incluidas)  | `log2(posición)`, más un bit por mayúsculas o sustituciones (`P@ssw0rd`) |
-| Una repetición (`aaaa`, `abcabc`)                    | la unidad repetida, más `log2(veces)`                         |
-| Una secuencia (`abcd`, `4321`) o tramo de teclado (`asdf`) | un punto de partida más `log2(longitud)`                |
-| Un año de 1900 a 2039                                | unos 8 bits                                                   |
-| Cualquier otra cosa                                  | `log2(conjunto)` por carácter, siendo el conjunto los tipos de carácter usados |
+| Parte                                                    | Precio                                                                          |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Una contraseña filtrada (unas 49 000 integradas)         | `log2(posición)` en la lista, más un bit por mayúsculas o cambios de letras (`P@ssw0rd`) |
+| Una palabra en inglés (unas 56 000 integradas)           | `log2(posición)` en la lista, más los mismos extras                             |
+| Una repetición (`aaaa`, `abcabc`)                        | la unidad repetida, más `log2(veces)`                                           |
+| Una secuencia (`abcd`, `4321`) o tramo del teclado (`asdf`) | un punto de partida más `log2(longitud)`                                     |
+| Un año de 1900 a 2039                                    | unos 8 bits                                                                     |
+| Un separador tras una palabra (`-`, `_`, `.`, espacio)   | 1 bit, y solo el primero de una frase                                           |
+| Cualquier otra cosa                                      | `log2(conjunto)` por carácter, siendo el conjunto los tipos de carácter usados  |
 
-Para una contraseña aleatoria esto da `longitud × log2(conjunto)`; para una elegida por una persona es
-menos, a menudo mucho menos. El tiempo de descifrado es el promedio, que es la mitad de todos los
-intentos, `2^(bits − 1)`, dividido por la velocidad del atacante. Las cuatro velocidades son las del
-estimador zxcvbn: 100 por hora (inicio de sesión web con límite), 10 por segundo (inicio de sesión web
-sin límite), 10 mil por segundo (ataque sin conexión contra un hash lento como bcrypt) y 10 mil
-millones por segundo (ataque sin conexión contra un hash rápido como MD5, con GPU). Las duraciones las
-escribe `Intl.NumberFormat` (`src/shared/format.ts`), de modo que las unidades y los plurales proceden
-de los datos de localización del navegador en todos los idiomas.
+Las listas de palabras están en `src/core/dictionary.ts`. Proceden de los paquetes de idioma de
+[zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn) (`@zxcvbn-ts/language-common` y `@zxcvbn-ts/language-en`,
+fijados en versiones exactas e incorporados al compilar, así que la extensión sigue sin dependencias en
+tiempo de ejecución), más las 7.776 palabras que Padlock usa en las frases de contraseña. Solo se usan los
+datos de esos paquetes, no su estimador: zxcvbn cobra unos 3,3 bits por carácter sin coincidencia, lo que
+valora una contraseña aleatoria de 20 caracteres en unos 66 bits cuando su entropía es de unos 130, y una prueba de
+seguridad para un generador de contraseñas no debe hacer eso con las contraseñas que genera. Todo lo demás,
+incluida la división en partes, es propio de Padlock. Las listas se cargan en el primer análisis, no al
+abrir el popup. Consulta [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) para ver sus fuentes y licencias.
 
-Límites, que la propia pantalla también indica: es una **estimación**. Solo conoce los patrones de
-arriba y una lista corta de contraseñas comunes, así que una contraseña hecha de palabras corrientes
-(una frase como "correct horse battery staple") recibe una nota mayor de la que merece, porque no hay
-diccionario. No puede saber si una contraseña ha aparecido en una filtración. "Muy fuerte" significa,
-por tanto, "no se encontró ningún patrón fácil", y no "segura para usar": usa una contraseña que nadie
-haya visto nunca, como las que genera Padlock.
+Para una contraseña aleatoria esto da `longitud × log2(conjunto)`; para una elegida es menos, a menudo
+mucho menos. Una frase de palabras se valora palabra por palabra, así que una frase de contraseña generada
+por Padlock recibe, de media, una nota a pocos bits de la entropía que indica el generador (la prueba no
+puede saber que las palabras se sortearon, así que una frase concreta puede salir por encima o por debajo).
+El tiempo para descifrar es la media, que es la mitad de todos los intentos, `2^(bits − 1)`, dividida por la
+velocidad de intentos. Las cuatro velocidades son las que usa el estimador zxcvbn: 100 por hora (inicio de
+sesión web con límite), 10 por segundo (inicio de sesión web sin límite), 10 mil por segundo (ataque sin
+conexión a un hash lento como bcrypt) y 10 mil millones por segundo (ataque sin conexión a un hash rápido
+como MD5, con GPU). Las duraciones, y la unidad de la entropía ("1 bit", "2 bits"), las escribe
+`Intl.NumberFormat` (`src/shared/format.ts`), así que las unidades y los plurales salen de los datos de
+localización del navegador en todos los idiomas.
+
+Límites, que la pantalla también indica: es una **estimación**. Solo conoce los patrones anteriores y
+listas en inglés, así que una contraseña hecha con palabras de otro idioma recibe una nota mayor de la que
+merece, y no puede saber si una contraseña ha aparecido en una filtración. Una nota de "muy fuerte"
+significa, por tanto, "no se encontró ningún patrón fácil", no "segura para usar": usa una contraseña que
+nadie haya visto nunca, como las que genera Padlock. Para un resultado débil, la pantalla ofrece un botón
+que genera una contraseña nueva, y la pantalla principal tiene un botón que abre la prueba con la
+contraseña que se ve en pantalla.
 
 La contraseña escrita nunca sale de la página: no se guarda, no se envía en mensajes, no entra en el
 historial y no se registra, y el campo se vacía al salir de la pantalla o al pulsar Esc.
@@ -327,8 +343,9 @@ empaquetado contiene `fetch`, `XMLHttpRequest`, `WebSocket`, `eval`, `new Functi
 - **Pruebas de protección.** `tests/manifest.test.ts` falla si se añade un permiso sin la
   justificación correspondiente en `docs/chrome-web-store.md`, o si el manifest obtiene acceso a
   sitios o una política más débil.
-- **Dependencias.** `npm audit` no informa de vulnerabilidades conocidas, y la extensión no incluye
-  dependencias de runtime: todo lo que se empaqueta es código de este repositorio.
+- **Dependencias.** `npm audit` se ejecuta en CI. La extensión no incluye dependencias de runtime: todo lo
+  que se empaqueta es código de este repositorio, salvo listas de palabras usadas como datos (consulta
+  [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
 
 ### Publicación
 
