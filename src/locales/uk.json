@@ -69,13 +69,16 @@
         "message": "Дуже надійний"
     },
     "entropyBits": {
-        "message": "$BITS$ біт ентропії",
+        "message": "$BITS$ ентропії",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "Перевірити цей пароль"
     },
     "optionsLabel": {
         "message": "Параметри"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "Орієнтовний час злому"
+    },
+    "checkerGenerate": {
+        "message": "Створити надійний пароль"
     },
     "crackOnlineSlow": {
         "message": "Онлайн-атака з обмеженням ($RATE$ спроб на годину)",
