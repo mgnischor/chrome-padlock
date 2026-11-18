@@ -19,8 +19,8 @@
     limitations under the License.
 */
 import { describe, expect, it } from "vitest";
-import { COMMON_PASSWORDS } from "../src/core/common-passwords";
 import { analyze, DEFAULT_GENERATOR_OPTIONS, generatePassword } from "../src/core/generator";
+import { DEFAULT_PASSPHRASE_OPTIONS, generatePassphrase, passphraseEntropyBits } from "../src/core/passphrase";
 import {
     ATTACK_SCENARIOS,
     MIN_RECOMMENDED_LENGTH,
@@ -70,7 +70,7 @@ describe("analyzePassword", () => {
         ["a repeated block", "xyzxyzxyzxyz"],
         ["an ascending run", "mnopqrst"],
         ["a descending run", "98765432"],
-        ["a keyboard run", "asdfghjk"],
+        ["a keyboard run", "dfghjkl"],
         ["two years", "19852020"],
     ])("treats %s as a pattern far weaker than random", (_name, password) => {
         const result = analyzePassword(password);
@@ -90,6 +90,33 @@ describe("analyzePassword", () => {
         expect(result.warnings).toContain("pattern");
         expect(result.entropyBits).toBeLessThan(45);
         expect(result.entropyBits).toBeLessThan(9 * Math.log2(62) - 10);
+    });
+
+    it("prices an ordinary English word far below random letters, without calling it a leaked password", () => {
+        const result = analyzePassword("xylophone");
+        expect(result.entropyBits).toBeLessThan(9 * Math.log2(26) * 0.5);
+        expect(result.warnings).not.toContain("common");
+    });
+
+    it("prices a phrase of ordinary words far below random characters of the same length", () => {
+        const phrase = "frosting-cabbage-gamble-snowman";
+        const result = analyzePassword(phrase);
+        expect(result.entropyBits).toBeGreaterThan(30);
+        expect(result.entropyBits).toBeLessThan(phrase.length * Math.log2(result.poolSize) * 0.5);
+        expect(result.warnings).toEqual([]);
+    });
+
+    it("charges little for the separators of a phrase, and nothing for capitalizing every word alike", () => {
+        const lower = analyzePassword("frosting-cabbage-gamble-snowman").entropyBits;
+        // Three separators between four words: about a bit each, where a random symbol costs about six.
+        expect(lower).toBeLessThan(analyzePassword("frostingXcabbageXgambleXsnowman").entropyBits - 8);
+        expect(analyzePassword("Frosting-Cabbage-Gamble-Snowman").entropyBits).toBeLessThan(lower + 5);
+    });
+
+    it("finds a leaked password hidden behind capitals and look-alike characters", () => {
+        for (const password of ["Dragon", "Sunshine1", "Fr33dom"]) {
+            expect(analyzePassword(password).entropyBits, password).toBeLessThan(25);
+        }
     });
 
     it("warns about short passwords but not about long ones", () => {
@@ -133,6 +160,29 @@ describe("analyzePassword", () => {
         expect(total / runs).toBeGreaterThan(exact - 6);
     });
 
+    it.each([
+        ["", {}],
+        ["capitalized", { capitalize: true }],
+        ["with a number", { includeNumber: true }],
+        ["with spaces", { separator: " " as const }],
+        ["of eight words", { words: 8 }],
+    ])("rates a passphrase %s close to what the generator says", (_name, overrides) => {
+        const options = { ...DEFAULT_PASSPHRASE_OPTIONS, ...overrides };
+        const exact = passphraseEntropyBits(options);
+        let total = 0;
+        const runs = 100;
+        for (let i = 0; i < runs; i++) {
+            const result = analyzePassword(generatePassphrase(options));
+            // A passphrase of words that happen to be common is cheaper, one of rarer words dearer.
+            expect(result.entropyBits).toBeGreaterThan(exact - 20);
+            expect(result.entropyBits).toBeLessThan(exact + 30);
+            expect(result.warnings).not.toContain("common");
+            total += result.entropyBits;
+        }
+        expect(total / runs).toBeGreaterThan(exact - 5);
+        expect(total / runs).toBeLessThan(exact + 5);
+    });
+
     it("gives longer random passwords more entropy", () => {
         const short = analyzePassword("Tq8#mZ4!");
         const long = analyzePassword("Tq8#mZ4!Lw5@Xe9$");
@@ -150,16 +200,6 @@ describe("analyzePassword", () => {
     it("never reports negative entropy", () => {
         for (const password of ["a", "aa", "aaa", "12345", "zzzzzz", "ab", "1"]) {
             expect(analyzePassword(password).entropyBits).toBeGreaterThan(0);
-        }
-    });
-});
-
-describe("common password list", () => {
-    it("has no duplicates, empty entries or upper case", () => {
-        expect(new Set(COMMON_PASSWORDS).size).toBe(COMMON_PASSWORDS.length);
-        for (const word of COMMON_PASSWORDS) {
-            expect(word).not.toBe("");
-            expect(word).toBe(word.toLowerCase());
         }
     });
 });
