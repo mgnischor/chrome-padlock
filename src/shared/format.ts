@@ -74,6 +74,24 @@ export function formatCount(value: number, tag: string): string {
 }
 
 /**
+ * Formats an amount of entropy with its unit, such as "1 bit" or "77 bits". The unit name and its
+ * plural forms come from the browser's locale data, so no plural has to be translated by hand.
+ *
+ * @param bits - The entropy in bits; it is rounded to a whole number.
+ * @param tag - A BCP 47 language tag such as `pt-BR`.
+ * @returns The formatted amount.
+ */
+export function formatBits(bits: number, tag: string): string {
+    return numberFormat(tag, {
+        style: "unit",
+        unit: "bit",
+        unitDisplay: "long",
+        maximumFractionDigits: 0,
+        numberingSystem: "latn",
+    }).format(bits);
+}
+
+/**
  * Formats a number of guesses, such as "10 billion", in a language.
  *
  * @param rate - The number of guesses.
