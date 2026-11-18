@@ -69,13 +69,16 @@
         "message": "Rất mạnh"
     },
     "entropyBits": {
-        "message": "$BITS$ bit entropy",
+        "message": "$BITS$ entropy",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "Kiểm tra mật khẩu này"
     },
     "optionsLabel": {
         "message": "Tùy chọn"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "Thời gian ước tính để bẻ khóa"
+    },
+    "checkerGenerate": {
+        "message": "Tạo mật khẩu mạnh"
     },
     "crackOnlineSlow": {
         "message": "Tấn công trực tuyến, có giới hạn ($RATE$ lượt đoán mỗi giờ)",
