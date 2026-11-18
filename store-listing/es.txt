@@ -1,17 +1,19 @@
-Padlock crea contraseñas fuertes y aleatorias en tu dispositivo. Copia el resultado con un clic o insértalo directamente en un campo de texto.
+Padlock crea contraseñas fuertes y aleatorias, o frases de palabras aleatorias, en tu dispositivo. Copia el resultado con un clic o insértalo directamente en un campo de texto.
 
 Cómo funciona
-- Cada carácter se elige con el generador de números aleatorios criptográficamente seguro de tu navegador, y el medidor de fortaleza muestra la entropía exacta en bits.
+- Cada carácter o palabra se elige con el generador de números aleatorios criptográficamente seguro de tu navegador, y el medidor de fortaleza muestra la entropía exacta en bits.
 - Elige la longitud (de 4 a 128 caracteres) y los tipos de caracteres: minúsculas, mayúsculas, dígitos y símbolos. Puedes evitar caracteres parecidos, como 0, O, 1, l e I, y excluir los que no quieras.
-- Copia el resultado o haz clic derecho en un campo de texto y elige «Insertar contraseña segura».
+- Frases: cambia al modo de frases para obtener de 3 a 12 palabras aleatorias, como abruptly-frosting-gamble-wiry-snowman-cabbage. Elige el separador, las mayúsculas y un dígito opcional. Las palabras proceden de una lista integrada de 7.776 palabras en inglés.
+- Copia el resultado o haz clic derecho en un campo de texto y elige «Insertar contraseña segura». También puedes pulsar Ctrl+Shift+U (Command+Shift+U en Mac) para insertarla en el campo en el que estás escribiendo.
+- Prueba de seguridad: escribe o pega una contraseña para ver su entropía estimada en bits y cuánto tardaría en descifrarse. Se analiza en tu dispositivo y nunca se guarda ni se envía.
 - Opcional: borra el portapapeles automáticamente entre 30 segundos y 2 minutos después de copiar.
 - Opcional: conserva una lista de las últimas 50 contraseñas generadas. Está desactivada por defecto, se guarda sin cifrar solo en la memoria del navegador y se borra al cerrar Chrome.
 - Temas claro y oscuro y 30 idiomas de interfaz.
 
 Privacidad
-Padlock funciona por completo en tu dispositivo. No recopila datos, no realiza solicitudes de red y no incluye anuncios ni analíticas. No es un gestor de contraseñas: no guarda ni sincroniza nada.
+Padlock funciona por completo en tu dispositivo. No recopila datos, no realiza solicitudes de red y no incluye anuncios ni analíticas. No es un gestor de contraseñas: nunca guarda ni sincroniza lo que genera.
 
 Permisos
-Padlock accede a una página solo cuando usas su entrada del menú contextual, y únicamente a la pestaña y al campo que usaste. Los permisos del portapapeles son opcionales y solo se solicitan si activas el borrado automático del portapapeles.
+Padlock solo accede a una página cuando usas su entrada del menú contextual o su atajo de teclado, y únicamente a la pestaña y al campo que has usado. Los permisos del portapapeles son opcionales y solo se solicitan si activas el borrado automático del portapapeles.
 
 Código abierto (Licencia Apache 2.0): github.com/mgnischor/chrome-padlock
