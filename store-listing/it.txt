@@ -1,17 +1,19 @@
-Padlock crea password forti e casuali sul tuo dispositivo. Copia il risultato con un clic oppure inseriscilo direttamente in un campo di testo.
+Padlock crea password forti e casuali, o frasi di parole casuali, sul tuo dispositivo. Copia il risultato con un clic oppure inseriscilo direttamente in un campo di testo.
 
 Come funziona
-- Ogni carattere viene estratto con il generatore di numeri casuali crittograficamente sicuro del browser, e l'indicatore di robustezza mostra l'entropia esatta in bit.
+- Ogni carattere o parola viene estratto con il generatore di numeri casuali crittograficamente sicuro del browser, e l'indicatore di robustezza mostra l'entropia esatta in bit.
 - Scegli la lunghezza (da 4 a 128 caratteri) e i tipi di caratteri: minuscole, maiuscole, cifre e simboli. Puoi evitare i caratteri simili, come 0, O, 1, l e I, ed escludere quelli che non vuoi.
-- Copia il risultato oppure fai clic con il pulsante destro su un campo di testo e scegli «Inserisci password sicura».
+- Passphrase: passa alla modalità passphrase per avere da 3 a 12 parole casuali, ad esempio abruptly-frosting-gamble-wiry-snowman-cabbage. Scegli il separatore, le maiuscole e una cifra facoltativa. Le parole provengono da un elenco integrato di 7.776 parole inglesi.
+- Copia il risultato oppure fai clic con il pulsante destro su un campo di testo e scegli «Inserisci password sicura». Puoi anche premere Ctrl+Shift+U (Command+Shift+U su Mac) per inserirla nel campo in cui stai scrivendo.
+- Test di robustezza: digita o incolla una password per vedere l'entropia stimata in bit e quanto tempo servirebbe per scoprirla. L'analisi avviene sul tuo dispositivo e nulla viene salvato o inviato.
 - Facoltativo: cancella automaticamente gli appunti da 30 secondi a 2 minuti dopo la copia.
 - Facoltativo: conserva un elenco delle ultime 50 password generate. È disattivato per impostazione predefinita, resta senza crittografia solo nella memoria del browser e viene cancellato alla chiusura di Chrome.
 - Temi chiaro e scuro e 30 lingue dell'interfaccia.
 
 Privacy
-Padlock funziona interamente sul tuo dispositivo. Non raccoglie dati, non effettua richieste di rete e non contiene pubblicità né analisi. Non è un gestore di password: non salva né sincronizza nulla.
+Padlock funziona interamente sul tuo dispositivo. Non raccoglie dati, non effettua richieste di rete e non contiene pubblicità né analisi. Non è un gestore di password: non salva né sincronizza mai ciò che genera.
 
 Autorizzazioni
-Padlock accede a una pagina solo quando usi la sua voce del menu contestuale, e soltanto alla scheda e al campo che hai usato. Le autorizzazioni per gli appunti sono facoltative e richieste solo se attivi la cancellazione automatica degli appunti.
+Padlock accede a una pagina solo quando usi la voce del menu contestuale o la scorciatoia da tastiera, e soltanto alla scheda e al campo che hai usato. Le autorizzazioni per gli appunti sono facoltative e richieste solo se attivi la cancellazione automatica degli appunti.
 
 Open source (licenza Apache 2.0): github.com/mgnischor/chrome-padlock
