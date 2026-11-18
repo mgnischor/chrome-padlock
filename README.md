@@ -228,27 +228,43 @@ The test works on any password, not only the ones Padlock creates, so it cannot 
 is random. `analyzePassword` (`src/core/strength.ts`) splits the password into pieces and prices each
 one in bits of guessing effort, the way an attacker would try it, then keeps the cheapest split:
 
-| Piece                                              | Price                                             |
-| -------------------------------------------------- | ------------------------------------------------- |
-| A common password or word (about 160 built in)     | `log2(rank)`, plus a bit for capitals or look-alikes (`P@ssw0rd`) |
-| A repeat (`aaaa`, `abcabc`)                        | the repeated unit, plus `log2(times)`             |
-| A sequence (`abcd`, `4321`) or keyboard run (`asdf`) | a starting point plus `log2(length)`            |
-| A year from 1900 to 2039                           | about 8 bits                                      |
-| Anything else                                      | `log2(pool)` per character, the pool being the character types used |
+| Piece                                                    | Price                                                                           |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| A leaked password (about 49,000 built in)                | `log2(rank)` on the list, plus a bit for capitals or look-alikes (`P@ssw0rd`)   |
+| An English word (about 56,000 built in)                  | `log2(rank)` on the list, plus the same extras                                  |
+| A repeat (`aaaa`, `abcabc`)                              | the repeated unit, plus `log2(times)`                                           |
+| A sequence (`abcd`, `4321`) or keyboard run (`asdf`)     | a starting point plus `log2(length)`                                            |
+| A year from 1900 to 2039                                 | about 8 bits                                                                    |
+| A separator after a word (`-`, `_`, `.`, space)          | 1 bit, and only the first one of a phrase                                       |
+| Anything else                                            | `log2(pool)` per character, the pool being the character types used            |
+
+The word lists live in `src/core/dictionary.ts`. They come from the [zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn)
+language packages (`@zxcvbn-ts/language-common` and `@zxcvbn-ts/language-en`, pinned to exact versions
+and bundled at build time, so the extension still has no runtime dependencies), plus the 7,776 words
+Padlock uses for passphrases. Only the data of those packages is used, not their estimator: zxcvbn
+prices an unmatched character at about 3.3 bits, which rates a random 20-character password at about
+66 bits when its entropy is about 130, and a strength test for a password generator must not do that to the
+passwords it generates. Everything else, including the segmentation into pieces, is Padlock's own. The
+lists are loaded on the first analysis, not when the popup opens. See
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for their sources and licenses.
 
 For a random password this equals `length × log2(pool)`; for a chosen one it is lower, often far
-lower. The crack time is the average, which is half of all guesses, `2^(bits − 1)`, divided by the
-guess rate. The four rates are the ones the zxcvbn estimator uses: 100 per hour (a throttled web
-login), 10 per second (an unthrottled one), 10 thousand per second (an offline attack on a slow
-hash such as bcrypt) and 10 billion per second (an offline attack on a fast hash such as MD5, with
-GPUs). Durations are written by `Intl.NumberFormat` (`src/shared/format.ts`), so units and plurals
-come from the browser's locale data in every language.
+lower. A phrase of words is priced word by word, so a passphrase Padlock generated is rated within a
+few bits of the entropy the generator states on average (the test cannot know the words were drawn at
+random, so any single phrase can come out higher or lower). The crack time is the average, which is
+half of all guesses, `2^(bits − 1)`, divided by the guess rate. The four rates are the ones the zxcvbn
+estimator uses: 100 per hour (a throttled web login), 10 per second (an unthrottled one), 10 thousand
+per second (an offline attack on a slow hash such as bcrypt) and 10 billion per second (an offline
+attack on a fast hash such as MD5, with GPUs). Durations, and the unit of the entropy ("1 bit",
+"2 bits"), are written by `Intl.NumberFormat` (`src/shared/format.ts`), so units and plurals come from
+the browser's locale data in every language.
 
-Limits, which the screen also states: it is an **estimate**. It knows only the patterns above and a
-short list of common passwords, so a password made of ordinary words (a passphrase such as "correct
-horse battery staple") is rated higher than it deserves, because there is no dictionary. It cannot know
-whether a password has appeared in a breach. A rating of "very strong" therefore means "no easy
-pattern found", not "safe to use": use a password nobody has ever seen, such as one Padlock generates.
+Limits, which the screen also states: it is an **estimate**. It knows only the patterns above and
+English lists, so a password made of words of another language is rated higher than it deserves, and it
+cannot know whether a password has appeared in a breach. A rating of "very strong" therefore means
+"no easy pattern found", not "safe to use": use a password nobody has ever seen, such as one Padlock
+generates. For a weak result the screen offers a button that generates a new password, and the main
+screen has a button that opens the test with the password on screen.
 
 The typed password never leaves the page: it is not stored, not sent in a message, not added to the
 history and not logged, and the field is cleared when you leave the screen or press Escape.
@@ -302,8 +318,9 @@ if an HTML page has an inline script, or if the bundled JavaScript contains `fet
 - **Safe DOM updates.** The code never uses `innerHTML`; text goes in with `textContent`.
 - **Guard tests.** `tests/manifest.test.ts` fails if a permission is added without a matching
   justification in `docs/chrome-web-store.md`, or if the manifest gains host access or a weaker policy.
-- **Dependencies.** `npm audit` reports no known vulnerabilities, and the extension ships no runtime
-  dependencies: everything bundled into the package is this repository's own code.
+- **Dependencies.** `npm audit` runs in CI. The extension ships no runtime dependencies: everything
+  bundled into the package is this repository's own code, apart from word lists used as data (see
+  [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
 
 ### Publishing
 
