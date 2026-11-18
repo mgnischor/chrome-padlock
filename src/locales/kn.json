@@ -69,13 +69,16 @@
         "message": "ತುಂಬಾ ಬಲವಾದ"
     },
     "entropyBits": {
-        "message": "$BITS$ ಬಿಟ್ ಎಂಟ್ರೊಪಿ",
+        "message": "$BITS$ ಎಂಟ್ರೊಪಿ",
         "placeholders": {
             "bits": {
                 "content": "$1",
-                "example": "128"
+                "example": "77 bits"
             }
         }
+    },
+    "testThisPassword": {
+        "message": "ಈ ಪಾಸ್‌ವರ್ಡ್ ಪರೀಕ್ಷಿಸಿ"
     },
     "optionsLabel": {
         "message": "ಆಯ್ಕೆಗಳು"
@@ -348,6 +351,9 @@
     },
     "checkerTimeHeading": {
         "message": "ಭೇದಿಸಲು ಅಂದಾಜು ಸಮಯ"
+    },
+    "checkerGenerate": {
+        "message": "ಬಲವಾದ ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಿ"
     },
     "crackOnlineSlow": {
         "message": "ಆನ್‌ಲೈನ್ ದಾಳಿ, ಮಿತಿಯೊಂದಿಗೆ (ಗಂಟೆಗೆ $RATE$ ಪ್ರಯತ್ನಗಳು)",
