@@ -19,8 +19,8 @@
         "check": "npm run typecheck && npm test && npm run build"
     },
     "devDependencies": {
-        "@types/chrome": "^0.0.326",
-        "@types/node": "^22.20.5",
+        "@types/chrome": "^0.3.7",
+        "@types/node": "^26.6.6",
         "@zxcvbn-ts/language-common": "4.2.0",
         "@zxcvbn-ts/language-en": "4.1.2",
         "esbuild": "^0.28.2",
